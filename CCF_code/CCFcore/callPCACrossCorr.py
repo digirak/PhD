@@ -10,10 +10,10 @@ from sklearn.decomposition import pca
 import matplotlib as mpl
 #from parallelCompareTemplates import CrossCorr
 import pandas as pd
-from removeTelluric import removeTelluric
 import glob
 from vip_hci.pca.svd import svd_wrapper
-from _utils import find_nearest
+from ._utils import find_nearest
+from .removeTelluric import removeTelluric
 
 font = {'family' : 'serif',
                 'weight' : 'bold'}

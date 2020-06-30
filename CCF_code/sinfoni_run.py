@@ -1,4 +1,4 @@
-from callPCACrossCorr import SINFONI
+from CCFcore.callPCACrossCorr import SINFONI
 import matplotlib as mpl
 from photutils import CircularAperture,aperture_photometry
 def measureSpatialSpec(datcube,loc):
@@ -11,9 +11,11 @@ def measureSpatialSpec(datcube,loc):
 font = {'family' : 'serif','weight' : 'bold'}
 mpl.rc('font', **font)
 from matplotlib import pyplot as plt
+from astropy.io import fits
 import numpy as np
 import sys
-from parallelCompareTemplates import CrossCorr
+import os
+from CCFcore.parallelCompareTemplates import CrossCorr
 import configparser
 configpath=sys.argv[1]
 if(configpath==[]):
@@ -29,9 +31,6 @@ vels=np.arange(vmin,vmax,dv)
 CC=CrossCorr(vels)
 from glob import glob
 from scipy.interpolate import interp1d
-#files=glob("/Users/rakesh/Data/Templates/BT-Settl/lte15*")
-#files.sort()
-#fl=files[5]
 fl=config.get("paths","template_path")
 Teff=fl.split('/')[-1].split('-')[0][-4:]
 logg=fl.split('/')[-1].split('-')[1]
@@ -40,16 +39,24 @@ n_comps=int(config.get("wavelengthparams",'n_comps'))
 wmin_max=[np.float(config.get("wavelengthparams","wmin")),
           np.float(config.get("wavelengthparams","wmax"))]#[2.2,2.5]
 datapath=config.get("paths","datapath")#"/Users/rakesh/Data/PDS70v2020/"
-s=SINFONI(datpath=datapath,filename=config.get("paths","cubename"),#"good_ASDI_cube_skysub_derot_med_WLcorr.fits",
+pp=bool(config.get("imageparams",'preprocess',fallback=True))
+window_size=int(config.get("wavelengthparams","window_size",fallback=101))
+order=int(config.get("wavelengthparams","order",fallback=1))
+s=SINFONI(datpath=datapath,filename=config.get("paths","cubename"),
           wavelen=config.get("paths","wavelen_file"),#"good_lambdas_WLcorr.fits",
           fwhm=config.get("paths","fwhm_file"),#"good_fwhm_WLcorr.fits",
           sz=int(config.get("imageparams","crop_size")),
           wmin_max=wmin_max,
           wmin_wmax_tellurics=[np.float(config.get("wavelength_params","tell_wmin",fallback=1.75)),
-                               np.float(config.get("wavelength_params","tell_wmax",fallback=2.15))])
-window_size=int(config.get("wavelengthparams","window_size",fallback=101))
-order=int(config.get("wavelengthparams","order",fallback=1))
+          np.float(config.get("wavelength_params","tell_wmax",fallback=2.15))])
 im_pc=s.preProcessSINFONI(n_comps=n_comps,window_size=window_size,polyorder=order)
+if(pp is True):
+    print("Now running preprocess")
+else:
+    print("Using raw data")
+    im_pc=s.cube[0].data
+
+
 snrmatrix=np.reshape(np.zeros(s.crop_sz*s.crop_sz),(s.crop_sz,s.crop_sz))
 noisemat=np.zeros(snrmatrix.shape)
 prefix=config.get("result","prefix")
@@ -58,6 +65,11 @@ xmin=int(config.get("imageparams","xmin"))
 xmax=int(config.get("imageparams","xmax"))
 ymin=int(config.get("imageparams","ymin"))
 ymax=int(config.get("imageparams","ymax"))
+res_dir=config.get("result","results_dir",fallback="../Results_CCF/")
+if not os.path.exists(res_dir):
+    os.makedirs(res_dir)
+print("Results will be saved in %s"%res_dir)
+
 for xx in range(xmin,xmax):
     for yy in range(ymin,ymax):
         spec=measureSpatialSpec(im_pc,[xx,yy])
@@ -84,5 +96,7 @@ for xx in range(xmin,xmax):
     #plt.close()
 fname=s.datpath.split('/')[-2]
 frame_size=xmax-xmin
-np.save("../Results_CCF/%s_snrmatrix_for_%s_framesize_%d_PCs_%d_wmin_%1.1f_wmax_%1.1f_Teff_%d_logg_%3.2f.npy"%(prefix,fname,frame_size,n_comps,wmin_max[0],wmin_max[1],int(Teff),float(logg)),snrmatrix)
+
+np.save(os.path.join(res_dir,"%s_snrmatrix_for_%s_framesize_%d_PCs_%d_wmin_%1.1f_wmax_%1.1f_Teff_%d_logg_%3.2f.npy"
+%(prefix,fname,frame_size,n_comps,wmin_max[0],wmin_max[1],int(Teff),float(logg))),snrmatrix)
 #np.save("noisematrix_%d_%1.1f_%1.1f_Teff_%d_logg_%3.2f.npy"%(n_comps,wmin_max[0],wmin_max[1],int(Teff),float(logg)),noisemat)
