@@ -1,3 +1,4 @@
+__author__='Rakesh Nath'
 import numpy as np
 from astropy.io import fits
 from scipy.constants import c
@@ -19,14 +20,41 @@ import warnings
 from matplotlib import pyplot as plt
 warnings.simplefilter('ignore', np.RankWarning)
 class CrossCorr:
+    """
+    This is a class for computing cross correlations
+
+    Attributes
+    ----------
+    vels (array):
+        Velocity array should be greater 1000 km/s
+    Methods
+    --------
+    processTemplate(temp_file,instru_fwhm_nm):
+        Downsamples and broadens the template according to instru_fwhm in microm
+    compareFluxes(data_wavs, data_flux, model_wavs, model_flux,window_size, order, noise(optional),wmin_wmax_tellurics(optional)):
+        Performs cross correlations based on data_flux and model_flux for finite wavelengths defined by data_waves over vels
+    """
     def __init__(self,vels):
         self.vels=vels
-        self.crosscor_dict=dict()
-        self.temp_processed=0.
         self.f1=0
         self.f2=0
-    def processTemplate(self,temp_file,instru_fwhm_nm=0.67):
-        print(str(temp_file))
+    def processTemplate(self,temp_file,instru_fwhm_nm=4.998446e-04):
+        """
+        Performs broadening of the template based on instrumental fwhm.
+
+        Parameters
+        ----------
+        temp_file (string):
+            Full absolute path of the template file 
+        instru_fwhm_nm (float):
+            The instrument wavelength resolution (in same units as temp_file)
+        
+        Returns
+        --------
+            float, float:
+                Returns wavelengths from the temp_file and flux now broadened
+        """
+        print("Now reading {}".format(str(temp_file)))
         #f=str(f)
         temp=fits.open(temp_file)
         wave_temp=temp[1].data['Wavelength']
@@ -34,7 +62,7 @@ class CrossCorr:
         #flux=(flux-np.min(flux))/(np.max(flux)-np.min(flux))
         Teff=temp_file.split('/')[-1].split('-')[0][-4:]
         logg=temp_file.split('/')[-1].split('-')[1]
-        instru_fwhm_nm = 4.998446e-04#0.67 #mum
+        instru_fwhm_nm = instru_fwhm_nm#4.998446e-04#0.67 #mum
 
         BT_SETTL_res = wave_temp[1]-wave_temp[0]#0.005   #mum
         instru_fwhm_BTSETTL = instru_fwhm_nm/BT_SETTL_res
@@ -53,6 +81,33 @@ class CrossCorr:
                      ,order
                      ,noise=0
                      ,wmin_wmax_tellurics=[1.75,2.1]):
+        """
+        Performs crosscorrelations between data and model fluxes.
+
+        Parameters
+        ----------
+        data_wavs (float array) :
+            wavelengths of the data 
+        data_flux (float array) :
+            data flux that needs to be correlated
+        model_wavs (float array):
+            wavelengths of the model
+        model_flux (float array):
+            Model flux to compare data against
+        window_size (int):
+            The size of the Savitzky-Golay filter
+        order (int):
+            The polynomial order of the filter
+        noise (float):
+            The noise standard deviation to compare the peak of CCF with
+        wmin_max_tellurics (list):
+            The wavelength of tellurics to mask out
+        
+        Returns
+        -------
+        array, float, float:
+            cross correlation coefficients, noise floor, SNR
+        """
         vels=self.vels
         df=vels[1]-vels[0]
         dataflux=data_flux
