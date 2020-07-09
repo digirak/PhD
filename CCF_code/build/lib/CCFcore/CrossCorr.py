@@ -12,7 +12,7 @@ from photutils import CircularAperture,aperture_photometry
 import vip_hci
 from scipy.signal import savgol_filter
 from .removeTelluric import removeTelluric
-from .callPCACrossCorr import applyFilter
+from .PreProcess import applyFilter
 from pycorrelate import pcorrelate,ucorrelate
 from astropy.convolution import Gaussian1DKernel, convolve_fft
 from astropy.stats import gaussian_fwhm_to_sigma
