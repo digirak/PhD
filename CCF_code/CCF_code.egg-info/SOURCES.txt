@@ -4,7 +4,7 @@ CCF_code.egg-info/SOURCES.txt
 CCF_code.egg-info/dependency_links.txt
 CCF_code.egg-info/top_level.txt
 CCFcore/CrossCorr.py
+CCFcore/PreProcess.py
 CCFcore/__init__.py
 CCFcore/_utils.py
-CCFcore/callPCACrossCorr.py
 CCFcore/removeTelluric.py
