@@ -15,6 +15,7 @@ import matplotlib as mpl
 import pandas as pd
 import glob
 from vip_hci.pca.svd import svd_wrapper
+from vip_hci.var.shapes import frame_center
 from ._utils import find_nearest
 from .removeTelluric import removeTelluric
 
@@ -23,6 +24,24 @@ font = {'family' : 'serif',
 
 mpl.rc('font', **font)
 def measureSpatialSpec(datcube,loc,fwhm):
+    """
+    This is a function to measure the the spectrum spatially
+
+    Parameters
+    ----------
+    datcube : 3d asarray
+        The 3d data cube which has the format wavelength,xx,yy
+    loc : list
+        location at which the spectrum needs to be measured in [yy,xx]
+    fwhm : list or array
+        List of full-width half max
+
+    Returns
+    -------
+    array :
+        Measured spectrum
+
+    """
     slices=[]
     for wl in range(datcube.shape[0]):
          apertures=CircularAperture([loc[0],loc[1]],r=fwhm[wl]/2)
@@ -30,8 +49,27 @@ def measureSpatialSpec(datcube,loc,fwhm):
          slices.append(np.float64(aperture_photometry(datcube[wl,:,:],apertures)['aperture_sum']))
     return np.asarray(slices)
 def applyFilter(flux,window_size,order):
+    """
+    Function  to apply the Savitzky-Golay filter and subtract the filtered
+    spectrum from the target.
+
+    Parameters
+    ----------
+    flux : array
+        Spectrum to which this needs to be applied
+    window_size: int
+        The size of the savgol filter in bins
+    order : int
+        The polynomial order of the filter
+
+
+    Returns
+    -------
+    array :
+        The spectrum after subtracting the savgol filter from flux
+    """
     flux_filt=savgol_filter(flux,window_size,order)
-    flux_dat=flux-flux_filt#-vals(waves)
+    flux_dat=flux-flux_filt
     return flux_dat
 class SINFONI:
     """
@@ -39,7 +77,7 @@ class SINFONI:
 
     Attributes
     -----------
-        datpath : str 
+        datpath : str
             location where your data resides.
 
         filename : str
@@ -48,10 +86,10 @@ class SINFONI:
             filename of the FWHM file
         wavelen : str
             filename of the wavelength solution
-        
+
         vels : array
             velocity array should have at least upto 1100 km/s
-        
+
         wmin_max : list
                 The min max frequencies that need to be set up for this
         crop_sz : int
@@ -59,7 +97,7 @@ class SINFONI:
     Methods
     -------
        preProcessSINFONI(polyorder,window_size,n_comps)
-            Does the pre processing with basic processing. Subtracting stellar spectra 
+            Does the pre processing with basic processing. Subtracting stellar spectra
             and returning a cube after PC is subtracted if n_comps>0
        valentinPreProcess(perc,polyorder,window_size,n_comps)
             Does pre process as per Haffert et al with more accurate stellar modeling. Returns
@@ -98,7 +136,7 @@ class SINFONI:
                 Window size has to be odd
         n_comps (int, default=2):
                 number of components to be subtractd.
-        
+
         Returns
         -------
         float :
@@ -121,8 +159,9 @@ class SINFONI:
                 cube[:,xx,yy]=np.asarray(removeTelluric(wavelen,np.ravel(cube_whole[:,xx,yy]),
                                               wmin=self.wmin_wmax_tellurics[0],
                                               wmax=self.wmin_wmax_tellurics[1]))
-        center=int(self.crop_sz/2)
-        self.sum_spax=measureSpatialSpec(cube[:,:,:],[center,center],self.fwhm_final)
+        #center=int(self.crop_sz/2)
+        center=frame_center(cube)
+        self.sum_spax=measureSpatialSpec(cube[:,:,:],center,self.fwhm_final)
         #for wl in range(idx_wmax-idx_wmin):
          #   sum_spax.append(np.nansum(cube[wl,30:40,30:40]))
         print("Wavelength spans from %2.1f to %2.1fmum"%(wavelen.min(),wavelen.max()))
@@ -190,7 +229,7 @@ class SINFONI:
                 Window size has to be odd
         n_comps (int, default=2):
                 number of components to be subtractd.
-        
+
         Returns
         -------
         float :
