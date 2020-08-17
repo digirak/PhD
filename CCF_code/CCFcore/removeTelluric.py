@@ -24,6 +24,8 @@ def removeTelluric(wavelens,flux,wmin,wmax):
     locs_h= list(np.ravel(np.where((wavelens>=wmax) & (wavelens<=np.max(wavelens)))))
     locs=locs_l+locs_h
     flux=np.ravel(flux)
+    if (len(locs)==0):
+        return flux
     waves=wavelens[locs]
     cut_flux=flux[locs]
     new=np.interp(wavelens,waves,cut_flux)

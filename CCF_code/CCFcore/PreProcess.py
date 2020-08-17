@@ -120,7 +120,7 @@ class SINFONI:
         self.waves_dat=0
         self.fwhm_final=0
         self.sum_spax=0.
-        self.wmin_wmax_tellurics=[1.75,2.1]
+        self.wmin_wmax_tellurics=kwargs.get("wmin_wmax_tellurics",[1.75,2.1])
         self.V=0
         self.spec=0
 
@@ -249,7 +249,6 @@ class SINFONI:
         thr = np.percentile(med_frame,perc)
         idx_high = np.where(med_frame>thr)
 
-        print(len(idx_high[0]))
 
 
         # take the spectrum of the star at the location of the brightest pixels
@@ -283,6 +282,8 @@ class SINFONI:
                 filt[:,i,j]=savgol_filter(norm_cube[:,i,j],window_size,polyorder=polyorder)
 
         norm_res_cube = norm_cube-filt
+        self.normalized_cube=norm_res_cube
+
         for wl in range(cube.shape[0]):
             good= np.where(filt[wl]!=0)
             res_cube[wl][good] = cube_nt[wl][good] - (filt[wl][good]*spat_sum[good]*ref_spec[wl])
@@ -303,13 +304,13 @@ class SINFONI:
                     counter+=1
         new_matrix=np.asanyarray(pd.DataFrame(new_matrix).fillna(0))
         new_matrix = new_matrix[:,:]
-        self.V = svd_wrapper(new_matrix,ncomp=ncomp, mode='randsvd',verbose=True)
-        transformed = np.dot(V, new_matrix.T)
-        reconstructed = np.dot(transformed.T, V)
-        residuals = new_matrix - reconstructed
-        resi_3dcube = np.zeros_like(res_cube)
+        self.V=svd_wrapper(new_matrix.T,'lapack',ncomp,verbose=True)
+        transformed=np.dot(self.V,new_matrix)
+        reconstructed=np.dot(transformed.T,self.V)
+        residuals=new_matrix-reconstructed.T
 
         new_counter = 0
+        resi_3dcube=np.zeros_like(res_cube)
 
         for j in range(cube.shape[1]):
             for k in range(cube.shape[2]):

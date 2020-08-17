@@ -13,7 +13,7 @@ import vip_hci
 from scipy.signal import savgol_filter
 from .removeTelluric import removeTelluric
 from .PreProcess import applyFilter
-from pycorrelate import pcorrelate,ucorrelate
+#from pycorrelate import pcorrelate,ucorrelate
 from astropy.convolution import Gaussian1DKernel, convolve_fft
 from astropy.stats import gaussian_fwhm_to_sigma
 import warnings
@@ -80,7 +80,7 @@ class CrossCorr:
                      ,window_size
                      ,order
                      ,noise=0
-                     ,wmin_wmax_tellurics=[1.75,2.1]):
+                     ,wmin_wmax_tellurics=0):
         """
         Performs crosscorrelations between data and model fluxes.
 
@@ -113,7 +113,11 @@ class CrossCorr:
         dataflux=data_flux
         final=np.zeros(len(vels))
         self.f1=dataflux-dataflux.mean()
-        self.f1=removeTelluric(data_wavs,self.f1,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
+        if wmin_wmax_tellurics==0:
+            wmin_wmax_tellurics=[1.75,2.05]
+        print(wmin_wmax_tellurics)
+
+        #self.f1=removeTelluric(data_wavs,self.f1,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
 
         for i in range(len(final)):
             #flux=np.convolve(flux,fwhm[0].data)
