@@ -2,7 +2,6 @@ __author__='Rakesh Nath'
 import numpy as np
 from astropy.io import fits
 from scipy.constants import c
-from PyAstronomy import pyasl
 from glob import glob
 from scipy.interpolate import interp1d
 import sys
