@@ -7,7 +7,6 @@ from matplotlib import pyplot as plt
 from photutils import CircularAperture,aperture_photometry
 import vip_hci
 from scipy.signal import savgol_filter
-from pycorrelate import pcorrelate,ucorrelate
 from vip_hci import pca
 from sklearn.decomposition import pca
 import matplotlib as mpl
