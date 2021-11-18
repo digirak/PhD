@@ -2,7 +2,6 @@ __author__='Rakesh Nath'
 import numpy as np
 from astropy.io import fits
 from scipy.constants import c
-from PyAstronomy import pyasl
 from glob import glob
 from scipy.interpolate import interp1d
 import sys
@@ -13,7 +12,8 @@ import vip_hci
 from scipy.signal import savgol_filter
 from .removeTelluric import removeTelluric
 from .PreProcess import applyFilter
-from pycorrelate import pcorrelate,ucorrelate
+from ._utils import find_nearest
+#from pycorrelate import pcorrelate,ucorrelate
 from astropy.convolution import Gaussian1DKernel, convolve_fft
 from astropy.stats import gaussian_fwhm_to_sigma
 import warnings
@@ -80,7 +80,7 @@ class CrossCorr:
                      ,window_size
                      ,order
                      ,noise=0
-                     ,wmin_wmax_tellurics=[1.75,2.1]):
+                     ,wmin_wmax_tellurics=0):
         """
         Performs crosscorrelations between data and model fluxes.
 
@@ -113,7 +113,11 @@ class CrossCorr:
         dataflux=data_flux
         final=np.zeros(len(vels))
         self.f1=dataflux-dataflux.mean()
-        self.f1=removeTelluric(data_wavs,self.f1,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
+        if wmin_wmax_tellurics==0:
+            wmin_wmax_tellurics=[1.75,2.05]
+        print(wmin_wmax_tellurics)
+
+        #self.f1=removeTelluric(data_wavs,self.f1,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
 
         for i in range(len(final)):
             #flux=np.convolve(flux,fwhm[0].data)
@@ -131,7 +135,13 @@ class CrossCorr:
             #ccov=np.corrcoef(f1,f2)[0][1]
             cf = ccov / (self.f1.std()*self.f2.std())
             final[i]=(cf[0])
-        max_vel=vels[np.argmax((final))]
+        neg_edge=find_nearest(vels,-500)
+        pos_edge=find_nearest(vels,500)
+        max_val=np.max((final[neg_edge:pos_edge]))
+
+       # max_vel=vels[np.argmax((final[neg_edge:pos_edge]))]
+        #print(final[max_val])
+
         if (noise==0):
 
 
@@ -142,8 +152,13 @@ class CrossCorr:
         else:
             noise_floor=noise
 
-        print("SNR is %3.2f"%(np.max(final)/noise_floor))
-        return final,noise_floor,(np.max(final/noise_floor))
+        #print("SNR is %3.2f"%(np.max(final)/noise_floor))
+        if(np.max(vels)<1000):
+            print("Use Ruffio SNR")
+        else:
+            print("SNR is %3.2f"%(max_val/noise_floor))
+
+        return final,noise_floor,((max_val/noise_floor))
 
 #if __name__ == '__main__':
  #   from multiprocessing import Pool
@@ -157,3 +172,21 @@ class CrossCorr:
     #crosscorr_dict = p.map( T.compareTemplate, (item for item in files[0:50]) )
     #print(crosscorr_dict)
     #np.save("crosscorr_%d.%d.npy"%(x,y),crosscorr_dict)
+def computeSNRLL(ccf,acf,sigma):
+    """
+    This method computes the loglikelihood and SNR based on Ruffio et al 2019
+
+    Parameters:
+    ------------
+    ccf: Cross correlation of the template with the target spectrum
+    acf: Auto correlation of the template with itself
+    sigma: Variance of the noise that is inserted
+
+    Returns:
+    -----------
+    float,float:
+    Returns the log likelihood and SNR
+    """
+    log_like = -(ccf/sigma**2)**2/(acf/sigma**2)
+    snr = (ccf/sigma**2)/np.sqrt(acf/sigma**2)
+    return log_like, snr

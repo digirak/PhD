@@ -7,7 +7,6 @@ from matplotlib import pyplot as plt
 from photutils import CircularAperture,aperture_photometry
 import vip_hci
 from scipy.signal import savgol_filter
-from pycorrelate import pcorrelate,ucorrelate
 from vip_hci import pca
 from sklearn.decomposition import pca
 import matplotlib as mpl
@@ -92,7 +91,7 @@ class SINFONI:
 
         wmin_max : list
                 The min max frequencies that need to be set up for this
-        crop_sz : int
+        sz : int
                 The size to which the cube needs to be cropped down to. Inherits VIP crop_sz
     Methods
     -------
@@ -120,8 +119,9 @@ class SINFONI:
         self.waves_dat=0
         self.fwhm_final=0
         self.sum_spax=0.
-        self.wmin_wmax_tellurics=[1.8,2.1]
-
+        self.wmin_wmax_tellurics=kwargs.get("wmin_wmax_tellurics",[1.75,2.1])
+        self.V=0
+        self.spec=0
 
     def preProcessSINFONI(self,*args,**kwargs):
         """
@@ -153,38 +153,31 @@ class SINFONI:
         fwhm = self.fwhm[0].data[idx_wmin:idx_wmax]
         self.fwhm_final=fwhm
         #sum the spaxels
-        cube=np.zeros(cube_whole.shape)
-        for xx in range(cube_whole.shape[1]):
-            for yy in range(cube_whole.shape[2]):
-                cube[:,xx,yy]=np.asarray(removeTelluric(wavelen,np.ravel(cube_whole[:,xx,yy]),
-                                              wmin=self.wmin_wmax_tellurics[0],
-                                              wmax=self.wmin_wmax_tellurics[1]))
+        cube_notell=np.zeros_like(cube_whole)
+        for xx in range(cube_notell.shape[1]):
+            for yy in range(cube_notell.shape[2]):
+                self.spec=(cube_whole[:,xx,yy])
+                self.spec=removeTelluric(wavelen,self.spec,self.wmin_wmax_tellurics[0],self.wmin_wmax_tellurics[1])
+                cube_notell[:,xx,yy]=self.spec
+                #cube_notell[:,xx,yy]=removeTelluric(wavelen,cube_whole[:,xx,yy],self.wmin_wmax_tellurics[0],self.wmin_wmax_tellurics[1])
         #center=int(self.crop_sz/2)
-        center=frame_center(cube)
-        self.sum_spax=measureSpatialSpec(cube[:,:,:],center,self.fwhm_final)
-        #for wl in range(idx_wmax-idx_wmin):
-         #   sum_spax.append(np.nansum(cube[wl,30:40,30:40]))
+        center=frame_center(cube_notell)
+        self.sum_spax=measureSpatialSpec(cube_notell,center,self.fwhm_final)
         print("Wavelength spans from %2.1f to %2.1fmum"%(wavelen.min(),wavelen.max()))
-        # divide by this sum
-        #for spax in range(len(sum_spax)):
-         #   cube[spax,:,:]=cube[spax,:,:]/sum_spax[spax]
-        # create a reference spectrum by taking median
-        #removed
+
         #two steps now, divide the whole cube by the ref_spec and also filter
         #for lower order residuals using savgol filter. option to subtract the reference also.
         polyorder=kwargs.get('polyorder',1)
         window_size=kwargs.get('window_size',101)
-        self.normalized_cube=np.zeros(cube.shape)
-        filt=np.zeros(cube.shape)
-        norm_cube=np.zeros(cube.shape)
-        for xx in range(cube.shape[1]):
-            for yy in range(cube.shape[2]):
-                    norm_cube[:,xx,yy]=cube[:,xx,yy]/self.sum_spax
-                    #filt[:,xx,yy]=savgol_filter(norm_cube[:,xx,yy]
-                    #    ,window_size
-                    #    ,polyorder=polyorder)
+        self.normalized_cube=np.zeros(cube_notell.shape)
+        filt=np.zeros(cube_notell.shape)
+        norm_cube=np.zeros(cube_notell.shape)
+        for xx in range(cube_notell.shape[1]):
+            for yy in range(cube_notell.shape[2]):
+                    norm_cube[:,xx,yy]=cube_notell[:,xx,yy]/self.sum_spax
                     self.normalized_cube[:,xx,yy]=applyFilter(norm_cube[:,xx,yy],
                     window_size,polyorder)
+                    self.normalized_cube[:,xx,yy]=removeTelluric(wavelen,self.normalized_cube[:,xx,yy],self.wmin_wmax_tellurics[0],self.wmin_wmax_tellurics[1])
         #self.normalized_cube[np.where(filt!=0)]=norm_cube[np.where(filt!=0)]-filt[np.where(filt!=0)]
         recon_3dcube=np.zeros_like(self.normalized_cube)
         ncomp=kwargs.get("n_comps",2)
@@ -192,23 +185,24 @@ class SINFONI:
             recon_3dcube=self.normalized_cube
             print("no PCA ")
         else:
-            PCA_matrix=np.reshape(np.zeros(len(wavelen)*cube.shape[1]*cube.shape[2]),
-                    (len(wavelen),cube.shape[1]*cube.shape[2]))
+            PCA_matrix=np.reshape(np.zeros(len(wavelen)*cube_notell.shape[1]*cube_notell.shape[2]),
+                    (len(wavelen),cube_notell.shape[1]*cube_notell.shape[2]))
 
             for wl in range(len(wavelen)):
-                for xx in range(cube.shape[1]):
-                    for yy in range(cube.shape[2]):
-                        PCA_matrix[wl,xx*cube.shape[1]+yy]=self.normalized_cube[wl,xx,yy]
-            V=svd_wrapper(PCA_matrix,'lapack',ncomp,verbose=True)
-            transformed=np.dot(V,PCA_matrix.T)
-            reconstructed=np.dot(transformed.T,V)
-            residuals=PCA_matrix-reconstructed
+                for xx in range(cube_notell.shape[1]):
+                    for yy in range(cube_notell.shape[2]):
+                        PCA_matrix[wl,xx*cube_notell.shape[1]+yy]=self.normalized_cube[wl,xx,yy]
+
+            self.V=svd_wrapper(PCA_matrix.T,'lapack',ncomp,verbose=True)
+            transformed=np.dot(self.V,PCA_matrix)
+            reconstructed=np.dot(transformed.T,self.V)
+            residuals=PCA_matrix-reconstructed.T
 
             #re-wrap into a cube
             for wl in range(idx_wmax-idx_wmin):
-                for xx in range(cube.shape[1]):
-                    for yy in range(cube.shape[2]):
-                        recon_3dcube[wl,xx,yy]=residuals[wl,cube.shape[1]*xx+yy]
+                for xx in range(cube_notell.shape[1]):
+                    for yy in range(cube_notell.shape[2]):
+                        recon_3dcube[wl,xx,yy]=residuals[wl,cube_notell.shape[1]*xx+yy]
         #waves=np.load("/mnt/diskss/home/rnath/Numpy_PDS70/wavelens_new28.npy")
         #locs=np.where(self.wavelen[0].data>=0)
 
@@ -254,7 +248,6 @@ class SINFONI:
         thr = np.percentile(med_frame,perc)
         idx_high = np.where(med_frame>thr)
 
-        print(len(idx_high[0]))
 
 
         # take the spectrum of the star at the location of the brightest pixels
@@ -288,6 +281,8 @@ class SINFONI:
                 filt[:,i,j]=savgol_filter(norm_cube[:,i,j],window_size,polyorder=polyorder)
 
         norm_res_cube = norm_cube-filt
+        self.normalized_cube=norm_res_cube
+
         for wl in range(cube.shape[0]):
             good= np.where(filt[wl]!=0)
             res_cube[wl][good] = cube_nt[wl][good] - (filt[wl][good]*spat_sum[good]*ref_spec[wl])
@@ -308,13 +303,13 @@ class SINFONI:
                     counter+=1
         new_matrix=np.asanyarray(pd.DataFrame(new_matrix).fillna(0))
         new_matrix = new_matrix[:,:]
-        V = svd_wrapper(new_matrix,ncomp=ncomp, mode='randsvd',verbose=True)
-        transformed = np.dot(V, new_matrix.T)
-        reconstructed = np.dot(transformed.T, V)
-        residuals = new_matrix - reconstructed
-        resi_3dcube = np.zeros_like(res_cube)
+        self.V=svd_wrapper(new_matrix.T,'lapack',ncomp,verbose=True)
+        transformed=np.dot(self.V,new_matrix)
+        reconstructed=np.dot(transformed.T,self.V)
+        residuals=new_matrix-reconstructed.T
 
         new_counter = 0
+        resi_3dcube=np.zeros_like(res_cube)
 
         for j in range(cube.shape[1]):
             for k in range(cube.shape[2]):

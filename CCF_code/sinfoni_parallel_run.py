@@ -14,6 +14,7 @@ from vip_hci.fits import open_fits, write_fits
 from CCFcore._utils import find_nearest
 import configparser
 import multiprocessing as mp
+import pandas as pd
 if __name__ == '__main__':
     configpath=sys.argv[1]
     if(configpath==[]):
@@ -83,6 +84,8 @@ if __name__ == '__main__':
     import io
     from contextlib import redirect_stdout
     specs=[]
+    import timeit
+    starttime = timeit.default_timer()
     pool=mp.Pool(8)
     print("Start the specs")
     print("We're running {} processes".format(pool._processes))
@@ -117,32 +120,29 @@ if __name__ == '__main__':
     snrs=np.asarray(results[:,2])
     noises=np.asarray(results[:,1])
     ccfs=np.asarray(results[:,0])
-    for xx in range(xmin,xmax):
-        for yy in range(ymin,ymax):
-            pos=(xx-xmin)+(yy-ymin)*(xx-xmin)
-            snrmatrix[xx,yy]=snrs[pos]
-            noisemat[xx,yy]=noises[pos]
-            ccfmat[:,xx,yy]=ccfs[pos]
-    print("The snr is {}".format(snrmatrix[28,30]))
-    #sys.stdout.flush()
-    #ys.stdout.write("Completed %d %d in pixels\r"%(xx,yy))
-    #print(trap.buffer.writelines())
-#print(snr)
-#print("Completed %d %d in pixels"%(xx,yy))
 
-    #plt.imshow(matrix[:,:,0])
-    #plt.colorbar()
-    #plt.savefig("vel_matrix.png",dpi=800)
-    #plt.close()
-#plt.plot(s.waves_dat[0::],CC.f1/np.std(CC.f1))
-##plt.plot(s.waves_dat[0::],CC.f2/np.std(CC.f2))
-#plt.savefig("trial.png")
+    snrs=pd.DataFrame(snrs)
+    snrmatrix=snrs.to_numpy(dtype="float64")
+    snrmatrix=snrmatrix.reshape(xmax-xmin,ymax-ymin)
     fname=s.datpath.split('/')[-2]
     frame_size=xmax-xmin
-
-    #np.save(os.path.join(res_dir,"%s_snrmatrix_for_%s_framesize_%d_PCs_%d_wmin_%1.1f_wmax_%1.1f_Teff_%d_logg_%3.2f.npy"
     write_fits(os.path.join(res_dir,"%s_snrmatrix_for_%s_framesize_%d_PCs_%d_wmin_%1.1f_wmax_%1.1f_Teff_%d_logg_%3.2f.fits"
     %(prefix,fname,frame_size,n_comps,wmin_max[0],wmin_max[1],int(Teff),float(logg))),snrmatrix)#ite()
+    ccfs=np.reshape(ccfs,(xmax-xmin,ymax-ymin))
+    ccfs=pd.DataFrame(ccfs)
+    #ccfs=ccfs.to_numpy(dtype="float64")
+
+    for xx in range(xmin,xmax):
+        for yy in range(ymin,ymax):
+            ccfmat[:,xx,yy]=np.ravel(ccfs.iloc[xx-xmin,yy-ymin])
+    
+
+
+
+#    np.save(os.path.join(res_dir,"resmatrix_for_parallel.npy"),results)
+
+    #np.save(os.path.join(res_dir,"%s_snrmatrix_for_%s_framesize_%d_PCs_%d_wmin_%1.1f_wmax_%1.1f_Teff_%d_logg_%3.2f.npy"
     write_fits(os.path.join(res_dir,"%s_ccfmatrix_for_%s_framesize_%d_PCs_%d_wmin_%1.1f_wmax_%1.1f_Teff_%d_logg_%3.2f.fits"
     %(prefix,fname,frame_size,n_comps,wmin_max[0],wmin_max[1],int(Teff),float(logg))),ccfmat)
     #np.sav("noisematrix_%d_%1.1f_%1.1f_Teff_%d_logg_%3.2f.npy"%(n_comps,wmin_max[0],wmin_max[1],int(Teff),float(logg)),noisemat)
+    print("The time difference is :", timeit.default_timer() - starttime)

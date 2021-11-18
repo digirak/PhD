@@ -127,3 +127,6 @@ def find_derot_angles(inpath, fits_list, loc='st', ipag=True, verbose=False):
         return -1.*final_derot_angs
     else:
         return posang
+def maxMinNorm(vector):
+    vector=np.asarray(vector,dtype=np.float64)
+    return (vector-np.nanmin(vector))/(np.nanmax(vector)-np.nanmin(vector))
