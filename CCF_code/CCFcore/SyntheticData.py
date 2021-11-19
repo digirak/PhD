@@ -181,7 +181,7 @@ class SynData():
         """
         Cs=np.logspace(Cmin,Cmax,Cnum)
         dSNRs=np.logspace(dSNRmin,dSNRmax,dSNRnum)
-        Rnum =8
+        Rnum =30
         Rs = np.logspace(np.log10(8e3),np.log10(1e5),Rnum)
 
         retMatrix=np.zeros(Rnum*dSNRnum).reshape(dSNRnum,Rnum)
@@ -250,7 +250,7 @@ class SynData():
                         break
         return retMatrix,dSNRs,Rs
     def constrainTeffLogg(self,template_files,R,C,dSNR,wmin,wmax):
-        
+                
         Teff=[]
         logg=[]
         template_files.sort()

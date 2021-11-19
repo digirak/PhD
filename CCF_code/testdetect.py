@@ -19,7 +19,7 @@ Cmax = -1.3
 Cnum = 30
 dsnr_min = 2
 dsnr_max = 8
-dsnr_num = 10
+dsnr_num = 30
 mat,dsnrs,Rs = syndat.computeDetectionMatrix(wmin,wmax,Cmin,Cmax,Cnum,dsnr_min,dsnr_max,dsnr_num)
 
 
