@@ -181,8 +181,8 @@ class SynData():
         """
         Cs=np.logspace(Cmin,Cmax,Cnum)
         dSNRs=np.logspace(dSNRmin,dSNRmax,dSNRnum)
-        Rnum =30
-        Rs = np.logspace(np.log10(8e3),np.log10(1e5),Rnum)
+        Rnum =35
+        Rs = np.logspace(np.log10(4e2),np.log10(1e5),Rnum)
 
         retMatrix=np.zeros(Rnum*dSNRnum).reshape(dSNRnum,Rnum)
         snr = 0.

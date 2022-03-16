@@ -114,7 +114,10 @@ class CrossCorr:
         if wmin_wmax_tellurics==0:
             wmin_wmax_tellurics=[1.75,2.05]
         print(wmin_wmax_tellurics)
-        flux=dataflux#removeTelluric(data_wavs,dataflux,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
+        if((wmin_wmax_tellurics[1]-wmin_wmax_tellurics[0])==0):
+            flux = dataflux
+        else:
+            flux=removeTelluric(data_wavs,dataflux,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
         self.f1=applyFilter(flux,
         window_size=window_size,
         order=order)
@@ -126,7 +129,10 @@ class CrossCorr:
             #flux=np.convolve(flux,fwhm[0].data)
             inter=interp1d(model_wavs*(1+vels[i]/3e5),model_flux)
             temp=inter(data_wavs)
-            temp_filt=temp#removeTelluric(data_wavs,temp,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
+            if((wmin_wmax_tellurics[1]-wmin_wmax_tellurics[0])==0):
+                temp_filt=temp#removeTelluric(data_wavs,temp,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
+            else:
+                temp_filt=removeTelluric(data_wavs,temp,wmin_wmax_tellurics[0],wmin_wmax_tellurics[1])
             temp_filt=applyFilter(temp_filt
                                  ,window_size=window_size
                                  ,order=order)
