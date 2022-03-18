@@ -8,7 +8,10 @@ from photutils import CircularAperture,aperture_photometry
 import vip_hci
 from scipy.signal import savgol_filter
 from vip_hci import pca
-from sklearn.decomposition import pca
+try:
+    from sklearn.decomposition import pca
+except ImportError:
+    from sklearn.decomposition import PCA
 import matplotlib as mpl
 #from parallelCompareTemplates import CrossCorr
 import pandas as pd
@@ -105,16 +108,18 @@ class SINFONI:
     def __init__(self,*args,**kwargs):
         self.datpath=kwargs.get('datpath',
                                 "/mnt/disk4tb/Users/rnath/Data/HD142527/")
-        self.filename=kwargs.get('filename',
-                                  'ASDI_cube_derot_med.fits')
-        self.cube=fits.open(self.datpath+self.filename)
-        self.fwhm=fits.open(self.datpath+kwargs.get('fwhm',"fwhm_vec.fits"))
-        self.wavelen=fits.open(self.datpath+kwargs.get('wavelen',"lbda_vec.fits"))
+        self.filename=kwargs.get('filename')
+        if self.filename == None:
+            self.cube=np.asarray(kwargs.get('cube'))
+        else:
+            self.cube= fits.open(self.datpath+self.filename)[0].data
+        self.fwhm=fits.open(self.datpath+kwargs.get('fwhm',"fwhm_vec.fits"))[0].data
+        self.wavelen=fits.open(self.datpath+kwargs.get('wavelen',"lbda_vec.fits"))[0].data
         self.vels=kwargs.get('vels',np.arange(-2000,2000,20))
         self.wmin_max=kwargs.get('wmin_max',[1.47,1.6])
         self.crop_sz=np.int(kwargs.get('sz',71))
-        self.cube[0].data=vip_hci.preproc.cube_crop_frames(
-        self.cube[0].data,self.crop_sz)
+        self.cube=vip_hci.preproc.cube_crop_frames(
+        self.cube,self.crop_sz)
         self.normalized_cube=0
         self.waves_dat=0
         self.fwhm_final=0
@@ -144,13 +149,16 @@ class SINFONI:
         """
 
 
-        idx_wmin = find_nearest(self.wavelen[0].data,self.wmin_max[0])
-        idx_wmax = find_nearest(self.wavelen[0].data,self.wmin_max[1])
-        print("We are reading %s"%(self.datpath+self.filename))
-        cube_whole = self.cube[0].data[idx_wmin:idx_wmax,:,:]
-        wavelen = self.wavelen[0].data[idx_wmin:idx_wmax]
+        idx_wmin = find_nearest(self.wavelen,self.wmin_max[0])
+        idx_wmax = find_nearest(self.wavelen,self.wmin_max[1])
+        if(self.filename==None):
+            print("Cube is passed as parameter")
+        else:
+            print("We are reading %s"%(self.datpath+self.filename))
+        cube_whole = self.cube[idx_wmin:idx_wmax,:,:]
+        wavelen = self.wavelen[idx_wmin:idx_wmax]
         self.waves_dat=wavelen
-        fwhm = self.fwhm[0].data[idx_wmin:idx_wmax]
+        fwhm = self.fwhm[idx_wmin:idx_wmax]
         self.fwhm_final=fwhm
         #sum the spaxels
         cube_notell=np.zeros_like(cube_whole)
