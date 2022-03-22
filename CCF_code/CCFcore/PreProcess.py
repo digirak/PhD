@@ -239,12 +239,12 @@ class SINFONI:
         """
 
 
-        idx_wmin = find_nearest(self.wavelen[0].data,self.wmin_max[0])
-        idx_wmax = find_nearest(self.wavelen[0].data,self.wmin_max[1])
-        cube = self.cube[0].data[idx_wmin:idx_wmax,:,:]
-        wavelen = self.wavelen[0].data[idx_wmin:idx_wmax]
+        idx_wmin = find_nearest(self.wavelen,self.wmin_max[0])
+        idx_wmax = find_nearest(self.wavelen,self.wmin_max[1])
+        cube = self.cube[idx_wmin:idx_wmax,:,:]
+        wavelen = self.wavelen[idx_wmin:idx_wmax]
         self.waves_dat=wavelen
-        fwhm = self.fwhm[0].data[idx_wmin:idx_wmax]
+        fwhm = self.fwhm[idx_wmin:idx_wmax]
         cube_nt=np.zeros(cube.shape)
         for xx in range(cube.shape[1]):
             for yy in range(cube.shape[2]):
