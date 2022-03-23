@@ -7,7 +7,10 @@ from matplotlib import pyplot as plt
 from photutils import CircularAperture,aperture_photometry
 import vip_hci
 from scipy.signal import savgol_filter
-from vip_hci import pca
+try:
+    from vip_hci import pca# for the latest vip
+except ImportError:
+    from vip_hci import pca_local
 try:
     from sklearn.decomposition import pca
 except ImportError:
@@ -16,7 +19,10 @@ import matplotlib as mpl
 #from parallelCompareTemplates import CrossCorr
 import pandas as pd
 import glob
-from vip_hci.pca.svd import svd_wrapper
+try:
+    from vip_hci.pca.svd import svd_wrapper
+except ImportError:
+    from vip_hci.psfsub.svd import svd_wrapper
 from vip_hci.var.shapes import frame_center
 from ._utils import find_nearest
 from .removeTelluric import removeTelluric
