@@ -10,7 +10,7 @@ from scipy.signal import savgol_filter
 try:
     from vip_hci import pca# for the latest vip
 except ImportError:
-    from vip_hci import pca_local
+    from vip_hci.psfsub import pca_local
 try:
     from sklearn.decomposition import pca
 except ImportError:
