@@ -1,0 +1,480 @@
+\begin{thebibliography}{80}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Agrawal} et~al.(2023){Agrawal}, {Ruffio}, {Konopacky}, {Macintosh}, {Mawet}, {Nielsen}, {Hoch}, {Liu}, {Barman}, {Thompson}, {Greenbaum}, {Marois}, and {Patience}]{2023Agrawal}
+S.~{Agrawal}, J.-B. {Ruffio}, Q.~M. {Konopacky}, B.~{Macintosh}, D.~{Mawet}, E.~L. {Nielsen}, K.~K.~W. {Hoch}, M.~C. {Liu}, T.~S. {Barman}, W.~{Thompson}, A.~Z. {Greenbaum}, C.~{Marois}, and J.~{Patience}.
+\newblock {Detecting Exoplanets Closer to Stars with Moderate Spectral Resolution Integral-field Spectroscopy}.
+\newblock \emph{\aj}, 166\penalty0 (1):\penalty0 15, July 2023.
+\newblock \doi{10.3847/1538-3881/acd6a3}.
+
+\bibitem[{Aleman} et~al.(2023){Aleman}, {Macintosh}, {Lacy}, {Groff}, {Zimmerman}, and {Bailey}]{2023AlemanMetall}
+A.~{Aleman}, B.~{Macintosh}, B.~{Lacy}, T.~{Groff}, N.~{Zimmerman}, and V.~{Bailey}.
+\newblock {Constraining Metallicity and Gravity of Young Exoplanets with the Nancy Grace Roman Space Telescope's Coronagraph Instrument}.
+\newblock In \emph{American Astronomical Society Meeting Abstracts}, volume~55 of \emph{American Astronomical Society Meeting Abstracts}, page 164.07, Jan. 2023.
+
+\bibitem[{Aleo} et~al.(2022){Aleo}, {Malanchev}, {Pruzhinskaya}, {Ishida}, {Russeil}, {Kornilov}, {Korolev}, {Sreejith}, {Volnova}, and {Narayan}]{2022AleoTransients}
+P.~D. {Aleo}, K.~L. {Malanchev}, M.~V. {Pruzhinskaya}, E.~E.~O. {Ishida}, E.~{Russeil}, M.~V. {Kornilov}, V.~S. {Korolev}, S.~{Sreejith}, A.~A. {Volnova}, and G.~S. {Narayan}.
+\newblock {SNAD transient miner: Finding missed transient events in ZTF DR4 using k-D trees}.
+\newblock \emph{\na}, 96:\penalty0 101846, Oct. 2022.
+\newblock \doi{10.1016/j.newast.2022.101846}.
+
+\bibitem[{Allard} et~al.(1997){Allard}, {Hauschildt}, {Alexander}, and {Starrfield}]{1997Allard}
+F.~{Allard}, P.~H. {Hauschildt}, D.~R. {Alexander}, and S.~{Starrfield}.
+\newblock {Model Atmospheres of Very Low Mass Stars and Brown Dwarfs}.
+\newblock \emph{\araa}, 35:\penalty0 137--177, Jan. 1997.
+\newblock \doi{10.1146/annurev.astro.35.1.137}.
+
+\bibitem[{Allard} et~al.(2011){Allard}, {Homeier}, and {Freytag}]{2011Allard}
+F.~{Allard}, D.~{Homeier}, and B.~{Freytag}.
+\newblock {Model Atmospheres From Very Low Mass Stars to Brown Dwarfs}.
+\newblock In C.~{Johns-Krull}, M.~K. {Browning}, and A.~A. {West}, editors, \emph{16th Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun}, volume 448 of \emph{Astronomical Society of the Pacific Conference Series}, page~91, Dec. 2011.
+
+\bibitem[{Amara} and {Quanz}(2012)]{2012Amara}
+A.~{Amara} and S.~P. {Quanz}.
+\newblock {PYNPOINT: an image processing package for finding exoplanets}.
+\newblock \emph{\mnras}, 427\penalty0 (2):\penalty0 948--955, Dec. 2012.
+\newblock \doi{10.1111/j.1365-2966.2012.21918.x}.
+
+\bibitem[{Angerhausen} and {Quanz}(2021)]{2021LIFE}
+D.~{Angerhausen} and S.~{Quanz}.
+\newblock {The Large Interferometer For Exoplanets (LIFE) mission: status and progress report}.
+\newblock In \emph{European Planetary Science Congress}, pages EPSC2021--284, Sept. 2021.
+\newblock \doi{10.5194/epsc2021-284}.
+
+\bibitem[{Ball} and {Brunner}(2010)]{2010IBall}
+N.~M. {Ball} and R.~J. {Brunner}.
+\newblock {Data Mining and Machine Learning in Astronomy}.
+\newblock \emph{International Journal of Modern Physics D}, 19\penalty0 (7):\penalty0 1049--1106, Jan. 2010.
+\newblock \doi{10.1142/S0218271810017160}.
+
+\bibitem[{Baron}(2019)]{2019Baron}
+D.~{Baron}.
+\newblock {Machine Learning in Astronomy: a practical overview}.
+\newblock \emph{arXiv e-prints}, art. arXiv:1904.07248, Apr. 2019.
+\newblock \doi{10.48550/arXiv.1904.07248}.
+
+\bibitem[{Batalha} et~al.(2019){Batalha}, {Marley}, {Lewis}, and {Fortney}]{2019PICASO}
+N.~E. {Batalha}, M.~S. {Marley}, N.~K. {Lewis}, and J.~J. {Fortney}.
+\newblock {Exoplanet Reflected-light Spectroscopy with PICASO}.
+\newblock \emph{\apj}, 878\penalty0 (1):\penalty0 70, June 2019.
+\newblock \doi{10.3847/1538-4357/ab1b51}.
+
+\bibitem[{Beuzit} et~al.(2019){Beuzit}, {Vigan}, {Mouillet}, {Dohlen}, {Gratton}, {Boccaletti}, {Sauvage}, {Schmid}, {Langlois}, {Petit}, {Baruffolo}, {Feldt}, {Milli}, {Wahhaj}, {Abe}, {Anselmi}, {Antichi}, {Barette}, {Baudrand}, {Baudoz}, {Bazzon}, {Bernardi}, {Blanchard}, {Brast}, {Bruno}, {Buey}, {Carbillet}, {Carle}, {Cascone}, {Chapron}, {Charton}, {Chauvin}, {Claudi}, {Costille}, {De Caprio}, {de Boer}, {Delboulb{\'e}}, {Desidera}, {Dominik}, {Downing}, {Dupuis}, {Fabron}, {Fantinel}, {Farisato}, {Feautrier}, {Fedrigo}, {Fusco}, {Gigan}, {Ginski}, {Girard}, {Giro}, {Gisler}, {Gluck}, {Gry}, {Henning}, {Hubin}, {Hugot}, {Incorvaia}, {Jaquet}, {Kasper}, {Lagadec}, {Lagrange}, {Le Coroller}, {Le Mignant}, {Le Ruyet}, {Lessio}, {Lizon}, {Llored}, {Lundin}, {Madec}, {Magnard}, {Marteaud}, {Martinez}, {Maurel}, {M{\'e}nard}, {Mesa}, {M{\"o}ller-Nilsson}, {Moulin}, {Moutou}, {Orign{\'e}}, {Parisot}, {Pavlov}, {Perret}, {Pragt}, {Puget}, {Rabou}, {Ramos}, {Reess}, {Rigal}, {Rochat}, {Roelfsema}, {Rousset}, {Roux}, {Saisse}, {Salasnich}, {Santambrogio}, {Scuderi}, {Segransan}, {Sevin}, {Siebenmorgen}, {Soenke}, {Stadler}, {Suarez}, {Tiph{\`e}ne}, {Turatto}, {Udry}, {Vakili}, {Waters}, {Weber}, {Wildi}, {Zins}, and {Zurlo}]{2019SPHERE}
+J.~L. {Beuzit}, A.~{Vigan}, D.~{Mouillet}, K.~{Dohlen}, R.~{Gratton}, A.~{Boccaletti}, J.~F. {Sauvage}, H.~M. {Schmid}, M.~{Langlois}, C.~{Petit}, A.~{Baruffolo}, M.~{Feldt}, J.~{Milli}, Z.~{Wahhaj}, L.~{Abe}, U.~{Anselmi}, J.~{Antichi}, R.~{Barette}, J.~{Baudrand}, P.~{Baudoz}, A.~{Bazzon}, P.~{Bernardi}, P.~{Blanchard}, R.~{Brast}, P.~{Bruno}, T.~{Buey}, M.~{Carbillet}, M.~{Carle}, E.~{Cascone}, F.~{Chapron}, J.~{Charton}, G.~{Chauvin}, R.~{Claudi}, A.~{Costille}, V.~{De Caprio}, J.~{de Boer}, A.~{Delboulb{\'e}}, S.~{Desidera}, C.~{Dominik}, M.~{Downing}, O.~{Dupuis}, C.~{Fabron}, D.~{Fantinel}, G.~{Farisato}, P.~{Feautrier}, E.~{Fedrigo}, T.~{Fusco}, P.~{Gigan}, C.~{Ginski}, J.~{Girard}, E.~{Giro}, D.~{Gisler}, L.~{Gluck}, C.~{Gry}, T.~{Henning}, N.~{Hubin}, E.~{Hugot}, S.~{Incorvaia}, M.~{Jaquet}, M.~{Kasper}, E.~{Lagadec}, A.~M. {Lagrange}, H.~{Le Coroller}, D.~{Le Mignant}, B.~{Le Ruyet}, G.~{Lessio}, J.~L. {Lizon}, M.~{Llored}, L.~{Lundin}, F.~{Madec}, Y.~{Magnard}, M.~{Marteaud}, P.~{Martinez}, D.~{Maurel}, F.~{M{\'e}nard}, D.~{Mesa}, O.~{M{\"o}ller-Nilsson}, T.~{Moulin}, C.~{Moutou}, A.~{Orign{\'e}}, J.~{Parisot}, A.~{Pavlov}, D.~{Perret}, J.~{Pragt}, P.~{Puget}, P.~{Rabou}, J.~{Ramos}, J.~M. {Reess}, F.~{Rigal}, S.~{Rochat}, R.~{Roelfsema}, G.~{Rousset}, A.~{Roux}, M.~{Saisse}, B.~{Salasnich}, E.~{Santambrogio}, S.~{Scuderi}, D.~{Segransan}, A.~{Sevin}, R.~{Siebenmorgen}, C.~{Soenke}, E.~{Stadler}, M.~{Suarez}, D.~{Tiph{\`e}ne}, M.~{Turatto}, S.~{Udry}, F.~{Vakili}, L.~B.~F.~M. {Waters}, L.~{Weber}, F.~{Wildi}, G.~{Zins}, and A.~{Zurlo}.
+\newblock {SPHERE: the exoplanet imager for the Very Large Telescope}.
+\newblock \emph{\aap}, 631:\penalty0 A155, Nov. 2019.
+\newblock \doi{10.1051/0004-6361/201935251}.
+
+\bibitem[{Bonnet} et~al.(2004){Bonnet}, {Conzelmann}, {Delabre}, {Donaldson}, {Fedrigo}, {Hubin}, {Kissler-Patig}, {Lizon}, {Paufique}, {Rossi}, {Stroebele}, and {Tordo}]{2004SINFONI}
+H.~{Bonnet}, R.~{Conzelmann}, B.~{Delabre}, R.~{Donaldson}, E.~{Fedrigo}, N.~N. {Hubin}, M.~{Kissler-Patig}, J.-L. {Lizon}, J.~{Paufique}, S.~{Rossi}, S.~{Stroebele}, and S.~{Tordo}.
+\newblock {First light of SINFONI AO-module at VLT}.
+\newblock In D.~{Bonaccini Calia}, B.~L. {Ellerbroek}, and R.~{Ragazzoni}, editors, \emph{Advancements in Adaptive Optics}, volume 5490 of \emph{Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series}, pages 130--138, Oct. 2004.
+\newblock \doi{10.1117/12.551187}.
+
+\bibitem[Breiman(1998)]{breiman1998arcing}
+L.~Breiman.
+\newblock Arcing classifier (with discussion and a rejoinder by the author).
+\newblock \emph{The annals of statistics}, 26\penalty0 (3):\penalty0 801--849, 1998.
+
+\bibitem[Breiman(2001)]{breiman2001random}
+L.~Breiman.
+\newblock Random forests.
+\newblock \emph{Machine learning}, 45:\penalty0 5--32, 2001.
+
+\bibitem[{Brogi} and {Line}(2019)]{2019Brogi}
+M.~{Brogi} and M.~R. {Line}.
+\newblock {Retrieving Temperatures and Abundances of Exoplanet Atmospheres with High-resolution Cross-correlation Spectroscopy}.
+\newblock \emph{\aj}, 157\penalty0 (3):\penalty0 114, Mar. 2019.
+\newblock \doi{10.3847/1538-3881/aaffd3}.
+
+\bibitem[{Calvin} et~al.(2021){Calvin}, {Jovanovic}, {Ruane}, {Pezzato}, {Colborn}, {Echeverri}, {Schofield}, {Porter}, {Wallace}, {Delorme}, and {Mawet}]{2021Calvin}
+B.~{Calvin}, N.~{Jovanovic}, G.~{Ruane}, J.~{Pezzato}, J.~{Colborn}, D.~{Echeverri}, T.~{Schofield}, M.~{Porter}, J.~K. {Wallace}, J.-R. {Delorme}, and D.~{Mawet}.
+\newblock {Enhancing Direct Exoplanet Spectroscopy with Apodizing and Beam Shaping Optics}.
+\newblock \emph{\pasp}, 133\penalty0 (1020):\penalty0 024503, Feb. 2021.
+\newblock \doi{10.1088/1538-3873/abdace}.
+
+\bibitem[{Cantero} et~al.(2023){Cantero}, {Absil}, {Dahlqvist}, and {Van Droogenbroeck}]{2023Carlito}
+C.~{Cantero}, O.~{Absil}, C.-H. {Dahlqvist}, and M.~{Van Droogenbroeck}.
+\newblock {NA-SODINN: a deep learning algorithm for exoplanet image detection based on residual noise regimes}.
+\newblock \emph{arXiv e-prints}, art. arXiv:2302.02854, Feb. 2023.
+\newblock \doi{10.48550/arXiv.2302.02854}.
+
+\bibitem[{Chomez} et~al.(2023){Chomez}, {Lagrange}, {Delorme}, {Langlois}, {Chauvin}, {Flasseur}, {Dallant}, {Philipot}, {Bergeon}, {Albert}, {Meunier}, and {Rubini}]{2023Chomez}
+A.~{Chomez}, A.~M. {Lagrange}, P.~{Delorme}, M.~{Langlois}, G.~{Chauvin}, O.~{Flasseur}, J.~{Dallant}, F.~{Philipot}, S.~{Bergeon}, D.~{Albert}, N.~{Meunier}, and P.~{Rubini}.
+\newblock {Preparing an unsupervised massive analysis of SPHERE high contrast data with the PACO algorithm}.
+\newblock \emph{arXiv e-prints}, art. arXiv:2305.08766, May 2023.
+\newblock \doi{10.48550/arXiv.2305.08766}.
+
+\bibitem[{Christiaens} et~al.(2018){Christiaens}, {Casassus}, {Absil}, {Kimeswenger}, {Gomez Gonzalez}, {Girard}, {Ram{\'\i}rez}, {Wertz}, {Zurlo}, {Wahhaj}, {Flores}, {Salinas}, {Jord{\'a}n}, and {Mawet}]{2018A&ChristiaensHD142527}
+V.~{Christiaens}, S.~{Casassus}, O.~{Absil}, S.~{Kimeswenger}, C.~A. {Gomez Gonzalez}, J.~{Girard}, R.~{Ram{\'\i}rez}, O.~{Wertz}, A.~{Zurlo}, Z.~{Wahhaj}, C.~{Flores}, V.~{Salinas}, A.~{Jord{\'a}n}, and D.~{Mawet}.
+\newblock {Characterization of low-mass companion HD 142527 B}.
+\newblock \emph{\aap}, 617:\penalty0 A37, Sept. 2018.
+\newblock \doi{10.1051/0004-6361/201629454}.
+
+\bibitem[Christiaens et~al.(2021)Christiaens, Ubeira-Gabellini, Cánovas, Delorme, Pairet, Absil, Casassus, Girard, Zurlo, Aoyama, Marleau, Spina, van der Marel, Cieza, Lodato, Pérez, Pinte, Price, and Reggiani]{2021Christiaens}
+V.~Christiaens, M.-G. Ubeira-Gabellini, H.~Cánovas, P.~Delorme, B.~Pairet, O.~Absil, S.~Casassus, J.~H. Girard, A.~Zurlo, Y.~Aoyama, G.-D. Marleau, L.~Spina, N.~van der Marel, L.~Cieza, G.~Lodato, S.~Pérez, C.~Pinte, D.~J. Price, and M.~Reggiani.
+\newblock {A faint companion around CrA-9: protoplanet or obscured binary?}
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 502\penalty0 (4):\penalty0 6117--6139, 02 2021.
+\newblock ISSN 0035-8711.
+\newblock \doi{10.1093/mnras/stab480}.
+\newblock URL \url{https://doi.org/10.1093/mnras/stab480}.
+
+\bibitem[{Christiaens} et~al.(2023){Christiaens}, {Gonzalez}, {Farkas}, {Dahlqvist}, {Nasedkin}, {Milli}, {Absil}, {Ngo}, {Cantero}, {Rainot}, {Hammond}, {Bonse}, {Cantalloube}, {Vigan}, {Kompella}, and {Hancock}]{2023Christiaens}
+V.~{Christiaens}, C.~{Gonzalez}, R.~{Farkas}, C.-H. {Dahlqvist}, E.~{Nasedkin}, J.~{Milli}, O.~{Absil}, H.~{Ngo}, C.~{Cantero}, A.~{Rainot}, I.~{Hammond}, M.~{Bonse}, F.~{Cantalloube}, A.~{Vigan}, V.~{Kompella}, and P.~{Hancock}.
+\newblock {VIP: A Python package for high-contrast imaging}.
+\newblock \emph{The Journal of Open Source Software}, 8\penalty0 (81):\penalty0 4774, Jan. 2023.
+\newblock \doi{10.21105/joss.04774}.
+
+\bibitem[{Cugno} et~al.(2023){Cugno}, {Pearce}, {Launhardt}, {Bonse}, {Ma}, {Henning}, {Quirrenbach}, {S{\'e}gransan}, {Matthews}, {Quanz}, {Kennedy}, {M{\"u}ller}, {Reffert}, and {Rickman}]{2023Cugno}
+G.~{Cugno}, T.~D. {Pearce}, R.~{Launhardt}, M.~J. {Bonse}, J.~{Ma}, T.~{Henning}, A.~{Quirrenbach}, D.~{S{\'e}gransan}, E.~C. {Matthews}, S.~P. {Quanz}, G.~M. {Kennedy}, A.~{M{\"u}ller}, S.~{Reffert}, and E.~L. {Rickman}.
+\newblock {ISPY: NACO Imaging Survey for Planets around Young stars. The demographics of forming planets embedded in protoplanetary disks}.
+\newblock \emph{\aap}, 669:\penalty0 A145, Jan. 2023.
+\newblock \doi{10.1051/0004-6361/202244891}.
+
+\bibitem[{Deb} et~al.(2022){Deb}, {Baruah}, and {Kumar}]{2022cluster}
+S.~{Deb}, A.~{Baruah}, and S.~{Kumar}.
+\newblock {Ensemble-based unsupervised machine learning method for membership determination of open clusters using Mahalanobis distance}.
+\newblock \emph{\mnras}, 515\penalty0 (4):\penalty0 4685--4701, Oct. 2022.
+\newblock \doi{10.1093/mnras/stac2116}.
+
+\bibitem[{Fischer} et~al.(2019){Fischer}, {Dom{\'\i}nguez S{\'a}nchez}, and {Bernardi}]{2019MNRASFischer}
+J.~L. {Fischer}, H.~{Dom{\'\i}nguez S{\'a}nchez}, and M.~{Bernardi}.
+\newblock {SDSS-IV MaNGA PyMorph Photometric and Deep Learning Morphological Catalogues and implications for bulge properties and stellar angular momentum}.
+\newblock \emph{\mnras}, 483\penalty0 (2):\penalty0 2057--2077, Feb. 2019.
+\newblock \doi{10.1093/mnras/sty3135}.
+
+\bibitem[{Fisher} et~al.(2020){Fisher}, {Hoeijmakers}, {Kitzmann}, {M{\'a}rquez-Neila}, {Grimm}, {Sznitman}, and {Heng}]{2020Fisher}
+C.~{Fisher}, H.~J. {Hoeijmakers}, D.~{Kitzmann}, P.~{M{\'a}rquez-Neila}, S.~L. {Grimm}, R.~{Sznitman}, and K.~{Heng}.
+\newblock {Interpreting High-resolution Spectroscopy of Exoplanets using Cross-correlations and Supervised Machine Learning}.
+\newblock \emph{\aj}, 159\penalty0 (5):\penalty0 192, May 2020.
+\newblock \doi{10.3847/1538-3881/ab7a92}.
+
+\bibitem[{Fluke} and {Jacobs}(2020)]{2020Fluke}
+C.~J. {Fluke} and C.~{Jacobs}.
+\newblock {Surveying the reach and maturity of machine learning and artificial intelligence in astronomy}.
+\newblock \emph{WIREs Data Mining and Knowledge Discovery}, 10\penalty0 (2):\penalty0 e1349, Jan. 2020.
+\newblock \doi{10.1002/widm.1349}.
+
+\bibitem[{Gebhard} et~al.(2022){Gebhard}, {Bonse}, {Quanz}, and {Sch{\"o}lkopf}]{2022Gebhard}
+T.~D. {Gebhard}, M.~J. {Bonse}, S.~P. {Quanz}, and B.~{Sch{\"o}lkopf}.
+\newblock {Half-sibling regression meets exoplanet imaging: PSF modeling and subtraction using a flexible, domain knowledge-driven, causal framework}.
+\newblock \emph{\aap}, 666:\penalty0 A9, Oct. 2022.
+\newblock \doi{10.1051/0004-6361/202142529}.
+
+\bibitem[{Gomez Gonzalez} et~al.(2016){Gomez Gonzalez}, {Absil}, {Absil}, {Van Droogenbroeck}, {Mawet}, and {Surdej}]{2016A&AGomez}
+C.~A. {Gomez Gonzalez}, O.~{Absil}, P.~A. {Absil}, M.~{Van Droogenbroeck}, D.~{Mawet}, and J.~{Surdej}.
+\newblock {Low-rank plus sparse decomposition for exoplanet detection in direct-imaging ADI sequences. The LLSG algorithm}.
+\newblock \emph{\aap}, 589:\penalty0 A54, May 2016.
+\newblock \doi{10.1051/0004-6361/201527387}.
+
+\bibitem[{Gomez Gonzalez} et~al.(2018){Gomez Gonzalez}, {Absil}, and {Van Droogenbroeck}]{2018Gomez}
+C.~A. {Gomez Gonzalez}, O.~{Absil}, and M.~{Van Droogenbroeck}.
+\newblock {Supervised detection of exoplanets in high-contrast imaging sequences}.
+\newblock \emph{\aap}, 613:\penalty0 A71, May 2018.
+\newblock \doi{10.1051/0004-6361/201731961}.
+
+\bibitem[Gurney(1997)]{gurney1997introduction}
+K.~Gurney.
+\newblock \emph{An introduction to neural networks}.
+\newblock CRC press, 1997.
+
+\bibitem[{Haffert} et~al.(2019){Haffert}, {Bohn}, {de Boer}, {Snellen}, {Brinchmann}, {Girard}, {Keller}, and {Bacon}]{2019Haffert}
+S.~Y. {Haffert}, A.~J. {Bohn}, J.~{de Boer}, I.~A.~G. {Snellen}, J.~{Brinchmann}, J.~H. {Girard}, C.~U. {Keller}, and R.~{Bacon}.
+\newblock {Two accreting protoplanets around the young star PDS 70}.
+\newblock \emph{Nature Astronomy}, 3:\penalty0 749--754, June 2019.
+\newblock \doi{10.1038/s41550-019-0780-5}.
+
+\bibitem[Harris and Harris(2010)]{harris2010digital}
+D.~Harris and S.~Harris.
+\newblock \emph{Digital Design and Computer Architecture}.
+\newblock Computer organization bundle, VHDL Bundle. Elsevier Science, 2010.
+\newblock ISBN 9780080547060.
+\newblock URL \url{https://books.google.be/books?id=5X7JV5-n0FIC}.
+
+\bibitem[{Hoeijmakers} et~al.(2018){Hoeijmakers}, {Schwarz}, {Snellen}, {de Kok}, {Bonnefoy}, {Chauvin}, {Lagrange}, and {Girard}]{2018AHoeijmakersMM}
+H.~J. {Hoeijmakers}, H.~{Schwarz}, I.~A.~G. {Snellen}, R.~J. {de Kok}, M.~{Bonnefoy}, G.~{Chauvin}, A.~M. {Lagrange}, and J.~H. {Girard}.
+\newblock {Medium-resolution integral-field spectroscopy for high-contrast exoplanet imaging. Molecule maps of the {\ensuremath{\beta}} Pictoris system with SINFONI}.
+\newblock \emph{\aap}, 617:\penalty0 A144, Oct. 2018.
+\newblock \doi{10.1051/0004-6361/201832902}.
+
+\bibitem[{Huang} et~al.(2023){Huang}, {Kong}, {Xie}, and {Yang}]{2023PatRe.14209676H}
+P.~{Huang}, Z.~{Kong}, M.~{Xie}, and X.~{Yang}.
+\newblock {Robust unsupervised feature selection via data relationship learning}.
+\newblock \emph{Pattern Recognition}, 142:\penalty0 109676, Oct. 2023.
+\newblock \doi{10.1016/j.patcog.2023.109676}.
+
+\bibitem[{Hunziker} et~al.(2018){Hunziker}, {Quanz}, {Amara}, and {Meyer}]{2018Hunziker}
+S.~{Hunziker}, S.~P. {Quanz}, A.~{Amara}, and M.~R. {Meyer}.
+\newblock {PCA-based approach for subtracting thermal background emission in high-contrast imaging data}.
+\newblock \emph{\aap}, 611:\penalty0 A23, Mar. 2018.
+\newblock \doi{10.1051/0004-6361/201731428}.
+
+\bibitem[{Ivezi{\'c}} et~al.(2014){Ivezi{\'c}}, {Connolly}, {VanderPlas}, and {Gray}]{2014IVESCI}
+{\v{Z}}.~{Ivezi{\'c}}, A.~J. {Connolly}, J.~T. {VanderPlas}, and A.~{Gray}.
+\newblock \emph{{Statistics, Data Mining, and Machine Learning in Astronomy: A Practical Python Guide for the Analysis of Survey Data}}.
+\newblock 2014.
+\newblock \doi{10.1515/9781400848911}.
+
+\bibitem[{Jocou} et~al.(2022){Jocou}, {Rabou}, {Moulin}, {Magnard}, {Hours}, {Pancher}, {Guieu}, {Carlotti}, {Delboulb{\'e}}, {V{\'e}rove}, {Stadler}, {Maurel}, {Rochat}, {Henault}, {Dohlen}, {Thatte}, {Neichel}, {Vola}, {Clarke}, {Melotte}, {Tecza}, and {Schnetler}]{2022Jocou}
+L.~{Jocou}, P.~{Rabou}, T.~{Moulin}, Y.~{Magnard}, A.~{Hours}, F.~{Pancher}, S.~{Guieu}, A.~{Carlotti}, A.~{Delboulb{\'e}}, M.~{V{\'e}rove}, E.~{Stadler}, D.~{Maurel}, S.~{Rochat}, F.~{Henault}, K.~{Dohlen}, N.~{Thatte}, B.~{Neichel}, P.~{Vola}, F.~{Clarke}, D.~{Melotte}, M.~{Tecza}, and H.~{Schnetler}.
+\newblock {HARMONI at ELT: development of the high-contrast module}.
+\newblock In L.~{Schreiber}, D.~{Schmidt}, and E.~{Vernet}, editors, \emph{Adaptive Optics Systems VIII}, volume 12185 of \emph{Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series}, page 121854K, Aug. 2022.
+\newblock \doi{10.1117/12.2626984}.
+
+\bibitem[{Jovanovic} et~al.(2019){Jovanovic}, {Delorme}, {Bond}, {Cetre}, {Mawet}, {Echeverri}, {Wallace}, {Bartos}, {Lilley}, {Ragland}, {Ruane}, {Wizinowich}, {Chun}, {Wang}, {Wang}, {Fitzgerald}, {Matthews}, {Pezzato}, {Calvin}, {Millar-Blanchaer}, {Martin}, {Wetherell}, {Wang}, {Jacobson}, {Warmbier}, {Lockhart}, {Hall}, {Jensen-Clem}, and {McEwen}]{2019KPIC}
+N.~{Jovanovic}, J.~R. {Delorme}, C.~Z. {Bond}, S.~{Cetre}, D.~{Mawet}, D.~{Echeverri}, J.~K. {Wallace}, R.~{Bartos}, S.~{Lilley}, S.~{Ragland}, G.~{Ruane}, P.~{Wizinowich}, M.~{Chun}, J.~{Wang}, J.~{Wang}, M.~{Fitzgerald}, K.~{Matthews}, J.~{Pezzato}, B.~{Calvin}, M.~{Millar-Blanchaer}, E.~C. {Martin}, E.~{Wetherell}, E.~{Wang}, S.~{Jacobson}, E.~{Warmbier}, C.~{Lockhart}, D.~{Hall}, R.~{Jensen-Clem}, and E.~{McEwen}.
+\newblock {The Keck Planet Imager and Characterizer: Demonstrating advanced exoplanet characterization techniques for future extremely large telescopes}.
+\newblock \emph{arXiv e-prints}, art. arXiv:1909.04541, Sept. 2019.
+\newblock \doi{10.48550/arXiv.1909.04541}.
+
+\bibitem[{Kiefer} et~al.(2021){Kiefer}, {Bohn}, {Quanz}, {Kenworthy}, and {Stolker}]{2021Kiefer}
+S.~{Kiefer}, A.~J. {Bohn}, S.~P. {Quanz}, M.~{Kenworthy}, and T.~{Stolker}.
+\newblock {Spectral and angular differential imaging with SPHERE/IFS. Assessing the performance of various PCA-based approaches to PSF subtraction}.
+\newblock \emph{\aap}, 652:\penalty0 A33, Aug. 2021.
+\newblock \doi{10.1051/0004-6361/202140285}.
+
+\bibitem[Kussul and Baidyk(2004)]{kussul2004improved}
+E.~Kussul and T.~Baidyk.
+\newblock Improved method of handwritten digit recognition tested on mnist database.
+\newblock \emph{Image and Vision Computing}, 22\penalty0 (12):\penalty0 971--981, 2004.
+
+\bibitem[{Lavie} et~al.(2017){Lavie}, {Mendon{\c{c}}a}, {Mordasini}, {Malik}, {Bonnefoy}, {Demory}, {Oreshenko}, {Grimm}, {Ehrenreich}, and {Heng}]{2017Lavie}
+B.~{Lavie}, J.~M. {Mendon{\c{c}}a}, C.~{Mordasini}, M.~{Malik}, M.~{Bonnefoy}, B.-O. {Demory}, M.~{Oreshenko}, S.~L. {Grimm}, D.~{Ehrenreich}, and K.~{Heng}.
+\newblock {HELIOS-RETRIEVAL: An Open-source, Nested Sampling Atmospheric Retrieval Code; Application to the HR 8799 Exoplanets and Inferred Constraints for Planet Formation}.
+\newblock \emph{\aj}, 154\penalty0 (3):\penalty0 91, Sept. 2017.
+\newblock \doi{10.3847/1538-3881/aa7ed8}.
+
+\bibitem[{Leung} and {Bovy}(2019)]{2019Leung}
+H.~W. {Leung} and J.~{Bovy}.
+\newblock {Deep learning of multi-element abundances from high-resolution spectroscopic data}.
+\newblock \emph{\mnras}, 483\penalty0 (3):\penalty0 3255--3277, Mar. 2019.
+\newblock \doi{10.1093/mnras/sty3217}.
+
+\bibitem[{Li} et~al.(2017){Li}, {Pan}, and {Duan}]{2017RAALi}
+X.-R. {Li}, R.-Y. {Pan}, and F.-Q. {Duan}.
+\newblock {Parameterizing Stellar Spectra Using Deep Neural Networks}.
+\newblock \emph{Research in Astronomy and Astrophysics}, 17\penalty0 (4):\penalty0 036, Mar. 2017.
+\newblock \doi{10.1088/1674-4527/17/4/36}.
+
+\bibitem[{Macintosh} et~al.(2014){Macintosh}, {Graham}, {Ingraham}, {Konopacky}, {Marois}, {Perrin}, {Poyneer}, {Bauman}, {Barman}, {Burrows}, {Cardwell}, {Chilcote}, {De Rosa}, {Dillon}, {Doyon}, {Dunn}, {Erikson}, {Fitzgerald}, {Gavel}, {Goodsell}, {Hartung}, {Hibon}, {Kalas}, {Larkin}, {Maire}, {Marchis}, {Marley}, {McBride}, {Millar-Blanchaer}, {Morzinski}, {Norton}, {Oppenheimer}, {Palmer}, {Patience}, {Pueyo}, {Rantakyro}, {Sadakuni}, {Saddlemyer}, {Savransky}, {Serio}, {Soummer}, {Sivaramakrishnan}, {Song}, {Thomas}, {Wallace}, {Wiktorowicz}, and {Wolff}]{2014MacintoshGPI}
+B.~{Macintosh}, J.~R. {Graham}, P.~{Ingraham}, Q.~{Konopacky}, C.~{Marois}, M.~{Perrin}, L.~{Poyneer}, B.~{Bauman}, T.~{Barman}, A.~S. {Burrows}, A.~{Cardwell}, J.~{Chilcote}, R.~J. {De Rosa}, D.~{Dillon}, R.~{Doyon}, J.~{Dunn}, D.~{Erikson}, M.~P. {Fitzgerald}, D.~{Gavel}, S.~{Goodsell}, M.~{Hartung}, P.~{Hibon}, P.~{Kalas}, J.~{Larkin}, J.~{Maire}, F.~{Marchis}, M.~S. {Marley}, J.~{McBride}, M.~{Millar-Blanchaer}, K.~{Morzinski}, A.~{Norton}, B.~R. {Oppenheimer}, D.~{Palmer}, J.~{Patience}, L.~{Pueyo}, F.~{Rantakyro}, N.~{Sadakuni}, L.~{Saddlemyer}, D.~{Savransky}, A.~{Serio}, R.~{Soummer}, A.~{Sivaramakrishnan}, I.~{Song}, S.~{Thomas}, J.~K. {Wallace}, S.~{Wiktorowicz}, and S.~{Wolff}.
+\newblock {First light of the Gemini Planet Imager}.
+\newblock \emph{Proceedings of the National Academy of Science}, 111\penalty0 (35):\penalty0 12661--12666, Sept. 2014.
+\newblock \doi{10.1073/pnas.1304215111}.
+
+\bibitem[{Madhusudhan}(2019)]{2019Madhsudhan}
+N.~{Madhusudhan}.
+\newblock {Exoplanetary Atmospheres: Key Insights, Challenges, and Prospects}.
+\newblock \emph{\araa}, 57:\penalty0 617--663, Aug. 2019.
+\newblock \doi{10.1146/annurev-astro-081817-051846}.
+
+\bibitem[{M{\^a}lin} et~al.(2023){M{\^a}lin}, {Boccaletti}, {Charnay}, {Kiefer}, and {B{\'e}zard}]{2023Malin}
+M.~{M{\^a}lin}, A.~{Boccaletti}, B.~{Charnay}, F.~{Kiefer}, and B.~{B{\'e}zard}.
+\newblock {Simulated performance of the molecular mapping for young giant exoplanets with the Medium Resolution Spectrometer of JWST/MIRI}.
+\newblock \emph{arXiv e-prints}, art. arXiv:2301.02116, Jan. 2023.
+\newblock \doi{10.48550/arXiv.2301.02116}.
+
+\bibitem[{Mawet} et~al.(2014){Mawet}, {Milli}, {Wahhaj}, {Pelat}, {Absil}, {Delacroix}, {Boccaletti}, {Kasper}, {Kenworthy}, {Marois}, {Mennesson}, and {Pueyo}]{2014MawetSNR}
+D.~{Mawet}, J.~{Milli}, Z.~{Wahhaj}, D.~{Pelat}, O.~{Absil}, C.~{Delacroix}, A.~{Boccaletti}, M.~{Kasper}, M.~{Kenworthy}, C.~{Marois}, B.~{Mennesson}, and L.~{Pueyo}.
+\newblock {Fundamental Limitations of High Contrast Imaging Set by Small Sample Statistics}.
+\newblock \emph{\apj}, 792\penalty0 (2):\penalty0 97, Sept. 2014.
+\newblock \doi{10.1088/0004-637X/792/2/97}.
+
+\bibitem[{Mawet} et~al.(2016){Mawet}, {Wizinowich}, {Dekany}, {Chun}, {Hall}, {Cetre}, {Guyon}, {Wallace}, {Bowler}, {Liu}, {Ruane}, {Serabyn}, {Bartos}, {Wang}, {Vasisht}, {Fitzgerald}, {Skemer}, {Ireland}, {Fucik}, {Fortney}, {Crossfield}, {Hu}, and {Benneke}]{2016Mawet}
+D.~{Mawet}, P.~{Wizinowich}, R.~{Dekany}, M.~{Chun}, D.~{Hall}, S.~{Cetre}, O.~{Guyon}, J.~K. {Wallace}, B.~{Bowler}, M.~{Liu}, G.~{Ruane}, E.~{Serabyn}, R.~{Bartos}, J.~{Wang}, G.~{Vasisht}, M.~{Fitzgerald}, A.~{Skemer}, M.~{Ireland}, J.~{Fucik}, J.~{Fortney}, I.~{Crossfield}, R.~{Hu}, and B.~{Benneke}.
+\newblock {Keck Planet Imager and Characterizer: concept and phased implementation}.
+\newblock In E.~{Marchetti}, L.~M. {Close}, and J.-P. {V{\'e}ran}, editors, \emph{Adaptive Optics Systems V}, volume 9909 of \emph{Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series}, page 99090D, July 2016.
+\newblock \doi{10.1117/12.2233658}.
+
+\bibitem[{Mesa} et~al.(2019){Mesa}, {Keppler}, {Cantalloube}, {Rodet}, {Charnay}, {Gratton}, {Langlois}, {Boccaletti}, {Bonnefoy}, {Vigan}, {Flasseur}, {Bae}, {Benisty}, {Chauvin}, {de Boer}, {Desidera}, {Henning}, {Lagrange}, {Meyer}, {Milli}, {M{\"u}ller}, {Pairet}, {Zurlo}, {Antoniucci}, {Baudino}, {Brown Sevilla}, {Cascone}, {Cheetham}, {Claudi}, {Delorme}, {D'Orazi}, {Feldt}, {Hagelberg}, {Janson}, {Kral}, {Lagadec}, {Lazzoni}, {Ligi}, {Maire}, {Martinez}, {Menard}, {Meunier}, {Perrot}, {Petrus}, {Pinte}, {Rickman}, {Rochat}, {Rouan}, {Samland}, {Sauvage}, {Schmidt}, {Udry}, {Weber}, and {Wildi}]{2019MesaPDS70}
+D.~{Mesa}, M.~{Keppler}, F.~{Cantalloube}, L.~{Rodet}, B.~{Charnay}, R.~{Gratton}, M.~{Langlois}, A.~{Boccaletti}, M.~{Bonnefoy}, A.~{Vigan}, O.~{Flasseur}, J.~{Bae}, M.~{Benisty}, G.~{Chauvin}, J.~{de Boer}, S.~{Desidera}, T.~{Henning}, A.~M. {Lagrange}, M.~{Meyer}, J.~{Milli}, A.~{M{\"u}ller}, B.~{Pairet}, A.~{Zurlo}, S.~{Antoniucci}, J.~L. {Baudino}, S.~{Brown Sevilla}, E.~{Cascone}, A.~{Cheetham}, R.~U. {Claudi}, P.~{Delorme}, V.~{D'Orazi}, M.~{Feldt}, J.~{Hagelberg}, M.~{Janson}, Q.~{Kral}, E.~{Lagadec}, C.~{Lazzoni}, R.~{Ligi}, A.~L. {Maire}, P.~{Martinez}, F.~{Menard}, N.~{Meunier}, C.~{Perrot}, S.~{Petrus}, C.~{Pinte}, E.~L. {Rickman}, S.~{Rochat}, D.~{Rouan}, M.~{Samland}, J.~F. {Sauvage}, T.~{Schmidt}, S.~{Udry}, L.~{Weber}, and F.~{Wildi}.
+\newblock {VLT/SPHERE exploration of the young multiplanetary system PDS70}.
+\newblock \emph{\aap}, 632:\penalty0 A25, Dec. 2019.
+\newblock \doi{10.1051/0004-6361/201936764}.
+
+\bibitem[{Meshkat} et~al.(2014){Meshkat}, {Kenworthy}, {Quanz}, and {Amara}]{2014Meshkat}
+T.~{Meshkat}, M.~A. {Kenworthy}, S.~P. {Quanz}, and A.~{Amara}.
+\newblock {Optimized Principal Component Analysis on Coronagraphic Images of the Fomalhaut System}.
+\newblock \emph{\apj}, 780\penalty0 (1):\penalty0 17, Jan. 2014.
+\newblock \doi{10.1088/0004-637X/780/1/17}.
+
+\bibitem[{Miettinen}(2018)]{2018Miettinen}
+O.~{Miettinen}.
+\newblock {Protostellar classification using supervised machine learning algorithms}.
+\newblock \emph{\apss}, 363\penalty0 (9):\penalty0 197, Sept. 2018.
+\newblock \doi{10.1007/s10509-018-3418-7}.
+
+\bibitem[{Molli{\`e}re} et~al.(2022){Molli{\`e}re}, {Nasedkin}, {Alei}, {Molaverdikhani}, and {Zilinskas}]{2022Molliere}
+P.~{Molli{\`e}re}, E.~{Nasedkin}, E.~{Alei}, K.~{Molaverdikhani}, and M.~{Zilinskas}.
+\newblock {petitRADTRANS: Exoplanet spectra calculator}.
+\newblock Astrophysics Source Code Library, record ascl:2207.014, July 2022.
+
+\bibitem[{Mukherjee} et~al.(2023){Mukherjee}, {Batalha}, {Fortney}, and {Marley}]{2023Mukherjee}
+S.~{Mukherjee}, N.~E. {Batalha}, J.~J. {Fortney}, and M.~S. {Marley}.
+\newblock {PICASO 3.0: A One-dimensional Climate Model for Giant Planets and Brown Dwarfs}.
+\newblock \emph{\apj}, 942\penalty0 (2):\penalty0 71, Jan. 2023.
+\newblock \doi{10.3847/1538-4357/ac9f48}.
+
+\bibitem[{Naul} et~al.(2018){Naul}, {Bloom}, {P{\'e}rez}, and {van der Walt}]{2018Naul}
+B.~{Naul}, J.~S. {Bloom}, F.~{P{\'e}rez}, and S.~{van der Walt}.
+\newblock {A recurrent neural network for classification of unevenly sampled variable stars}.
+\newblock \emph{Nature Astronomy}, 2:\penalty0 151--155, Nov. 2018.
+\newblock \doi{10.1038/s41550-017-0321-z}.
+
+\bibitem[{Pairet} et~al.(2019){Pairet}, {Cantalloube}, {Gomez Gonzalez}, {Absil}, and {Jacques}]{2019Pairet}
+B.~{Pairet}, F.~{Cantalloube}, C.~A. {Gomez Gonzalez}, O.~{Absil}, and L.~{Jacques}.
+\newblock {STIM map: detection map for exoplanets imaging beyond asymptotic Gaussian residual speckle noise}.
+\newblock \emph{\mnras}, 487\penalty0 (2):\penalty0 2262--2277, Aug. 2019.
+\newblock \doi{10.1093/mnras/stz1350}.
+
+\bibitem[{Palma-Bifani} et~al.(2023){Palma-Bifani}, {Chauvin}, {Bonnefoy}, {Rojo}, {Petrus}, {Rodet}, {Langlois}, {Allard}, {Charnay}, {Desgrange}, {Homeier}, {Lagrange}, {Beuzit}, {Baudoz}, {Boccaletti}, {Chomez}, {Delorme}, {Desidera}, {Feldt}, {Ginski}, {Gratton}, {Maire}, {Meyer}, {Samland}, {Snellen}, {Vigan}, and {Zhang}]{2023PalmaBifani}
+P.~{Palma-Bifani}, G.~{Chauvin}, M.~{Bonnefoy}, P.~M. {Rojo}, S.~{Petrus}, L.~{Rodet}, M.~{Langlois}, F.~{Allard}, B.~{Charnay}, C.~{Desgrange}, D.~{Homeier}, A.~M. {Lagrange}, J.~L. {Beuzit}, P.~{Baudoz}, A.~{Boccaletti}, A.~{Chomez}, P.~{Delorme}, S.~{Desidera}, M.~{Feldt}, C.~{Ginski}, R.~{Gratton}, A.~L. {Maire}, M.~{Meyer}, M.~{Samland}, I.~{Snellen}, A.~{Vigan}, and Y.~{Zhang}.
+\newblock {Peering into the young planetary system AB Pic. Atmosphere, orbit, obliquity, and second planetary candidate}.
+\newblock \emph{\aap}, 670:\penalty0 A90, Feb. 2023.
+\newblock \doi{10.1051/0004-6361/202244294}.
+
+\bibitem[{Pearson} et~al.(2018){Pearson}, {Palafox}, and {Griffith}]{2018Pearson}
+K.~A. {Pearson}, L.~{Palafox}, and C.~A. {Griffith}.
+\newblock {Searching for exoplanets using artificial intelligence}.
+\newblock \emph{\mnras}, 474\penalty0 (1):\penalty0 478--491, Feb. 2018.
+\newblock \doi{10.1093/mnras/stx2761}.
+
+\bibitem[{Pedregosa} et~al.(2011){Pedregosa}, {Varoquaux}, {Gramfort}, {Michel}, {Thirion}, {Grisel}, {Blondel}, {M{\"u}ller}, {Nothman}, {Louppe}, {Prettenhofer}, {Weiss}, {Dubourg}, {Vanderplas}, {Passos}, {Cournapeau}, {Brucher}, {Perrot}, and {Duchesnay}]{2011JRFsklearn}
+F.~{Pedregosa}, G.~{Varoquaux}, A.~{Gramfort}, V.~{Michel}, B.~{Thirion}, O.~{Grisel}, M.~{Blondel}, A.~{M{\"u}ller}, J.~{Nothman}, G.~{Louppe}, P.~{Prettenhofer}, R.~{Weiss}, V.~{Dubourg}, J.~{Vanderplas}, A.~{Passos}, D.~{Cournapeau}, M.~{Brucher}, M.~{Perrot}, and {\'E}.~{Duchesnay}.
+\newblock {Scikit-learn: Machine Learning in Python}.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830, Oct. 2011.
+\newblock \doi{10.48550/arXiv.1201.0490}.
+
+\bibitem[{Petit dit de la Roche} et~al.(2018){Petit dit de la Roche}, {Hoeijmakers}, and {Snellen}]{2018Petit}
+D.~J.~M. {Petit dit de la Roche}, H.~J. {Hoeijmakers}, and I.~A.~G. {Snellen}.
+\newblock {Molecule mapping of HR8799b using OSIRIS on Keck. Strong detection of water and carbon monoxide, but no methane}.
+\newblock \emph{\aap}, 616:\penalty0 A146, Aug. 2018.
+\newblock \doi{10.1051/0004-6361/201833384}.
+
+\bibitem[{Phillips} et~al.(2020){Phillips}, {Tremblin}, {Baraffe}, {Chabrier}, {Allard}, {Spiegelman}, {Goyal}, {Drummond}, and {H{\'e}brard}]{2020Phillips}
+M.~W. {Phillips}, P.~{Tremblin}, I.~{Baraffe}, G.~{Chabrier}, N.~F. {Allard}, F.~{Spiegelman}, J.~M. {Goyal}, B.~{Drummond}, and E.~{H{\'e}brard}.
+\newblock {A new set of atmosphere and evolution models for cool T-Y brown dwarfs and giant exoplanets}.
+\newblock \emph{\aap}, 637:\penalty0 A38, May 2020.
+\newblock \doi{10.1051/0004-6361/201937381}.
+
+\bibitem[{Prakash} et~al.(2023){Prakash}, {Rajesh}, {Namakhwa}, {Dwarkanath Pande}, and {Ahammad}]{2023Nanda}
+N.~N. {Prakash}, V.~{Rajesh}, D.~L. {Namakhwa}, S.~{Dwarkanath Pande}, and S.~H. {Ahammad}.
+\newblock {A DenseNet CNN-based liver lesion prediction and classification for future medical diagnosis}.
+\newblock \emph{Scientific African}, 20:\penalty0 e01629, July 2023.
+\newblock \doi{10.1016/j.sciaf.2023.e01629}.
+
+\bibitem[{Quanz} et~al.(2015){Quanz}, {Amara}, {Meyer}, {Girard}, {Kenworthy}, and {Kasper}]{2015Quanz}
+S.~P. {Quanz}, A.~{Amara}, M.~R. {Meyer}, J.~H. {Girard}, M.~A. {Kenworthy}, and M.~{Kasper}.
+\newblock {Confirmation and Characterization of the Protoplanet HD 100546 b{\textemdash}Direct Evidence for Gas Giant Planet Formation at 50 AU}.
+\newblock \emph{\apj}, 807\penalty0 (1):\penalty0 64, July 2015.
+\newblock \doi{10.1088/0004-637X/807/1/64}.
+
+\bibitem[Ruffio et~al.(2019)Ruffio, Macintosh, Konopacky, Barman, De~Rosa, Wang, Wilcomb, Czekala, and Marois]{ruffio2019radial}
+J.-B. Ruffio, B.~Macintosh, Q.~M. Konopacky, T.~Barman, R.~J. De~Rosa, J.~J. Wang, K.~K. Wilcomb, I.~Czekala, and C.~Marois.
+\newblock Radial velocity measurements of hr 8799 b and c with medium resolution spectroscopy.
+\newblock \emph{The Astronomical Journal}, 158\penalty0 (5):\penalty0 200, 2019.
+
+\bibitem[{Ruffio} et~al.(2021){Ruffio}, {Konopacky}, {Barman}, {Macintosh}, {Hoch}, {De Rosa}, {Wang}, {Czekala}, and {Marois}]{2021Ruffio}
+J.-B. {Ruffio}, Q.~M. {Konopacky}, T.~{Barman}, B.~{Macintosh}, K.~K.~W. {Hoch}, R.~J. {De Rosa}, J.~J. {Wang}, I.~{Czekala}, and C.~{Marois}.
+\newblock {Deep Exploration of the Planets HR 8799 b, c, and d with Moderate-resolution Spectroscopy}.
+\newblock \emph{\aj}, 162\penalty0 (6):\penalty0 290, Dec. 2021.
+\newblock \doi{10.3847/1538-3881/ac273a}.
+
+\bibitem[{Ryan} and {Robinson}(2022)]{2022RyanOCeans}
+D.~J. {Ryan} and T.~D. {Robinson}.
+\newblock {Detecting Oceans on Exoplanets with Phase-dependent Spectral Principal Component Analysis}.
+\newblock \emph{psj}, 3\penalty0 (2):\penalty0 33, Feb. 2022.
+\newblock \doi{10.3847/PSJ/ac4af3}.
+
+\bibitem[{Sparks} and {Ford}(2002)]{2002SparksSDI}
+W.~B. {Sparks} and H.~C. {Ford}.
+\newblock {Imaging Spectroscopy for Extrasolar Planet Detection}.
+\newblock \emph{\apj}, 578\penalty0 (1):\penalty0 543--564, Oct. 2002.
+\newblock \doi{10.1086/342401}.
+
+\bibitem[{Stinco} et~al.(2023){Stinco}, {Tesei}, and {LePage}]{2023EJASPanomaly}
+P.~{Stinco}, A.~{Tesei}, and K.~D. {LePage}.
+\newblock {Unsupervised active sonar contact classification through anomaly detection}.
+\newblock \emph{EURASIP Journal on Applied Signal Processing}, 2023\penalty0 (1):\penalty0 59, Dec. 2023.
+\newblock \doi{10.1186/s13634-023-01016-z}.
+
+\bibitem[{Tennyson} and {Yurchenko}(2012)]{2012Tennyson}
+J.~{Tennyson} and S.~N. {Yurchenko}.
+\newblock {ExoMol: molecular line lists for exoplanet and other atmospheres}.
+\newblock 425\penalty0 (1):\penalty0 21--33, Sept. 2012.
+\newblock \doi{10.1111/j.1365-2966.2012.21440.x}.
+
+\bibitem[{van der Marel} et~al.(2021){van der Marel}, {Bosman}, {Krijt}, {Mulders}, and {Bergner}]{2021Vandermarel}
+N.~{van der Marel}, A.~D. {Bosman}, S.~{Krijt}, G.~D. {Mulders}, and J.~B. {Bergner}.
+\newblock {If you like C/O variations, you should have put a ring on it}.
+\newblock \emph{\aap}, 653:\penalty0 L9, Sept. 2021.
+\newblock \doi{10.1051/0004-6361/202141786}.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, and Polosukhin]{vaswani2017attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, {\L}.~Kaiser, and I.~Polosukhin.
+\newblock Attention is all you need.
+\newblock \emph{Advances in neural information processing systems}, 30, 2017.
+
+\bibitem[Vincent(2011)]{vincent2011connection}
+P.~Vincent.
+\newblock A connection between score matching and denoising autoencoders.
+\newblock \emph{Neural computation}, 23\penalty0 (7):\penalty0 1661--1674, 2011.
+
+\bibitem[{Wang} et~al.(2022){Wang}, {Mawet}, {Jovanovic}, {Ruffio}, {Delorme}, {Schofield}, {Echeverri}, {Morris}, {Finnerty}, {Xin}, {Horstman}, {Sappey}, {Xuan}, and {KPIC Team}]{2022BWang}
+J.~{Wang}, D.~{Mawet}, N.~{Jovanovic}, J.-B. {Ruffio}, J.-R. {Delorme}, T.~{Schofield}, D.~{Echeverri}, E.~{Morris}, L.~{Finnerty}, Y.~{Xin}, K.~{Horstman}, B.~{Sappey}, W.~{Xuan}, and {KPIC Team}.
+\newblock {Surveying Directly Imaged Planets at High Spectral Resolution with KPIC}.
+\newblock In \emph{Bulletin of the American Astronomical Society}, volume~54, page 102.347, June 2022.
+
+\bibitem[{Wang} et~al.(2023){Wang}, {Wang}, {Ruffio}, {Blake}, {Mawet}, {Baker}, {Bartos}, {Bond}, {Calvin}, {Cetre}, {Delorme}, {Doppmann}, {Echeverri}, {Finnerty}, {Fitzgerald}, {Jovanovic}, {Lopez}, {Martin}, {Morris}, {Pezzato}, {Ragland}, {Ruane}, {Sappey}, {Schofield}, {Skemer}, {Venenciano}, {Wallace}, {Wizinowich}, {Xuan}, {Bryan}, {Roy}, and {Wallack}]{2023Wangabund}
+J.~{Wang}, J.~J. {Wang}, J.-B. {Ruffio}, G.~A. {Blake}, D.~{Mawet}, A.~{Baker}, R.~{Bartos}, C.~Z. {Bond}, B.~{Calvin}, S.~{Cetre}, J.-R. {Delorme}, G.~{Doppmann}, D.~{Echeverri}, L.~{Finnerty}, M.~P. {Fitzgerald}, N.~{Jovanovic}, R.~{Lopez}, E.~C. {Martin}, E.~{Morris}, J.~{Pezzato}, S.~{Ragland}, G.~{Ruane}, B.~{Sappey}, T.~{Schofield}, A.~{Skemer}, T.~{Venenciano}, J.~K. {Wallace}, P.~{Wizinowich}, J.~W. {Xuan}, M.~L. {Bryan}, A.~{Roy}, and N.~L. {Wallack}.
+\newblock {Retrieving C and O Abundance of HR 8799 c by Combining High- and Low-resolution Data}.
+\newblock \emph{\aj}, 165\penalty0 (1):\penalty0 4, Jan. 2023.
+\newblock \doi{10.3847/1538-3881/ac9f19}.
+
+\bibitem[{Wang} et~al.(2021){Wang}, {Delorme}, {Ruffio}, {Morris}, {Jovanovic}, {Echeverri}, {Schofield}, {Pezzato}, {Skemer}, and {Mawet}]{2021Wang}
+J.~J. {Wang}, J.-R. {Delorme}, J.-B. {Ruffio}, E.~{Morris}, N.~{Jovanovic}, D.~{Echeverri}, T.~{Schofield}, J.~{Pezzato}, A.~{Skemer}, and D.~{Mawet}.
+\newblock {High resolution spectroscopy of directly imaged exoplanets with KPIC}.
+\newblock In S.~B. {Shaklan} and G.~J. {Ruane}, editors, \emph{Techniques and Instrumentation for Detection of Exoplanets X}, volume 11823 of \emph{Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series}, page 1182302, Sept. 2021.
+\newblock \doi{10.1117/12.2596484}.
+
+\bibitem[{Xie} et~al.(2020){Xie}, {Haffert}, {de Boer}, {Kenworthy}, {Brinchmann}, {Girard}, {Snellen}, and {Keller}]{2020Xie}
+C.~{Xie}, S.~Y. {Haffert}, J.~{de Boer}, M.~A. {Kenworthy}, J.~{Brinchmann}, J.~{Girard}, I.~A.~G. {Snellen}, and C.~U. {Keller}.
+\newblock {Searching for proto-planets with MUSE}.
+\newblock \emph{\aap}, 644:\penalty0 A149, Dec. 2020.
+\newblock \doi{10.1051/0004-6361/202038242}.
+
+\bibitem[{Xuan} et~al.(2022){Xuan}, {Wang}, {Ruffio}, {Knutson}, {Mawet}, {Molli{\`e}re}, {Kolecki}, {Vigan}, {Mukherjee}, {Wallack}, {Wang}, {Baker}, {Bartos}, {Blake}, {Bond}, {Bryan}, {Calvin}, {Cetre}, {Chun}, {Delorme}, {Doppmann}, {Echeverri}, {Finnerty}, {Fitzgerald}, {Horstman}, {Inglis}, {Jovanovic}, {L{\'o}pez}, {Martin}, {Morris}, {Pezzato}, {Ragland}, {Ren}, {Ruane}, {Sappey}, {Schofield}, {Skemer}, {Venenciano}, {Wallace}, and {Wizinowich}]{2022Xuan}
+J.~W. {Xuan}, J.~{Wang}, J.-B. {Ruffio}, H.~{Knutson}, D.~{Mawet}, P.~{Molli{\`e}re}, J.~{Kolecki}, A.~{Vigan}, S.~{Mukherjee}, N.~{Wallack}, J.~{Wang}, A.~{Baker}, R.~{Bartos}, G.~A. {Blake}, C.~Z. {Bond}, M.~{Bryan}, B.~{Calvin}, S.~{Cetre}, M.~{Chun}, J.-R. {Delorme}, G.~{Doppmann}, D.~{Echeverri}, L.~{Finnerty}, M.~P. {Fitzgerald}, K.~{Horstman}, J.~{Inglis}, N.~{Jovanovic}, R.~{L{\'o}pez}, E.~C. {Martin}, E.~{Morris}, J.~{Pezzato}, S.~{Ragland}, B.~{Ren}, G.~{Ruane}, B.~{Sappey}, T.~{Schofield}, A.~{Skemer}, T.~{Venenciano}, J.~K. {Wallace}, and P.~{Wizinowich}.
+\newblock {A Clear View of a Cloudy Brown Dwarf Companion from High-resolution Spectroscopy}.
+\newblock \emph{\apj}, 937\penalty0 (2):\penalty0 54, Oct. 2022.
+\newblock \doi{10.3847/1538-4357/ac8673}.
+
+\bibitem[{Yin} et~al.(2022){Yin}, {Eisenstein}, {Finkbeiner}, and {Protopapas}]{2022YinAEparameter}
+J.~E. {Yin}, D.~J. {Eisenstein}, D.~P. {Finkbeiner}, and P.~{Protopapas}.
+\newblock {A Conditional Autoencoder for Galaxy Photometric Parameter Estimation}.
+\newblock \emph{\pasp}, 134\penalty0 (1034):\penalty0 044502, Apr. 2022.
+\newblock \doi{10.1088/1538-3873/ac5847}.
+
+\bibitem[{Zhang} et~al.(1990){Zhang}, {Itoh}, {Tanida}, and {Ichioka}]{1990ZhangCNN}
+W.~{Zhang}, K.~{Itoh}, J.~{Tanida}, and Y.~{Ichioka}.
+\newblock {Parallel distributed processing model with local space-invariant interconnections and its optical architecture}.
+\newblock \emph{\ao}, 29\penalty0 (32):\penalty0 4790--4797, Nov. 1990.
+\newblock \doi{10.1364/AO.29.004790}.
+
+\bibitem[{Zhao} et~al.(2023){Zhao}, {Qiu}, {Luo}, {Guo}, {Yao}, {Wang}, and {Liu}]{2023Zhao}
+G.~{Zhao}, B.~{Qiu}, A.-L. {Luo}, X.~{Guo}, L.~{Yao}, K.~{Wang}, and Y.~{Liu}.
+\newblock {Deep Learning Applications Based on WISE Infrared Data: Classification of Stars, Galaxies and Quasars}.
+\newblock \emph{arXiv e-prints}, art. arXiv:2305.10217, May 2023.
+\newblock \doi{10.48550/arXiv.2305.10217}.
+
+\bibitem[{Zucker}(2003)]{2003Zucker}
+S.~{Zucker}.
+\newblock {Cross-correlation and maximum-likelihood analysis: a new approach to combining cross-correlation functions}.
+\newblock \emph{\mnras}, 342\penalty0 (4):\penalty0 1291--1298, July 2003.
+\newblock \doi{10.1046/j.1365-8711.2003.06633.x}.
+
+\end{thebibliography}

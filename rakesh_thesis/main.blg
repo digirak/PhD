@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: abbrvnat.bst
+Database file #1: bibliographie.bib
+Warning--I didn't find a database entry for "2018Modred"
+Warning--empty publisher in 2014IVESCI
+Warning--empty journal in 2012Tennyson
+You've used 80 entries,
+            2773 wiz_defined-function locations,
+            1192 strings with 32976 characters,
+and the built_in function-call counts, 66320 in all, are:
+= -- 5049
+> -- 7431
+< -- 40
++ -- 2479
+- -- 2399
+* -- 6852
+:= -- 11008
+add.period$ -- 313
+call.type$ -- 80
+change.case$ -- 1032
+chr.to.int$ -- 80
+cite$ -- 162
+duplicate$ -- 1795
+empty$ -- 2947
+format.name$ -- 2501
+if$ -- 13038
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 82
+newline$ -- 480
+num.names$ -- 330
+pop$ -- 1918
+preamble$ -- 1
+purify$ -- 955
+quote$ -- 0
+skip$ -- 1847
+stack$ -- 0
+substring$ -- 855
+swap$ -- 281
+text.length$ -- 21
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 865
+warning$ -- 2
+while$ -- 282
+width$ -- 0
+write$ -- 1193
+(There were 3 warnings)

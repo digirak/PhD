@@ -1,0 +1,36 @@
+\babel@toc {english}{}\relax 
+\contentsline {xpart}{Machine learning based detection of exoplanets using high contrast image spectra}{3}{part.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction to spectral data processing}{5}{chapter.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction to machine learning algorithms}{14}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A sample decision tree\relax }}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces RF importances of features used to predict the species of the Iris flower. The y-axis is the relative importance; so a relative importance of $1$ implies the most important and $0$ is the least important feature to predict the species.\relax }}{22}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A sample percepton consisting of an input vector $X_{i}$ and an output $y$ is depicted here.\relax }}{23}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Data generation based on a scientific hypothesis}{25}{chapter.3}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Performance of cross correlation based algorithm on the benchmarking metric}{36}{chapter.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Caption\relax }}{43}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Caption\relax }}{44}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption\relax }}{46}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption\relax }}{47}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption\relax }}{48}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Caption\relax }}{49}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Caption\relax }}{52}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Caption\relax }}{53}{figure.caption.32}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Development and performance of the ML algorithms}{57}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Caption\relax }}{60}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Caption\relax }}{61}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption\relax }}{64}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption\relax }}{66}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption\relax }}{67}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces CCF results\relax }}{71}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces RF results\relax }}{72}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces AE results\relax }}{73}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Caption\relax }}{75}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{76}{figure.caption.53}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Discussion and conclusion}{78}{chapter.6}%
+\contentsfinish 
