@@ -911,50 +911,69 @@ The goal is to summarize the functioning of a basic algorithm utilizing cross-co
 
 \section{Methods}
 The cross correlation based non ML algorithm takes as input the spectrum resulting from Eq~\ref{eq:insertion}.
-The output is available at different steps in the algorithm and can be used for diverse purposes at each step,
+%The output is available at different steps in the algorithm and can be used for diverse purposes at each step,
+The broad steps of the algorithm are as follows,
+
 \begin{enumerate}
-    \item at the end of the pre-processing step we will have spectra which are deconvolved from stellar features and are continuum subtracted. Normally, this is the spectrum that has to be cross correlated with the template, but this can also be used for other characterization purposes where the contiuum does not form the basis for characterization,
-    \item at the end of the cross correlation, we get the cross correlation coefficients at different velocity dispersions between the template and the input spectrum. 
-    This non-normalized but can used to get an idea of what similarity between spectra are.
-    \item Finally, the detection and characterization parameters are the cross correlation signal to noise and the log-likelihood of the templates which can also be used to produce log-likelihood based characterizations.
+    \item In the preprocessing stage, spectra are deconvolved from stellar features and undergo continuum subtraction. This resultant spectrum, free from stellar influences, is typically cross-correlated with a template. However, it finds application beyond this, especially in characterizations unrelated to continuum-based analysis.
+
+\item Post cross-correlation, cross-correlation coefficients emerge at various velocity dispersions between the template and input spectrum. Though non-normalized, these coefficients offer insights into spectrum similarities.
+
+\item Ultimately, detection and characterization hinge on parameters like cross-correlation signal-to-noise ratio and template log-likelihood. These parameters can be leveraged for log-likelihood-based characterizations.
 \end{enumerate}
 \subsection{Pre-processing and cross correlation}
-The pre-processing of the spectra is in line pre-processing that was described in \textcolor{blue}{[Refer to Part II, Methods, pre-processing]}.
-In the case where we have image data we have the advantage of knowing the pixels where the star is present, therefore we measure the exact stellar spectrum.
-This also has the effect of measuring noisy stellar spectrum and therefore when subtracting the stellar spectrum could mis-subtract the noise.
-There has been some evidence where stellar spectra from templates are used \textcolor{green}{[Include this citation]} to model the stellar spectrum to deconvolve it from the measured spectrum.
 
-In this case, since our data is purely synthetic, we use the known stellar spectrum to divide out stellar features.
-In order to do this we undertake the following steps,
+The spectral preprocessing aligns with the methodology detailed in \textcolor{blue}{[See Part II, Methods, pre-processing]}. For synthetic data, where the star's pixels are precisely known, we utilize the known stellar spectrum to eliminate stellar features. The procedure involves:
 \begin{enumerate}
-    \item We compute the sum of the stellar spectrum in Eq~\ref{eq:scaling of F}. This would be the total flux that the spectrum has been normalized to and then divide the final spectrum generated in Eq~\ref{eq:insertion} by this value.
-    \item This is followed by computing computing the reference spectrum from the scaled stellar spectrum by applying a Savitzky-Golay filter of order $1$ and window size $101$ on the normalized stellar spectrum.
-    This is the reference spectrum.
-    \item Finally, the reference stellar spectrum is divided out of every synthetic spectrum.
+    \item 
+    Computing the sum of the stellar spectrum in Eq~\ref{eq:scaling of F}, serving as the normalization reference for the spectrum in Eq~\ref{eq:insertion}.
+    \item
+    Deriving the reference spectrum by applying a Savitzky-Golay filter (order $1$, window size $101$) to the scaled stellar spectrum.
+    \item 
+    Dividing the reference stellar spectrum from each synthetic spectrum, resulting in a continuum-free spectrum (\textcolor{blue}{[Refer to Part II, Methods, pre-processing]}). The noise, exoplanet spectrum, and contrast remain unaffected.
 \end{enumerate}
-This leaves a continuum free spectrum, as in \textcolor{blue}{[Cite Part II, Methods, pre-processing]}.
-But the noise in the spectrum and the exoplanet spectrum and its contrast remain unaltered.
-
-The next step is cross correlate this spectrum with a template spectrum and produce a cross correlation vector for different velocity dispersions.
-As with \textcolor{blue}{[Refer to Part II Methods, cross correlation]} we use Eq~\textcolor{blue}{[Refer to Part II methods, cross correlation equation]} to cross correlate a chosen template spectrum with the target spectrum.
-In \textcolor{blue}{Part II cross correlation} we used a large velocity dispersion of $-2000$ to $2000$ km/s between the spectra and use the larger velocity dispersions as the noise computation baseline.
-We saw that this large range of dispersions are computationally expensive but provide signal to noise values for each pixel.
-The reason of doing so in the previous part was the lack of a standardized technique to measure noise in the data.
-In this Part the data we use is purely synthetic and hence the noise is well measured.
-We also don't introduce a relative velocity shift between the template and the target spectrum.
-Thus, if there is a match between the template and the target then it will be present at $v=0$ km/s.
-But in order to be still considered a cross correlation we still provide a small velocity dispersion to work with.
-Consequently, the velocity dispersion we choose is between $-50$ to $50$ km/s.
-The velocity resolution of this cross correlation is related to spectral resolution as,
+The subsequent step entails cross-correlating this spectrum with a template spectrum to generate a cross-correlation vector for different velocity dispersions. Employing Eq~\textcolor{blue}{[Refer to Part II, Methods, cross-correlation equation]}, we choose a velocity dispersion range of $-50$ to $50$ km/s. Unlike \textcolor{blue}{[Refer to Part II Methods, cross-correlation]}, the synthetic data allows for a well-measured noise level, eliminating the need for a broad dispersion range for noise computation. As there is no introduced relative velocity shift between the exoplanet and the observer, a small velocity dispersion within $-50$ to $50$ km/s is used for cross-correlation. The velocity resolution ($\delta v$) is related to spectral resolution ($R$) as,
 \begin{equation}
-    \delta v = \dfrac{V_{1}}{R}
+\delta v = \dfrac{1}{R}. 
 \end{equation}
-where $\delta v$ is the velocity resolution and $V_1$ is the velocity at $1$ km/s.
-Finally, we will recompose the cross correlation vector to now be used to produce both the detection and the characterization parameters.
+The resulting cross-correlation vector is then employed to derive both detection and characterization parameters.
+    
+%\subsection{Pre-processing and cross correlation}
+%The pre-processing of the spectra is in line with the pre-processing that was described in \textcolor{blue}{[Refer to Part II, Methods, pre-processing]}.
+%In the case where we have image data we have the advantage of knowing the pixels where the star is present, therefore we measure the exact stellar spectrum.
+%This also has the effect of measuring noisy stellar spectrum and therefore when subtracting the stellar spectrum could mis-subtract the noise.
+
+%In this case, since our data is purely synthetic, we use the known stellar spectrum to divide out stellar features.
+%In order to do this we undertake the following steps,
+%\begin{enumerate}
+ %%   \item We compute the sum of the stellar spectrum in Eq~\ref{eq:scaling of F}. This would be the total flux that the spectrum has been normalized to and then divide the final spectrum generated in Eq~\ref{eq:insertion} by this value.
+   % \item This is followed by computing computing the reference spectrum from the scaled stellar spectrum by applying a Savitzky-Golay filter of order $1$ and window size $101$ on the normalized stellar spectrum.
+    %This is the reference spectrum.
+    %\item Finally, the reference stellar spectrum is divided out of every synthetic spectrum.
+%\end{enumerate}
+%This leaves a continuum free spectrum, as in \textcolor{blue}{[Cite Part II, Methods, pre-processing]}.
+%But the noise in the spectrum and the exoplanet spectrum and its contrast remain unaltered.
+
+%The next step is cross correlate this spectrum with a template spectrum and produce a cross correlation vector for different velocity dispersions.
+%As with \textcolor{blue}{[Refer to Part II Methods, cross correlation]} we use Eq~\textcolor{blue}{[Refer to Part II methods, cross correlation equation]} to cross correlate a chosen template spectrum with the target spectrum.
+%In \textcolor{blue}{Part II cross correlation} we used a large velocity dispersion of $-2000$ to $2000$ km/s between the spectra and use the larger velocity dispersions as the noise computation baseline.
+%We saw that this large range of dispersions are computationally expensive but provide signal to noise values for each pixel.
+%The reason of doing so in the previous part was the lack of a standardized technique to measure noise in the data.
+%In this Part the data we use is purely synthetic and hence the noise is well measured.
+%We also don't introduce a relative velocity shift between the template and the target spectrum.
+%Thus, if there is a match between the template and the target then it will be present at $v=0$ km/s.
+%But in order to be still considered a cross correlation we still provide a small velocity dispersion to work with.
+%Consequently, the velocity dispersion we choose is between $-50$ to $50$ km/s.
+%The velocity resolution of this cross correlation is related to spectral resolution as,
+%\begin{equation}
+ %   \delta v = \dfrac{V_{1}}{R}
+%\end{equation}
+%where $\delta v$ is the velocity resolution and $V_1$ is the velocity at $1$ km/s.
+%Finally, we will recompose the cross correlation vector to now be used to produce both the detection and the characterization parameters.
 \subsection{Development of the detection parameters and its application}
 Claiming a detection in the field of exoplanet detection is probably one of the most contentious issues in the field.
 As we have seen in \textcolor{blue}{[Refer Part II methods, SNR]} it is possible to use signal to noise from the cross correlation to define a detection threshold.
-However, computing this signal to noise ratio is computationally intensive and does not take into account the auto-correlation. 
+However, computing this signal to noise ratio is computationally intensive. %and does not take into account the auto-correlation. 
 In this part we will re-compute the signal to noise of the cross correlation by taking into account the auto correlation and taking the noisiness of the spectrum into account.
 
 To begin with we define the `signal' of the signal to noise which is defined as,
@@ -962,42 +981,45 @@ To begin with we define the `signal' of the signal to noise which is defined as,
     S(0) = CC(0)
     \label{eq:numerator-snr}
 \end{equation}
-where $CC(0)$ is the cross correlation value at $v=0$ and therefore this is the signal at $v=0$. 
+where $CC(0)$ is the cross correlation value at $v=0$.% and therefore this is the signal at $v=0$. 
 This follows from the cross correlation value defined in \textcolor{blue}{[Refer Part II cross correlation]}
-It is possible to generalize this for different velocities but this generalization is out of the scope pf this thesis.
+%It is possible to generalize this for different velocities but this generalization is out of the scope pf this thesis.
 The `noise'  comprises of two quantities, the noise measured of the spectrum $\sigma$ and the auto-correlation value.
 The auto-correlation value is defined as in the cross correlation function as follows,
 \begin{equation}
     \textrm{AC}(v) = \sum\limits_{\lambda}M_{\rm{\lambda}}\times (M_{v,\lambda}-M_{\textrm{SG},v,\lambda})  
     \label{eq: AC equation}
 \end{equation}
-where $\textrm{AC}(v)$ is the auto correlation value at $v$, as before $M_{\lambda}$ is the model flux in wavelength bin $\lambda$ and when the $v$ suffix is added it is the wavelength shifted version by a velocity dispersion $v$.
-The $M_{\textrm{SG},v,\lambda}$ is the Savitzky-Golay filtered version of the template.
-Note that this also acts as mean subtraction for the second term while the first term is used as is.\textcolor{red}{[The goal is to keep the first term pristine and untouched whereas the second term is the "template". Not sure if I need to state that here.]}
-Thus now we have the noise terms namely the noise ($\sigma$) and the auto-correlation $\textrm{AC}(v)$.
-We use these three terms to compute a signal to noise value for each cross correlation.
+%where $\textrm{AC}(v)$ is the auto correlation value at $v$, as before $M_{\lambda}$ is the model flux in wavelength bin $\lambda$ and when the $v$ suffix is added it is the wavelength shifted version by a velocity dispersion $v$.
+$\textrm{AC}(v)$ represents the auto-correlation value at velocity dispersion $v$. As previously defined, $M_{\lambda}$ denotes the model flux in wavelength bin $\lambda$, and the addition of the $v$ suffix indicates the wavelength-shifted version resulting from a velocity dispersion of $v$.
+The $M_{\textrm{SG},v,\lambda}$ is the Savitzky-Golay filtered version of the template which also acts as mean subtraction for the cross correlation.
+%\textcolor{red}{[The goal is to keep the first term pristine and untouched whereas the second term is the "template". Not sure if I need to state that here.]}
+%Thus now we have the noise terms namely the noise ($\sigma$) and the auto-correlation $\textrm{AC}(v)$.
+%We use these three terms to compute a signal to noise value for each cross correlation.
 We define the cross correlation $\rm{SNR}$ only for $v=0$ and is denoted as $\rm{SNR_{ccf}}$ .
 We then compose the noise portion of this signal to noise thus,
 \begin{equation}
     N(0) = \sigma \sqrt{\textrm{AC}(0)}
 \end{equation}
-A key point to be noted is that the effect of the auto-correlation as a noise term is considered only a square root, while the full value of $\sigma$ is considered.
-Therefore, when the auto-correlation increases its effect is not increased in an unbound manner, which if allowed could have allowed this effect to overwhelm the effect of the noise.
-As with the signal we compute the noise at $v=0$.
+%A key point to be noted is that the effect of the auto-correlation as a noise term is considered only a square root, while the full value of $\sigma$ is considered.
+%Therefore, when the auto-correlation increases its effect is not increased in an unbound manner, which if allowed could have allowed this effect to overwhelm the effect of the noise.
+%As with the signal we compute the noise at $v=0$.
 The next step is to use both these parts to compose the signal to noise metric.
 
-Claiming a detection is fraught with difficulties particularly when doing so with $\rm{SNR_{ccf}}$.
-While other $\rm{SNR}$ techniques such as \cite{2014MawetSNR} has been well whetted and their limitations are well understood \citep[e.g STIM][]{2019Pairet}, there is very little literature on the robustness of calculating $\rm{SNR_{ccf}}$.
-Therefore, when thresholding such measures, there is very little understanding of what the false positive rate is at different thresholds.
-But a threshold we must set and a threshold we will have.
-A contribution of this study is to also estimate the false positive rate at a threshold of $\rm{SNR_{ccf}}\ge 6$.
-Note that this signal to noise ratio is still just a metric of the similarity between the target spectrum and its template and not a significance of the detection.
+%Claiming a detection is fraught with difficulties particularly when doing so with $\rm{SNR_{ccf}}$.
+%While other $\rm{SNR}$ techniques such as \cite{2014MawetSNR} has been well whetted and their limitations are well understood \citep[e.g STIM][]{2019Pairet}, there is very little literature on the robustness of calculating $\rm{SNR_{ccf}}$.
+%Therefore, when thresholding such measures, there is very little understanding of what the false positive rate is at different thresholds.
+%But a threshold we must set and a threshold we will have.
+%A contribution of this study is to also estimate the false positive rate at a threshold of $\rm{SNR_{ccf}}\ge 6$.
+%Note that this signal to noise ratio is still just a metric of the similarity between the target spectrum and its template and not a significance of the detection.
 %The CCF algorithm performs the cross correlations and returns a $\rm{SNR_{ccf}}$ using the formula from \cite{ruffio2019radial},
+Detecting with $\rm{SNR_{ccf}}$ poses challenges. Unlike established $\rm{SNR}$ techniques such as \cite{2014MawetSNR}, which have been thoroughly vetted and their limitations well-documented \citep[e.g., STIM][]{2019Pairet}, the robustness of calculating $\rm{SNR_{ccf}}$ lacks comprehensive literature. Consequently, understanding the false positive rate at different thresholds for such measures remains limited. Despite this, setting a threshold is imperative. This study contributes by estimating the false positive rate at $\rm{SNR_{ccf}}\ge 6$. It's crucial to note that this signal-to-noise ratio merely gauges similarity between the target spectrum and its template and does not indicate the significance of the detection.
 Finally, we use the expression in \cite{ruffio2019radial} to compute the cross correlation signal to noise as follows,
 \begin{equation}
     \rm{SNR_{ccf}}=\frac{CC(0)}{\sigma \sqrt{\textrm{AC}(0)}}
     \label{eq:ccf-snr}
 \end{equation}
+
 In order to make this a detection parameter we take the following steps,
 \begin{enumerate}
     \item we generate several synthetic spectra with a fixed $R$ and $\rm{SNR}$,
@@ -1010,15 +1032,29 @@ In order to make this a detection parameter we take the following steps,
 \subsection{Development of the characterization parameter and its application}
 The cross correlation coefficient is a measure of similarity between a template spectrum and the target spectrum.
 The extent of this similarity is quantified by $\rm{SNR_{ccf}}$.
-However, while this is a measure of the similarity, there is not much evidence to show that it is a good measure of the \textit{difference} between spectra.
-The characterization parameter needs to encapsulate the following pieces of information,
-\begin{enumerate}
-    \item the extent of similarity of one template (within the characterization parameter space as discussed in the previous chapter) with the target spectrum,
-    \item the relative non-similarity of other templates with the target spectrum and this will allow us to quantify the difference between individual templates and identify the spectrum that best fits with the exoplanetary template in the synthetic spectrum.
-\end{enumerate}
-Thus, characterization is an exercise in optimizing the parameter space such that the optimal value of the characterization parameter can be defined.
-We use log-likelihood of the cross correlation to evaluate the optimal combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$ and measure the uncertainty in estimating this value.
-In this subsection we describe our derivation and use of the characterization parameter by answering three fundamental questions, a) What is the advantage of log-likelihood b) how do we define the relationship between cross correlation and log-likelihood and finally c) how do we use the properties of this log-likelihood to derive the error bars of the characterization of an exoplanet.
+While this is a measure of similarity, characterization aims to find the \textbf{most} similar template spectrum to the target spectrum.
+%However, while this is a measure of the similarity, there is not much evidence to show that it is a good measure of the \textit{difference} between spectra.
+%The characterization parameter needs to encapsulate the following pieces of information,
+%\begin{enumerate}
+ %   \item the extent of similarity of one template (within the characterization parameter space as discussed in the previous chapter) with the target spectrum,
+ %   \item the relative non-similarity of other templates with the target spectrum and this will allow us to quantify the difference between individual templates and identify the spectrum that best fits with the exoplanetary template in the synthetic spectrum.
+%\end{enumerate}
+%Thus, characterization is an exercise in optimizing the parameter space such that the optimal value of the characterization parameter can be defined.
+%We use log-likelihood of the cross correlation to evaluate the optimal combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$ and measure the uncertainty in estimating this value.
+%In this subsection we describe our derivation and use of the characterization parameter by answering three fundamental questions, a) What is the advantage of log-likelihood b) how do we define the relationship between cross correlation and log-likelihood and finally c) how do we use the properties of this log-likelihood to derive the error bars of the characterization of an exoplanet.
+The characterization parameter plays a crucial role in capturing specific information, including:
+\begin{itemize}
+    \item 
+    Evaluating the degree of similarity between a chosen template (within the parameter space discussed in the previous chapter) and the target spectrum.
+    \item
+    Quantifying the relative dissimilarity of other templates compared to the target spectrum, facilitating the identification of the spectrum that best aligns with the exoplanetary template in the synthetic spectrum.
+\end{itemize}
+
+Therefore, the process of characterization involves optimizing the parameter space to define the most suitable value for the characterization parameter. Our approach involves utilizing the log-likelihood of the cross-correlation to determine the optimal combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$, accompanied by an assessment of the uncertainty associated with estimating this value.
+In this subsection, we clarify our derivation and application of the characterization parameter by addressing three key questions:
+a) What advantages does log-likelihood offer?
+b) How do we establish the relationship between cross-correlation and log-likelihood?
+c) How can we use the properties of this log-likelihood to derive error bars for the characterization of an exoplanet?
 
 \paragraph{Why do we need a log-likelihood at all?\\}
 The idea of using log-likelihood as a method to estimate parameters inferred from cross correlations was first introduced by \cite{2003Zucker} who derived one of the earliest cross correlation to log-likelihood expressed as,
@@ -1026,15 +1062,14 @@ The idea of using log-likelihood as a method to estimate parameters inferred fro
     LL \propto \log(1-\rm{CC}^2)
     \label{eq:LL-cc eqn}
 \end{equation}
-The goal of such an log-likelihood was to have a $\chi^2$ like behaviour, the standard deviation of which can be used to compute the uncertainty.
-As justified in \cite{2019Brogi}, the use of the negative sign and the dependence on the square of the cross correlation allows for two crucial factors to be considered,
+%The goal of such an log-likelihood was to have a $\chi^2$ like behaviour, the standard deviation of which can be used to compute the uncertainty.
+The use of log-likelihood and cross correlations is justified in \cite{2019Brogi}, the use of the negative sign and the dependence on the square of the cross correlation allows for two crucial factors to be considered,
 \begin{enumerate}
 \item using the square of $\rm{CC}$ will allow us to make a deep likelihood trough only for truly high cross correlation values and any small variations will get ruled out.
 This will allow us to fit an inverted Gaussian and derive the uncertainty.
 \item The negative sign enables to only have true cross correlations of absorption features to absorption features to produce a strong $LL$,
 This in turn will let us ensure that the best matching template is the one that truly matches the features of the template to its noisy equivalent.
     \end{enumerate}
-Hence, the use of $LL$ and cross correlations was deemed appropriate.
 
 \paragraph{How do we adapt this concept to our specific case?\\}
 
@@ -1063,7 +1098,7 @@ Thus, we have the final $LL$ computation is giveny by,
 
 \paragraph{How do we use this log-likelihood to compute the uncertainties?\\}
 
-As stated earlier this log-likelihood function takes on a $\chi^2$ shape around the template library parameter space which can be used to infer the uncertainties. 
+%As stated earlier this log-likelihood function takes on a $\chi^2$ shape around the template library parameter space which can be used to infer the uncertainties. 
 The characterization matrix consists of rows of $T_{\rm{eff}}$ and columns of $\rm{\log(g)}$ and we fill each cell with the $LL$ computed using the spectrum with the corresponding combination of rows and columns.
 This results in 2D matrix, however the error bars have to be computed separately in $\rm{T_{eff}}$ and $\rm{\log(g)}$.
 In order to now compute the error bars separately, we first find the cell with the lowest value of $LL$.
