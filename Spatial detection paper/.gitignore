@@ -1,0 +1,10 @@
+*.aux
+*.bbl
+nathpaper.blg
+nathpaper.fdb_latexmk
+nathpaper.fls
+nathpaper.log
+nathpaper.out
+nathpaper.pdf
+nathpaper.synctex.gz
+../live*
