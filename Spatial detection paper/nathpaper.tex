@@ -755,11 +755,6 @@ The first six rows have an amplitude range closer to the class $\rm{C_N}$ in Fig
 The spatial signature of the cross correlation plays another, in our view, crucial role in the higher TPR produced by C3PO for higher contrasts.
 When we compare the inputs to both the algorithms between the different contrasts, the spatial distribution of the cross correlation coefficients is better conserved for the input to C3PO than for C-LANDO, although the mean cross correlation strength is reduced for a higher contrast.
 This seems to be another key differentiating factor between the two algorithms where it appears that computing the mean to produce the last row focuses the features better to enable an ML algorithm to be more sensitive to a high-contrast exoplanet.
-%Thus we have two reasons why C3PO produces higher TPR compared to C-LANDO,
-%\begin{enumerate}
-%    \item the higher mean cross correlation coefficient for a fixed contrasts in the key spatial cross correlation diversity and
-%    \item better spatially conserved distribution of the spatial cross correlation signature of the inserted simulated warm Jupiter.
-%\end{enumerate}
 
 \subsection{Importance of the velocity dimension}
 
@@ -767,11 +762,7 @@ This seems to be another key differentiating factor between the two algorithms w
     \centering
     \includegraphics[width=\textwidth]{Fig6_final_September.png}
     \caption{Comparison of mROC curves produced with and without using the velocity dimension, using otherwise the same dataset, at two contrast levels ($4\times 10^{-4}$ and $2\times 10^{-4}$) and for a separation of 3 to 4 FWHM. In case where the velocity dimension is not used, illustrated with the purple and yellow dashed lines for C3PO and C-LANDO respectively, the velocity dimension is replaced by the central velocity bin. This makes the comparison to STCM a little more fair as STCM does not have the capability to use the velocity dimension.
-    %We extend the x-axis to $3$ mean FP per map to show the difference between mROC curves constructed with velocity (in solid lines for the ML algorithms) and without in dashed lines.
     Note that the solid curves remain the same as in Fig.~\ref{fig:fig_4}.
-    %When not using the velocity dimension, while the ML algorithms still have higher sensitivity than STCM, the number of TPs for the same number of FPs remains lower than without using the velocity dimension. 
-    %For example, for a FP$=0$ the TPR$=0.85$ for C3PO on the left plot when not using velocity whereas TPR$\approx0.95$ when using the velocity for a FP$=0$ for the same contrast and radial separation.
-    % Note the highest threshold still remains the same both with and without velocity.
     }
     \label{fig:novel_roc}
 \end{figure*}
@@ -865,55 +856,11 @@ Another limitation of this work is the limited data that was used for this study
 Despite this significant limitation, the ML algorithms still continued to be more sensitive to high-contrast exoplanets even at smaller radial separations without any evidence of overfitting.
 If our algorithms overfit the training data we typically expect to see a large number of FPs in the test data, but very few in the training data. 
 The fact that this has performed well on this dataset, which is very noisy and lacks a coronagraph to enable high-contrast imaging, gives us confidence in a future iteration to try this algorithm on a less noisy dataset.
-%The availability of a larger, less noisy dataset will allow us to infer the true detection limits with use of ML algorithms as opposed to non-ML algorithms.
 Finally, ML algorithms have advanced rapidly in the last few years, with the advent of Vision Transformers \citep{2020ViT} and with recipes to train them on smaller datasets \citep[e.g.,][]{2022Gani}.
 A limitation of this study has been the use of relatively standard network architectures, such as CNNs and convLSTMs, whereas vision transformers have recently shown to be more effective on the same data dimensions.
 
-%All of these limitations pertain to the fact that before this paper, %there was no evidence of whether using ML algorithms with cross correlation maps provides any sort of detection sensitivity advantage.
-%There was also no methodology on how to leverage these cross correlation maps to improve detectability of exoplanets.
 This paper, thus, sets the methodology to leverage a computer vision algorithm effectively with spectral and temporal dimensions.
-%We also introduce mRoC curves to evaluate the effectiveness of these algorithms in the context of exoplanet detections which could be used to explore benchmarking of new datasets.
-%However, we confine ourselves to fairly well tested units such as a CNN and LSTM, which might be somewhat counterintuitive in applying the best in class algorithms to challenging problems. 
 
-
-%\paragraph{\textbf{Limitations of our study and conclusion:}\\}
-
-%The goal of this paper was to study the use of ML algorithms in improving detection sensitivity to  warm Jupiters using high-contrast spectroscopy datasets.
-%Warm Jupiters as a class of exoplanets are not well understood because of the lack of large number of discoveries and their characterization, however, we have set them to have a $1200\le \rm{T_{eff}}<2000$ K. 
-%jThis means that these temperature limits are somewhat arbitrary and their physical significance is not well established.
-%We have also inserted a single one of these templates in our data. 
-%This was originally done because of the presence of large number of molecules in these templates in both the H and the K bands corresponding to the SINFONI spectral bands. 
-%This naturally, gave us a chance to have more correlated data to train the ML algorithms.
-%This, however, also means our algorithms have been trained (and consequently tested) only on one type of exoplanet.
-%Note that while we only insert one type of these exoplanet templates, because of the use of cross correlation to transform them from photons to the coefficient space, our results are less impacted by the choice of templates.
-%We also account for some template variance by not cross correlating with the exact same template and hence our results are not expressly dependent on this.
-%However, an improvement could be to repeat the same experiment with several types of exoplanets to have the natural variance and study the use of ML algorithms on all of these exoplanets.
-%This would be interesting to understand if the results are consistent with each of these template combinations or are the results in this paper a happenstance.
-
-%The data used in this paper is just one of the many available datasets with high-contrast spectroscopy. 
-%There was no a priori reason to choose this dataset other than availability and ease of access (in addition to having no known exoplanets in the data).
-%The SINFONI instrument does not have a coronagraph and therefore is already limited in detection of high-contrast exoplanets.
-%This could also be one of the reasons why our detection algorithms have low TPRs for higher contrasts.
-%Another important limitation of the data used to test our algorithms is that it comes from \citep[SINFONI, ][]{2004SINFONI} which is no longer used, this means that the results obtained with this data may not be trivially translatable to other datasets.
-%On the other hand, the encouraging performance of ML algorithms in a noisy dataset should make us more confident in using the same methodology with other datasets on higher SNR, new age instruments.
-
-%We do not exploit an important inherent benefit of spectral data, i.e availability of multiple templates and the use of molecular line lists. {\color{blue} Indeed, the detection of a planet could be hinged by the limited knowledge about its atmospheric characteristics, affecting the template selection}. 
-%This is addressed in a companion paper by \citep{2023Garvin} they show that it is possible to account for template variability by incorporating several spectral templates as convolution filter depth for CNNs. 
-%This allows to compensate for uncertainties regarding the planet's atmospheric characteristics when performing detection in spectral data. In addition, they 
-%show that the use of cross correlation on individual molecular line lists with CNNs can increase the flexibility to detect planets
-%with very little preliminary assumptions about their composition.
-
-%A limitation of this work, from the perspective of ML algorithm development is the availability of only one dataset to test the algorithms.
-%In such cases ML algorithms are tested on parts of the dataset which are not used to train or validate the algorithms.
-%This is also how this has been done for this paper, however the results reported and discussed in this work should ideally be repeated in more than one dataset to gain confidence on the use of ML algorithms in this manner.
-%A logical next step would be to apply these algorithms on a larger suite of datasets such as a survey.
-%We will then be able to simulate large enough number of insertions to be able to produce contrast curves (which require FP rates of $\approx 10^{-4}$).
-
-%Finally, the field of ML algorithms is going through a revolution in computer vision and the availability of new age units such as \citep[Vision Transformers, ][]{2020ViT} and recipes to train them on smaller datasets \citep[e.g][]{2022Gani}.
-%However, we confine ourselves to fairly well tested units such as a CNN and LSTM, which might be somewhat counterintuitive in applying the best in class algorithms to challenging problems.
-%However, while these algorithms are interesting and have indeed produced spectacular results, applying them directly to our data would not produce results which will inform us as to whether these algorithms have not been well used or is it that these algorithms are not suited to our problem.
-%Finally, this paper quantitatively shows that a CNN based algorithm (C3PO) outperforms an LSTM based algorithm (C-LANDO) when detecting high-contrast companions.
-%We also provide a qualitative argument of why C3PO outperforms C-LANDO and for the same reason why STCM and C3PO have similar TPRs.
 
 
 \bibliographystyle{aa}
@@ -924,46 +871,10 @@ R.N.R., O.A., and V.C. are funded by the Fund for Scientific Research (F.R.S.-FN
 R.N.R was funded for this project through the FRIA grant N\textsuperscript{o}	40004011. This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 819155). R.N.R also wishes to thank the members of PSILab headed by O.A and Dr Sascha Quanz for the kind inputs and discussions. E.O.G gratefully acknowledges the financial support from the Swiss National Science Foundation (SNSF) under project grant number 200020\_200399.
 \end{acknowledgements}
 %-------------------------------------------------------------------
-%\begin{appendix} %First appendix
-%\label{app:snrvsstcm}
-%\section{Use of SNR with cross correlation maps and its performance vis-a-vis STCM}
-%\citep[SNR][]{2014MawetSNR} has been used with direct imaging data to compute the SNR of a detected companion.
-%SNR maps are typically used with direct imaging ADI-reduced data so that the ratio of the signal from on test pixel is computed with respect to the noise in the direct imaging photon map \citep[e.g][]{2022Daglayan}.
-%When claiming detections, detection statistics and a threshold for a detection have to be determined on some statistical basis, and is used to define a $3\sigma$ or a $5\sigma$ detection \citep[e.g][]{Jensen-Clem_2018}.
-%It has already been suggested that computing such statistics using SNR is very difficult when using cross correlation maps because of the naturally `optimistic' nature of the estimating SNR in such synthetic data \cite{2017Ruffio}.
-
-%We have noticed the same sort of optimistic behaviour of SNR when computing TPs and FPs from detection maps using SNR as the metric.
-%We demonstrate this by producing cross correlation maps as described on \S~\ref{sec: CC algorithm} and then computing \citep[SNR][]{2014Mawet} of these maps.
-%We then subject these SNR maps to the ROC curve treatment as described in \S\ref{sec:mapbased}.
-%But we notice that at an SNR$\approx 3.8$ we achieve a FP$=0$ as shown in Fig~\ref{fig:appendix 1}.
-
-%This would imply that for a simple $3\sigma$ cut off we achieve a $TP=0$ well before the $5\sigma$ cutoff as is considered the standard set by \cite{2008Marois}.
-
-%This may be true that SNR is indeed more sensitive and produces fewer FPs, but this implies that somehow computing median before performing cross correlation produces better noise characteristics than after, when there is no obvious reason for this.
-
-%On the other hand, it is possible that SNR is indeed overestimating the signal and underestimating the noise in the naive application of SNR as suggested in \cite{2017Ruffio}.
-%jThis seems to be the case because the cross correlation signal is combination of the cross correlation with the extracted spectrum and the autocorrelation signal produced by the template. 
-
-%This automatically boosts the signal leading to an underestimation of the noise and hence the SNR map appears relatively `less' noisy.
-%In the pixels where the inserted fake warm Jupiter is present, the autocorrelation boosts the signal twice as strongly because of the correlation of spectral features with itself. 
-%A means to mitigate this would be to divide out the autocorrelation, but this has to be done before the SNR is calculated.
-
-%In fact the method of computing this SNR is not optimized for spatial detections as described in this paper.
-
-%\begin{figure*}
-%    \centering
-%    \includegraphics[scale =0.5]{appendix_1.png}
-%    \caption{This figure illustrates the binary maps computed for different SNR values (given in the title of each binary map) with different TPs and FPs computed for each threshold value produces. 
-  %  As with Fig~\ref{fig:sample_detmaps}}, disconnected blobs are considered false positives (in red) and the FWHM sized pixels in green is counted as one TP.
-  %  \label{fig:appendix 1}
-%\end{figure*}
-
-
-%We describe that cross correlation and SNR can be used. 
+%\begin{appendix} %First appendix   
 %When performing similar analysis we get some results.
 %\end{appendix}
 
 
 \end{document}
 
-%%%% End of aa.dem
