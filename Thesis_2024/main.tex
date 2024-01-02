@@ -1,0 +1,194 @@
+\documentclass[12pt,chapterprefix=True]{book}
+\usepackage{natbib}
+%
+\usepackage{aasmacros}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}} %Citation-related commands
+\usepackage{comment}
+
+%\usepackage[
+	%backend=bibtex,
+	%style=authoryear,
+%]{biblatex}
+%\addbibresource{bibliographie}
+\usepackage{setspace}
+\let\cleardoublepage=\clearpage
+%\doublespacing
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,left=3cm,right=2.5cm,top=3cm,bottom=3cm, twoside]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{stmaryrd}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{libertine}
+\usepackage[pdftex]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{apalike}
+\usepackage{minitoc}
+\addto{\captionsenglish}{% Making babel aware of special titles
+  \renewcommand{\mtctitle}{Chapters}
+}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{epigraph}
+%\usetikzlibrary{shadows.blur}
+\usepackage{lscape}
+\usepackage{titletoc}
+%\usepackage{lipsum}
+%\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{arydshln}
+\usepackage[nonumberlist]{glossaries}
+\usepackage{calc}
+\usepackage[]{titlesec} 
+\definecolor{linkColor}{HTML}{32a852}
+\usepackage[colorlinks=true,citecolor=linkColor,linkcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{crefthe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{yourcolor}{HTML}{408000}%{008bb2}
+
+\titleformat{\chapter}[display]
+{\normalfont\color{yourcolor}}
+{\filleft\huge\color{black}\textsc\chaptertitlename\hspace*{2mm}%
+	\begin{tikzpicture}[baseline={([yshift=-.6ex]current bounding box.center)}]
+	\node[fill=yourcolor,circle,text=white] {\thechapter};
+	\end{tikzpicture}
+}
+{1ex}
+{\titlerule[1.5pt]\vspace*{1.5ex}\Huge\color{black}\textsc}
+[]
+
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont\color{black}}
+{}
+{1ex}
+{\vspace*{-5cm}\Huge\textsc}
+[]
+
+%command to print the acutal minitoc
+\newcommand{\printmyminitoc}[1]{%
+	\noindent\hspace{1cm}%
+	\colorlet{chpnumbercolor}{black}%
+	\begin{tikzpicture}
+	\node(s){
+		\begin{minipage}{.9\linewidth}%minipage trick
+        \setcounter{tocdepth}{1}
+		\printcontents[chapters]{}{0}{}
+		\end{minipage}
+	};
+	{
+		\color{yourcolor}
+		\draw(s.north west)--(s.north east) (s.south west)--(s.south east);
+	}
+	\end{tikzpicture}
+	\vspace*{3ex}
+	
+	#1
+	\vfill
+	\pagebreak
+}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.7mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			\begin{tabular}{c@{\hskip 3cm}c}
+				\includegraphics[height=2cm]{images/uliege logo.png} &
+				\includegraphics[height=2cm]{images/FRS-FNRS_ros_vert_transp.png}\\
+			\end{tabular}
+		\end{center}
+  \vspace{1cm}
+  \begin{center}
+	 		\HRule \\[0.2cm]
+	 		 { \Large \bfseries Applying Machine learning techniques to high contrast images and medium resolution spectra of warm Jupiters.}
+	  		\Hrule \\
+		\end{center}
+%		\vfill
+\vspace{1cm}
+		\begin{center}
+			Presented by \\[0.5cm] 
+   \textsc{\Large Rakesh Nath Ranga}\\[0.1cm]
+			PhD thesis in \textsc{\large Space Sciences}\\%[1cm]
+		\end{center}
+     \vspace{1cm}
+		\begin{center}
+			Université de Li\`ege\\
+			STAR Institute, University of Liège, 19 Allée du Six Août, 4000 Liège, Belgium\\
+  			%\vfill
+			\vspace{0.5cm}
+			October 2023
+		\end{center}
+		\vspace{1cm}
+		\begin{center}
+			\begin{tabular}{lll}
+				\textsc{Olivier Absil}  &  Promoteur\\
+				\textsc{Marc Vandenbroeck}  &  Co-promoteur \\
+			\end{tabular}\\%[1cm]
+		\end{center}
+	\end{titlepage}
+	\newpage
+
+\pagestyle{fancy}
+
+\fancyhead{}
+
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{}}
+
+
+\frontmatter
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of contents}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+
+
+\mainmatter
+
+\setlength{\parskip}{.7em}
+
+\titlespacing*{\section}{0pt}{.9em}{.8em}
+\renewcommand{\baselinestretch}{1.1}
+
+\fancyhead[RO]{\leftmark}
+\fancyhead[LE]{\textsc{\partname ~\thepart - \chaptername ~\thechapter}}
+
+%\input{Chapters/acknowledgements}
+%\input{Chapters/absract}
+%\input{Chapters/chapter01.tex}
+
+%\part{Contribution}
+\include{Chapters/part01.tex}
+\include{Chapters/part02.tex}
+\include{Chapters/part03.tex}
+\include{Chapters/part04.tex}
+
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliographie}
+\end{document}
