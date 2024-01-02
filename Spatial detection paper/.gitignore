@@ -7,4 +7,6 @@ nathpaper.log
 nathpaper.out
 nathpaper.pdf
 nathpaper.synctex.gz
-../live*
+live.main.tex
+live.main.bbg
+
