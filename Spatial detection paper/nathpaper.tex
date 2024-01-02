@@ -118,24 +118,24 @@
 
 %general intro to direct imaging and the use of spectra in direct imaging and exoplanet detection
 Direct imaging combined with integral field spectrographs (IFS) at low resolution such as VLT/SPHERE \citep{2019Beuzit}, Gemini/GPI \citep{2014MacintoshGPI} or SUBARU/SCExAO \citep{2015SCeXAO}, or at medium resolution such as VLT/SINFONI \citep{2004SINFONI}, VLT/ERIS \citep{2023Davies} or KECK/OSIRIS \citep{2000OSIRIS} allows exoplanet hunters to access both images, as well as the reflected or emitted spectra, of sub-stellar companions in the field of view of the telescope.
-Since the availability of such IFS instruments, studies using direct imaging data have yielded detection of young gas giants \citep[e.g., PDS70b, ][]{2018KepplerPDS70} and low-mass stellar companions \citep[e.g., HD142527b, ][]{2019ClaudiHD142527b} in addition to the now iconic system of 51~Eridani~b \citep{2015MacintoshEridani} that primarily making use of the spatial dimension.
-On the other hand the spectral dimension has allowed us to characterize detected exoplanets such as HR8799 \citep[e.g][]{2008Marois, 2013Konopacky}, HD206893b \citep[][]{2017DelormeHD206893b}, $\beta$ Pic \citep[][]{2017ChilcoteBetapic}, PDS70b \citep[e.g][]{2018MullerPDS70,2019ChristiaensPDS70}, HD142527b \citep[][]{2018A&ChristiaensHD142527}, and attempt to characterize PDS70c \citep[][]{2019MesaPDS70}, CrA-9b \citep[][]{2021ChristiaensCrA-9b} and HIP 99770b \citep[][]{2023Currie}.
+Since the availability of such IFS instruments, studies using direct imaging data have yielded detection of young gas giants \citep[e.g., PDS70b, ][]{2018KepplerPDS70} and low-mass stellar companions \citep[e.g., HD142527b, ][]{2019ClaudiHD142527b} in addition to the now iconic system of 51~Eridani~b \citep{2015MacintoshEridani} that primarily makes use of the spatial dimension to make these discoveries.
+In addition, the spectral dimension has allowed us to characterize detected exoplanets such as HR8799 \citep[e.g][]{2008Marois, 2013Konopacky}, HD206893b \citep[][]{2017DelormeHD206893b}, $\beta$ Pic \citep[][]{2017ChilcoteBetapic}, PDS70b \citep[e.g][]{2018MullerPDS70,2019ChristiaensPDS70}, HD142527b \citep[][]{2018A&ChristiaensHD142527}, and attempt to characterize PDS70c \citep[][]{2019MesaPDS70}, CrA-9b \citep[][]{2021ChristiaensCrA-9b} and HIP 99770b \citep[][]{2023Currie}.
 
 %Thus we have the spatial dimension that has been mostly used to detect exoplanets, whereas the spectral dimension has been used for characterization.
 However, these discoveries have been far and few because of the specific challenges posed by direct imaging data.
 One of the more difficult challenges is to be able to separate the exoplanetary signal from the ever-present stellar glare.
 The flux ratio between the exoplanet and its host star, termed contrast, can be as high as $10^{-10}$ for a Jupiter like planet in a Solar system analog in visible light \citep[ for e.g][]{2023Galicher}.
 Therefore, we work in the regime of high-contrast imaging (HCI), where the planetary flux to stellar flux ratio defines the sensitivity of our detections.
-In order to work in the high-contrast regime, a number of observing strategies have been employed, such as angular differential imaging \citep[ADI, ][]{2006MaroisADI}, spectral differential imaging \citep[SDI, ][]{2002SparksSDI}, and a hybrid mode referred to as spectral angular differential imaging (SADI), which combines both types of strategies.
-While each of these algorithms have their own unique features, in general, they produce a model for the stellar halo and subtract it from the data, leaving the residual data largely free of stellar contamination.
+In order to work in the high-contrast regime, a number of observing strategies have been employed, such as angular differential imaging \citep[ADI, ][]{2006MaroisADI}, spectral differential imaging \citep[SDI, ][]{2002SparksSDI}, and a hybrid mode combining both ADI and SDI referred to as spectral angular differential imaging (SADI).
+While each of these strategies have their own unique features, in general, they produce a model for the stellar halo and that can be subtracted from the data, leaving the residual data largely free of stellar contamination.
 However, this leads to the problem of unsubtracted speckle signal in the data which could still be confused as exoplanet companions.
 Therefore, astronomers are limited to shallower contrasts where it is possible to confidently differentiate between the exoplanet companions and speckles.
-A way out of this confusion is combining SADI data with spectral deconvolution post-processing techniques \cite[e.g., ][]{2002SparksSDI, 2007ThatteSDI}.
-Combining high-contrast imaging data with high-resolution spectra to improve detectability of exoplanets was suggested by \cite{2015Snellen} particularly to improve the detection contrast limit in SADI datasets.
+A way out of this confusion is combining SADI data with spectral deconvolution post-processing techniques \cite[as for e.g. in, ][]{2002SparksSDI, 2007ThatteSDI}.
+Combining high-contrast imaging data with high-resolution spectra to improve detectability of exoplanets was suggested by \cite{2015Snellen} particularly to improve the detection contrast limit in SADI datasets particularly with the aid of the molecular absoption lines present in the spectra.
 
-The molecular absorption lines produced in the atmosphere of a Jupiter analog have long since been used to characterize the atmospheres of exoplanets using cross correlations with template spectra \cite[e.g][]{birkby2013detection,snellen2010orbital} that contain molecular absorption features \citep[e.g][]{2003BTsettl}.
+The molecular absorption lines produced in the atmosphere of a Jupiter analog have long been used to characterize the atmospheres of exoplanets using cross correlations with template spectra \cite[e.g][]{birkby2013detection,snellen2010orbital} that contain molecular absorption features \citep[e.g][]{2003BTsettl}.
 The presence of spatial data allows astronomers to converge on the region in spatial dimension where such molecular cross correlation is the highest.
-The term ``molecular map'' was first introduced by \citet{2018AHoeijmakersMM} to produce detection maps for \rm{H$_2$O} and \rm{CO} in IFS datasets.
+Such maps are best expressed by the term ``molecular map'' was first introduced by \citet{2018AHoeijmakersMM} to produce detection maps for \rm{H$_2$O} and \rm{CO} in IFS datasets.
 In order to produce such maps, known molecular templates are cross correlated with the data.
 This cross correlation produces coefficients which can be placed in the same pixel positions in lieu of the original photon values to produce molecular cross correlation coefficient maps or molecule maps.
 Such molecular maps can now provide spatial and spectral characterization of the exoplanet.
@@ -144,20 +144,19 @@ The question then, is how do astronomers claim a detection based on the value of
 
 A common method of claiming a detection is to estimate if the cross correlation coefficient with the companion spectrum is $5\sigma$ higher than the noise cross correlation values.
 In spatial photon based maps such detections are usually subjected to measure such as spatial S/N \citep[][]{2014MawetSNR}.
-An equivalent of such an S/N computed from the cross correlation coefficient vector itself was attempted by several authors \citep[e.g., ][]{2018AHoeijmakersMM, 2021Cugno,2022Patapis}.
-But this still suffers from an autocorrelation bias in the cross correlation values and the non Gaussianity of the noise.
+An equivalent of such an S/N computed from the cross correlation coefficient vector itself was attempted by several authors \citep[e.g., ][]{2018AHoeijmakersMM}.
+But this still suffers from an autocorrelation bias in the cross correlation values and the non-Gaussianity of the noise.
 Some remedies for the autocorrelation bias have been suggested in \citet[][]{ruffio2019radial} who measure the noise separately and then divide the autocorrelation signal out.
 However, these techniques also continue to rely on the assumption that noise is Gaussian in distribution.
 There is also the intrinsic difficulty in measuring the S/N within a correlation pattern as described in \cite{2023Malin} and the solutions therein. There is, thus, a lack of consensus in defining the $5\sigma$ limit of detection when using cross correlation maps.
 In addition, the method of S/N computed by some authors \citep[e.g in][]{2021Cugno} requires computing large radial velocity cross correlations, which are computationally more intensive and need to be computed one pixel at a time, which also makes them unsuited for large datasets.
 
-In order to tackle some of these issues, we propose to use supervised machine learning (ML) techniques to exploit the multi-dimensional character of IFS datasets. In the literature, ML techniques have already been proposed to process the spectral and spatial dimensions separately for direct exoplanet characterization tasks. In particular, \citet{2020Fisher} demonstrated that using high-resolution spectra in an ML framework is not efficient, and proposed to feed the ML models with cross correlation coefficients instead. 
+In order to tackle some of these issues, we propose the use of supervised machine learning (ML) techniques to exploit the multi-dimensional character of IFS datasets. In the literature, ML techniques have already been proposed to process the spectral and spatial dimensions separately for direct exoplanet characterization tasks. In particular, \citet{2020Fisher} demonstrated that using high-resolution spectra in an ML framework is not efficient, and proposed to feed the ML models with cross correlation coefficients instead. 
 We therefore only consider cross correlation maps, which preserve the multi-dimensionality of the datasets, where the wavelength dimension is replaced by the radial velocity of the cross correlation and the photon values by the cross correlation coefficients. 
 
 The presence of these multiple dimensions lends to the potential of using ML algorithms to claim detections as opposed to using metrics such as S/N.
 Using spatial data with ML algorithms has had particular success in the direct imaging community, to detect point like sources \cite{2018Gomez} and \cite{2023Carlito} to characterize the PSF that needs to be subtracted in ADI images \cite{2022Gebhard} and \cite{2023Flasseur}.
 However, research in the field of exoplanet detection using spectral and direct imaging data with ML algorithms still has plenty of scope to develop. This is a gap that this paper and its companion (Garvin et al., in prep) will be addressing.
-%\citep{2023Garvin} will be addressing. 
 Here, we are focusing on how spatial, spectral (i.e., cross correlation), and temporal dimensions can be most effectively leveraged together in a single ML framework. 
 An alternative approach to do this is to implement the ML framework only in the cross correlated spectral dimension, to preserve spatial independence and flexibility towards spectral instruments, as in Garvin et al. (in prep.).
 
@@ -174,7 +173,7 @@ Finally, in Sect.~\ref{sec:discussion} we discuss the reasons why using data in 
 \section{From 4D IFS tensors to cross correlation tensors}\label{sec:data}
 
 This section describes the step-wise transformation of the data from 4D IFS (i.e 2D spatial, 1D spectral and 1D temporal) tensors to cross correlation tensors that can then be used to train ML algorithms.
-We start with describing the multispectral photon tensors in Sect.~\ref{sec:datadesc}.
+We start with describing these 4D tensors in Sect.~\ref{sec:datadesc}.
 This is followed by describing the injection of simulated warm Jupiters in this data in Sect.~\ref{sec: FC insertion}.
 Finally, we describe the conversion of these simulated warm Jupiter tensors into cross correlation tensors in Sect.~\ref{sec:specpreproc}.
 
@@ -204,24 +203,21 @@ We resample each image vertically by a factor two, to avoid the redundant rows.
 We find the stellar centroid by fitting a 2D Gaussian model to each spectral channel. 
 These fits also enable us to estimate the FWHM of the PSF in each channel. 
 The wavelength vector is recalculated by cross correlating the sky signal present in spectral channels at the edges of the H and K band channels with the expected ESOCalc transmission profile following \cite{2018AHoeijmakersMM}. 
-%The star is then re-centered in each spectral frame based on the centroid positions, and the frames are cropped on their edges by three rows and three columns of pixels after recentering.
-%Thus, now the frame center for each wavelength frame corresponds to the location of the host star.
 The spectral frames are then cropped around the identified stellar centroid positions, which both recenters the images on the star and removes artefacts that affect spaxels at the edge of the frames.
 Finally, we collate all re-centered cubes into a single master 4D tensor.
 The tensor now has $83$ temporal cubes with $2000$ wavelength bins with $61$ rows and $61$ columns of pixels.
-At a pixel resolution $12.5$ mas/pixel this leads to a field of view of $0\farcs76 \times 0\farcs76$ for each image.
+%At a pixel resolution $12.5$ mas/pixel this leads to a field of view of $0\farcs76 \times 0\farcs76$ for each image.
 
 \subsection{Injection of simulated warm Jupiters in the data}\label{sec: FC insertion}
 
 In this paper we explore the detection of a population of planets which are relatively young (typically a few tens of Myr old) where they still retain a large fraction of their formation entropy, making them `warm' with a $T_{\rm eff}\approx 1000 - 1500$~K.
 Such exoplanets are called warm Jupiters because of their temperature and gas giant composition.
-In order to simulate the presence of a warm Jupiter in the data we inject a simulated warm Jupiter at a specific radial distance and position angle from the frame center.
+In order to simulate the presence of a warm Jupiter in the data we inject a simulated warm Jupiter at a specific radial distance and position angle (PA) from the frame center.
 In this paper we use the template set provided by the BT-SETTL models \citep{1997Allard, 2011Allard}. 
 We use the substellar templates characterized by their effective temperature ($T_{\rm{eff}}$) and surface gravity ($\log(g)$), and contain detailed spectra which model the atmosphere for brown dwarfs, late M-type stars, and young gas-giant planets or warm Jupiters.
 Warm Jupiters are particularly interesting as they seem to be present in the $5-20$~au distance range \cite{2016Bryan}.
-For this paper we use the models produced with the BT-SETTL models \citep[][]{2003BTsettl} that allow us to have a large enough wavelength range in the infrared. 
-%The BT-SETTL models provide us with a range of $T_{\rm{eff}}$ and $\log(g)$ that are appropriate for young, warm Jupiters characterized by a $1200\le T_{\rm{eff}}\le 1900$K and $2.5 \le \log(g) \le 5.5$ dex.
-With the BT-SETTL access to wavelengths between $1\mu$m to $30\mu$m.
+For this paper we use the models from the BT-SETTL family of models \citep[][]{2003BTsettl} that allow us to have a large enough wavelength range in the infrared. 
+With the BT-SETTL models we have access to wavelengths between $1\mu$m to $30\mu$m.
 We choose a warm Jupiter template with a $T_{\rm eff} = 1300$K and a $\log(g)=3.0$.
 When injecting this template, we follow these steps:
 \begin{enumerate}
@@ -231,23 +227,12 @@ When injecting this template, we follow these steps:
     \item we then multiply the total photon count in the spectrum by factor of the total photon count in the extracted spectrum at the frame center that represents the stellar photon count (this factor is the contrast);
     \item finally, we chose a pixel and add a PSF-scaled equivalent of the warm Jupiter spectrum in a FWHM-sized aperture around that pixel.
 \end{enumerate}
-%The last step requires the PSF to be measured by fitting a 2D Gaussian to the central pixel. We then use the best fit model as the normalized PSF for each wavelength, with the size of the PSF changing with wavelength with a mean FWHM $=4.8$ pixel.
 We use routines from the \textsc{VIP} package to perform the spatial injection at a specified radial separation and position angle, and at a given contrast with respect to the star.
 Every insertion in each temporal cube is done taking into account the parallactic rotation of the frame (or spectral cube in this case).
 In order to rule out the possibility of a real warm Jupiter biasing our tests, the simulated warm Jupiters are inserted using the opposite parallactic angles to the ones associated with the data, and these are later used for final derotation of the frames.
 
 
 \subsection{Producing cross correlation cubes}\label{sec:specpreproc}
-
-%Typically, most direct imaging data are subjected to PSF subtraction to remove stellar contamination.
-%Typical PSF subtraction routines rely on accurate PSF reconstruction through imaging strategies such as ADI \citep{2006MaroisADI} that do not have the ability to discriminate between planetary and stellar features when subtracting the PSFs.
-%Therefore, along with stellar PSF subtraction, some amount of the planetary signal also gets subtracted (also known as self-subtraction).
-%While techniques such as \citep[SDI, ][]{2002SparksSDI} account for a PSF reconstruction using the stellar spectra, it does not account for lower order effects that continue to remain and hence it has been suggested to use \citep[HRSDI, ][]{2019Haffert,2020Xie} instead.
-%Thus, in this paper we will use HRSDI in lieu of SDI to carry out PSF subtraction and this is the only PSF subtraction that is carried out in this paper.
-%We `extract' spectra for each pixel by performing aperture photometry on this pixel with the pixel being at the center of the aperture.
-%Thus when we extract spectra for each pixel we perform overlapping aperture photometries for each cube in the 4D tensor.
-%We carry out pre-processing for the spectra thus extracted from the SINFONI data tensors in two ways, first by removing the stellar features using the HRSDI technique from the extracted spectrum and second by cross correlating a reference template from the BT-SETTL libraries with the extracted spectrum.
-%We perform both these actions on the 4D tensors themselves.
 
 After injecting fake planets into our 4D IFS data cubes, we now proceed with the computation of the cross correlation, which consists of two steps: (i) reducing the amount of stellar feature contamination in the data, and (ii) cross correlating each spaxel with a similarly pre-processed version of a BT-SETTL planetary template with similar $T_{\rm eff}$ and $\log(g)$ to the one used for the injection.
 The idea of using a similar but not exact template is to avoid a highly optimistic set of cross correlation tensors.
@@ -274,7 +259,7 @@ To remove any lower order residual contamination, we compute a first order Savit
 Cross correlation is a method used to compare two different spectra.
 In this paper, such a comparison is made between an extracted spectrum and the BT-SETTL template spectrum, which is downsampled and broadened to match the SINFONI spectra (same as when it was injected) and then mean-subtracted as described above.
 %In this paper we use cross correlations to compare molecular absorption between a Bmodel spectrum and the extracted spectra from a simulated Jupiter dataset as described above.
-Cross correlating is the result of introducing a small velocity shift between the model and the extracted spectrum and computing the product of the two.
+Cross correlation is the result of introducing a small velocity shift between the model and the extracted spectrum and computing the product of the two.
 This product is the cross correlation coefficient and it is computed for every velocity shift.
 The cross correlation $\mathcal{C}$ between the model template $M_{\lambda}$ and the extracted spectrum ($F_{\lambda}$) at different velocities $v$ is thus given by:
 \begin{equation}
@@ -290,9 +275,8 @@ In this paper, we sample the velocities at every $10$ km/s between $-100$ to $10
 \section{Detection algorithms}
 \label{sec:mapbased}
 
-%\textcolor{red}{This introductory paragraph is still way too confused, and needs significant editing. I think the points you're trying to make are the following, in logical order. (1) A standard way to measure the significance of a CCF is to compare the peak of the CCF to the (standard deviation of the) CCF signal far from the peak. However, this has inherent problems, due to (auto)correlation in the signal itself, which pollutes the noise estimation. Using large velocity offsets can partly mitigate the problem, but not completely. This is discussed e.g. in \citet{ruffio2019radial}. (2) The fact that we have access to images in IFS datasets helps, as we can compute the noise in spaxels where the planet is not present. This is what most authors do, including \citet{2018AHoeijmakersMM,2022Patapis}, where neighboring spaxels are used to compute the noise, through the (*SPECTRAL*) standard deviation of the CCF at velocities sufficiently far from $v=0$ to avoid any contamination from true signal. (3) Here, we go one step further (or rather, one step back?) and decide to use only the spatial information to compute the significance of the detection, which avoids the need to compute the CCF over a wide range of velocity offsets. (Is this really a good justification? I doubt it. I think rather we need to state that this is a choice we make to develop our ML-based detection algorithm, and that Emily is investigating a different pathway in her paper.) (4) Rather than using the standard spatial S/N definition of \citet{2014Mawet}, we rely on the STIM map.} 
 
-Cross correlations as defined in Sect.~\ref{sec: CC algorithm} are typically used to compare spectra, by comparing the value of the cross correlation coefficient $\mathcal{C}(0)$ computed at $v=0$ to the standard deviation of the cross correlation signal $\mathcal{C}(v)$ at higher velocity shifts than $0$.
+Cross correlations as defined in Sect.~\ref{sec: CC algorithm} are typically used to compare spectra, by comparing the value of the cross correlation coefficient computed at $v=0$ (i.e $C(0)$) to the standard deviation of the cross correlation signal $\mathcal{C}(v)$ at higher velocity shifts than $0$.
 This ratio is then used to define the signal to noise ratio (S/N) for the cross correlation.
 This, however, biases the noise estimation for a cross correlation because of the presence of auto-correlation.
 Thus, the noise is typically underestimated.
@@ -303,32 +287,17 @@ Direct imaging data as used in this paper allows us to produce cross correlation
 The image dimension gives us access to neighbouring pixels where the noise of the cross correlation can be measured as computed with a similar recipe to \citet{2022Patapis}.
 However, additional corrections are normally applied to all such S/N computations to avoid an optimistic value of S/N.
 All of these methods rely on computing a large set of cross correlations for every spaxel making the problem computationally intensive.
-These methods also require us to normalize our cross correlation which limits the predictive power of our ML algorithms.
 An alternative way is to use the spatial S/N definition, that does not rely on the cross correlation noise at all, and thus is commonly used in ADI algorithms as defined in \citet{2014MawetSNR}.
 Instead of using this S/N definition, which once again relies on some definition of spatial noise distribution we choose to adapt the standardized trajectory intensity mean \citep[STIM,][]{2019Pairet} map to our cross correlation cubes. 
 A major advantage of using STIM is that it makes use of the temporal axis in the residual cubes, which has shown to reduce false positives in ADI cubes.
-%When comparing the performance of the ML algorithms we will confine ourselves to comparing it with only one non-ML algorithm, i.e. our adaptation of STIM.
-
-
-%There are therefore two ways in principle to compute the signal to noise (S/N) in these data. 
-%The first one consists of using the cross correlation from each pixel independently to compute its S/N based only on cross correlation information. This is particularly suited to simulations where the noise is well known as demonstrated by \cite{2017Ruffio}. 
-%This method involves computing the noise standard deviation and the auto-correlation of the template, and then using these two values as the proxy for measuring cross correlation noise as in \cite{2017Ruffio}. 
-%This is not very useful when the noise is not easily constrained like in our simulated warm Jupiter insertions in the data.
-%Recent studies have shown that applying the standard S/N definition in direct imaging literature is not appropriate to cross correlations with the spectra \citep[e.g.,][]{2017Ruffio} because of the presence of auto-correlation of the signal at non-zero velocities, which artificially boosts the noise.
-%An alternative way of computing the S/N of cross correlations  is to increase the $v$ range to very high values(e.g $\mod{v}\ge1000$ km/s) as performed by \cite{2018AHoeijmakersMM} where cross correlations are computed.
-%This transforms into a computationally intensive problem when performing this on a 4D tensor.
-%This is not suited for the large number of cross correlations we produce using these tensors.
-%In addition SNR estimations directly from the spectra is computationally intensive in the way suggested by \citep[e.g][]{2018AHoeijmakersMM, 2022Patapis} and is not suited for the large number of cross correlations we have for our data.
-%We will describe in detail what such a detection map is in \S\ref{sec:testdata}.
-%In this section we will confine ourselves to describing the algorithms used to produce detection maps from cross correlation tensors.
 In the following sections, we describe our adaptation of the STIM algorithm to cross correlation cubes, and then introduce our two supervised ML algorithms.
 
 \subsection{Standardized trajectory correlation mean (STCM) maps}
 
-Detecting an exoplanet in an imaging dataset requires the estimation of signal on the noise distribution of the dataset and tools such as S/N do this quite effectively as demonstrated by \citet{2014MawetSNR}.
+Detecting an exoplanet in an imaging dataset requires the estimation of signal on the noise distribution of the dataset and tools such as S/N provide a means of doing this as demonstrated by \citet{2014MawetSNR}.
 Here, we introduce the standardized trajectory correlation mean (STCM) map as an analogous way to estimate the relative strength of the signal. To produce an STCM map we perform the following steps:
 \begin{enumerate}
-    \item we first compute the cross correlation tensor as described is Sect.~\ref{sec: CC algorithm} and derotate the cubes so that the pixels at which the simulated warm Jupiter was inserted now align in all cubes;
+    \item we first compute the cross correlation tensor as described in Sect.~\ref{sec: CC algorithm} and derotate the cubes so that the pixels at which the simulated warm Jupiter was inserted now align in all the cubes;
     \item next we choose the velocity at which $CC(v)$ in Eq~\ref{eq:CC equation} is the highest for this pixel (since we don't apply an explicit frame shift and both the template and the spectrum are at the same rest frame the highest $CC$ would be at $v=0$) and recompose the tensor into a cube consisting of the spatial and the temporal dimensions only;
     \item finally the STIM algorithm is applied to this cube along the temporal axis, resulting in an STCM map.
 \end{enumerate}
@@ -343,16 +312,15 @@ Here, we introduce the standardized trajectory correlation mean (STCM) map as an
 
 In Fig.~\ref{fig:fig_1}, we demonstrate the application of three different ways of estimating the relative signal strength of the simulated warm Jupiter that we insert in the data as described in Sect.~\ref{sec: FC insertion}.
 Each column in Fig.~\ref{fig:fig_1} is the detection map for an injection at a fixed contrast of $5\times 10^{-4}$ produced using different algorithms. %namely ADI+S/N \citep[][]{2014}
-Each row is produced when the simulated warm Jupiter is inserted at different radial separations of $2.3$, $3.3$ and $4.3$ times the FWHM, at a fixed position angle of $60^{\circ}$.
+Each row is produced when the simulated warm Jupiter is inserted at different radial separations of $2.3$, $3.3$ and $4.3$ times the FWHM, at a fixed PA of $60^{\circ}$.
 The first column is produced when we compute an S/N map \citep[as defined in][]{2014Mawet} after performing classical ADI on each 4D tensor.
-In order to do this we compute the ADI for a series of data cubes at every wavelength, and then the mean ADI cube is computed from this result. 
-%This is the case where no weighting is applied to the wavelength or temporal dimension.
-The second column is produced by calculating the S/N map \citep[as defined in][]{2014Mawet} to the cross correlation cube in two steps: first we compute the median along the temporal dimension (after applying appropriate de-rotation), and then we compute the cross correlation map and apply the standard spatial S/N to this cross correlation map.
+In order to do this we compute the ADI for a series of data cubes at every wavelength. Then, we compute the mean ADI cube from this result. 
+The second column is produced by calculating the S/N map \citep[as defined in][]{2014Mawet} to the cross correlation cube in two steps: first we compute the median along the temporal dimension (after applying appropriate de-rotation), and then we compute the cross correlation map and apply the standard spatial S/N to it.
 The third column is produced by the STCM algorithm.
 The range of values on each of these maps is normalized to be between $-2$ and $6$ so that we get a fair visual estimation of the noise values produced by each of these algorithms.
 We choose the limits of the color maps based on the global minima and maxima of these nine maps.
-From the figures it appears that the STCM detection map recovers the exoplanet more consistently across different separations. We interpret this as being due to the fact that the original STIM algorithm was designed to alleviate small sample statistics, and thus perform better than standard S/N maps at small separations.
-This will be described in more detail in the results section.
+From the figures it appears that the STCM detection map recovers the exoplanet more consistently across different separations. We interpret this as being caused by the original STIM algorithm design, which aims to alleviate small sample statistics to perform better than standard S/N maps at small separations.
+%This will be described in more detail in the results section.
 
 \subsection{Map-based detection through deep-learning algorithms}\label{sec:ML algorithms}
 
@@ -362,20 +330,23 @@ We seek to use deep-learning algorithms to produce maps akin to the STCM maps de
 
 The building block of a neural network is a neuron.
 A neuron consists of an input that is operated on by an activation function resulting in an output.
-The activation function is usually a non-linear mathematical operation (such as computing the hyperbolic tangent of the input) that is performed on the input.
-A neural network usually contains more than one neuron, and when the output of these neurons is used as an input to another set of neurons, it forms a deep neural network where a set of neurons receiving independent inputs are treated as a layer.
-A layer of neurons can have multidimensional input: typically a feedforward neural network is used with one dimensional data and a two dimensional convolutional neural network is used with image data.
+The activation function is usually a non-linear mathematical operation (for instance a hyperbolic tangent) that is performed on the input.
+A neural network usually contains more than one neuron, and a set of such independent neurons each operating on a part of the input is called a layer. 
+If the output of this layer is used as input to another layer, this layer is called a hidden layer.
+When one or more hidden layers are present, such a neural network is called a deep neural network.
+A layer of neurons can have multidimensional input: typically a deep neural network is used with one dimensional data and a two dimensional deep convolutional neural network is used with image data.
 Typically, memory-based networks such as a long short-term memory and transformers can be used with data that have some temporal coherence.
-Feedforward neural networks have been applied to astronomical spectra \citep[e.g.,][]{2019Leung,2020Tao} to classify them and specifically in direct imaging to characterize exoplanets using cross correlations of the spectra \citep{2020Fisher}.
-Deep neural networks (i.e., networks with more than one feedforward step) have the versatility to also use images through 2D convolutional neural networks \citep[CNN,][]{shi2015convolutional} and to combine images with temporal data in convolutional long short term memory \citep[convLSTM,][]{1997HocherieterLSTM,2022convLSTM}.
-%convLSTMs have already been used by our lab on direct imaging data \cite{2018Gomez,2023Carlito}.
-A neuron, notwithstanding its input dimensionality, has a set of weights and biases as parameters. 
-These parameters form the model of the neural network and are produced when we train this neural network on data.
-Training is the term used to make the neurons identify intrinsic relationships between different data dimensions (frequently called data features) and the necessary output.
+Deep neural networks have the versatility to also use images through 2D convolutional neural networks \citep[CNN,][]{shi2015convolutional} and to combine images with temporal data in convolutional long short term memory \citep[convLSTM,][]{1997HocherieterLSTM,2022convLSTM}.
+Deep neural networks have been applied to astronomical spectra \citep[e.g.,][]{2019Leung,2020Tao} to classify them and specifically in direct imaging.
+\citet{2020Fisher} characterized exoplanets using cross correlations of the spectra from the HARPS-N spectrograph.
+
+A neuron, despite its input dimensionality, has a set of weights and biases as parameters. 
+These parameters form the model of the neural network and are produced when we train the algorithm on data.
+Training is the term used to make the neurons identify intrinsic relationships between different data dimensions and the necessary output.
 In this case we train the neural networks in this paper to predict the presence of an exoplanet in the input cross correlation tensor.
 Training typically consists of providing the neural networks with large number of labelled examples of the classes one wishes to predict.
 The neural network in turn predicts the probability of each class given the input data.
-Training neural networks is very important to achieve the desired result and we explain this in detail in Sect.~\ref{sec: training ML}.
+Training neural networks is very important to achieve the desired result; we explain this in detail in Sect.~\ref{sec: training ML}.
 
 In this section we describe the two different deep neural network architectures that are used in this paper.
 Architectures are typically defined by the number of neurons, number of layers, and the kind of neurons used.
@@ -395,10 +366,10 @@ The $x$ and $y$ dimensions of the convolutional layer is called kernel size.
 Several such kernels are stacked in a 3D block and the depth is the number of such kernels that are stacked.
 The input image is passed through each of these layers in a block for each feedforward pass.
 %and the depth is these kernels stacked such that their $x$, $y$ dimensions align and the input is passed through one such 3D block.
-In our case input consists of the cross correlation coefficients in the $x$, $y$, and $v$ dimensions.
-The pooling layer on the other hand downsamples the kernels of the convolutional layer based on a summary statistic of the output of the convolutional layer (e.g., maximum value).
-The output of this layer is then flattened to remove 3D elements and then connected to a fully connected multi-layer perceptron layer. 
-This is the layer that will act as the classifier output, which is the probability of a pixel to contain a simulated warm Jupiter. The detailed architecture of C3PO is as follows:
+In our case, an input consists of the cross correlation coefficients in the $x$, $y$, and $v$ dimensions.
+The pooling layer downsamples the kernels of the convolutional layer based on a summary statistic of the output of the convolutional layer (e.g., maximum value).
+The output of this layer is then flattened to remove 3D elements and then connected to a multi-layer perceptron, with a sigmoid activation as final layer. 
+The latter will act as the classifier output, which is the probability of a pixel to contain a simulated warm Jupiter. The detailed architecture of C3PO is as follows:
 \begin{enumerate}
     \item a convolutional layer with kernel size of $\left(3,3\right)$ and $50$ such kernels with a hyperbolic tangent activation function;
     \item a pooling layer that uses the maximum value statistic with a pool size $\left(2,2\right)$ -- note that at this point the data dimensionality follows the dimensions set by C3PO, so that we now have a new dimensionality to the output based on the kernel size, number of velocity bins, and number of such kernels;
@@ -414,7 +385,7 @@ The architecture of C3PO is illustrated in Fig.~\ref{fig:c3po schematic}. We pro
     \includegraphics[height=0.6\textheight]{c3po.png} \hspace*{5mm}
     \includegraphics[height=0.55\textheight]{clando.png}
     \caption{Schematic of the C3PO (left) and C-LANDO (right) architectures, showing the different layers and sizes of the input, the dilation of this input at different layers and finally the output format.
-    The top grey block represents the input, with dimensions printed next to the arrow (e.g., for C3PO: 20 velocity bins, $11\times11$ pixel image size as explained in Sect.~\ref{sec: training ML}, and batch size given as input labelled with a question mark).
+    The top grey block represents the input, with dimensions printed next to the arrow (e.g., for C3PO: $20$ velocity bins, $11\times11$ pixel image size as explained in Sect.~\ref{sec: training ML}, and batch size given as input labelled with a question mark).
     Each block represents a layer and has three parts: the blue or black part represents the type of neuron, the white part is the number of neurons represented by a convolutional kernel size and number of bias units, and the red part represents the non-linearity (hyperbolic tangent).
     The kernel has four dimensions, with the first three representing the input shape and the last one representing the depth of the kernel.
     The kernel shape also represents the output dimensions of a layer and the input to its following layer. %For instance, after the first layer in C3PO, the dimensions are reduced to $3\times3\times20\times50$, i.e., the image dimension is downsampled, the velocity dimension remains the same, and the whole image is now divided into 50 basis vectors.
@@ -425,22 +396,20 @@ The architecture of C3PO is illustrated in Fig.~\ref{fig:c3po schematic}. We pro
 
 \subsubsection{C-LANDO}
 
-%C-LANDO is a result of adapting the SODINN \cite{2018Gomez} architecture to be able to use the current data.
-%As a reminder SODINN uses as input 3D data with the dimensions of spatial x, spatial y and a third dimension of $\rm{k\_clip}$, however C-LANDO uses 4D data and works with cross correlation maps.
-%We reuse the basic network architecture of SODINN but the while SODINN used a 3D input, we replace the $\rm{k\_clip}$ dimension with the velocity dimension and introduce a fourth dimension of time.
 The basic unit of C-LANDO is a convolutional LSTM, in the same way as the basic unit of C3PO is a CNN. A convolutional LSTM is a combination of the standard LSTM \citep{1997HocherieterLSTM} with a convolutional neural network \citep{1990ZhangCNN}, which allows this kind of network to combine C3PO features of velocity and spatial PSF structure with the temporal structure embedded in the $83$ temporal cubes that are present. 
-Our convolutional LSTM architecture intends to exploit the fact that when the companion is present in each cube the temporal signature of spatial and velocity will be consistent in each of the temporal cubes.
+Our convolutional LSTM architecture intends to exploit the recurrence of spatial and velocity signatures in each temporal cubes, in the presence of a planet.
+%Our convolutional LSTM architecture intends to exploit the fact that when the companion is present in each cube the temporal signature of spatial and velocity will be consistent in each of the temporal cubes.
 The architecture of C-LANDO, illustrated in Fig.~\ref{fig:c3po schematic}, consists of the following layers:
 \begin{enumerate}
     \item a convolutional LSTM layer consisting of a $3\times3$ kernel with $40$ filters 
     \item  this is followed by a 3D max pooling layer, which pools the convolutional kernels of the LSTM two pixels at a time;
     \item this is followed by another convolutional LSTM layer consisting of a $2\times2$ kernel with $80$ filters once again followed by a max pooling layer as the previous layer, which once again pools the convolutional kernels two pixels at a time;
     %We retain the length of sequences in each of these cases. 
-    \item  this is followed by a flatten layer which converts the 3D shape into 1D that can then be fed to a feedforward neural network layer  with $128$ neurons with a Rectifying Linear unit (ReLu) activation;
+    \item  this is followed by a flattening layer which converts the 3D shape into 1D that can then be fed to a feedforward neural network layer  with $128$ neurons with a Rectifying Linear unit (ReLu) activation;
     \item the output of the feedforward neural network is then fed into a dropout layer that randomly drops $25\%$ of the neurons;
-    \item finally, the output is single sigmoid neuron that gives the probability of our output class.
+    \item finally, the output is a single sigmoid neuron that gives the probability of our output class.
 \end{enumerate}
-The idea of the first two layers is to produce a convolved representation of the features where the convolutional layers represent spatial data and the kernels represent their decomposition into basis vectors.
+%The idea of the first two layers is to produce a convolved representation of the features where the convolutional layers represent spatial data and the kernels represent their decomposition into basis vectors.
 
 
 %\begin{figure}[!ht]
@@ -460,17 +429,18 @@ The idea of the first two layers is to produce a convolved representation of the
 \section{Training the deep-learning algorithms}\label{sec: training ML}
 
 At the beginning of training we initialize the parameters of the neural networks such as weights and biases to random values, which will then be tuned through the training process. %(which are in turn based on no previous knowledge at the beginning of training).
-An important term that will be used repeatedly is called, the `loss', which quantifies the difference between the truth and prediction of a network.
-This loss is typically computed through an appropriate loss function which is related to the output type. For example, in the case of a binary classifier output the categorical cross-entropy loss function is used.
+An important term that will be used repeatedly is called, the loss function (hereafter, referred to as 'loss'), which depends on the output type, and quantifies the difference between the truth and prediction of a network.
+%This loss is typically computed through an appropriate loss function which is related to the output type. 
+For example, in our case where the output is a binary classifier, the categorical cross-entropy loss is used.
 This loss is back-propagated through the network each time the data is processed (passed) through the network \citep{Rojas1996}.
-At this time the network parameters such as the weights and the biases are modified slightly and the loss once again computed for the next data point.
-In practice, a series of labelled examples (known as data samples) are input and processed by each layer of the neural networks and the error between the output of our architecture and the label is computed for every example.
+At this time the network parameters such as the weights and the biases are modified slightly and the loss is once again computed for the next data point.
+In practice, a series of labelled examples (known as data samples) are input and passed through each layer of the neural network and the error between the output of our architecture and the label is computed for every example.
 Typically, this process is repeated once through the whole dataset and such a training step is called an epoch.
 In order to `complete' the training, several such training iterations or epochs have to be completed.
 Each time the error is back-propagated through the network the weights and biases are adjusted so that the error is minimized.
 
 After calculating this loss over multiple epochs, the network parameters undergo significant adjustments to ensure that the subsequent processing by the network does not result in further loss reduction. At this point, the network is referred to as a trained model.
-Training the model necessitates the generation of diverse data, a crucial step to prevent the network from memorizing recurring features and to ensure the dataset encompasses a sufficient array of features for the network to learn from. The consideration of these challenges is pivotal in the training process, as the potential problems in the data, such as overfitting \citep[][]{dietterich1995overfitting} and gradient stall \citep[][]{patel2017sgd}, could arise if not effectively addressed.
+Training the model necessitates the generation of diverse data, a crucial step to prevent the network from memorizing recurring noise features and to ensure the dataset encompasses a sufficient array of data features for the network to learn from. The consideration of these challenges is pivotal in the training process, as the potential problems in the data, such as overfitting \citep[][]{dietterich1995overfitting} and gradient stall \citep[][]{patel2017sgd}, could arise if not effectively addressed.
 Hence, in the following section, we will outline the process of generating training data and provide a detailed description of the training process for both C3PO and C-LANDO.
 
 \subsection{Generating the training dataset}
@@ -488,8 +458,8 @@ Hence, in the following section, we will outline the process of generating train
     \label{fig:fig-2}
 \end{figure*}
 
-To train the C3PO and C-LANDO networks presented in Sect.~\ref{sec:ML algorithms}, we insert simulated warm Jupiters at different select pixels with a range of contrasts and at different position angles from the frame center, as described in Sect.~\ref{sec: FC insertion}.
-In practice these contrasts range from $10^{-2}$ to $10^{-4}$ and we insert these at each pixel with a position angle sampling rate of one insertion for every $30^{\circ}$ of position angle (PA), to make sure that at the closest radial separations we still have a spaced out PA separation between insertions. From previous studies using deep learning to detect exoplanets in images \citep[e.g.,][]{2018Gomez,2023Carlito}, we learned that using full-frame images to train deep neural networks on spatial features is not optimal, as the features corresponding to an exoplanet are confined to a few percent of the total pixels that we train on. Therefore, we crop the field of view that is used as an input to the neural network to a region of two FWHM around the inserted fake companions (or around another position to learn the noise structure of non-detections).
+To train the C3PO and C-LANDO networks presented in Sect.~\ref{sec:ML algorithms}, we insert simulated warm Jupiters at different selected pixels with a range of contrasts and at different PAs from the frame center, as described in Sect.~\ref{sec: FC insertion}.
+In practice these contrasts range from $10^{-2}$ to $10^{-4}$ and we insert these at each pixel with a PA sampling rate of one insertion for every $30^{\circ}$ of PA, to make sure that at the closest radial separations we still have a spaced out PA separation between insertions. From previous studies using deep learning to detect exoplanets in images \citep[e.g.,][]{2018Gomez,2023Carlito}, we learned that using full-frame images to train deep neural networks on spatial features is not optimal, as the features corresponding to an exoplanet are confined to a few percent of the total pixels that we train on. Therefore, we crop the field of view that is used as an input to the neural network to a region of two FWHM around the inserted fake companions (or around another position to learn the noise structure of non-detections).
 %Following strategies of previous papers we crop the spatial extent and 
 This results in data with the following dimensions:
 \begin{itemize}
@@ -502,7 +472,8 @@ Both C3PO and C-LANDO produce as output a probability based on their input and t
 We use VIP to spatially crop each full frame into non-overlapping smaller $11\times11$ pixel sized patches.
 
 Patches are produced for a pixel where the simulated warm Jupiter is inserted, but also for those pixels where nothing is present.
-The patches that contain at their center a pixel where the simulated warm Jupiter was inserted are part of the class $C_{\rm{FC}}$ (where FC stands for fake companion) and the rest, which are just noise samples, become part of the class $C_{\rm{N}}$ (where N stands for noise).
+%The patches in which the simulated warm Jupiter was inserted are part of the class $C_{\rm{FC}}$ (where FC stands for fake companion). The rest are just noise samples which become part of the class $C_{\rm{N}}$ (where N stands for noise).
+The patches that contain the simulated warm Jupiter are part of the $C_{\rm{FC}}$ class (where FC stands for fake companion) and the rest, which are just noise samples, become part of the $C_{\rm{N}}$ class (where N stands for noise).
 Fig.~\ref{fig:fig-2} shows a sample for both $\rm{C_{FC}}$ and $\rm{C_N}$ side by side.
 The first two lines are those representing $\rm{C_{FC}}$; they are produced by choosing a random temporal cube from the tensor.
 The last two rows are produced in the same manner with $\rm{C_N}$.
@@ -518,19 +489,19 @@ Random patch sequences are subjected to one of the following augmentation techni
     \item random sub-pixel shifts of up to $0.5$ pixels are applied in either $x$ or $y$ direction,
     \item production of additional samples by adding two non-sequential and randomly chosen samples.
 \end{itemize}
-The distinction between the classes is evident spatially and along the velocity dimension.
+%The distinction between the classes is evident spatially and along the velocity dimension.
 Spatially the $\rm{C_{FC}}$ has an intensity distribution very similar to the PSF shape originally measured in the data whereas the intensity distribution in $\rm{C_N}$ class appears to be random.
 The range of cross correlation values in the $\rm{C_{FC}}$ and the $\rm{C_N}$ also offer a point of difference.
-Each pixel in the $\rm{C_{FC}}$ shows a Gaussian like behaviour whereas each pixel $\rm{C_{N}}$ exhibits a randomly varying behaviour without any easily discernible pattern.
+%Each sample in $\rm{C_{FC}}$ shows a PSF shaped intensity distribution spatially whereas each pixel $\rm{C_{N}}$ exhibits a randomly varying behaviour without any clear pattern.
 This is the type of differentiating feature that allows a deep-learning algorithm to make fine distinctions.
-Such a differentiating feature was observed in the PCA dimension by \cite{2018Gomez}.
+Such a differentiating feature was observed in the PCA dimension by \citet{2018Gomez}.
 The temporal dimension (not shown here) is such that each pixel in the $\rm{C_{FC}}$ class that contains the exoplanet shows consistently the same pixel value and a set of pixels tend to maintain a PSF like shape for a fixed velocity. 
 
 
 \subsection{Training the deep-learning algorithms}
 
 As stated earlier, ML algorithms always run the risk of memorizing the data, but there are several ways to overcome this.
-One of the several strategies to overcome this problem is to divide the data into three independent datasets called training, validation, and testing.
+One of the several strategies is to divide the data into three independent datasets called training, validation, and testing.
 Overfitting is characterized by exceptionally good performance in the training dataset but conversely produces poor performance in the validation and test dataset.
 The training dataset is used to primarily train the algorithm to make predictions, and the validation is used to verify the training accuracy and make small modifications to hyperparameters such as learning rate, number of neurons, and activation functions. %and ensure that the algorithm has indeed learned the features we intend.
 The test data is reserved to test and benchmark the algorithm and is typically used when the training and validation accuracies are very close to each other.
@@ -539,20 +510,19 @@ The three datasets are typically separated before beginning training so that the
 The testing samples are first removed from data by choosing $25\%$ of the PA values and removing all $\rm{C_{FC}}$ and $\rm{C_N}$ samples corresponding to those. 
 For the purposes of this paper, this corresponds to four PA values.
 Then we split the remaining data into $90\%$ training and $10\%$ validation.
-A key metric we use in the validation data is the number of false positives the algorithm generates in the data. 
+A key metric we use in the validation data is the number of false positives the algorithm generates. 
 The validation comprises of patch tensors corresponding to just one PA value with all of the different radial separations so that we probe the different noise levels.
 As with the test the $\rm{C_N}$ and $\rm{C_{FC}}$ are removed before training.
 We describe the computation of false positives in Sect.~\ref{sec:results}.
 We use the number of false positives in the validation data to tune the mix of contrasts and the parameters of the ML algorithms such as number of layers, neurons etc.
 
 We started with a small network and grew it layer by layer as the validation data produced more true positives (i.e., started detecting the simulated warm Jupiter over multiple separations and for higher contrasts) and fewer false positives.
-It became quickly clear that hyperparameters of the network (such as number of neurons, number of layers, and activation functions) themselves had little impact on the number of false positives produced in the validation data.
+It became quickly clear that hyperparameters of the network (such as number of neurons, number of layers, and activation functions) themselves have little impact on the number of false positives produced in the validation data.
 Initially, we started with the full range of contrasts starting from $5\times10^{-2}$ to $10^{-4}$ with no sub-pixel shifts.
-We noticed that as we increase the number of high-contrast examples in the data we had higher false positives generated and therefore we limit the contrast to $<10^{-3}$ with the full range of separations starting from $\approx 1$ FWHM up to $\approx 5$ FWHM.
-%We also limit the number of pixel shifts of the $\rm{C_{FC}}$  class to between $0.5$ to $1$ mean pixel shift to match the sub pixel shifts introduced in $\rm{C_N}$ class.
+We noticed that, as we increase the number of high-contrast examples in the data, we encounter higher false positives generated. Therefore, we limit the contrast to $<10^{-3}$ with the full range of separations starting from $\approx 1$ FWHM up to $\approx 5$ FWHM.
 We use the $\texttt{binary\_cross\_entropy}$ loss function \citep{1993Li} to compare the prediction of the deep-learning algorithms with the truth value.
-We use the Adam optimizer \citep{2014Adam} to minimize the loss and prevent being stuck in a local minima.
-We continue training till the validation loss does not change by more than $10^{-5}$.
+We use the Adam optimizer \citep{2014Adam} to minimize the loss and overcome local minimas.
+We continue training untill the validation loss does not change by more than $10^{-5}$.
 
 
 % ***************************************************************************
@@ -560,39 +530,30 @@ We continue training till the validation loss does not change by more than $10^{
 \section{Comparing the performance of the algorithms}\label{sec:results}
 
 We benchmark all our algorithms based on their ability to accurately detect simulated warm Jupiters at contrasts $<10^{-3}$ with the fewest number of mistaken detections.
-In order to make this comparison as fair as possible, we produce detection maps from each of the algorithms and then subject these to receiver operating characteristic (ROC) analysis.
-We then compare the ROC curves for each of the algorithms for different simulated warm Jupiters at different radial separations from the frame center.
-%MThe higher contrast simulated warm Jupiters represent fainter exoplanets and therefore their detection is the ability of an algorithm to continue to make detections at low flux levels.
-%The detection of warm Jupiters which are inserted at smaller radial separation represents the ability of an algorithm to detect them in noisier (read higher instrumental artefacts, mis-subtracted speckles, stellar contamination etc.).
-%In this section we will describe the generation of test data on which the algorithms will be compared in  \S\ref{sec:testdata}.
+In order to make this comparison as fair as possible, we produce detection maps from each of the algorithms and then subject these to modified ROC (mROC) analysis.
+We then compare the mROC curves for each of the algorithms for different simulated warm Jupiters at different radial separations from the frame center.
 In this section, we describe the production of detection map and binary maps with our test data described in the previous section.
-The binary maps are then used to compute true and false positives, and we finally describe the metric used for the comparison of our algorithms, based on modified ROC (mROC) curves.
-%FCs at different contrasts represent exoplanets with differing brightness and the radial separations represent exoplanets at different radial distances from their host star.
+The binary maps are then used to compute true and false positives, and we finally describe the metric used for the comparison of our algorithms, based on modified mROC curves.
 
 
 \subsection{Producing detection and binary maps on test data}\label{sec:testdata}
 
-%The test dataset is separated even before training commences so that that is not used in the training or validation of the ML algorithms.
-To produce a test dataset, we choose four position angles corresponding to $60,120,180,360^{\circ}$.
-%none of which were used in the training or the validation.
+To produce a test dataset, we choose four PAs corresponding to $60,120,180,360^{\circ}$.
 The choice of these angles is somewhat arbitrary, but it is also done so that all of the tests can be performed with the same angles and there are lesser systematic effects when testing the three algorithms together.
-% \item We remove all of the cross correlation tensors corresponding with an inserted simulated warm Jupiter at these position angles from the data that we
 We then go through the procedure of inserting simulated warm Jupiters as described in Sect.~\ref{sec: FC insertion}, where we insert warm Jupiters at different radial separations over a range of contrasts between $10^{-2}$ to $10^{-4}$. We then produce cross correlation cubes as described in \S\ref{sec: CC algorithm}, and save these cross correlation tensors without any further processing.
 
 \begin{figure*}[t]
     %\centering
     \includegraphics[width=\textwidth]{Fig3_Sep2023.png}
-    \caption{Illustration of the TP and FP counting process, showing the detection map (column 1) used to produce four different binary maps thresholded at different intensity levels (columns 2-5), for the three algorithms (respectively STCM, C3PO, and C-LANDO, from top to bottom). A fake companion was inserted at position $\Delta{\rm Dec}=0.0$ and $\Delta{\rm RA} = -0.2$. TPs and FPs are respectively shown in green and in red for the thresholds indicated in the titles of each image. Each red blob/point is counted as a single FP/TP, with blobs representing many connected pixels at the same binary intensity level.}
+    \caption{Illustration of the TP and FP counting process. Column 1 shows the detection map used to produce four different binary maps, thresholded at different intensity levels (columns 2-5), for the three algorithms (respectively STCM, C3PO, and C-LANDO, from top to bottom). A fake companion was inserted at position $\Delta{\rm Dec}=0.0$ and $\Delta{\rm RA} = -0.2$. TPs and FPs are respectively shown in green and in red for the thresholds indicated in the titles of each image. Each red blob/point is counted as a single FP/TP, with blobs representing many connected pixels at the same binary intensity level.}
     \label{fig:sample_detmaps}
 \end{figure*}
 
-%In practice, the test data is something of a `blind' test to see if the ML algorithms have learned the features we want to teach and hence it is ideally suited to compare our algorithms.
-As explained in the previous section, when the algorithms have trained we pass the test dataset through the algorithms to produce detection maps.
-%A detection map is a map of the class of probability of each pixel produced, typically, by detection algorithms.
+As explained in the previous section, once the algorithms have trained, we pass the test dataset through the neural networks to produce detection maps.
 A detection map is a map of the relative weighting of pixels, where noisy pixels carry lower weight and those pixels with an exoplanet carry higher weight.
 These maps can be composed using S/Ns, STCMs, or probabilities, and in each case we define thresholds to define which weights constitute a detection (for example $\rm{S/N}\ge 5$).
 An example of such detection maps for non-ML algorithms is Fig.~\ref{fig:fig_1}.
-Detection maps intrinsically hold the biases of the algorithm that produces them, but with accurate quantification of these biases, they serve as an indispensable tool in direct imaging to detect exoplanets.
+Detection maps intrinsically hold the biases of the algorithm that produces them. Accurate quantification of these biases serve as an indispensable tool in direct imaging of detect exoplanets.
 One of the ways of quantifying these biases is the use of  binary maps.
 Binary maps are produced when thresholds are applied to a detection map and each pixel above the threshold is assigned $1$ binary value while the rest of the pixels are set to $0$.
 
@@ -600,7 +561,6 @@ We produce detection maps from each of the algorithms as shown in the first colu
 Each row in Fig.~\ref{fig:sample_detmaps} starts with the detection map followed by a binary map produced with the threshold indicated in the title of each of the plots in columns two through four.
 These detection and binary maps are produced on the test data.
 The STCM algorithm (first row in Fig.~\ref{fig:sample_detmaps}) produces a detection map as its natural output and constitutes the first row.
-%the ML algorithms produce probabilities of the class $\rm{C_{FC}}$ for spatial patches of size $11\times11$ .
 In order to compare the STCM and ML algorithms, we present the ML algorithms with overlapping patches where the central pixel of each patch is the pixel of interest, whose probability of containing the simulated warm Jupiter will be predicted by the ML algorithm.
 These probabilities are used to build a detection map.
 This constitutes row two and three of the first column of Fig.~\ref{fig:sample_detmaps}.
@@ -612,16 +572,12 @@ These binary maps are then used to compute the total number of false positives a
 \label{sec:TPFP}
 
 In principle, the threshold is the cut off that allows us to identify the pixels where the exoplanet is present.
-%Thresholding a detection map allows the explore the tradeoff between having false positives and detecting faint companions.
-%For instance lower thresholds will more likely find fainter simulated warm Jupiters but also produce more false positives.
 Utilizing thresholding on a detection map facilitates the exploration of the tradeoff between false positives and the detection of faint companions. Lower thresholds, for example, increase the likelihood of identifying faint simulated warm Jupiters but concurrently result in a higher incidence of false positives.
-Counting the number of false positives and true positives in every binary map and comparing the two values as a function of the threshold allows us to produce Receiever operating characteristic (ROC) curves for each detection map.
-Note that when we produce these ROC curves, we mask a circular region of $3.5$ pixels from the frame center.
+Counting the number of false positives and true positives in every binary map and comparing the two values as a function of the threshold allows to produce classical receiver operating characteristic curves (ROC). 
 ROC curves are particularly useful when posing a problem as a two-class classification problem to define the ability of a classifier to make the trade-off between predicting a class and admitting false positives.
-They allow us to benchmark both ML and non-ML pipelines and make a relative comparison. 
-In this paper we define all the connected pixels in a binary map within $\approx 1$ FWHM of the original insertion of the simulated warm Jupiter as a true positive (TP) and all other non-zero pixels as a false positive (FP).
+They allow to benchmark both ML and non-ML pipelines and make a relative comparison. 
 
-We perform this analysis over multiple insertions and thereby derive the number of TPs per insertion, also known as a true positive rate (TPR), and the mean number of FPs per detection map, or a mean full frame FP as described in \citet{2018Gomez}. Because we consider the whole field of view to count a mean number of FPs, instead of testing each single resolution element at a time to derive a false positive rate (FPR), we refer these curves to as modified ROC (mROC) curves. These mROC curves are arguably more relevant to the problem at hand, where the goal is to work at very low FPR (e.g., $3\times 10^{-7}$ for an equivalent Gaussian $5\sigma$ detection).
+In this paper, we define all the connected pixels in a binary map within $\approx 1$ FWHM of the original insertion of the simulated warm Jupiter as a true positive (TP) and all other non-zero pixels as a false positive (FP). We perform this analysis over multiple insertions and thereby derive the number of TPs per insertion, also known as a true positive rate (TPR), and the mean number of FPs per detection map, or a mean full frame FP as described in \citet{2018Gomez}. Because we consider the whole field of view to count a mean number of FPs, instead of testing each single resolution element at a time to derive a false positive rate (FPR), we use adapted ROC curves as mROC curves. In comparison to ROC curves, these mROC curves are arguably more relevant to the problem at hand, where the goal is to work at very low FPR (e.g., $3\times 10^{-7}$ for an equivalent Gaussian $5\sigma$ detection). As we produce these mROC curves  curves for each detection map, we mask a circular region of $3.5$ pixels from each frame center.
 
 \begin{figure*}
 \centering
@@ -643,9 +599,8 @@ Therefore, every detection map will contain at most one TP, and potentially many
 As we progressively increase the threshold the FPs will reduce until at the maximum threshold we have no remaining FP. 
 True positives in Fig.~\ref{fig:sample_detmaps} are shown in green and false positives in red.
 In order to produce a smooth mROC curve, we repeat this experiment $T_{i}$ number of times.
-Thus $T_{i}$ is a product of the total number of radial separations (in this case we pick five separations corresponding to $\approx 1$ FWHM each), the total number of PA that are part of the test set (four angles).
+Thus $T_{i}$ is a product of the total number of radial separations (in this case we pick five separations corresponding to $\approx 1$ FWHM each) and the total number of PA that are part of the test set (four angles) and this is done twice with slightly different values of contrast.
 For each insertion, we choose between two contrast values respectively just above and just below the chosen contrast value (e.g., $5\times10^{-4}$ and $3\times10^{-4}$ for a chosen contrast of $4\times10^{-4}$), and inject one companion of each contrast at each position, leading to a total of $40$ insertions to produce one mROC curve.
-%within a range of $2$ contrasts for instance ($5\times10^{-4}$  and $3\times10^{-4}$) necessary to produce one mROC curve in Fig.~\ref{fig:fig_4} giving the total insertions $T_i = 40$.
 This results in a total of $40$ detection maps like those in Fig.~\ref{fig:sample_detmaps}, which are then turned into binary maps with various thresholds. 
 Each point in Fig.~\ref{fig:fig_4} corresponds to $40$ such binary maps for each algorithm, whose TPR and mean full frame FPs are computed as follows:
 \begin{equation}
@@ -654,12 +609,7 @@ Each point in Fig.~\ref{fig:fig_4} corresponds to $40$ such binary maps for each
 \label{eq:TPR}
 \end{equation}
 Note that the mean number of FPs is always an integer number as the number of FPs remains the same for binary maps of a fixed threshold.
-%We compute these FPs over $40$ insertions so that we have a mean number of FPs (as opposed to a false positive rate) for each frame or cube that has been used to produce a detection map.
 In the unlikely event that a fake companion was inserted at the exact location where a FP would appear for the empty dataset, we still account for it as we compute the mean FP. The mean number of FPs is only bounded by the number of pixels in our field-of-view, but we limit the range of the x-axis in our mROC curves to 1, as this is the largest number of FPs produced by the ML algorithm for the considered thresholds, and because this is the regime astronomers are usually interested in.
-%Each ROC is thus computed over a range of $40$ independent FC insertions.
-%In Fig.~\ref{fig:fig_4} the x-axis corresponds to the mean FP per map which is typically an integer $\ge 0$ but in principle is unbounded.
-%For the purposes of this paper, we limit the axis scale to $1$ FP.
-%as this is the maximum FPs produced by the ML algorithms.
 The numbers around each point in Fig.~\ref{fig:fig_4} represent the threshold for each binary map produced by each algorithm.
 We consider the highest threshold as that where ${\rm FP} = 0$.
 For the ML algorithms this is satisfied at the highest threshold value of $0.999$, and for the STCM algorithm at a STCM $\sim 6.0$. 
@@ -670,35 +620,24 @@ For the ML algorithms this is satisfied at the highest threshold value of $0.999
 
 To compare the different ML and non-ML algorithms, we computed their mROC curves for different separations, as each separation corresponds to a different noise regime.
 This corresponds to the columns in Fig~\ref{fig:fig_4}, with the rows corresponding to mean contrasts starting from $6\times10^{-4}$ down to $2\times10^{-4}$.
-We have chosen this range of contrasts specifically as it allows us, going from left to right in Fig.~\ref{fig:fig_4} to observe the change in detection sensitivity of the algorithms starting from close to uniformly sensitive for all algorithms (all the algorithms detect the simulated warm Jupiter in every insertion with a ${\rm TPR}\approx 1.0$ for the different values of thresholds) stepping through different noise and brightness levels to completely insensitive for the STCM algorithm.
+We have chosen this range of contrasts specifically as it allows us to observe the change in detection sensitivity of the algorithms (c.f. Fig.~\ref{fig:fig_4}, top to bottom). The panels start with a similar sensitivity for all algorithms (all the algorithms detect the simulated warm Jupiter in every insertion with a ${\rm TPR}\approx 1.0$ for the different values of thresholds). 
+As we step through different noise(left to right) and brightness levels (top to bottom), the STCM algorithm evolves towards a complete insensitivity.
 The shape of a mROC curve defines the response of the algorithm to increasing the thresholds and thereby its ability to continue to have TPs while the FPs are removed.
-%The TPR is a measure of an algorithm to detect, on an average over a number of repetitions of an experiment in this case $T_i = 40$, an inserted simulated warm Jupiters, whereas, the FP is a measure of the algorithm's ability to ignore the speckles in the field.
-%A FP$=0$ corresponds to the case where all the nuisance elements in a detection map have been filtered out by a high threshold and TPR$=1$ is the case where the algorithm is able to perfectly detect every insertion in every frame for every contrast and spatial separation value.
-An ideal detection algorithm is where the ${\rm TPR}=1$ even when the threshold changes.
-This is the case in the first row first column of Fig.~\ref{fig:fig_4} for all three algorithms and continues to remain the case for the ML algorithms in most of the first two rows, while STCM begins to show a drastic drop in TPR with a slight reduction in brightness of the simulated warm Jupiter in the second row.
+An ideal detection algorithm is where the ${\rm TPR}=1$ even when the threshold changes (i.e. the mROC curve is flat, and lies at the very top of the plot).
+This case is illustrated in Fig.~\ref{fig:fig_4}  (c.f. first row first column) for all three algorithms and remains the case for the ML algorithms in most of the first two rows, while STCM begins to show a drastic drop in TPR as the simulated warm Jupiter gets fainter in the second row.
 Conversely, when we look at the bottom right set of plots, which correspond to the higher contrast noisy regime, a decrease in threshold will produce more FPs but will also produce higher TPR. 
-%We limit the number of FPs in Fig~\ref{fig:fig_4} to 1 as this is the largest number of FPs produced by the ML algorithm for the considered thresholds.
-%The mean FPs are limited to $1$ in Fig~\ref{fig:fig_4} because if mean FPs $>1$ the mean FPs would be higher than the maximum possible TPs in the data.
-%This is usually not a sign of a well trained ML algorithm.
 
 The performance of the STCM is the baseline that establishes whether a contrast is `easily detectable' by non-ML methods. 
 This corresponds to contrasts in the top left of the plot, particularly the top left extreme where all three algorithms perform similarly in terms of the TPs for ${\rm FP}=0$.
-Thus, for this paper we study those contrasts at which STCM produces ${\rm TPR}<1$ and compare how ML algorithms perform for these contrasts and separations.
+Thus, for this paper, we study those contrasts at which STCM produces ${\rm TPR}<1$ and compare how ML algorithms perform for these contrasts and separations.
 As we go from the top left towards the bottom right we see TPRs going down across all algorithms, until we reach a TPR $=0$ at the bottom row for STCM. 
 In general, ML algorithms continue to detect the majority of simulated warm Jupiters (TPR $\ge 0.5$) other than for the highest contrast companion closest to the frame center.
 For the lowest contrast, we see that STCM produces a TPR $=0$ for almost all separations and values of the thresholds.
-On the other hand the ML algorithms continue to be able to produce a TPR$>0$ for all the considered contrasts.
-%The peculiar behaviour is that for both STCM and C-LANDO there seems to be little or no impact of thresholding on the TPR for a fixed contrast of the simulated warm Jupiter.
-%This is not fully evident in the mROC curves of C-LANDO in Fig.~\ref{fig:fig_4} because the higher threshold points are overlapping at ${\rm FP}=1$.
-%We notice that for C3PO the TPRs increase with a decrease in this threshold and continue to increase through the lower thresholds, but there is a FP always in the field. 
-The additional advantage ML algorithms bring is that the FPs do not seem to increase indefinitely, whereas with STCM it is obvious that the FPs will continue to increase at lower thresholds.
+Conversely, the ML algorithms continue to be able to produce a TPR$>0$ for all the considered contrasts.
+The additional advantage offered by ML algorithms is that the FPs do not seem to increase indefinitely, whereas with STCM it is obvious that the FPs will continue to increase at lower thresholds.
 An interesting observation is that the brightness of the warm Jupiter seems to be the single most important astronomical aspect which impacts detectability with ML algorithms.
-We see that the TPR does not drop with reducing radial separation (i.e across columns in Fig.~\ref{fig:fig_4}), but rather drops with increasing contrast. 
-On the other hand, for the STCM the brightness of the companion and the background stellar contamination seems to both be factors as we see a drop in TPR both with increasing contrast and reducing radial separations (i.e., both rows and columns in Fig.~\ref{fig:fig_4}).
-
-%The contrast of $2\times10^{-4}$ seems to pose particular difficulties for STCM as it is unable to produce any TPRs even for lowest background noise regime ($3-4$ FWHM from the center), whereas the lack of background noise allows the ML algorithms to have a TPR $=0.5$ for the highest threshold and between $0.8$ and $0.5$ for the lowest threshold for C3PO and C-LANDO respectively. 
-%This TPR does not drop by much for C3PO where for the lowest threshold at a separation of $1-2$ FWHM it continues to have a TPR$=0.65$, whereas the TPR at the highest threshold drops to about $0.2$.
-%The general behaviour seems to be that C3PO is able to best exploit this gray zone of TPR-FP tradeoff, whereas the behaviour of C-LANDO is somewhat less amenable to utilizing this trade-off.
+We see that the TPR does not drop when reducing radial separation (i.e across columns in Fig.~\ref{fig:fig_4}), but rather drops with increasing contrast. 
+Conversely,  the brightness of the companion and the background stellar contamination seems to both be impacting factors for the STCM, as we observe a drop in TPR both with increasing contrast and reducing radial separations (i.e., both rows and columns in Fig.~\ref{fig:fig_4}).
 
 
 
@@ -707,18 +646,11 @@ On the other hand, for the STCM the brightness of the companion and the backgrou
 \section{Discussion}
 \label{sec:discussion}
 
-The results in the previous section seem to indicate that ML algorithms give us an advantage in noisier regimes closer to the frame center and particularly with higher contrast exoplanets.
+The results in the previous section indicate that ML algorithms provide an advantage in noisier regimes, closer to the frame center and particularly with higher contrast exoplanets.
 But the reality is that the algorithm uses data features (temporal, spatial and velocity) diversity naturally present in the data efficiently and consistently in the test data.
-%ML algorithms are only good as the data that they are trained with.
-%This allows us to produce more sensitive detection algorithms (i.e., those that produce fewer FPs and higher TPR) compared to non ML algorithms which also use the same data.
-%In general, the TPR seems to be most influenced (for ML algorithms) by the brightness of the companions and not so much by the background noise. 
-%Whereas, with STCM we see the TPR influenced by both the background noise as well as the brightness of the companion.
-%We also note that, in general, the thresholds have a relatively small effect on the TPR of the ML algorithms whereas with STCM there can  be as much as $30\%$ jump in the TPR with a change of threshold between highest and lowest in Fig~\ref{fig:fig_4}.
-%Both of these observations show that no matter the changing thresholds the ML algorithms provide a relatively stable platform to explore the detection sensitivity of datasets.
 One of the questions that is raised is which features or dimensions of the data are producing this high detection sensitivity and robustness that make them more reliable?
 For instance, with the same data C3PO seems to produce a higher TPR compared to C-LANDO.
 We also have several dimensions such as the image, the cross correlation velocity dimension, and the temporal dimension.
-%Which of these dimensions are the key to the reasons for better performance of ML algorithms?
 In this section, we will analyze this question in the light of our data and results.
 We start by discussing the reasons for the relatively higher TPR produced by C3PO when compared to C-LANDO.
 This will serve to illuminate as well, why the temporal dimension does not lend much more detection sensitivity than just using the image dimension alone.
@@ -729,7 +661,7 @@ We will then make a test of the same data both with and without the velocity to 
 \begin{figure*}
 \centering
 \includegraphics[width=\textwidth]{fig5_disc_dec2023_cropped.png}
-\caption{Illustration of the data presented to the ML algorithms for training, for two different contrast levels. The upper rows of imagettes depict the spatial distribution of the cross correlation signature along the temporal dimension, used for C-LANDO training, while the lower image depicts the temporal mean of the same cube, used for C3PO training. }
+\caption{Illustration of the data presented to the ML algorithms for training, for two different contrast levels. The upper rows of miniatures depict the spatial distribution of the cross correlation signature along the temporal dimension, used for C-LANDO training, while the lower image depicts the temporal mean of the same cube, used for C3PO training. }
 \label{fig:disc-part1}
 \end{figure*}
 
@@ -738,7 +670,7 @@ We will then make a test of the same data both with and without the velocity to 
 %We have transformed the spectral dimension making it common for all the algorithms.
 %Therefore, in this section we discuss the relative importance of temporal and spatial features for detection sensitivity.
 The previous section showed us that C3PO is more sensitive both at higher contrast and noisier regimes than C-LANDO.
-We posit that one of the reasons for this apparently higher detection sensitivity is the consistency in the presence of signal in the input cubes of C3PO.
+We posit that one of the reasons for this higher detection sensitivity is the consistency in the presence of signal in the input cubes of C3PO.
 While both C3PO and C-LANDO have been trained with the same data and are considered equally well trained, the difference in performance is a measure of the features necessary to make a prediction being present in the data.
 Therefore, it appears that while for lower contrasts C-LANDO sees the signature of the exoplanet being consistently present in the temporal dimension this behaviour changes with higher contrast insertions.
 We use Fig.~\ref{fig:disc-part1} to explain this behaviour.
@@ -746,7 +678,7 @@ This figure shows the input to both algorithms, composed of cross correlation te
 In the first six rows of the figure we depict patches of some of the $83$ temporal cubes, i.e., the temporal features that are used to train C-LANDO, while the final row shows the mean of these temporal cubes, i.e., the features used to train C3PO.
 The two large columns represent two different contrasts at which the simulated warm Jupiter is inserted. On the left is a contrast corresponding to the first column second row of Fig.~\ref{fig:fig_4}, where both algorithms perform very similarly.
 Both in amplitude and spatial features the first large column shows quite similar features, where C-LANDO just seems to have an additional $83$ copies of the features that C3PO receives. 
-The features in the data that algorithm looks for is the spatial diversity of the cross correlation coefficients and for this diversity to be maintained in the temporal dimension as well.
+The data features the algorithm looks for is the spatial diversity of the cross correlation coefficients, as much as diversity in the temporal dimension.
 The second large column corresponds to a warm Jupiter inserted for the same separation at a higher contrast.
 Thus, the only difference between the columns is the brightness of the simulated warm Jupiter.
 In this column the first difference that we notice is the difference in amplitude between the first six rows and the last row.
@@ -755,6 +687,11 @@ The first six rows have an amplitude range closer to the class $\rm{C_N}$ in Fig
 The spatial signature of the cross correlation plays another, in our view, crucial role in the higher TPR produced by C3PO for higher contrasts.
 When we compare the inputs to both the algorithms between the different contrasts, the spatial distribution of the cross correlation coefficients is better conserved for the input to C3PO than for C-LANDO, although the mean cross correlation strength is reduced for a higher contrast.
 This seems to be another key differentiating factor between the two algorithms where it appears that computing the mean to produce the last row focuses the features better to enable an ML algorithm to be more sensitive to a high-contrast exoplanet.
+%Thus we have two reasons why C3PO produces higher TPR compared to C-LANDO,
+%\begin{enumerate}
+%    \item the higher mean cross correlation coefficient for a fixed contrasts in the key spatial cross correlation diversity and
+%    \item better spatially conserved distribution of the spatial cross correlation signature of the inserted simulated warm Jupiter.
+%\end{enumerate}
 
 \subsection{Importance of the velocity dimension}
 
@@ -768,10 +705,10 @@ This seems to be another key differentiating factor between the two algorithms w
 \end{figure*}
 
 The importance of how spatial features are driving the higher performance of C3PO was illustrated in the last section. The STCM algorithm sees the same features as C3PO, but with just one of the relative velocities.
-Since velocity seems to be the key data feature difference between C3PO and STCM, it is important to discuss the importance of the velocity feature in the data. 
+Since velocity seems to be the key feature difference between C3PO and STCM, it is relevant to discuss the importance of the velocity feature in the data. 
 In order to appreciate the importance of this dimension, we train the ML algorithms both with the full range of the velocity shift (i.e., between $-100$ and $100$ km/s) to produce ROC curves in Fig.~\ref{fig:fig_4}, but also train them by choosing only the velocity where the cross correlation value is the maximum, i.e., $v=5$ km/s in Fig.~\ref{fig:fig-2}.
 Note that because of the medium resolution of SINFONI, there is no difference between the spatial distribution and mean value of cross correlation between $v=-5$, 0, and 5 km/s. 
-We then re-create C3PO and C-LANDO such that the value for the number channels is $1$ instead of $20$ as in Fig.~\ref{fig:c3po schematic}.
+Then, we re-create C3PO and C-LANDO such that the value for the number channels is $1$ instead of $20$ as in Fig.~\ref{fig:c3po schematic}.
 All other dilations/changes are appropriately altered automatically as a consequence of this but the hyperparameters (i.e., number of neurons, layers, the mix of contrasts used for training, optimization algorithm and error function) remain the same.
 We perform training exactly in the manner described in Sect.~\ref{sec:ML algorithms}, compute the TPs and FPs in frame exactly as in Sect.~\ref{sec:results}, and then produce sample ROC curves in Fig.~\ref{fig:novel_roc}, where the two plots are obtained for insertions of simulated warm Jupiters at different contrasts but at a fixed separation from the frame center.
 The dashed lines in Fig.~\ref{fig:novel_roc} are those produced with no explicit velocity evolution in the data.
@@ -781,8 +718,8 @@ The first noteworthy point is that we have extended the FP axis up to $3$ FPs, b
 %Therefore, as before with a fainter inserted exoplanet the TPR drops for both the algorithms both with and without the velocity.
 The second point is that the evolution (i.e shape of the mROC curves) of the TPRs produced by the ML algorithms remains similar both with and without the velocity dimension between two different contrasts, i.e., the TPR falls by a fraction of $\approx 50\%$ between contrasts.
 However, within the same contrast regime (in this case each sub plot), the TPR produced by C-LANDO with velocity is $\approx 20\%$ higher than without the velocity evolution (for a fixed FP), whereas the evolution of the TPR produced by C3PO is less dramatic.
-The velocity dimension produces a systematic variation of spatial features (i.e., both cross correlation values and the spatial distribution of the cross correlation), which is quite distinct.
-This is most clearly evident in Fig.~\ref{fig:fig-2}, when comparing the evolution of the spatial features with velocity between $\rm{C_{FC}}$ and $\rm{C_N}$.
+The velocity dimension produces a distinct systematic variation of spatial features (i.e., both cross correlation values and the spatial distribution of the cross correlation).
+This is becomes evident in Fig.~\ref{fig:fig-2}, when comparing the evolution of the spatial features with velocity between $\rm{C_{FC}}$ and $\rm{C_N}$.
 This produces an additional dimension that can be relied on to make this distinction between different pixels, making the detection less confused ergo more sensitive.
 This should particularly be useful when one of the dimensions used are not able to make these distinctions for a specific insertion.
 Therefore, while introducing the velocity dimension, C-LANDO produces an improvement in both TPR and FPs, the improvement in C3PO is mostly confined to having fewer FPs.
@@ -804,77 +741,93 @@ To build ROC curves, we inserted simulated warm Jupiters in a dataset devoid of 
 To detect these simulated warm Jupiters we have devised a non-ML algorithm (STCM), a CNN-based algorithm (C3PO), and a CNN-LSTM based algorithm (C-LANDO). 
 We train the ML algorithms on part of the data and reserve the rest to test and benchmark our algorithms. 
 We train our algorithms so that the validation set has fewest number of FPs and tune our algorithms accordingly. 
-%We then produced mROC curves for different ranges of contrasts at different radial annuli from the frame center for different ranges of contrasts.
 
-%We find that the ability to detect TPs reduces for the STCM algorithm for companions closer to the frame center, while it remains relatively unchanged for ML algorithms.
-%We also discussed the potential reasons for the ML algorithms, particularly C3PO, performing better than the others and the importance of the introduction of the velocity dimension.
-%In this conclusion, we will describe the salient results obtained in this paper and the limitations of the research work whose result this paper showcases.
-
-
-%\subsection{Salient results of the use of C3PO and C-LANDO}
-
-%This paper studied the effects of two different ML algorithms on a dataset of simulated warm Jupiters.
-%We present the following conclusions of our research, limited as it is to our dataset,
-The most salient results of our study are the following:
+The most notable results of our study are the following:
 \begin{itemize}
     \item the ability to detect TPs reduces for the STCM algorithm for companions closer to the frame center, while it remains relatively unchanged for ML algorithms;
-%    \item  Contrast of the simulated warm Jupiter is a limiting factor for detection even with ML algorithms
-%    \item the use of ML algorithms allows us to explore a larger range of radial separations when compared to non ML algorithms
     \item the ability of ML algorithms to harness additional dimensionalities such as velocity seems to be at the root of their increased sensitivity;
     \item the use of the temporal dimension does not seem to provide an added value in terms of detectability.%allow us to more robustly explore detectability over different contrasts and separations
 \end{itemize}
-%A key finding of this piece of research that 
-%In this paper the TPR of the ML algorithms is most impacted by the brightness of the simulated warm Jupiter, we see that at a mean contrast of $2\times10^{-4}$ the TPR is more than halved for $0$ FPs, wheareas the STCM algorithm at the same contrast has a TPR$=0$. 
-%However, the use of ML algorithms gives us a slight advantage when exploring higher contrast detections.
-%This is observed when looking at TPRs at a mean contrast of $2\times10^{-4}$, it is possible to continue to explore the relative detectability of the warm Jupiter between C3PO and C-LANDO where for a FP$=1$, C3PO seems to produce a higher TPR.
-%These improvements suggest to us the best way to use the data dimensions namely, the spatial, and velocity dimensions along with deep-learning algorithms to improve detectability.
-%This is particularly evidenced when looking at the TPRs for a fixed contrast over multiple different radial separations.
-%We notice that for a mean contrast $6\times 10^{-4}$ in Fig~\ref{fig:fig_4}, the TPR for both ML algorithms is $~1$ for all radial separations.
-%This behaviour continues for other contrasts where the mean TPR for a fixed FP does not vary much for ML algorithms whereas for the STCM algorithm it drops with decreasing radial separation.
 
-%\textbf{Importance of using the velocity dimension and its consequences}
-%We discovered in our research that the factor that enables us to explore detectability deeper and to higher contrasts is the use of the velocity dimension.
-
-
-%This is evidenced by the drop in TPR for the same number of FPs between using the velocity and not using the velocity dimension.
-%However, we also notice that increasing dimensionality arbitrarily does not give better performance and this is evidenced when we compare the performances of C3PO and C-LANDO.
-%Fig~\ref{fig:novel_roc} clearly shows this difference in the number of maximum FPs reducing from $3$ to $1$ for the same thresholds.
-%It enables us to, thus, control better the number of mean FPs in the frame.
-
-%In our tests, we found that the use of the temporal dimension does not improve the sensitivity of ML algorithms to detect faint companions.
-%This is particularly evidenced when comparing the performance of C3PO and C-LANDO across different contrasts and separations. 
-%This effect is particularly true when comparing this effect at higher contrast ($2\times 10^{-4}$) in Fig~\ref{fig:fig_4} where C-LANDO consistently has low TPR even for lower thresholds as compared to C3PO. 
-%This is somewhat explained in Fig~\ref{fig:disc-part1} where even at higher contrasts the cross correlation signature of a companion is present as a feature after a temporal mean is computed.
-
-There are a few limitations of this work that merit mentioning.
-A first limitation of this work is related to use of just one type of exoplanet, while the use of cross correlation also allows the use of multiple templates and multiple types of exoplanets.
-A companion paper (Garvin et al., in prep.) %by \citep{2023Garvin} 
-will address this limitation, where they show that it is possible to account for template variability by incorporating several spectral templates as convolution filter depth for CNNs. 
-This allows to compensate for uncertainties in the planet's atmospheric characteristics when performing detection in spectral data.
-In addition, they show that the use of cross correlation on individual molecular line lists with CNNs can increase the sensitivity to detect planets.
+There are a few limitations of this work that merit a mention.
+A first one is related to the use of a unique type of exoplanet, while the use of cross correlation also allows the use of multiple templates for multiple types of exoplanets.
+A companion paper (Garvin et al., in prep.) addresses this topic, where they show that it is possible to account for template variability by incorporating several spectral templates as convolution filter depth for CNNs. 
+This allows to account for uncertainties in the planet's atmospheric characteristics when performing detection in spectral data.
+To increase this flexibility, they also use individual molecular line lists instead of full atmospheric templates.
 Another limitation of this work is the limited data that was used for this study, which means that the selection of test data reduced the amount of data available to train the algorithms.
 Despite this significant limitation, the ML algorithms still continued to be more sensitive to high-contrast exoplanets even at smaller radial separations without any evidence of overfitting.
 If our algorithms overfit the training data we typically expect to see a large number of FPs in the test data, but very few in the training data. 
 The fact that this has performed well on this dataset, which is very noisy and lacks a coronagraph to enable high-contrast imaging, gives us confidence in a future iteration to try this algorithm on a less noisy dataset.
-Finally, ML algorithms have advanced rapidly in the last few years, with the advent of Vision Transformers \citep{2020ViT} and with recipes to train them on smaller datasets \citep[e.g.,][]{2022Gani}.
-A limitation of this study has been the use of relatively standard network architectures, such as CNNs and convLSTMs, whereas vision transformers have recently shown to be more effective on the same data dimensions.
-
-This paper, thus, sets the methodology to leverage a computer vision algorithm effectively with spectral and temporal dimensions.
+Finally, ML algorithms have evolved rapidly in the last few years, with the advent of Vision Transformers \citep{2020ViT} and recipes to train them on smaller datasets \citep[e.g.,][]{2022Gani}. Those algorithms have recently shown to be very effective on the same data dimensions, and would be a direction to explore for future research. Although we used relatively standard network architectures, this paper sets the methodology to leverage a computer vision algorithm effectively with spectral and temporal dimensions.
 
 
+%We do not exploit an important inherent benefit of spectral data, i.e availability of multiple templates and the use of molecular line lists. {\color{blue} Indeed, the detection of a planet could be hinged by the limited knowledge about its atmospheric characteristics, affecting the template selection}. 
+%This is addressed in a companion paper by \citep{2023Garvin} they show that it is possible to account for template variability by incorporating several spectral templates as convolution filter depth for CNNs. 
+%This allows to compensate for uncertainties regarding the planet's atmospheric characteristics when performing detection in spectral data. In addition, they 
+%show that the use of cross correlation on individual molecular line lists with CNNs can increase the flexibility to detect planets
+%with very little preliminary assumptions about their composition.
 
-\bibliographystyle{aa}
-\bibliography{references.bib}
+%A limitation of this work, from the perspective of ML algorithm development is the availability of only one dataset to test the algorithms.
+%In such cases ML algorithms are tested on parts of the dataset which are not used to train or validate the algorithms.
+%This is also how this has been done for this paper, however the results reported and discussed in this work should ideally be repeated in more than one dataset to gain confidence on the use of ML algorithms in this manner.
+%A logical next step would be to apply these algorithms on a larger suite of datasets such as a survey.
+%We will then be able to simulate large enough number of insertions to be able to produce contrast curves (which require FP rates of $\approx 10^{-4}$).
+
+%Finally, the field of ML algorithms is going through a revolution in computer vision and the availability of new age units such as \citep[Vision Transformers, ][]{2020ViT} and recipes to train them on smaller datasets \citep[e.g][]{2022Gani}.
+%However, we confine ourselves to fairly well tested units such as a CNN and LSTM, which might be somewhat counterintuitive in applying the best in class algorithms to challenging problems.
+%However, while these algorithms are interesting and have indeed produced spectacular results, applying them directly to our data would not produce results which will inform us as to whether these algorithms have not been well used or is it that these algorithms are not suited to our problem.
+%Finally, this paper quantitatively shows that a CNN based algorithm (C3PO) outperforms an LSTM based algorithm (C-LANDO) when detecting high-contrast companions.
+%We also provide a qualitative argument of why C3PO outperforms C-LANDO and for the same reason why STCM and C3PO have similar TPRs.
+
+
 
 \begin{acknowledgements}
 R.N.R., O.A., and V.C. are funded by the Fund for Scientific Research (F.R.S.-FNRS) of Belgium. 
 R.N.R was funded for this project through the FRIA grant N\textsuperscript{o}	40004011. This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 819155). R.N.R also wishes to thank the members of PSILab headed by O.A and Dr Sascha Quanz for the kind inputs and discussions. E.O.G gratefully acknowledges the financial support from the Swiss National Science Foundation (SNSF) under project grant number 200020\_200399.
 \end{acknowledgements}
+\bibliographystyle{aa}
+\bibliography{references.bib}
 %-------------------------------------------------------------------
-%\begin{appendix} %First appendix   
+%\begin{appendix} %First appendix
+%\label{app:snrvsstcm}
+%\section{Use of SNR with cross correlation maps and its performance vis-a-vis STCM}
+%\citep[SNR][]{2014MawetSNR} has been used with direct imaging data to compute the SNR of a detected companion.
+%SNR maps are typically used with direct imaging ADI-reduced data so that the ratio of the signal from on test pixel is computed with respect to the noise in the direct imaging photon map \citep[e.g][]{2022Daglayan}.
+%When claiming detections, detection statistics and a threshold for a detection have to be determined on some statistical basis, and is used to define a $3\sigma$ or a $5\sigma$ detection \citep[e.g][]{Jensen-Clem_2018}.
+%It has already been suggested that computing such statistics using SNR is very difficult when using cross correlation maps because of the naturally `optimistic' nature of the estimating SNR in such synthetic data \cite{2017Ruffio}.
+
+%We have noticed the same sort of optimistic behaviour of SNR when computing TPs and FPs from detection maps using SNR as the metric.
+%We demonstrate this by producing cross correlation maps as described on \S~\ref{sec: CC algorithm} and then computing \citep[SNR][]{2014Mawet} of these maps.
+%We then subject these SNR maps to the ROC curve treatment as described in \S\ref{sec:mapbased}.
+%But we notice that at an SNR$\approx 3.8$ we achieve a FP$=0$ as shown in Fig~\ref{fig:appendix 1}.
+
+%This would imply that for a simple $3\sigma$ cut off we achieve a $TP=0$ well before the $5\sigma$ cutoff as is considered the standard set by \cite{2008Marois}.
+
+%This may be true that SNR is indeed more sensitive and produces fewer FPs, but this implies that somehow computing median before performing cross correlation produces better noise characteristics than after, when there is no obvious reason for this.
+
+%On the other hand, it is possible that SNR is indeed overestimating the signal and underestimating the noise in the naive application of SNR as suggested in \cite{2017Ruffio}.
+%jThis seems to be the case because the cross correlation signal is combination of the cross correlation with the extracted spectrum and the autocorrelation signal produced by the template. 
+
+%This automatically boosts the signal leading to an underestimation of the noise and hence the SNR map appears relatively `less' noisy.
+%In the pixels where the inserted fake warm Jupiter is present, the autocorrelation boosts the signal twice as strongly because of the correlation of spectral features with itself. 
+%A means to mitigate this would be to divide out the autocorrelation, but this has to be done before the SNR is calculated.
+
+%In fact the method of computing this SNR is not optimized for spatial detections as described in this paper.
+
+%\begin{figure*}
+%    \centering
+%    \includegraphics[scale =0.5]{appendix_1.png}
+%    \caption{This figure illustrates the binary maps computed for different SNR values (given in the title of each binary map) with different TPs and FPs computed for each threshold value produces. 
+  %  As with Fig~\ref{fig:sample_detmaps}}, disconnected blobs are considered false positives (in red) and the FWHM sized pixels in green is counted as one TP.
+  %  \label{fig:appendix 1}
+%\end{figure*}
+
+
+%We describe that cross correlation and SNR can be used. 
 %When performing similar analysis we get some results.
 %\end{appendix}
 
 
 \end{document}
 
+%%%% End of aa.dem
