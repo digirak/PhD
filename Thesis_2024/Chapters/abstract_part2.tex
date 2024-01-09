@@ -1,4 +1,4 @@
-\chapter*{chapter summary}
+\chapter*{Part summary}
 Exoplanet characterization using emission/absorption spectra of exoplanets is becoming an increasing part of exoplanet science particularly\@ 
 with the advent of space based telescopes such as the James Webb space telescope and future ground based telescopes such as ELT.\@
 %spectra are an increasing part of exoplanet science, particularly with the advent of the James Webb Space telescope. 
@@ -25,10 +25,12 @@ of the following,
 \end{itemize}
 This chapter thus establishes the utility of a cross correelation based algorithm and the methodology to evaluate\@
 it.
-To that end we have two introductory chapters;
-in the first one  we will first introduce data processing methods for direct imaging spectra and in the second we will then introduce ML algorithms and specifically the classes of algorithms used in this chapter.
-This is followed by the data chapter in which we will define the science objectives and the data that is used to meet these science objectives.
-This is followed by two methods chapters; 
-the first of which describes the cross correlation based algorithm and the results it produces on the benchmarking scale and its scientific impact,
-The second methods chapter describes the ML algorithms and their results
-The final chapter in this part will discuss the results and derive a conclusion from both the experiments and finally define what next step this piece of research has motivated us to do.
+
+To this end, we start with introducing spectral data processing to detect and characterize exoplanets in \S\ref{chap: II.1}.
+This is then followed by an introduction to cross correlation and our implementation of it. 
+%\comment{This is to be merged or not}.
+This makes up the `introductory' portion of this part. 
+The `methods' of this part is related to generating data which covers the full spread of $\left(C, R, \rm{SNR}\right)$\@
+that allows us to generate data which is astronomically relevant and is thus a good test bed for evaluating our \@
+cross correlation based algorithm.
+In this chapter we also describe our evaluation criteria for both detection and characterization.
