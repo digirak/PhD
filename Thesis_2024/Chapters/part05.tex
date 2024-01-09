@@ -1,0 +1,162 @@
+\part{Discussions and conclusion}
+\startcontents[chapters]
+\printmyminitoc{}
+\chapter{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}
+Discuss salient features introduced by this chapter
+\chapter{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}
+This part of the thesis has had two broad goals for using direct imaging spectra,
+\begin{enumerate}
+    \item to define whether detectability and characterization of exoplanets using spectra was possible and if so what is the biggest factor in this detectability and characterization,
+    \item and can the use of modern ML algorithms improve this detectability and characterization, and if so can this be quantified using a common metric that could be shared by both ML and non ML algorithms.
+\end{enumerate}
+We have tested these ideas in different ways and in this chapter we will discuss the different aspects of testing both these ideas.
+To start we will discuss how the detection and characterization hypotheses are relevant to achieving goal 1 above.
+In this context we will discuss the relevance of the detection and characterization matrix and how they aid us in exploring idea 1.
+Then we will discuss how the use of ML algorithms has been ineffective in exploring the scientific idea 1 and how this means that they are unsuitable to use to explore idea 2.
+Finally, we will discuss the broad reasons around ML algorithms not being very successful and what are the steps that can be taken to mitigate this issue.
+\section{The detection and characterization hypotheses}
+The broad goal of this part of my thesis was to evaluate whether spectra could be use to detect exoplanets and to characterize them by using the same spectral features.
+This implies that the absorption features that are typical to an exoplanet will be well discriminated from those of the host star and if the spectrum is of sufficient quality with enough of these absorption lines.
+The relevant question, therefore, is when the stellar and planetary spectra are combined would a well tuned algorithm be able to detect the exoplanetary features well enough to not ony be able to discover an exoplanet but predict with a known level of uncertainty the kind of planet it is.
+
+Based on these questions, we defined the detection and characterization hypotheses, to study the limits of detection of a warm Jupiter and its corresponding characterization.
+These hypotheses allowed us to define the problem statement that we are aiming to test and justify the reason to reject some results and accept others. 
+The hypotheses also validate the benchmark by which we will evaluate algorithms to test these hypotheses.
+For instance, the detection hypothesis states that so long as there are exoplanet absorption features in a spectrum, the exoplanet is detectable in sufficiently high quality spectrum. 
+We establish that the quality of a spectrum would be defined by the number of photons it gathers, and if they are sufficiently high we would be able to detect an exoplanet. 
+This, however, does not sufficiently define the sensitivity of an algorithm to detect exoplanets. 
+Therefore to define how sensitive an algorithm is we defined the contrast $C$ at which an exoplanet is present with respect to the host star.
+We then developed a detection matrix to define this sensitivity and test the detection hypothesis.
+The detection matrix allows us to define if at the lowest contrast (highest value of $C$) it is still possible to detect the exoplanet for all the different quality spectra.
+In principle, the contrast at which a detection is claimed is a measure of how an algorithm interprets spectra and not a test of the hypothesis.
+The hypothesis is tested by checking if an exoplanet can be detected for different quality of spectra. 
+We tested this hypothesis extensively by considering spectra of very low $\rm{SNR}$ and running it through our cross correlation based detection algorithm.
+We found that the detection matrix tests the detection hypothesis for even very low values of $\rm{SNR}$ and for the highest $\rm{SNR}$ we found that the exoplanet was detected at the highest contrasts $C=10^{-6}$.
+For the detection hypothesis, this means that it was tested and verified at a $\rm{SNR}\ge10^{5}$.
+For lower $\rm{SNR}$s we are limited by the sensitivity of the algorithm. 
+This is one of the major contributions of this part of the thesis that we have produced a detection matrix to test the detection hypothesis which also serves to validate the sensitivity of an algorithm.
+
+The characterization hypothesis defines that the characteristic parameters of the exoplanet, namely $\rm{T_{eff}}$ and $\log(\rm{g})$ can be estimated through its spectra with well quantified error bars.
+We defined a characterization matrix that allows us to infer the mean values of these characteristic parameters and estimate their uncertainty.
+When we run the spectra through our cross correlation based algorithm, we found two salient results,
+\begin{enumerate}
+    \item we found that the characterization error bar became consistent at $\rm{SNR_{ccf}}\ge3$ and that this value does not change with increase in $\rm{SNR}$ but,
+    \item this uncertainty changed for lower contrasts and in fact this uncertainty became the lowest for $C=1$ i.e a case of where stellar signal was perfectly removed from the spectrum.
+\end{enumerate}
+These two results fundamentally validate the ideas that,
+\begin{enumerate}
+    \item the characteristic parameters of the exoplanet in the spectrum can be estimated with a known accuracy when the exoplanet is detectable and
+    \item this characterization is impacted by the amount of residual stellar features that are present in the spectrum.
+\end{enumerate}
+Both of these derivations are corollaries to the characterization hypothesis which states that \textit{when} the exoplanet is present in the spectrum we are able to characterize the spectra with constant error bars.
+This thesis thus defines this word \textit{when} to be $\rm{SNR_{ccf}}\ge3$.
+The second idea that stellar contamination is the fundamental reason for error in the characterization of the exoplanet allows us to appreciate the limitation of characterization algorithms when the characteristic is a broad parameter such as $\rm{T_{eff}}$.
+
+Thus, the detection and characterization hypotheses have been well tested and verified with the cross correlation algorithm. 
+This allowed us to rule out the fundamental question of whether this problem is well defined. 
+Secondly it also now allowed us to set a benchmark and parameter space for follow up algorithms.
+The fact that the sensitivity of the cross correlation based detection algorithm was the highest at $\rm{SNR}>10^{5}$ pointed to that value being the cut off for the best quality spectra.
+It also allowed us to state that scientifically it provides reasonable basis to verify that algorithms satisfy the detection hypothesis at these values of $\rm{SNR}$ before we undertake a study of their sensitivity  to detection at lower $\rm{SNR}$.
+Finally, the tests of the characterization hypothesis allowed us to link the detection and characterization at $\rm{SNR_{ccf}}>3$.
+Note that this still cannot be called a detection but this allows us to make a scientific justification to produce a characterization matrix before testing the detectability of an exoplanet rigorously.
+\section{Difference between the performances of the ML and cross correlation based algorithm}
+The detection and characterization matrices allow us to test the detection and characterization hypotheses respectively.
+The goal for ML algorithms was to operate on the same data and the same evaluation criterion to ensure we are able to compare both the types of algorithms.
+We chose to start training and testing ML algorithms with the highest $\rm{SNR}$ spectra, with the goal as first establish the sensitivity of ML algorithms on the best quality spectra.
+This would have allowed us to establish the detection sensitivity of an ML based algorithm at a $\rm{SNR}$ where the detection hypothesis was satisfied by the cross correlation based for the highest contrast.
+
+As a start we had planned to test the ability of ML algorithms to detect spectra with exoplanet features in them consistently at a specific value of $R,\rm{SNR}$ for different values of $C$ starting from $10^{-1}$ down to $C=10^{-6}$.
+We aimed to evaluate the detection sensitivity of these algorithms using confusion matrices.
+As has been clear from the results, the highest contrast that ML algorithms can detect exoplanets is $10^{-3}$.
+An analysis of the results showed that the data features that the ML algorithms need to learn to detect exoplanets disappear beyond this contrast.
+Naturally, producing a detection matrix is moot at this point because ML algorithms do not seem to be able to test the detection hypothesis. 
+Evidence, also shows that if you are unable to detect the exoplanet it is not possible to test the characterization hypothesis.
+Consequently, this thesis concludes that ML algorithms are not appropriate to test these hypotheses in this manner.
+The question therefore is why these ML algorithms failed where a cross correlation based algorithm had succeeded.
+There are several reasons this could be true we list a few of them below,
+\paragraph{1. the lack of significant differentiating features in spectra for ML algorithms to learn from:\\}
+One of the major requirements for ML algorithms to separate the $y=0$ and $y=1$ cases would be the presence of clear differentiating features between the two classes.
+When we look for example at \Cref{fig:compare-specsnr=5.24} and \Cref{fig:compare-specsnr=3000} it is fairly evident that \Cref{fig:compare-specsnr=3000} contains several spectral bins that contain differentiating features, which may not be so evident in \Cref{fig:compare-specsnr=5.24}.
+This is reflected in confusion matrices produced by the ML algorithms on the same parameter spaces.
+We clearly observe that the matrices produced with the low contrast exoplanets has very good $\rm{TPR}$ and low false positives.
+But as the contrast increases, we notice the confusion matrices producing more false negatives and in the case of random forests more false positives as well.
+All these indicate that while in the lower contrast cases the algorithms have features that are different between $y=0$ and $y=1$, as the contrast increases these features get washed away by stellar signal.
+This is why even at the higher $\rm{SNR}$ contrast seems to play such an important role.
+Thus, we also see that as the contrast increases, deep learning algorithms see only $y=0$ cases whereas random forests get confused more with the noise.
+
+\paragraph{2. the presence of large number of wavelength bins that do not contain discriminating information:\\}
+the large number of wavelength bins are supposed to act as features to ML algorithms which allows them to learn the difference between the $y=0$ and $y=1$ cases, provided there are enough wavelength bins with features.
+The cross correlation based algorithm uses this measure to produce a strong cross correlation signature by accounting for the small amounts of information in each wavelength bin. 
+This has caused problems for many detection problems in the past where false correlations due to atmospheric lines, particularly the Telluric absorption.
+The assumption at the beginning of this part was that there was enough information in each wavelength bin which allows the cross correlation to detect the exoplanets and therefore should be sufficient for ML algorithms as well.
+However, this appears to have been an incorrect assumption, because if this was true then either increasing the contrast or increasing the $\rm{SNR}$ should have had lesser effect than it currently has.
+If the ML algorithms were purely influenced by the astrophysical features, then we would notice an ML algorithm continuing to detect exoplanets at low $\rm{SNR}$ or at the very least be less sensitive to changing $\rm{SNR}$ and a reverse effect would be noticed if the ML algorithms were only affected by the signal in the data. 
+But we notice that both the $\rm{SNR}$ needs to be high and the $C$ has to be low for ML algorithms to detect exoplanets.
+This is a sign that that not only are there no differentiating features at higher contrasts and lower $\rm{SNR}$ but that intrisically the large number of wavelength bins don't contain enough information. 
+A counter point to this is that it is possible that ML algorithms would be trained if we limit the spectra to certain wavelength bins rather than the whole spectrum.
+\paragraph{3. finally the presence of photon noise which leads to a lot of variance in features:\\}
+astronomical observations have at the very least photon noise. 
+This is very basic and intrinsic noise that is always present in astronomical data.
+This noise produces intrinsic randomness in the data and also washes out crucial features in the data. 
+We see that both the cross correlation and ML based algorithms are both impacted by this.
+While the sensitivity of the cross correlation algorithm is limited by this noise, for the ML algorithms it appears to hamper both training and validation of the data.
+This noise seems to also produce a large amount of confusion in random forests.
+When the noise levels are decreased at a constant contrast $C>10^{-3}$ there seems to be minimal impact of noise on the algorithms. 
+We see this as an effect of the nature of photon noise. 
+
+
+\section{Conclusions and limitations of the study}
+This study has had several interesting results and contributions to the field of exoplanet detection and characterization.
+We will first list the notable contributions and then discuss the many limitations of this study.
+
+\subsection{Conclusions of this study}
+The conclusions in this study follow three major axis points, the scientific hypotheses developed for this study, followed by the algorithms and finally generalised conclusions of the study.
+\paragraph{The detection and characterization hypotheses\\}
+In the field of direct exoplanet detection, the use of spectra are well known and somewhat well explored.
+This part of the thesis primarily explored the idea of whether it was possible to simultaneously detect and characterize exoplanets using their spectra alone.
+In this part we have defined the detection hypothesis which was tested using the detection matrix and the characterization hypothesis which was tested using the characterization matrix.
+We defined both these hypotheses and their evaluation metrics to be compatible with both ML and non-ML algorithms. 
+We then generated data that could be used for both types of algorithms and which have a basis in astrophysics.
+
+\paragraph{A cross correlation based detection and characterization algorithm:\\}
+We developed an algorithm that cross correlates template spectra with target data spectra, and we interpret these results to compute the detection and characterization matrices.
+We discovered that the sensitivity of detection of an exoplanet is limited by the $\rm{SNR}$ of the spectrum. 
+We also found that the detection hypothesis is satisified for all values of contrast at the highest $\rm{SNR}$.
+The characterization of an exoplanet is limited by the same parameters as the detection, but at a lower threshold of the detection parameter we obtain a stable uncertainty but a value higher than what is demanded by the scientific community.
+We found that the perfect characterization of an exoplanet is limited by the stellar contamination and when stellar contamination is perfectly removed then we have perfect characterization with stable uncertainties.
+
+\paragraph{generalized conclusions:\\}
+This study has attempted to understand the interaction between detectability, characterization and the improvement that ML algorithms bring to this interaction.
+We have concluded that exoplanet detection using cross correlation algorithms is the ultimate test of the presence of an exoplanet and characterization serves as a clue to the presence of the presence of this exoplanet given very specific conditions (for ex: $\rm{SNR_{ccf}}>3$).
+This study has also learnt that ML algorithms, no matter how advanced, are severely impacted by both noise and the contrast of the exoplanet.
+The changing $\rm{SNR}$ impacts the cross correlation by reducing its sensitivity but in case of the ML based algorithms we notice that both changing $\rm{SNR}$ and $C$ impacts the detection sensitivity.
+\subsection{Limitations of this study}
+This study has certain specific limitations fundamentally related to its scope, the data used and extent of exploration of the use of ML algorithms.
+\paragraph{an unfair comparison between the cross correlation based and ML based algorithms:\\}
+while comparing the performance of the cross correlation based algorithms with those of the ML based algorithms it appears that this kind of problem statement is better suited for a cross correlation kind of algorithm which only evaluates the similarity between spectra.
+Since we generate large number of spectra which are subject to only random modifications, this problem  could be better suited to an unsupervised approach than a supervised one 
+\paragraph{lack of realistic variation in the data:\\}
+so ML doesn't train
+\paragraph{the choice of ML algorithms:\\}
+maybe a more interesting choice than a safe one could have helped
+\paragraph{non use of specific molecules:\\}
+Use of molecules is well established but we chose not to.
+
+\section{Next steps and how this can feature sparsity be countered.}
+One of the major reasons to not be able to compose a detection matrix with ML algorithms has been the sparsity of features in the spectra.
+As we saw with \Cref{fig: RF-SNR-featureimportances}, it was clear that no matter the contrast or the $\rm{SNR}$ the feature importances never were strong enough to reproduce spectral features.
+While at lower contrasts we could still some features, these would have disappeared in a more realistic and varying dataset.
+This makes it unambiguous that the data needs sufficient feature to be able to detect exoplanets.
+
+It is also clear from our analysis that basic characterization of an exoplanet using its spectrum is fundamentally related to its detection. 
+Therefore, it is imperative to study the best way to present ML algorithms data to detect exoplanets at high contrasts.
+We have also seen that $\rm{SNR}$ provides a loosely but not wholly reliable metric to evaluate if the data is sufficiently diverse to train a ML algorithm or contains sufficient features.
+Therefore, we need to find a metric that gives us insight into the data that is presented to ML algorithms for training.
+In the part that follows this, we will study how ML algorithms behave when provided with a feature rich dataset and when compared using a metric that sees the same features as the ML algorithm.
+
+\chapter{How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}
+\chapter{What are the ways forward?}
+\section{Conclusions}
+\subsection{Consequences for direct detection}
+\subsection{Consequences for characterizing using spectra}
+\subsection{Consequences for exoplanet detection}
