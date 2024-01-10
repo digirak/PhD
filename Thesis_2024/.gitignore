@@ -5,7 +5,9 @@
 *.fls
 *.log
 *.out
-*.pdf
+*.log
+*.ptc
+*.toc
 *.synctex.gz
 live.main.tex
 live.main.bbg

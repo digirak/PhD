@@ -17,37 +17,31 @@
 \contentsline {table}{\numberline {6.2}{\ignorespaces Sample detection matrix where the rows represent a different $\rm {SNR}$ numbered from $1$ to $n$ where $\rm {SNR_1}$ represents the spectrum with the highest $\rm {SNR}$. Columns are indexed by the wavelength resolution of the spectra that are processed by the algorithm. Each entry correesponds to the contrast at which the algorithm is able to detect the exoplanet observed with its correspoding $\rm {SNR}$ amd $R$. Thus a contrast $C_{R_1,\rm {SNR}_1}$ corresponds to the contrast at which the exoplanet can be detected when observed with a $\rm {SNR_1}$ and a resolution $R_1$ and so on.\relax }}{40}{table.caption.14}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Performance of cross correlation based algorithm on the benchmarking metric}{42}{chapter.7}%
-\contentsline {xpart}{Application of cross correlation to high contrast data for simulataneous detection and characterisation}{65}{part.3}%
+\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{65}{part.3}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Introduction to HCI datasets and their dimensionalities}{66}{chapter.8}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Producing detection maps from HCI and MRS data}{68}{chapter.9}%
+\contentsline {xchapter}{Producing detection and characterization maps from HCI and MRS data}{67}{chapter.9}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Characterization in high contrast images with medium resolution spectra}{69}{chapter.10}%
+\contentsline {xchapter}{Using cross correlations with 4D data}{69}{chapter.10}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Applying our algorithms to datasets}{70}{chapter.11}%
+\contentsline {xchapter}{Discussion of the advantages and limitations of processing spectra in this manner}{70}{chapter.11}%
+\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{73}{part.4}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Discussion of the advantages and limitations of processing spectra in this manner}{71}{chapter.12}%
-\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{74}{part.4}%
+\contentsline {xchapter}{Development and performance of the ML algorithms}{74}{chapter.12}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Development and performance of the ML algorithms}{75}{chapter.13}%
+\contentsline {xchapter}{Use of machine learning algorithms with map based data}{95}{chapter.13}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Producing transformed datasets using cross correlation }{96}{chapter.14}%
+\contentsline {xchapter}{Training and testing of the ML algorithms with simulated data}{96}{chapter.14}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Machine learning algorithns}{97}{chapter.15}%
+\contentsline {xchapter}{Discussion and salient features of map based detection algorithms}{97}{chapter.15}%
+\contentsline {xpart}{Discussions and conclusion}{100}{part.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Detection map based exoplanet detection using ML and non-ML algorithms}{98}{chapter.16}%
+\contentsline {xchapter}{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{101}{chapter.16}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Experiment using an empty dataset}{99}{chapter.17}%
+\contentsline {xchapter}{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{102}{chapter.17}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Discussion and salient features of map based detection algorithms}{100}{chapter.18}%
-\contentsline {xpart}{Discussions and conclusion}{103}{part.5}%
+\contentsline {xchapter}{How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{109}{chapter.18}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{104}{chapter.19}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{105}{chapter.20}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{112}{chapter.21}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{What are the ways forward?}{113}{chapter.22}%
+\contentsline {xchapter}{What are the ways forward?}{110}{chapter.19}%
 \contentsfinish 
