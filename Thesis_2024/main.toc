@@ -16,8 +16,8 @@
 \contentsline {section}{\numberline {3.2}Applications to exoplanet detection}{16}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Machine learning in direct imaging}{16}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Relevance of using machine learning in simultaneous spectral and imaging targets}{16}{section.3.4}%
-\contentsline {part}{II\hspace {1em}Exoplanet detection and characterization with extracted spectra of high contrast images}{17}{part.2}%
-\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images}{19}{part.2}%
+\contentsline {part}{II\hspace {1em}Exoplanet detection and characterization with extracted spectra of high contrast images}{18}{part.2}%
+\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images}{20}{part.2}%
 \contentsline {chapter}{\numberline {4}Introduction to spectral data processing}{21}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Exoplanetary spectral data from direct imaging data sets}{22}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Exoplanetary science from HDS}{23}{section.4.2}%
