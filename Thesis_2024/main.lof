@@ -9,9 +9,9 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces A sample percepton consisting of an input vector $X_{i}$ and an output $y$ is depicted here.\relax }}{14}{figure.caption.6}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Machine learning and astronomy}{16}{chapter.3}%
-\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images}{20}{part.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to spectral data processing}{21}{chapter.4}%
+\contentsline {xchapter}{Introduction to spectral data processing}{17}{chapter.4}%
+\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images using cross correlation.}{29}{part.2}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Cross correlation for processing exoplanet spectra}{30}{chapter.5}%
 \addvspace {10\p@ }

@@ -16,19 +16,19 @@
 \contentsline {section}{\numberline {3.2}Applications to exoplanet detection}{16}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Machine learning in direct imaging}{16}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Relevance of using machine learning in simultaneous spectral and imaging targets}{16}{section.3.4}%
-\contentsline {part}{II\hspace {1em}Exoplanet detection and characterization with extracted spectra of high contrast images}{18}{part.2}%
-\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images}{20}{part.2}%
-\contentsline {chapter}{\numberline {4}Introduction to spectral data processing}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Exoplanetary spectral data from direct imaging data sets}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Exoplanetary science from HDS}{22}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Algorithms that detect and/or characterize exoplanets using high contrast diffusion spectra }{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Non-ML based spectral inference algorithms }{25}{subsection.4.3.1}%
-\contentsline {paragraph}{Stellar contamination subtraction methods:\\}{25}{paragraph*.8}%
-\contentsline {paragraph}{modelling the residual spectral features:\\}{25}{paragraph*.9}%
-\contentsline {paragraph}{interpreting the results:\\}{26}{paragraph*.10}%
-\contentsline {subsection}{\numberline {4.3.2}Use of machine learning (ML) algorithms in analyzing astrophysical data and spectra}{26}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Limitations of current methods}{27}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Motivation to use ML algorithms for identifying spectral features of exoplanets}{28}{section.4.5}%
+\contentsline {chapter}{\numberline {4}Introduction to spectral data processing}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Exoplanetary spectral data from direct imaging data sets}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Exoplanetary science from HDS}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Algorithms that detect and/or characterize exoplanets using high contrast diffusion spectra }{20}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Non-ML based spectral inference algorithms }{21}{subsection.4.3.1}%
+\contentsline {paragraph}{Stellar contamination subtraction methods:\\}{21}{paragraph*.7}%
+\contentsline {paragraph}{modelling the residual spectral features:\\}{21}{paragraph*.8}%
+\contentsline {paragraph}{interpreting the results:\\}{22}{paragraph*.9}%
+\contentsline {subsection}{\numberline {4.3.2}Use of machine learning (ML) algorithms in analyzing astrophysical data and spectra}{22}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Limitations of current methods}{23}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Motivation to use ML algorithms for identifying spectral features of exoplanets}{24}{section.4.5}%
+\contentsline {part}{II\hspace {1em}Exoplanet detection and characterization with extracted spectra of high contrast images using cross correlation.}{27}{part.2}%
+\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images using cross correlation.}{29}{part.2}%
 \contentsline {chapter}{\numberline {5}Cross correlation for processing exoplanet spectra}{30}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Introduction to cross correlation of spectra}{30}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Adapting the cross correlation function to detecting exoplanets}{30}{section.5.2}%
