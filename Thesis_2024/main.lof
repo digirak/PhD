@@ -1,66 +1,66 @@
 \babel@toc {english}{}\relax 
-\contentsline {xpart}{Introduction}{3}{part.1}%
+\contentsline {xpart}{Introduction}{5}{part.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Exoplanet detection and characterization using high contrast imaging}{4}{chapter.1}%
+\contentsline {xchapter}{Exoplanet detection and characterization using high contrast imaging}{6}{chapter.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to machine learning algorithms}{5}{chapter.2}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A sample decision tree\relax }}{11}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces RF importances of features used to predict the species of the Iris flower. The y-axis is the relative importance; so a relative importance of $1$ implies the most important and $0$ is the least important feature to predict the species.\relax }}{13}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces A sample percepton consisting of an input vector $X_{i}$ and an output $y$ is depicted here.\relax }}{14}{figure.caption.6}%
+\contentsline {xchapter}{Introduction to machine learning algorithms}{7}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A sample decision tree\relax }}{13}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces RF importances of features used to predict the species of the Iris flower. The y-axis is the relative importance; so a relative importance of $1$ implies the most important and $0$ is the least important feature to predict the species.\relax }}{15}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A sample percepton consisting of an input vector $X_{i}$ and an output $y$ is depicted here.\relax }}{16}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Machine learning and astronomy}{16}{chapter.3}%
+\contentsline {xchapter}{Machine learning and astronomy}{18}{chapter.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to spectral data processing}{17}{chapter.4}%
-\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images using cross correlation.}{29}{part.2}%
+\contentsline {xchapter}{Introduction to spectral data processing}{19}{chapter.4}%
+\contentsline {xpart}{Exoplanet detection and characterization with extracted spectra of high contrast images using cross correlation.}{30}{part.2}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Cross correlation for processing exoplanet spectra}{30}{chapter.5}%
+\contentsline {xchapter}{Cross correlation for processing exoplanet spectra}{31}{chapter.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Spectral data generation to test the effectiveness of cross correlation based detection and characterization}{31}{chapter.6}%
+\contentsline {xchapter}{Spectral data generation to test the effectiveness of cross correlation based detection and characterization}{32}{chapter.6}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Detection and characterization performance using cross correlation and synthetic astronomical spectra}{42}{chapter.7}%
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Caption\relax }}{49}{figure.caption.20}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Caption\relax }}{50}{figure.caption.22}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Caption\relax }}{52}{figure.caption.23}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Caption\relax }}{53}{figure.caption.24}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Caption\relax }}{54}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Caption\relax }}{55}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Caption\relax }}{59}{figure.caption.30}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Caption\relax }}{60}{figure.caption.32}%
-\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{66}{part.3}%
+\contentsline {xchapter}{Detection and characterization performance using cross correlation and synthetic astronomical spectra}{43}{chapter.7}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Caption\relax }}{50}{figure.caption.20}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Caption\relax }}{51}{figure.caption.22}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Caption\relax }}{53}{figure.caption.23}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Caption\relax }}{54}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Caption\relax }}{55}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Caption\relax }}{56}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Caption\relax }}{60}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Caption\relax }}{61}{figure.caption.32}%
+\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{67}{part.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to HCI datasets and their dimensionalities}{67}{chapter.8}%
+\contentsline {xchapter}{Introduction to HCI datasets and their dimensionalities}{68}{chapter.8}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Producing detection and characterization maps from HCI and MRS data}{68}{chapter.9}%
+\contentsline {xchapter}{Producing detection and characterization maps from HCI and MRS data}{69}{chapter.9}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Using cross correlations with 4D data}{70}{chapter.10}%
+\contentsline {xchapter}{Using cross correlations with 4D data}{71}{chapter.10}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Discussion of the advantages and limitations of processing spectra in this manner}{71}{chapter.11}%
-\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{74}{part.4}%
+\contentsline {xchapter}{Discussion of the advantages and limitations of processing spectra in this manner}{72}{chapter.11}%
+\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{75}{part.4}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Development and performance of the ML algorithms}{75}{chapter.12}%
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Caption\relax }}{78}{figure.caption.35}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Caption\relax }}{79}{figure.caption.36}%
-\contentsline {figure}{\numberline {12.3}{\ignorespaces Caption\relax }}{82}{figure.caption.40}%
-\contentsline {figure}{\numberline {12.4}{\ignorespaces Caption\relax }}{84}{figure.caption.42}%
-\contentsline {figure}{\numberline {12.5}{\ignorespaces Caption\relax }}{85}{figure.caption.44}%
-\contentsline {figure}{\numberline {12.6}{\ignorespaces CCF results\relax }}{89}{figure.caption.48}%
-\contentsline {figure}{\numberline {12.7}{\ignorespaces RF results\relax }}{90}{figure.caption.49}%
-\contentsline {figure}{\numberline {12.8}{\ignorespaces AE results\relax }}{91}{figure.caption.50}%
-\contentsline {figure}{\numberline {12.10}{\ignorespaces Caption\relax }}{93}{figure.caption.52}%
-\contentsline {figure}{\numberline {12.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{94}{figure.caption.53}%
+\contentsline {xchapter}{Development and performance of the ML algorithms}{76}{chapter.12}%
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Caption\relax }}{79}{figure.caption.35}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Caption\relax }}{80}{figure.caption.36}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Caption\relax }}{83}{figure.caption.40}%
+\contentsline {figure}{\numberline {12.4}{\ignorespaces Caption\relax }}{85}{figure.caption.42}%
+\contentsline {figure}{\numberline {12.5}{\ignorespaces Caption\relax }}{86}{figure.caption.44}%
+\contentsline {figure}{\numberline {12.6}{\ignorespaces CCF results\relax }}{90}{figure.caption.48}%
+\contentsline {figure}{\numberline {12.7}{\ignorespaces RF results\relax }}{91}{figure.caption.49}%
+\contentsline {figure}{\numberline {12.8}{\ignorespaces AE results\relax }}{92}{figure.caption.50}%
+\contentsline {figure}{\numberline {12.10}{\ignorespaces Caption\relax }}{94}{figure.caption.52}%
+\contentsline {figure}{\numberline {12.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{95}{figure.caption.53}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Use of machine learning algorithms with map based data}{96}{chapter.13}%
+\contentsline {xchapter}{Use of machine learning algorithms with map based data}{97}{chapter.13}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Training and testing of the ML algorithms with simulated data}{97}{chapter.14}%
+\contentsline {xchapter}{Training and testing of the ML algorithms with simulated data}{98}{chapter.14}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Discussion and salient features of map based detection algorithms}{98}{chapter.15}%
-\contentsline {xpart}{Discussions and conclusion}{101}{part.5}%
+\contentsline {xchapter}{Discussion and salient features of map based detection algorithms}{99}{chapter.15}%
+\contentsline {xpart}{Discussions and conclusion}{102}{part.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{102}{chapter.16}%
+\contentsline {xchapter}{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{103}{chapter.16}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{103}{chapter.17}%
+\contentsline {xchapter}{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{104}{chapter.17}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{110}{chapter.18}%
+\contentsline {xchapter}{How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{111}{chapter.18}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{What are the ways forward?}{111}{chapter.19}%
+\contentsline {xchapter}{What are the ways forward?}{112}{chapter.19}%
 \contentsfinish 
