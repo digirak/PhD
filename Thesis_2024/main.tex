@@ -108,12 +108,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%\usepackage{background}
 
+% Define the background picture
+%\backgroundsetup{
+ %   scale=1,
+  %  color=black,
+   % opacity=0.4,
+    %angle=0,
+    %position=current page.south,
+    %	vshift=1cm,
+    %contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/hotjupiter.png}}
+%}
+\usepackage{wallpaper}
 
+% Define the background picture
+%\ThisCenterWallPaper{1}{images/rot_hotjupiter.png} % Adjust scale and filename as needed
+\TileWallPaper{\paperwidth}{\paperheight}{images/rot_hotjupiter.png} % Adjust scale and filename as needed
+% Redefine the footnoterule command to customize the color
+\makeatletter
+\renewcommand\footnoterule{%
+  \kern-3\p@
+  \hrule\@width \textwidth \kern2.6\p@ % the \hrule is .4pt high
+  \kern3.6\p@
+  \color{white}{\hrule height 0.5pt width \textwidth}% Set rule line color here
+}
+\makeatother
+
+\makeatletter
+\renewcommand\@makefntext[1]{%
+  \parindent 1em%
+  \noindent
+  \tiny\color{white}% Set footnote text size and color here
+  \hb@xt@1.8em{\hss\@makefnmark}#1%
+}
+\makeatother
 
 \begin{document}
 	
 	\begin{titlepage}
+		\color{white}
+		%\BgThispage
 		\begin{center}
 			\begin{tabular}{c@{\hskip 3cm}c}
 				\includegraphics[height=2cm]{images/uliege logo.png} &
@@ -139,7 +174,7 @@
 			STAR Institute, University of Liège, 19 Allée du Six Août, 4000 Liège, Belgium\\
   			%\vfill
 			\vspace{0.5cm}
-			October 2023
+			July 2024
 		\end{center}
 		\vspace{1cm}
 		\begin{center}
@@ -148,8 +183,11 @@
 				\textsc{Marc Vandenbroeck}  &  Co-promoteur \\
 			\end{tabular}\\%[1cm]
 		\end{center}
+		\footnotetext[1]{This image is from the NASA exoplanet multimedia archive representing a warm Jupiter created by R. Hurt that can be obtained  
+		\href[]{https://exoplanets.nasa.gov/resources/2242/young-hot-jupiter/}{here}.}
 	\end{titlepage}
 	\newpage
+	\ClearWallPaper
 
 \pagestyle{fancy}
 
