@@ -1,5 +1,7 @@
 \documentclass[12pt,chapterprefix=True]{book}
 \usepackage{natbib}
+\usepackage{etoolbox}
+\patchcmd{\part}{\clearpage}{}{}{}
 %
 \usepackage{aasmacros}
 \bibliographystyle{abbrvnat}
@@ -60,7 +62,7 @@
 
 \titleformat{\chapter}[display]
 {\normalfont\color{yourcolor}}
-{\filleft\huge\color{black}\textsc\chaptertitlename\hspace*{2mm}%
+{\filleft\large\color{black}\textsc\chaptertitlename\hspace*{2mm}%
 	\begin{tikzpicture}[baseline={([yshift=-.6ex]current bounding box.center)}]
 	\node[fill=yourcolor,circle,text=white] {\thechapter};
 	\end{tikzpicture}
@@ -102,7 +104,6 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.7mm}}
 \newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -167,6 +168,8 @@
 
 \listoftables
 
+\input{Chapters/abstract_part2.tex}
+\addcontentsline{toc}{chapter}{Thesis summary}
 
 \mainmatter
 
@@ -183,7 +186,6 @@
 %\input{Chapters/chapter01.tex}
 
 %\part{Contribution}
-\input{Chapters/abstract_part2.tex}
 \include{Chapters/part01.tex}
 \include{Chapters/part02.tex}
 \include{Chapters/part03.tex}

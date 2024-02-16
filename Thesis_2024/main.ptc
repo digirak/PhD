@@ -1,167 +1,167 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Table of contents}{iv}{chapter*.1}%
 \contentsline {chapter}{List of Figures}{v}{chapter*.2}%
-\contentsline {part}{I\hspace {1em}Introduction}{3}{part.1}%
-\contentsline {xpart}{Introduction}{5}{part.1}%
+\contentsline {chapter}{Thesis summary}{viii}{chapter*.4}%
+\contentsline {part}{I\hspace {1em}Introduction}{1}{part.1}%
+\contentsline {xpart}{Introduction}{3}{part.1}%
 \ttl@starttoc {chapters@1}
-\contentsline {chapter}{\numberline {1}Exoplanet detection and characterization using high contrast imaging}{6}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Direct exoplanet detections and characterizations}{6}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Introduction to machine learning algorithms}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Types of supervised algorithms}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Training and testing supervised algorithms}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Random forests}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Multi-layer Perceptrons}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Autoencoders}{16}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Machine learning and astronomy}{17}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Use of deep detection networks}{17}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Applications to exoplanet detection}{17}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Machine learning in direct imaging}{17}{subsection.2.6.3}%
-\contentsline {section}{\numberline {2.7}Relevance of using machine learning in simultaneous spectral and imaging targets}{17}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Introduction to spectral data processing}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Exoplanetary spectral data from direct imaging data sets}{18}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Exoplanetary science from HDS}{19}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Algorithms that detect and/or characterize exoplanets using high contrast diffusion spectra }{21}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Non-ML based spectral inference algorithms }{22}{subsection.3.3.1}%
-\contentsline {paragraph}{Stellar contamination subtraction methods:\\}{22}{paragraph*.8}%
-\contentsline {paragraph}{modelling the residual spectral features:\\}{22}{paragraph*.9}%
-\contentsline {paragraph}{interpreting the results:\\}{23}{paragraph*.10}%
-\contentsline {subsection}{\numberline {3.3.2}Use of machine learning (ML) algorithms in analyzing astrophysical data and spectra}{23}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Limitations of current methods}{24}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Motivation to use ML algorithms for identifying spectral features of exoplanets}{25}{section.3.5}%
-\contentsline {part}{II\hspace {1em}Cross correlation of exoplanet spectra from high contrast imaging data for simulataneous detection and characterization}{27}{part.2}%
-\contentsline {xpart}{Cross correlation of exoplanet spectra from high contrast imaging data for simulataneous detection and characterization}{29}{part.2}%
+\contentsline {chapter}{\numberline {1}Exoplanet detection and characterization using high contrast imaging}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Direct exoplanet detections and characterizations}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Exoplanet science of high contrast imaging}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Exoplanet science of medium and high resolution spectra }{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}High contrast image data processing}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Scientific goals of combining high/medium resolution spectra with high contrast imaging}{5}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Introduction to machine learning algorithms}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Types of supervised algorithms}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Training and testing supervised algorithms}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Random forests}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Multi-layer Perceptrons}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Autoencoders}{15}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Machine learning and astronomy}{16}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Use of deep detection networks}{16}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Applications to exoplanet detection}{16}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Machine learning in direct imaging}{16}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Relevance of using machine learning in simultaneous spectral and imaging targets}{16}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Introduction to spectral data processing}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Exoplanetary spectral data from direct imaging data sets}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Exoplanetary science from HDS}{18}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Algorithms that detect and/or characterize exoplanets using high contrast diffusion spectra }{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Non-ML based spectral inference algorithms }{21}{subsection.3.3.1}%
+\contentsline {paragraph}{Stellar contamination subtraction methods:\\}{21}{paragraph*.8}%
+\contentsline {paragraph}{modelling the residual spectral features:\\}{21}{paragraph*.9}%
+\contentsline {paragraph}{interpreting the results:\\}{22}{paragraph*.10}%
+\contentsline {subsection}{\numberline {3.3.2}Use of machine learning (ML) algorithms in analyzing astrophysical data and spectra}{22}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Limitations of current methods}{23}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Motivation to use ML algorithms for identifying spectral features of exoplanets}{24}{section.3.5}%
+\contentsline {part}{II\hspace {1em}Cross correlation of exoplanet spectra from high contrast imaging data for simulataneous detection and characterization}{26}{part.2}%
+\contentsline {xpart}{Cross correlation of exoplanet spectra from high contrast imaging data for simulataneous detection and characterization}{28}{part.2}%
 \ttl@stoptoc {chapters@1}
 \ttl@starttoc {chapters@2}
-\contentsline {chapter}{\numberline {4}Cross correlation for processing exoplanet spectra}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction to cross correlation of spectra}{30}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Adapting the cross correlation function to detecting exoplanets}{30}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Interpretation of cross correlation values}{30}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Spectral data generation to test the effectiveness of cross correlation based detection and characterization}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Scientific goals of using spectral data with ML algorithms}{31}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Detection hypothesis}{32}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Characterization hypothesis}{32}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Data generation to test our hypotheses}{33}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1} Choice of parameters for data generation}{33}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Synthetic spectra library}{34}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Generating synthetic spectra}{35}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Creating astronomically accurate synthetic spectra}{35}{subsection.5.3.1}%
-\contentsline {paragraph}{Normalization:}{36}{paragraph*.11}%
-\contentsline {paragraph}{Scaling the spectra:}{36}{paragraph*.12}%
-\contentsline {subsection}{\numberline {5.3.2}Noisy spectra generation}{36}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Computing the $\rm {SNR}$ from the noisy spectrum.}{37}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Developing a common benchmark for ML algorithms and non-ML algorithms}{38}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1} Evaluation of the algorithms through confusion matrices}{39}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Quantifying the algorithm as a detection tool}{40}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Quantifying the characterization hypothesis using the characterization matrix}{41}{subsection.5.4.3}%
-\contentsline {chapter}{\numberline {6}Detection and characterization performance using cross correlation and synthetic astronomical spectra}{42}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Methods}{42}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Pre-processing and cross correlation}{43}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Development of the detection parameters and its application}{44}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Development of the characterization parameter and its application}{45}{subsection.6.1.3}%
-\contentsline {paragraph}{Why do we need a log-likelihood at all?\\}{45}{paragraph*.15}%
-\contentsline {paragraph}{How do we adapt this concept to our specific case?\\}{46}{paragraph*.16}%
-\contentsline {paragraph}{How do we use this log-likelihood to compute the uncertainties?\\}{47}{paragraph*.17}%
-\contentsline {section}{\numberline {6.2}Results}{47}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}The parameter space that we use to generate data}{47}{subsection.6.2.1}%
-\contentsline {paragraph}{Parameter ranges of $C$:\\}{48}{paragraph*.18}%
-\contentsline {paragraph}{Parameter ranges of $\rm {SNR}:\\$}{48}{paragraph*.19}%
-\contentsline {paragraph}{Parameter space selection of $R$:\\}{49}{paragraph*.21}%
-\contentsline {subsection}{\numberline {6.2.2}The detection matrix }{50}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Characterization error bars }{51}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Benchmark for ML algorithms}{54}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}The detection hypothesis and the relevant benchmark}{54}{subsection.6.3.1}%
-\contentsline {paragraph}{Setting the benchmark for ML algorithms:\\}{55}{paragraph*.27}%
-\contentsline {paragraph}{Consequence for the scientific goals of spectral data processing to detect exoplanets:\\}{56}{paragraph*.28}%
-\contentsline {subsection}{\numberline {6.3.2}The characterization and its relevant benchmark}{57}{subsection.6.3.2}%
-\contentsline {paragraph}{Evolution of the characterization accuracy with the parameter space:\\}{57}{paragraph*.29}%
-\contentsline {paragraph}{Effect of perfect removal of stellar signal from the data:\\}{58}{paragraph*.31}%
-\contentsline {paragraph}{Link between detection and characterization of spectra:\\}{60}{paragraph*.33}%
-\contentsline {subsection}{\numberline {6.3.3}Why would ML algorithms be an asset if they work?}{62}{subsection.6.3.3}%
-\contentsline {part}{III\hspace {1em}Using cross correlations with high contrast images with several dimensions}{64}{part.3}%
-\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{66}{part.3}%
+\contentsline {chapter}{\numberline {4}Cross correlation for processing exoplanet spectra}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction to cross correlation of spectra}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Adapting the cross correlation function to detecting exoplanets}{29}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Interpretation of cross correlation values}{29}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Spectral data generation to test the effectiveness of cross correlation based detection and characterization}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Scientific goals of using spectral data with ML algorithms}{30}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detection hypothesis}{31}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Characterization hypothesis}{31}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Data generation to test our hypotheses}{31}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1} Choice of parameters for data generation}{32}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Synthetic spectra library}{32}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Generating synthetic spectra}{34}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Creating astronomically accurate synthetic spectra}{34}{subsection.5.3.1}%
+\contentsline {paragraph}{Normalization:}{35}{paragraph*.11}%
+\contentsline {paragraph}{Scaling the spectra:}{35}{paragraph*.12}%
+\contentsline {subsection}{\numberline {5.3.2}Noisy spectra generation}{35}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Computing the $\rm {SNR}$ from the noisy spectrum.}{36}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Developing a common benchmark for ML algorithms and non-ML algorithms}{37}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1} Evaluation of the algorithms through confusion matrices}{38}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Quantifying the algorithm as a detection tool}{38}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Quantifying the characterization hypothesis using the characterization matrix}{40}{subsection.5.4.3}%
+\contentsline {chapter}{\numberline {6}Detection and characterization performance using cross correlation and synthetic astronomical spectra}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Methods}{41}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Pre-processing and cross correlation}{42}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Development of the detection parameters and its application}{43}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Development of the characterization parameter and its application}{44}{subsection.6.1.3}%
+\contentsline {paragraph}{Why do we need a log-likelihood at all?\\}{44}{paragraph*.15}%
+\contentsline {paragraph}{How do we adapt this concept to our specific case?\\}{45}{paragraph*.16}%
+\contentsline {paragraph}{How do we use this log-likelihood to compute the uncertainties?\\}{46}{paragraph*.17}%
+\contentsline {section}{\numberline {6.2}Results}{46}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}The parameter space that we use to generate data}{46}{subsection.6.2.1}%
+\contentsline {paragraph}{Parameter ranges of $C$:\\}{47}{paragraph*.18}%
+\contentsline {paragraph}{Parameter ranges of $\rm {SNR}:\\$}{47}{paragraph*.19}%
+\contentsline {paragraph}{Parameter space selection of $R$:\\}{48}{paragraph*.21}%
+\contentsline {subsection}{\numberline {6.2.2}The detection matrix }{49}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Characterization error bars }{50}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Benchmark for ML algorithms}{53}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}The detection hypothesis and the relevant benchmark}{53}{subsection.6.3.1}%
+\contentsline {paragraph}{Setting the benchmark for ML algorithms:\\}{54}{paragraph*.27}%
+\contentsline {paragraph}{Consequence for the scientific goals of spectral data processing to detect exoplanets:\\}{55}{paragraph*.28}%
+\contentsline {subsection}{\numberline {6.3.2}The characterization and its relevant benchmark}{56}{subsection.6.3.2}%
+\contentsline {paragraph}{Evolution of the characterization accuracy with the parameter space:\\}{56}{paragraph*.29}%
+\contentsline {paragraph}{Effect of perfect removal of stellar signal from the data:\\}{57}{paragraph*.31}%
+\contentsline {paragraph}{Link between detection and characterization of spectra:\\}{59}{paragraph*.33}%
+\contentsline {subsection}{\numberline {6.3.3}Why would ML algorithms be an asset if they work?}{61}{subsection.6.3.3}%
+\contentsline {part}{III\hspace {1em}Using cross correlations with high contrast images with several dimensions}{63}{part.3}%
+\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{65}{part.3}%
 \ttl@stoptoc {chapters@2}
 \ttl@starttoc {chapters@3}
-\contentsline {chapter}{\numberline {7}Introduction to HCI datasets and their dimensionalities}{67}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Exoplanet science of high contrast imaging}{67}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Exoplanet science of medium and high resolution spectra }{67}{section.7.2}%
-\contentsline {section}{\numberline {7.3}High contrast image data processing}{67}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Scientific goals of combining high/medium resolution spectra with high contrast imaging}{67}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Producing detection and characterization maps from HCI and MRS data}{68}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Adapting our cross correlation algorithm to images}{68}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Pre processing of high contrast images to use with spectral data processing}{68}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}High contrast imaging and spectral data processing}{68}{subsection.8.1.2}%
-\contentsline {section}{\numberline {8.2}Data processing using this adapted framework}{68}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}HD142527}{68}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}PDS70}{68}{subsection.8.2.2}%
-\contentsline {section}{\numberline {8.3}Sensitivity analysis of HCI data}{68}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Use of principal component analysis with high contrast images and spectra}{69}{section.8.4}%
-\contentsline {chapter}{\numberline {9}Using cross correlations with 4D data}{70}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Limitations of map based detection algorithms when using $\rm {SNR}$}{70}{section.9.1}%
-\contentsline {section}{\numberline {9.2}STCM}{70}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Detection sensitivity using map based RoC analysis}{70}{section.9.3}%
-\contentsline {chapter}{\numberline {10}Discussion of the advantages and limitations of processing spectra in this manner}{71}{chapter.10}%
-\contentsline {part}{IV\hspace {1em}Use of ML algorithms with exoplanet spectra and direct imaging maps}{72}{part.4}%
-\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{74}{part.4}%
+\contentsline {chapter}{\numberline {7}Producing detection and characterization maps from HCI and MRS data}{66}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Adapting our cross correlation algorithm to images}{66}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Pre processing of high contrast images to use with spectral data processing}{66}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}High contrast imaging and spectral data processing}{66}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}Data processing using this adapted framework}{66}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}HD142527}{66}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}PDS70}{66}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Sensitivity analysis of HCI data}{66}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Use of principal component analysis with high contrast images and spectra}{67}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Using cross correlations with 4D data}{68}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Limitations of map based detection algorithms when using $\rm {SNR}$}{68}{section.8.1}%
+\contentsline {section}{\numberline {8.2}STCM}{68}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Detection sensitivity using map based RoC analysis}{68}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Discussion of the advantages and limitations of processing spectra in this manner}{69}{chapter.9}%
+\contentsline {part}{IV\hspace {1em}Use of ML algorithms with exoplanet spectra and direct imaging maps}{70}{part.4}%
+\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{72}{part.4}%
 \ttl@stoptoc {chapters@3}
 \ttl@starttoc {chapters@4}
-\contentsline {chapter}{\numberline {11}Development and performance of the ML algorithms}{75}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Experimental parameter space selection and testing they hypotheses}{76}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}Adapting ML algorithms to test the detection hypothesis}{76}{subsection.11.1.1}%
-\contentsline {paragraph}{Detection criterion parameter:\\}{77}{paragraph*.34}%
-\contentsline {paragraph}{The detection criterion:\\}{77}{paragraph*.37}%
-\contentsline {subsection}{\numberline {11.1.2}Adapting ML algorithms to test the characterization hypothesis}{80}{subsection.11.1.2}%
-\contentsline {paragraph}{Use of regression to compute the characterization parameter:\\}{80}{paragraph*.38}%
-\contentsline {paragraph}{Design of a characterization matrix with a logistic characterization parameter:\\}{81}{paragraph*.39}%
-\contentsline {subsection}{\numberline {11.1.3}Parameter space selection}{82}{subsection.11.1.3}%
-\contentsline {paragraph}{Low contrast parameter space:\\}{83}{paragraph*.41}%
-\contentsline {paragraph}{high contrast parameter space:\\}{83}{paragraph*.43}%
-\contentsline {section}{\numberline {11.2}ML based algorithms}{84}{section.11.2}%
-\contentsline {subsection}{\numberline {11.2.1}Data generation and pre-processing}{87}{subsection.11.2.1}%
-\contentsline {subsection}{\numberline {11.2.2}ML algorithms}{87}{subsection.11.2.2}%
-\contentsline {paragraph}{Random forests:\\}{87}{paragraph*.45}%
-\contentsline {paragraph}{MLP:\\}{87}{paragraph*.46}%
-\contentsline {paragraph}{Autoencoders:\\}{88}{paragraph*.47}%
-\contentsline {section}{\numberline {11.3} Experimental results}{88}{section.11.3}%
-\contentsline {subsection}{\numberline {11.3.1}Performance of the cross correlation algorithm as a classifier}{89}{subsection.11.3.1}%
-\contentsline {subsection}{\numberline {11.3.2}Low contrast results}{90}{subsection.11.3.2}%
-\contentsline {subsection}{\numberline {11.3.3}high contrast results}{91}{subsection.11.3.3}%
-\contentsline {section}{\numberline {11.4}Discussion}{91}{section.11.4}%
-\contentsline {subsection}{\numberline {11.4.1}Random forest feature importances}{91}{subsection.11.4.1}%
-\contentsline {subsection}{\numberline {11.4.2}On the unsuitability of ML algorithms to test the detection and characterization hypotheses}{94}{subsection.11.4.2}%
-\contentsline {chapter}{\numberline {12}Use of machine learning algorithms with map based data}{96}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Computer vision and its capabilities}{96}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Development of C3PO}{96}{section.12.2}%
-\contentsline {section}{\numberline {12.3}Development of C-LANDO}{96}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Interpreting the output of ML algorithms}{96}{section.12.4}%
-\contentsline {chapter}{\numberline {13}Training and testing of the ML algorithms with simulated data}{97}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Discussion and salient features of map based detection algorithms}{98}{chapter.14}%
-\contentsline {part}{V\hspace {1em}Discussions and conclusion}{99}{part.5}%
-\contentsline {xpart}{Discussions and conclusion}{101}{part.5}%
+\contentsline {chapter}{\numberline {10}Development and performance of the ML algorithms}{73}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Experimental parameter space selection and testing they hypotheses}{74}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Adapting ML algorithms to test the detection hypothesis}{74}{subsection.10.1.1}%
+\contentsline {paragraph}{Detection criterion parameter:\\}{75}{paragraph*.34}%
+\contentsline {paragraph}{The detection criterion:\\}{75}{paragraph*.37}%
+\contentsline {subsection}{\numberline {10.1.2}Adapting ML algorithms to test the characterization hypothesis}{78}{subsection.10.1.2}%
+\contentsline {paragraph}{Use of regression to compute the characterization parameter:\\}{78}{paragraph*.38}%
+\contentsline {paragraph}{Design of a characterization matrix with a logistic characterization parameter:\\}{79}{paragraph*.39}%
+\contentsline {subsection}{\numberline {10.1.3}Parameter space selection}{80}{subsection.10.1.3}%
+\contentsline {paragraph}{Low contrast parameter space:\\}{81}{paragraph*.41}%
+\contentsline {paragraph}{high contrast parameter space:\\}{81}{paragraph*.43}%
+\contentsline {section}{\numberline {10.2}ML based algorithms}{82}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Data generation and pre-processing}{85}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}ML algorithms}{85}{subsection.10.2.2}%
+\contentsline {paragraph}{Random forests:\\}{85}{paragraph*.45}%
+\contentsline {paragraph}{MLP:\\}{85}{paragraph*.46}%
+\contentsline {paragraph}{Autoencoders:\\}{86}{paragraph*.47}%
+\contentsline {section}{\numberline {10.3} Experimental results}{86}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Performance of the cross correlation algorithm as a classifier}{87}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Low contrast results}{88}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}high contrast results}{89}{subsection.10.3.3}%
+\contentsline {section}{\numberline {10.4}Discussion}{89}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Random forest feature importances}{89}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}On the unsuitability of ML algorithms to test the detection and characterization hypotheses}{92}{subsection.10.4.2}%
+\contentsline {chapter}{\numberline {11}Use of machine learning algorithms with map based data}{94}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Computer vision and its capabilities}{94}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Development of C3PO}{94}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Development of C-LANDO}{94}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Interpreting the output of ML algorithms}{94}{section.11.4}%
+\contentsline {chapter}{\numberline {12}Training and testing of the ML algorithms with simulated data}{95}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Discussion and salient features of map based detection algorithms}{96}{chapter.13}%
+\contentsline {part}{V\hspace {1em}Discussions and conclusion}{97}{part.5}%
+\contentsline {xpart}{Discussions and conclusion}{99}{part.5}%
 \ttl@stoptoc {chapters@4}
 \ttl@starttoc {chapters@5}
-\contentsline {chapter}{\numberline {15}What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{102}{chapter.15}%
-\contentsline {chapter}{\numberline {16}Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{103}{chapter.16}%
-\contentsline {section}{\numberline {16.1}The detection and characterization hypotheses}{103}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Difference between the performances of the ML and cross correlation based algorithm}{105}{section.16.2}%
-\contentsline {paragraph}{1. the lack of significant differentiating features in spectra for ML algorithms to learn from:\\}{106}{paragraph*.54}%
-\contentsline {paragraph}{2. the presence of large number of wavelength bins that do not contain discriminating information:\\}{106}{paragraph*.55}%
-\contentsline {paragraph}{3. finally the presence of photon noise which leads to a lot of variance in features:\\}{107}{paragraph*.56}%
-\contentsline {section}{\numberline {16.3}Conclusions and limitations of the study}{107}{section.16.3}%
-\contentsline {subsection}{\numberline {16.3.1}Conclusions of this study}{107}{subsection.16.3.1}%
-\contentsline {paragraph}{The detection and characterization hypotheses\\}{107}{paragraph*.57}%
-\contentsline {paragraph}{A cross correlation based detection and characterization algorithm:\\}{107}{paragraph*.58}%
-\contentsline {paragraph}{generalized conclusions:\\}{108}{paragraph*.59}%
-\contentsline {subsection}{\numberline {16.3.2}Limitations of this study}{108}{subsection.16.3.2}%
-\contentsline {paragraph}{an unfair comparison between the cross correlation based and ML based algorithms:\\}{108}{paragraph*.60}%
-\contentsline {paragraph}{lack of realistic variation in the data:\\}{108}{paragraph*.61}%
-\contentsline {paragraph}{the choice of ML algorithms:\\}{108}{paragraph*.62}%
-\contentsline {paragraph}{non use of specific molecules:\\}{108}{paragraph*.63}%
-\contentsline {section}{\numberline {16.4}Next steps and how this can feature sparsity be countered.}{109}{section.16.4}%
-\contentsline {chapter}{\numberline {17}How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{110}{chapter.17}%
-\contentsline {chapter}{\numberline {18}What are the ways forward?}{111}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Conclusions}{111}{section.18.1}%
-\contentsline {subsection}{\numberline {18.1.1}Consequences for direct detection}{111}{subsection.18.1.1}%
-\contentsline {subsection}{\numberline {18.1.2}Consequences for characterizing using spectra}{111}{subsection.18.1.2}%
-\contentsline {subsection}{\numberline {18.1.3}Consequences for exoplanet detection}{111}{subsection.18.1.3}%
-\contentsline {chapter}{Bibliography}{112}{subsection.18.1.3}%
+\contentsline {chapter}{\numberline {14}What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{100}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{101}{chapter.15}%
+\contentsline {section}{\numberline {15.1}The detection and characterization hypotheses}{101}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Difference between the performances of the ML and cross correlation based algorithm}{103}{section.15.2}%
+\contentsline {paragraph}{1. the lack of significant differentiating features in spectra for ML algorithms to learn from:\\}{104}{paragraph*.54}%
+\contentsline {paragraph}{2. the presence of large number of wavelength bins that do not contain discriminating information:\\}{104}{paragraph*.55}%
+\contentsline {paragraph}{3. finally the presence of photon noise which leads to a lot of variance in features:\\}{105}{paragraph*.56}%
+\contentsline {section}{\numberline {15.3}Conclusions and limitations of the study}{105}{section.15.3}%
+\contentsline {subsection}{\numberline {15.3.1}Conclusions of this study}{105}{subsection.15.3.1}%
+\contentsline {paragraph}{The detection and characterization hypotheses\\}{105}{paragraph*.57}%
+\contentsline {paragraph}{A cross correlation based detection and characterization algorithm:\\}{105}{paragraph*.58}%
+\contentsline {paragraph}{generalized conclusions:\\}{106}{paragraph*.59}%
+\contentsline {subsection}{\numberline {15.3.2}Limitations of this study}{106}{subsection.15.3.2}%
+\contentsline {paragraph}{an unfair comparison between the cross correlation based and ML based algorithms:\\}{106}{paragraph*.60}%
+\contentsline {paragraph}{lack of realistic variation in the data:\\}{106}{paragraph*.61}%
+\contentsline {paragraph}{the choice of ML algorithms:\\}{106}{paragraph*.62}%
+\contentsline {paragraph}{non use of specific molecules:\\}{106}{paragraph*.63}%
+\contentsline {section}{\numberline {15.4}Next steps and how this can feature sparsity be countered.}{107}{section.15.4}%
+\contentsline {chapter}{\numberline {16}How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{108}{chapter.16}%
+\contentsline {chapter}{\numberline {17}What are the ways forward?}{109}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Conclusions}{109}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Consequences for direct detection}{109}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}Consequences for characterizing using spectra}{109}{subsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.1.3}Consequences for exoplanet detection}{109}{subsection.17.1.3}%
+\contentsline {chapter}{Bibliography}{110}{subsection.17.1.3}%
 \contentsfinish 
