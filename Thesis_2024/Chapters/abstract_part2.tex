@@ -23,18 +23,26 @@ telescopes.
 When this step is combined with images we produce what are known as molecular maps an idea that is explained in 
 \S\ref{chap: I.1} and our adaptions of this concept is desribed later in this thesis.
 A brief description of spectral data processing is thus given to conclude this introductory that explains the scientific relevance of spectra data processing.
+ML algorithms have been recently used quite effectively in exoplanet detection using high contrast images through SODINN, \citet[][]{2018Gomez}
+and NA-SODINN, \citet[][]{2023Carlito}.
+These algorithms have been used only on the HCI data without leveraging the spectral or temporal dimensions. 
+The success of these algorithms and the presence of spectral pre-processing algorithms such as molecular mapping, \citet[][]{2018AHoeijmakersMM},
+leaves the question of whether it would be possible to combine spectral, spatial and temporal data to improve detection and characterization of exoplanets.
 
+This thesis is aimed at exploring methods of combining spectral, spatial and temporal data with ML algorithms and establishing the sensitivity 
+of such combinations. 
+The introductory part establishes the state of the art in terms of both science and the instruments and the post processing algorithms that produce the scienctific results.
 The introductory part is followed by the first original part of this thesis called the cross correlation of exoplanet spectra from high contrast imaging data for simulataneous detection and characterization.
 The theme of this part is to explore the data processing necessary to use stand-alone spectra to detect and characterize exoplanets.
 This part begins with an introduction to cross correlation as a data processing technique \S \ref{chap:II.1}. 
 In this chapter we will describe the broad definition of cross correlation and end with how we have adapted the cross correlation to  work with exoplanet spectra and the necessary pre-processing needed for this.
 %Explain contribution here
-The broad aim of my thesis is to combine high contrast imaging data with spectroscopic observations and thus create a unified framework to simulataneously,
-detect and characterize an exoplanet candidate.
-The goal of this framework would be to evaluate if a candidate exoplanet can indeed be verified as an exoplanet.
-In order to do this, it is important to test the framework both from the point of view of statistics and astrophysics.
-Hence, we present in this thesis three frameworks which work on data with different dimensionalities.
-Each framework is studied for both its strengths and limitations, and in this regard, my thesis is thus divided into three parts that focus on each of these frameworks.
+%The broad aim of my thesis is to combine high contrast imaging data with spectroscopic observations and thus create a unified framework to simulataneously,
+%detect and characterize an exoplanet candidate.
+%The goal of this framework would be to evaluate if a candidate exoplanet can indeed be verified as an exoplanet.
+%In order to do this, it is important to test the framework both from the point of view of statistics and astrophysics.
+%Hence, we present in this thesis three frameworks which work on data with different dimensionalities.
+%Each framework is studied for both its strengths and limitations, and in this regard, my thesis is thus divided into three parts that focus on each of these frameworks.
 
 Part II focuses on describing the development of a cross correlation algorithm that processes spectra to simulataneously\@
 detect and characterize exoplanets.
