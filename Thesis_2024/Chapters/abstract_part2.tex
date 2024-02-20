@@ -32,25 +32,52 @@ leaves the question of whether it would be possible to combine spectral, spatial
 This thesis is aimed at exploring methods of combining spectral, spatial and temporal data with ML algorithms and establishing the sensitivity 
 of such combinations. 
 The introductory part establishes the state of the art in terms of both science and the instruments and the post processing algorithms that produce the scienctific results.
-%The introductory part is followed by the first original part of this thesis called the cross correlation of exoplanet spectra from high contrast imaging data for simulataneous detection and characterization.
-%The theme of this part is to explore the data processing necessary to use stand-alone spectra to detect and characterize exoplanets.
-%This part begins with an introduction to cross correlation as a data processing technique \S \ref{chap:II.1}. 
-%In this chapter we will describe the broad definition of cross correlation and end with how we have adapted the cross correlation to  work with exoplanet spectra and the necessary pre-processing needed for this.
-%Explain contribution here
-%The broad aim of my thesis is to combine high contrast imaging data with spectroscopic observations and thus create a unified framework to simulataneously,
-%detect and characterize an exoplanet candidate.
-%The goal of this framework would be to evaluate if a candidate exoplanet can indeed be verified as an exoplanet.
-%In order to do this, it is important to test the framework both from the point of view of statistics and astrophysics.
-%Hence, we present in this thesis three frameworks which work on data with different dimensionalities.
-%Each framework is studied for both its strengths and limitations, and in this regard, my thesis is thus divided into three parts that focus on each of these frameworks.
+Methods such as a molecular mapping exploit intrinsic features in the spectra, combine them with high contrast images to produce detection maps of specific molecules.
+There have been several algorithms \citep[e.g HRSDI][]{2019Haffert} that perform spectral pre-processing to then be combined with techniques such as molecular mapping.
+All of these algorithms use cross correlation as their principal analysis methodology. 
+While cross correlations are well studied in signal processing methodologies, more about this in the Introduction to Cross correlations chapter in Part II,
+they have still not been used to benchmark detectability of exoplanets in high contrast imaging datasets.
+This is the gap that will be filled by my study of cross correlations to detect and characterize exoplanet spectra.
+In the second chapter of this Part we will described our method of generating large number of synthetic spectra and their analyses framework for both detection and characterization.
+In the third chapter of this Part we will describe some of the tests we conducted and the conclusion on the effectiveness of detection and characterization using spectra alone.
+We will finally conclude this part with the learning that while it is possible to detect exoplanets at high contrast (and even characterize them) it requires spectra to have unreasonably high signal to noise values.
+This Part will motivate thus, whether it is possible to use the image dimension to get more sensitive detection and/or characterization.
 
-Part II focuses on describing the development of a cross correlation algorithm that processes spectra to simulataneously\@
-detect and characterize exoplanets.
-In this part we have $3$ chapters starting with the introduction to spectral data processing, followed by an introduction
-to cross correlation analysis. 
-In this chapter we also describe our implementation of cross correlation with the pre-processing.
-This is followed by a description of our testbench which is composed of data generation, testing and evaluation.
-Finally, we end this part with a retrospective on the limitations on spectral data processing. 
+This thesis focuses on high contrast imaging data, and therefore it stands to reason that high contrast images themselves are tantamount to our algorithms.
+While Part II focused on 1D spectra to establish the baseline of what can be achieved with cross correlation, Part III will describe our experiments with using imaging part to attempt more sensitive detections.
+The introduction of this Part is already established in Part I which introduces high contrast images, therefore the first chapter will begin with adapting our techniques to use with HCI.
+This chapter will describe our successful re-detection of HD$142527$b and our failure to detect PDS$70$b. 
+While there has been a phsyically motivated explanation by \cite{2023Cugno}, we conclude that the reason we don't detect PDS$~70$b is that the measured signal to noise on this exoplanet for our data is just out of reach of our processing.
+We also conclude this Chapter with the understanding that the image dimension itself does not lend to improvement in detection sensitivity, and in fact our detection benchmark itself is a bit polluted with the use of the imaging dimension.
+In Chapter$~8$ (second chapter of this Part) we will describe our efforts at using the temporal dimension with cross correlation maps. 
+Finally, we will establish that our sensitivity analysis is better served with the use of RoC curves with images than using contrast curves.
+The last chapter in this part is a discussion chapter on the `classical' post processing algorithms that this thesis has introduced to the field of exoplanet detection and characterization for HCI spectra.
+We will end this Part and Chapter with the need to use modern ML algorithms with such data and need to study their use.
+
+Part IV will focus entirely on the application of ML algorithms to HCI data.
+We will begin with describing our efforts to apply ML algorithms directly to spectra. 
+This will comprise the entire Chapter$~10$, where we apply ML algorithms to the data generated in Chapter$~5$. 
+We will describe the results and the limitations of ML algrorithms when used directly with spectra and motivate the use of images with ML algoriothms to end this chapter.
+Chapter$~11$ will describe ML algorithms that were developed to work with 2D and 3D data.
+We will end this chapter with describing the method this thesis uses to interpret the result of the detection maps produced by ML algorithms.
+Chapter$~12$ will describe the training and testing algorithms developed for the algorithms in Chapter$~11$ and its results. 
+Finally, we will conclude this Part with a discussion on the use of ML algorithms to detect exoplanets in HCI data with spectra.
+Each of these parts correspond to several projects that we completed as part of my thesis that explores detection and characterization of exoplanets.
+This however, motivates several discussion points which are broader in scope.
+
+Part V, thus focuses on discussing several aspects of my thesis. 
+To begin with we discuss the relevance of this study to the exoplanet community in Chapter$~14$.
+We then discuss the limitations ML algorithms and why standard cross correlation analysis is more suited to directly apply to spectra in Chapter$~15$.
+We conclude this chapter with a broad discussion on the use of multi-dimensional data which best leverages ML algorithms.
+The final Chapter of this thesis concludes with some ways forward where the analysis we have performed as part of this thesis can be best leveraged by the scientific commununity.  
+
+%Part II focuses on describing the development of a cross correlation algorithm that processes spectra to simulataneously\@
+%detect and characterize exoplanets.
+%In this part we have $3$ chapters starting with the introduction to spectral data processing, followed by an introduction
+%to cross correlation analysis. 
+%In this chapter we also describe our implementation of cross correlation with the pre-processing.
+%This is followed by a description of our testbench which is composed of data generation, testing and evaluation.
+%Finally, we end this part with a retrospective on the limitations on spectral data processing. 
 
 In Part III we discuss the use of our cross correlation algorithm with medium resolution spectra and high contrast images.
 This part contains $4$ chapters starting an introduction to high contrast imaging datasets and their dimensionalities.
