@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Table of contents}{iv}{chapter*.1}%
 \contentsline {chapter}{List of Figures}{v}{chapter*.2}%
-\contentsline {chapter}{Thesis summary}{viii}{chapter*.4}%
+\contentsline {chapter}{Thesis summary}{ix}{chapter*.4}%
 \contentsline {part}{I\hspace {1em}Introduction}{1}{part.1}%
 \contentsline {xpart}{Introduction}{3}{part.1}%
 \contentsline {chapter}{\numberline {1}Exoplanet detection and characterization using high contrast imaging}{4}{chapter.1}%
@@ -148,11 +148,11 @@
 \contentsline {paragraph}{the choice of ML algorithms:\\}{106}{paragraph*.62}%
 \contentsline {paragraph}{non use of specific molecules:\\}{106}{paragraph*.63}%
 \contentsline {section}{\numberline {15.4}Next steps and how this can feature sparsity be countered.}{107}{section.15.4}%
-\contentsline {chapter}{\numberline {16}How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{108}{chapter.16}%
-\contentsline {chapter}{\numberline {17}What are the ways forward?}{109}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Conclusions}{109}{section.17.1}%
-\contentsline {subsection}{\numberline {17.1.1}Consequences for direct detection}{109}{subsection.17.1.1}%
-\contentsline {subsection}{\numberline {17.1.2}Consequences for characterizing using spectra}{109}{subsection.17.1.2}%
-\contentsline {subsection}{\numberline {17.1.3}Consequences for exoplanet detection}{109}{subsection.17.1.3}%
-\contentsline {chapter}{Bibliography}{110}{subsection.17.1.3}%
+\contentsline {section}{\numberline {15.5}How can we best leverage ML algorithms to further a detection and characterization drive with direct imaging data}{107}{section.15.5}%
+\contentsline {chapter}{\numberline {16}What are the ways forward?}{108}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Conclusions}{108}{section.16.1}%
+\contentsline {subsection}{\numberline {16.1.1}Consequences for direct detection}{108}{subsection.16.1.1}%
+\contentsline {subsection}{\numberline {16.1.2}Consequences for characterizing using spectra}{108}{subsection.16.1.2}%
+\contentsline {subsection}{\numberline {16.1.3}Consequences for exoplanet detection}{108}{subsection.16.1.3}%
+\contentsline {chapter}{Bibliography}{109}{subsection.16.1.3}%
 \contentsfinish 
