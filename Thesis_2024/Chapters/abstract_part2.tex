@@ -1,28 +1,27 @@
 \chapter*{Thesis summary}
 %broad intro
-High contrast imaging (HCI) is a field of astrophysics that deals with obtaining of images that pixels that have extremely bright sources (stars for example) and extremely faint sources (exoplanets for example).
+High contrast imaging (HCI) is a field of astrophysics which captures images with pixels that have both extremely bright sources (stars for example) and extremely faint sources (exoplanets for example).
 This technique has been used effectively to detect exoplanets with wide orbits which are not easily detectable with indirect detection techniques.
-My thesis primarily focuses on data obtained from direct imaging instruments and therefore a broad introduction the field of exoplanet detection and characterization\@
-using high contrast imaging.
-This forms the first chapter of the introduction.
-HCI data has become increasingly complex and with modern imaging techniques it is possible to have a large dataset with several dimensions.
-This automatically leads to introducing a modern data analysis technique, machine learning algorithms.
+My thesis primarily focuses on data obtained from direct imaging instruments and therefore a broad introduction to the field of exoplanet detection and characterization\@
+using high contrast imaging forms the first chapter of the Introductory Part I.
+This part is divided into three chapters, one introductory science chapter and two intro to data processing chapters.
+HCI data has become increasingly complex and with modern imaging techniques it is possible to have a large dataset with several dimensions which naturally leads to introducing a modern data analysis technique, machine learning algorithms.
 Thus the next chapter will focus on introducing machine learning and its application to astronomical datasets.
 %%Explain detection and characterization and the need for ML
-Detection involves analyzing the images from the direct imaging data and using specific algortithmic strategies to identify those pixels that contain the exoplanet.
+Exoplanet detection currently involves analyzing the images from direct imaging data and using specific algortithmic strategies to identify those pixels that contain the exoplanet.
 Whereas characterization of this detection requires astronomers to analyze spectra from the detection location.
 Several imaging strategies such as \citep[ADI, ][]{2006MaroisADI} have been used to detect exoplanets, more details on this follows in 
 \S\ref{chap: I.1}.
-Naturally, this implies that characterization comes as an afterthought of detection.
-To reduce this gap, a method was suggested to combine spectral and spatial data, in essence combining the detection 
+Naturally, this implies that characterization comes as an afterthought of detection and to reduce this gap, a method was suggested to combine spectral and spatial data, in essence combining the detection 
 and characterization step.
-Such an example is \citet[][]{2002SparksSDI}.
+One such example is \citet[][]{2002SparksSDI}.
+The second introductory data processing chapter explains spectral data processing.
 This step allows us to look at spectra both in combination with images and independently as spectra alone.
 This has been made possible with the presence of Integral Field Spectrographs (IFS) and the next generation of adapative optics based 
 telescopes.
 When this step is combined with images we produce what are known as molecular maps an idea that is explained in 
-\S\ref{chap: I.1} and our adaptions of this concept is desribed later in this thesis.
-A brief description of spectral data processing is thus given to conclude this introductory that explains the scientific relevance of spectra data processing.
+\S\ref{chap: I.1}.
+This chapter concludes the introduction to this thesis, the last chapter will set up the context that the thesis is set up in.
 ML algorithms have been recently used quite effectively in exoplanet detection using high contrast images through SODINN, \citet[][]{2018Gomez}
 and NA-SODINN, \citet[][]{2023Carlito}.
 These algorithms have been used only on the HCI data without leveraging the spectral or temporal dimensions. 
