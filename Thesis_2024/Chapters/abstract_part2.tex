@@ -4,11 +4,11 @@ High contrast imaging (HCI) is a field of astrophysics which captures images wit
 This technique has been used effectively to detect exoplanets with wide orbits which are not easily detectable with indirect detection techniques.
 Exoplanet detection currently involves analyzing the images from direct imaging data and using specific algortithmic strategies to identify those pixels that contain the exoplanet.
 Whereas characterization of this detection requires astronomers to analyze spectra from the detection location.
-Several imaging strategies such as \citep[ADI, ][]{2006MaroisADI} have been used to detect exoplanets, more details on this follows in 
+Several imaging strategies such as ADI~\citep[][]{2006MaroisADI} have been used to detect exoplanets, more details on this follows in 
 \S\ref{chap: I.1}.
 Naturally, this implies that characterization comes as an afterthought of detection and to reduce this gap, a method was suggested to combine spectral and spatial data, in essence combining the detection 
 and characterization step.
-One such example is \citet[][]{2002SparksSDI}.
+One such example in the field of HCI is SDI~\citep[][]{2002SparksSDI}.
 In addition, the concept of speckle imaging requires astronomers to capture a sequence of HCI, lending an additional temporal dimension.
 Data obtained, thus, has not only the dimensions that lend to ADI post processing, but now have both spectral and temporal dimensions.
 HCI data has become increasingly complex and with modern imaging techniques it is possible to have a large dataset with several dimensions which naturally
@@ -18,10 +18,10 @@ Part I is divided into three chapters, one introductory science chapter and two 
 Thus, the next chapter will focus on introducing machine learning and its application to astronomical datasets.
 The third chapter explains spectral data processing where spectra can be used as standalone data input but also in combination with HCI.
 This chapter concludes the introduction to this thesis, the last chapter will set up the context that the thesis is set up in.
-In brief, this context is that while ML algorithms have been recently used quite effectively in exoplanet detection using high contrast images through SODINN, \citet[][]{2018Gomez}
-and NA-SODINN, \citet[][]{2023Carlito}.
+In brief, this context is that while ML algorithms have been recently used quite effectively in exoplanet detection using high contrast images through SODINN~\citep[][]{2018Gomez}
+and NA-SODINN~\citep[][]{2023Carlito}.
 These algorithms have been used only on the HCI data without leveraging the spectral or temporal dimensions. 
-The success of these algorithms and the presence of spectral post-processing algorithms such as molecular mapping, \citet[][]{2018AHoeijmakersMM},
+The success of these algorithms and the presence of spectral post-processing algorithms such as molecular mapping~\citep[][]{2018AHoeijmakersMM},
 leaves the question of whether it would be possible to combine spectral, spatial and temporal data to improve detection sensitivity and characterization accuracy of exoplanets %Wierd sentence what am I trying to say?.
 
 This thesis is aimed at exploring methods of combining spectral, spatial and temporal data with ML algorithms and establishing the sensitivity 
@@ -66,14 +66,4 @@ We then discuss the limitations ML algorithms and why standard cross correlation
 We conclude this chapter with a broad discussion on the use of multi-dimensional data which best leverages ML algorithms.
 The final Chapter of this thesis concludes with some ways forward where the analysis we have performed as part of this thesis can be best leveraged by the scientific commununity (Chapter $~16$).  
 
-%Part II focuses on describing the development of a cross correlation algorithm that processes spectra to simulataneously\@
-%detect and characterize exoplanets.
-%In this part we have $3$ chapters starting with the introduction to spectral data processing, followed by an introduction
-%to cross correlation analysis. 
-%In this chapter we also describe our implementation of cross correlation with the pre-processing.
-%This is followed by a description of our testbench which is composed of data generation, testing and evaluation.
-%Finally, we end this part with a retrospective on the limitations on spectral data processing. 
 
-In Part III we discuss the use of our cross correlation algorithm with medium resolution spectra and high contrast images.
-This part contains $4$ chapters starting an introduction to high contrast imaging datasets and their dimensionalities.
-this is followed by our algorithm to use these dimensions to perform simulataneous detections and characterizations of exoplanets.
