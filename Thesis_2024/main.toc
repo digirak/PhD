@@ -39,22 +39,22 @@
 \contentsline {section}{\numberline {4.2}Adapting the cross correlation function to detecting exoplanets}{29}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Interpretation of cross correlation values}{29}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Spectral data generation to test the effectiveness of cross correlation based detection and characterization}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Scientific goals of using spectral data with ML algorithms}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.1}Scientific goals of using spectral data to detect and characterize exoplanets}{30}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Detection hypothesis}{31}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Characterization hypothesis}{31}{subsection.5.1.2}%
 \contentsline {section}{\numberline {5.2}Data generation to test our hypotheses}{31}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1} Choice of parameters for data generation}{32}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.1} Choice of parameters for data generation}{31}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Synthetic spectra library}{32}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Generating synthetic spectra}{34}{section.5.3}%
+\contentsline {section}{\numberline {5.3}Generating synthetic spectra}{33}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Creating astronomically accurate synthetic spectra}{34}{subsection.5.3.1}%
-\contentsline {paragraph}{Normalization:}{35}{paragraph*.11}%
+\contentsline {paragraph}{Normalization:}{34}{paragraph*.11}%
 \contentsline {paragraph}{Scaling the spectra:}{35}{paragraph*.12}%
 \contentsline {subsection}{\numberline {5.3.2}Noisy spectra generation}{35}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Computing the $\rm {SNR}$ from the noisy spectrum.}{36}{subsection.5.3.3}%
 \contentsline {section}{\numberline {5.4}Developing a common benchmark for ML algorithms and non-ML algorithms}{37}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1} Evaluation of the algorithms through confusion matrices}{38}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.1} Evaluation of the algorithms through confusion matrices}{37}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Quantifying the algorithm as a detection tool}{38}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Quantifying the characterization hypothesis using the characterization matrix}{40}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.3}Quantifying the characterization hypothesis using the characterization matrix}{39}{subsection.5.4.3}%
 \contentsline {chapter}{\numberline {6}Detection and characterization performance using cross correlation and synthetic astronomical spectra}{41}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Methods}{41}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Pre-processing and cross correlation}{42}{subsection.6.1.1}%

@@ -13,19 +13,20 @@
 Spectra have a wide range of properties, such as $\rm{SNR}$, line width etc. and we need to choose properties that are in line with science goals of detection and characterization.
 The goal of this chapter is to define,
 \begin{itemize}
-    \item the scientific objective of using spectra with ML algorithms, 
+    \item the scientific objective of using HCI spectra,
     \item the data that we will use to achieve these objectives and
     \item the metric that will be used to state whether this chosen objective was met or not.
-The metric will be common for ML and non-ML algorithms and in principle will be algorithm independent.
 \end{itemize}
 In that quest we structure this chapter to start with introducing a science goal by defining the detection and characterization hypothesis.
 This will then be followed by describing the parameters chosen for data generation followed by a description of the data generation itself.
 This will be followed by describing the benchmark metric formulation.
 This chapter aims to set up the basic framework that will be used in the two methods chapters in this part.
 
-\section{Scientific goals of using spectral data with ML algorithms}
-Using spectra directly with ML algorithms has not been particularly successful for a specific set of characterization problems \citep[e.g,][]{2020Fisher}.
-In order to not repeat previous studies and to redefine the goals of spectral data processing with ML algorithms we separate our goals as detection and characterization goals.
+\section{Scientific goals of using spectral data to detect and characterize exoplanets}
+%Using spectra directly with ML algorithms has not been particularly successful for a specific set of characterization problems \citep[e.g,][]{2020Fisher}.
+%In order to not repeat previous studies and to redefine the goals of spectral data processing with ML algorithms we separate our goals as detection and characterization goals.
+As stated in the introduction to this part, the goal of this part is to explore the use of cross correlation to detect and characterize exoplanets using their spectra alone.
+While detection and characterization are performed with the same spectra their goals can be quite different, thus in this chapter we define them explicitly.
 Detection goals pertain to identifying that a spectrum indeed contains spectral features that pertain to an exoplanet.
 The characterization goals pertain to using the spectral absorption features to derive constraints on the $\rm{T_{eff}}$ and $\log(\rm{g})$ of the exoplanet in the spectrum.
 \subsection{Detection hypothesis}
@@ -34,8 +35,8 @@ In the context of high contrast imaging this means that no matter, the contrast 
 
 This would prove particularly useful when trying to discriminate between speckles and exoplanets in an residual cube.
 A well designed algorithm should be able to test and validate this hypothesis.
-In this part we will develop a ML and a non-ML based algorithm to test this hypothesis.
-We will use the non-ML algorithm to develop the benchmark values that the ML algorithms need to achieve to validate the detection hypothesis.
+%In this part we will develop a ML and a non-ML based algorithm to test this hypothesis.
+%We will use the non-ML algorithm to develop the benchmark values that the ML algorithms need to achieve to validate the detection hypothesis.
 
 \subsection{Characterization hypothesis}
 The characterization hypothesis is expressed as the ability to constrain physical exoplanetary parameters with a well defined and repeatable error bar when exoplanet spectral features are present in the spectrum.
@@ -46,7 +47,7 @@ This hypothesis is motivated by the idea that it is possible that detection algo
 However, characterization constraints could allow to rule out such false positives when the detection is marginal.
 
 These two hypotheses form the basis of our data generation, algorithm development and interpretation of those results. 
-The detection hypothesis is disproven if we are not able to find (with either the ML or non ML algorithms) the point at which we are not able to make perfect detections no matter the resolution and contrast of the exoplanet present in the spectrum.
+The detection hypothesis is disproven if we are not able to find the point at which we are not able to make perfect detections no matter the resolution and contrast of the exoplanet present in the spectrum.
 The characterization hypothesis is also disproven if we are not able to define the minimum error-bar with which we constrain the $\rm{T_{eff}}$ and $\rm{\log(g)}$.
 
 \section{Data generation to test our hypotheses}
@@ -77,10 +78,9 @@ The parameters we use in this part of the thesis to test our hypotheses are,
      To keep the interpretation simple we consider the $R$ as computed for the smallest wavelength in our data.
  \end{enumerate}
 %These parameters present with a limited exploratory ability, but the choice of the parameters are driven by the detection and characterization seen in the literature.
-These parameters have a very specific meaning in literature,
-the $C$ for instance is the single parameter that defines the sensitivity in the data when computing contrast curves,
+In literature, the $C$ for instance is the single parameter that defines the sensitivity in the data when computing contrast curves,
 the $\rm{SNR}$ is the parameter that is expected to be the limiting factor when developing a new instrument,
-and the $R$ has long been considered the key factor in using spectra in direct exoplanet detection and \citep[KPIC, ][]{2016Mawet} has prided itself on provide high $\rm{SNR}$ and high $R$ spectra.
+and the $R$ has long been considered the key factor in using spectra in direct exoplanet detection and \citep[e.g KPIC, ][]{2016Mawet} has prided itself on provide high $\rm{SNR}$ and high $R$ spectra.
 \subsection{Synthetic spectra library}
 To test our hypotheses, these parameters have to be sampled over a large sample space to ensure that we are able to rigorously test our hypotheses.
 Additionally, instrument parameters will require us to have access to instruments with different resolutions but we will need to the exoplanets imaged with these instruments at different $\rm{SNR}$ and $C$.
@@ -122,11 +122,12 @@ The goal of our tests is to ascertain if a) Which type of algorithm is able to s
 Consequently, the goals of generating synthetic spectra are also two fold, 
 \begin{enumerate}
     \item to be able to explore a parameter space which is relevant from both the astronomical as well as signal processing point of view.
-    This will allow us to the test the hypotheses, which are purely based on astronomy, but it will also allow us to understand the interplay between the parameters.
+    This will allow us to the test the hypotheses and to understand the interplay between the parameters.
     This is relevant to the community to understand if, of the three parameters we have chosen, are there any which play an important role in validating these hypotheses.
-    \item To generate a large number of samples that can be used to train, validate and test the machine learning algorithms that are developed to test our hypotheses.
-    In addition to ML algorithms needing a large number of samples to train and generalize well, we also need this parameter space well sampled in order to derive insights into the performance of the ML algorithms on this data.
-    As in the case of a cross correlation based algorithm, the community will benefit if we are able to derive the limits at which these hypotheses were satisfied by ML algorithms.
+    %\item To generate a large number of samples that can be used to train, validate and test the machine learning algorithms that are developed to test our hypotheses.
+    %In addition to ML algorithms needing a large number of samples to train and generalize well, we also need this parameter space well sampled in order to derive insights into the performance of the ML algorithms on this data.
+    %As in the case of a cross correlation based algorithm, the community will benefit if we are able to derive the limits at which these hypotheses were satisfied by ML algorithms.
+    \item to be able to test our algorithms to the limit of what they can achieve for each hypothesis from a scientific point of view.
 \end{enumerate}
 Thus to generate spectra that are astronomically relevant, having realistic observation noise and finally lend to re derivation of the parameters (i.e now they can be viewed as parameters that can be re-estimated by an observer, we generate the same in three steps.
 We split the description of this into three subsections, first we create noise-less spectrum from a combination of stellar and exoplanetary spectrum.
