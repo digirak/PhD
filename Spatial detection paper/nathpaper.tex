@@ -25,6 +25,10 @@
 \usepackage{textcomp}
 \usepackage{natbib,twoopt}
 \usepackage{xcolor}
+
+% Define a new command for highlighting new changes in darkgreen
+\definecolor{darkgreen}{RGB}{0,100,0}
+\newcommand{\newchange}[1]{\textcolor{darkgreen}{#1}}
 \usepackage[breaklinks=true]{hyperref} %% to avoid \citeads line fills
 \bibpunct{(}{)}{;}{a}{}{,}             %% natbib format for A&A and ApJ
 \makeatletter
@@ -117,9 +121,10 @@
 \section{Introduction}
 
 %general intro to direct imaging and the use of spectra in direct imaging and exoplanet detection
-Direct imaging combined with integral field spectrographs (IFS) at low resolution such as VLT/SPHERE \citep{2019Beuzit}, Gemini/GPI \citep{2014MacintoshGPI} or SUBARU/SCExAO \citep{2015SCeXAO}, or at medium resolution such as VLT/SINFONI \citep{2004SINFONI}, VLT/ERIS \citep{2023Davies} or KECK/OSIRIS \citep{2000OSIRIS} allows exoplanet hunters to access both images, as well as the reflected or emitted spectra, of sub-stellar companions in the field of view of the telescope.
+Direct imaging combined with integral field spectrographs (IFS) at low resolution such as VLT/SPHERE \citep{2019Beuzit}, Gemini/GPI \citep{2014MacintoshGPI} and SUBARU/SCExAO \citep{2015SCeXAO}, or at medium resolution such as VLT/SINFONI \citep{2004SINFONI}, VLT/ERIS \citep{2023Davies} or KECK/OSIRIS \citep{2000OSIRIS} allows exoplanet hunters to access both images, as well as the reflected or emitted spectra, of sub-stellar companions in the field of view of the telescope.
 Since the availability of such IFS instruments, studies using direct imaging data have yielded detection of young gas giants \citep[e.g., PDS70b, ][]{2018KepplerPDS70} and low-mass stellar companions \citep[e.g., HD142527b, ][]{2019ClaudiHD142527b} in addition to the now iconic system of 51~Eridani~b \citep{2015MacintoshEridani} that primarily makes use of the spatial dimension to make these discoveries.
 In addition, the spectral dimension has allowed us to characterize detected exoplanets such as HR8799 \citep[e.g][]{2008Marois, 2013Konopacky}, HD206893b \citep[][]{2017DelormeHD206893b}, $\beta$ Pic \citep[][]{2017ChilcoteBetapic}, PDS70b \citep[e.g][]{2018MullerPDS70,2019ChristiaensPDS70}, HD142527b \citep[][]{2018A&ChristiaensHD142527}, and attempt to characterize PDS70c \citep[][]{2019MesaPDS70}, CrA-9b \citep[][]{2021ChristiaensCrA-9b} and HIP 99770b \citep[][]{2023Currie}.
+\newchange{The introduction of the JWST NIRSPEC \citet{2022BokerJWST} and a subsequent high contrast detection by \citet{2023RuffioJWST} further demonstrates the detection ability of such instruments.}
 
 %Thus we have the spatial dimension that has been mostly used to detect exoplanets, whereas the spectral dimension has been used for characterization.
 However, these discoveries have been far and few because of the specific challenges posed by direct imaging data.
@@ -155,7 +160,7 @@ In order to tackle some of these issues, we propose the use of supervised machin
 We therefore only consider cross correlation maps, which preserve the multi-dimensionality of the datasets, where the wavelength dimension is replaced by the radial velocity of the cross correlation and the photon values by the cross correlation coefficients. 
 
 The presence of these multiple dimensions lends to the potential of using ML algorithms to claim detections as opposed to using metrics such as S/N.
-Using spatial data with ML algorithms has had particular success in the direct imaging community, to detect point like sources \cite{2018Gomez} and \cite{2023Carlito} to characterize the PSF that needs to be subtracted in ADI images \cite{2022Gebhard} and \cite{2023Flasseur}.
+Using spatial data with ML algorithms has had particular success in the direct imaging community, to detect point like sources \newchange{\citet{2018Gomez} and \citet{2023Carlito}} to characterize the PSF that needs to be subtracted in ADI images \cite{2022Gebhard} and \cite{2023Flasseur}.
 However, research in the field of exoplanet detection using spectral and direct imaging data with ML algorithms still has plenty of scope to develop. This is a gap that this paper and its companion (Garvin et al., in prep) will be addressing.
 Here, we are focusing on how spatial, spectral (i.e., cross correlation), and temporal dimensions can be most effectively leveraged together in a single ML framework. 
 An alternative approach to do this is to implement the ML framework only in the cross correlated spectral dimension, to preserve spatial independence and flexibility towards spectral instruments, as in Garvin et al. (in prep.).
@@ -543,9 +548,16 @@ The choice of these angles is somewhat arbitrary, but it is also done so that al
 We then go through the procedure of inserting simulated warm Jupiters as described in Sect.~\ref{sec: FC insertion}, where we insert warm Jupiters at different radial separations over a range of contrasts between $10^{-2}$ to $10^{-4}$. We then produce cross correlation cubes as described in \S\ref{sec: CC algorithm}, and save these cross correlation tensors without any further processing.
 
 \begin{figure*}[t]
-    %\centering
+    \centering
     \includegraphics[width=\textwidth]{Fig3_Sep2023.png}
     \caption{Illustration of the TP and FP counting process. Column 1 shows the detection map used to produce four different binary maps, thresholded at different intensity levels (columns 2-5), for the three algorithms (respectively STCM, C3PO, and C-LANDO, from top to bottom). A fake companion was inserted at position $\Delta{\rm Dec}=0.0$ and $\Delta{\rm RA} = -0.2$. TPs and FPs are respectively shown in green and in red for the thresholds indicated in the titles of each image. Each red blob/point is counted as a single FP/TP, with blobs representing many connected pixels at the same binary intensity level.}
+    %\label{fig:sample_detmaps}
+\end{figure*}
+\begin{figure*}[t]
+    \centering
+ %   \includegraphics[width=\textwidth]{Fig3_Sep2023.png}
+    \includegraphics[width=\textwidth]{Fig3_Mar2024_referee.png}
+    \caption{\newchange{Illustration of the TP and FP counting process. Column 1 shows the detection map used to produce four different binary maps, thresholded at different intensity levels (columns 2-5), for the three algorithms (respectively STCM, C3PO, and C-LANDO, from top to bottom). A fake companion was inserted at position $\Delta{\rm Dec}=0.0$ and $\Delta{\rm RA} = -0.2$. TPs and FPs are respectively shown in green and in red for the thresholds indicated in the titles of each image. Each red blob/point is counted as a single FP/TP, with blobs representing many connected pixels at the same binary intensity level.}}
     \label{fig:sample_detmaps}
 \end{figure*}
 
@@ -588,6 +600,17 @@ In this paper, we define all the connected pixels in a binary map within $\appro
 The x-axis is mean FP per map and the y-axis corresponds to TPR computed using Eq.~\ref{eq:TPR}. 
 The numbers next to each data point correspond to the threshold that was applied to compute the number of TPs and FPs for each binary map (as described in Fig~\ref{fig:sample_detmaps}).
 }
+  %  \label{fig:fig_4}
+\end{figure*}
+\begin{figure*}
+\centering
+    \includegraphics[width=1.0\textwidth]{fig4_March2024_referee.png}
+%    \caption{ROC produced for a separation of between $1-2$ FWHM with the same set of contrasts.}
+%\end{subfigure}
+\caption{ \newchange{mROC curves produced by inserting a total of 40 exoplanets for a set of contrasts ($6 \times 10^{-4}$, $4 \times 10^{-4}$ and $2 \times 10^{-4}$ from top to bottom) at annuli of different separations in the ranges $3-4$, $2-3$ and $1-2$ FWHM (left, middle, and right columns, respectively).
+The x-axis is mean FP per map and the y-axis corresponds to TPR computed using Eq.~\ref{eq:TPR}. 
+The numbers next to each data point correspond to the threshold that was applied to compute the number of TPs and FPs for each binary map (as described in Fig~\ref{fig:sample_detmaps}).
+}}
     \label{fig:fig_4}
 \end{figure*}
 
@@ -701,8 +724,17 @@ This seems to be another key differentiating factor between the two algorithms w
     \caption{Comparison of mROC curves produced with and without using the velocity dimension, using otherwise the same dataset, at two contrast levels ($4\times 10^{-4}$ and $2\times 10^{-4}$) and for a separation of 3 to 4 FWHM. In case where the velocity dimension is not used, illustrated with the purple and yellow dashed lines for C3PO and C-LANDO respectively, the velocity dimension is replaced by the central velocity bin. This makes the comparison to STCM a little more fair as STCM does not have the capability to use the velocity dimension.
     Note that the solid curves remain the same as in Fig.~\ref{fig:fig_4}.
     }
+  %  \label{fig:novel_roc}
+\end{figure*}
+\begin{figure*}
+    \centering
+    \includegraphics[width=\textwidth]{Fig6_March2024_referee.png}
+    \caption{\newchange{Comparison of mROC curves produced with and without using the velocity dimension, using otherwise the same dataset, at two contrast levels ($4\times 10^{-4}$ and $2\times 10^{-4}$) and for a separation of 3 to 4 FWHM. In case where the velocity dimension is not used, illustrated with the purple and yellow dashed lines for C3PO and C-LANDO respectively, the velocity dimension is replaced by the central velocity bin. This makes the comparison to STCM a little more fair as STCM does not have the capability to use the velocity dimension.
+    Note that the solid curves remain the same as in Fig.~\ref{fig:fig_4}.}
+    }
     \label{fig:novel_roc}
 \end{figure*}
+
 
 The importance of how spatial features are driving the higher performance of C3PO was illustrated in the last section. The STCM algorithm sees the same features as C3PO, but with just one of the relative velocities.
 Since velocity seems to be the key feature difference between C3PO and STCM, it is relevant to discuss the importance of the velocity feature in the data. 
