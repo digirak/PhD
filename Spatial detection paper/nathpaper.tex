@@ -25,6 +25,7 @@
 \usepackage{textcomp}
 \usepackage{natbib,twoopt}
 \usepackage{xcolor}
+\usepackage{ulem}
 
 % Define a new command for highlighting new changes in darkgreen
 \definecolor{darkgreen}{RGB}{0,100,0}
@@ -135,10 +136,11 @@ In order to work in the high-contrast regime, a number of observing strategies h
 While each of these strategies have their own unique features, in general, they produce a model for the stellar halo and that can be subtracted from the data, leaving the residual data largely free of stellar contamination.
 However, this leads to the problem of unsubtracted speckle signal in the data which could still be confused as exoplanet companions.
 Therefore, astronomers are limited to shallower contrasts where it is possible to confidently differentiate between the exoplanet companions and speckles.
-A way out of this confusion is combining SADI data with spectral deconvolution post-processing techniques \cite[as for e.g. in, ][]{2002SparksSDI, 2007ThatteSDI}.
-Combining high-contrast imaging data with high-resolution spectra to improve detectability of exoplanets was suggested by \cite{2015Snellen} particularly to improve the detection contrast limit in SADI datasets particularly with the aid of the molecular absoption lines present in the spectra.
+A way out of this confusion is combining SADI data with spectral deconvolution post-processing techniques\cite[as for e.g. in, ][]{2002SparksSDI, 2007ThatteSDI}.
+Combining high-contrast imaging data with high-resolution spectra to improve detectability of exoplanets was suggested by\cite{2015Snellen} particularly to improve the detection contrast limit in SADI datasets particularly with the aid of the \newchange{exoplanetary} molecular absoption lines present in the spectra.
 
 The molecular absorption lines produced in the atmosphere of a Jupiter analog have long been used to characterize the atmospheres of exoplanets using cross correlations with template spectra \cite[e.g][]{birkby2013detection,snellen2010orbital} that contain molecular absorption features \citep[e.g][]{2003BTsettl}.
+\newchange{However, characterization of exoplanets require the mapping of the cross correlation to log-likelihood which is not straightforward and therefore in the last few years characterization has mainly been carried with the help of spectral retrievals on HR$~8799$e \citep[][]{2020MolliereHR8799e}, HR$~7672$AB \citep[][]{2022WangHR7672AB}, Yses$~1$b \citep[][]{2022Zhang} and HR$~4747$B \citep[][]{2022Xuan4747B} for example.}
 The presence of spatial data allows astronomers to converge on the region in spatial dimension where such molecular cross correlation is the highest.
 Such maps are best expressed by the term ``molecular map'' was first introduced by \citet{2018AHoeijmakersMM} to produce detection maps for \rm{H$_2$O} and \rm{CO} in IFS datasets.
 In order to produce such maps, known molecular templates are cross correlated with the data.
@@ -211,6 +213,7 @@ The wavelength vector is recalculated by cross correlating the sky signal presen
 The spectral frames are then cropped around the identified stellar centroid positions, which both recenters the images on the star and removes artefacts that affect spaxels at the edge of the frames.
 Finally, we collate all re-centered cubes into a single master 4D tensor.
 The tensor now has $83$ temporal cubes with $2000$ wavelength bins with $61$ rows and $61$ columns of pixels.
+\newchange{The reduced number of pixels is a result of the tradeoff with trying to keep as much of the field of view as possible while simultaneously filtering the bad pixels and keeping the star}
 %At a pixel resolution $12.5$ mas/pixel this leads to a field of view of $0\farcs76 \times 0\farcs76$ for each image.
 
 \subsection{Injection of simulated warm Jupiters in the data}\label{sec: FC insertion}
@@ -218,10 +221,10 @@ The tensor now has $83$ temporal cubes with $2000$ wavelength bins with $61$ row
 In this paper we explore the detection of a population of planets which are relatively young (typically a few tens of Myr old) where they still retain a large fraction of their formation entropy, making them `warm' with a $T_{\rm eff}\approx 1000 - 1500$~K.
 Such exoplanets are called warm Jupiters because of their temperature and gas giant composition.
 In order to simulate the presence of a warm Jupiter in the data we inject a simulated warm Jupiter at a specific radial distance and position angle (PA) from the frame center.
-In this paper we use the template set provided by the BT-SETTL models \citep{1997Allard, 2011Allard}. 
+In this paper we use the template set provided by the BT-SETTL models \citep{1997Allard, 2011Allard,2003BTsettl}\newchange{,\citep[][]{2003BTsettl}}. 
 We use the substellar templates characterized by their effective temperature ($T_{\rm{eff}}$) and surface gravity ($\log(g)$), and contain detailed spectra which model the atmosphere for brown dwarfs, late M-type stars, and young gas-giant planets or warm Jupiters.
 Warm Jupiters are particularly interesting as they seem to be present in the $5-20$~au distance range \cite{2016Bryan}.
-For this paper we use the models from the BT-SETTL family of models \citep[][]{2003BTsettl} that allow us to have a large enough wavelength range in the infrared. 
+For this paper we use the models from \newchange{\sout{the}} BT-SETTL \newchange{\sout{family of models 2003BTsettl that}} as \newchange{it allows us} to have a large enough wavelength range in the infrared. 
 With the BT-SETTL models we have access to wavelengths between $1\mu$m to $30\mu$m.
 We choose a warm Jupiter template with a $T_{\rm eff} = 1300$K and a $\log(g)=3.0$.
 When injecting this template, we follow these steps:
