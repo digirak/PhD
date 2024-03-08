@@ -162,7 +162,7 @@ In order to tackle some of these issues, we propose the use of supervised machin
 We therefore only consider cross correlation maps, which preserve the multi-dimensionality of the datasets, where the wavelength dimension is replaced by the radial velocity of the cross correlation and the photon values by the cross correlation coefficients. 
 
 The presence of these multiple dimensions lends to the potential of using ML algorithms to claim detections as opposed to using metrics such as S/N.
-Using spatial data with ML algorithms has had particular success in the direct imaging community, to detect point like sources \newchange{\citet{2018Gomez} and \citet{2023Carlito}} to characterize the PSF that needs to be subtracted in ADI images \cite{2022Gebhard} and \cite{2023Flasseur}.
+Using spatial data with ML algorithms has had particular success in the direct imaging community, to detect point like sources \newchange{\sout{ cite{2018Gomez} and cite{2023Carlito} } \citet{2018Gomez} and \citet{2023Carlito}} to characterize the PSF that needs to be subtracted in ADI images \cite{2022Gebhard} and \cite{2023Flasseur}.
 However, research in the field of exoplanet detection using spectral and direct imaging data with ML algorithms still has plenty of scope to develop. This is a gap that this paper and its companion (Garvin et al., in prep) will be addressing.
 Here, we are focusing on how spatial, spectral (i.e., cross correlation), and temporal dimensions can be most effectively leveraged together in a single ML framework. 
 An alternative approach to do this is to implement the ML framework only in the cross correlated spectral dimension, to preserve spatial independence and flexibility towards spectral instruments, as in Garvin et al. (in prep.).
