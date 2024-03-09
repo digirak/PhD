@@ -53,9 +53,6 @@
 \begin{document} 
 
 
-%   \title{Improving detection limits of brown dwarfs using spectral angular differential imaging (SADI) sequences with machine learning }
-   %\title{ Noise independent detection limits for warm Jupiters using spectral angular differential imaging (SADI) with machine learning (ML) }
-   %\title{Exploring detection limits of warm Jupiters using high-contrast imaging, medium-resolution spectra and machine learning}
    \title{Machine learning for exoplanet detection in high-contrast spectroscopy} 
    \subtitle{Combining cross correlation maps and deep learning on medium-resolution integral-field spectra} %Improving detection sensitivity by combining cross correlation and deep learning on medium-resolution integral-field spectra
 
@@ -92,20 +89,20 @@
   {We develop a new method to effectively leverage the spectral and spatial dimensions in integral-field spectroscopy (IFS) datasets using a supervised deep-learning algorithm to improve the detection sensitivity to high-contrast exoplanets.}
   % methods heading (mandatory)
   {
-  We begin by applying a data transform whereby the four-dimensional (two spatial dimensions, one spectral dimension, and one temporal dimension) IFS datasets are replaced by four-dimensional cross correlation coefficient tensors obtained by cross correlating our data with warm Jupiter spectral template spectra.
+  We begin by applying a data transform whereby the four-dimensional (two spatial dimensions, one spectral dimension, and one temporal dimension) IFS datasets are replaced by four-dimensional cross correlation coefficient tensors obtained by cross correlating our data with \newchange{young gas giant} spectral template spectra.
   Thus, the spectral dimension is replaced by a radial velocity dimension and the rest of the dimensions are retained as is.
   This transformed data is then used to train machine learning (ML) algorithms.
   We train a 2D convolutional neural network 
   with temporally averaged spectral cubes as input, and a convolutional long short term memory network that uses the temporal data as well.
   We compare these two models with a purely statistical (non-ML) exoplanet detection algorithm, which we develop specifically for four-dimensional datasets, based on the concept of the standardized trajectory intensity mean (STIM) map of \citet{2019Pairet}.
-  We test our algorithms on simulated warm Jupiters inserted into a SINFONI dataset that contains no known exoplanet, and explore the sensitivity of algorithms to detect these exoplanets at contrasts ranging from $10^{-3}$ to $10^{-4}$ for different radial separations.
+  We test our algorithms on simulated \newchange{young gas giant}s inserted into a SINFONI dataset that contains no known exoplanet, and explore the sensitivity of algorithms to detect these exoplanets at contrasts ranging from $10^{-3}$ to $10^{-4}$ for different radial separations.
   }
   % results heading (mandatory)
-  {%We explore the sensitivity of the algorithms at different contrasts between $10^{-3}$ to $10^{-4}$ for simulated warm Jupiters at different radial separations from the frame center. 
+  {%We explore the sensitivity of the algorithms at different contrasts between $10^{-3}$ to $10^{-4}$ for simulated \newchange{young gas giant}s at different radial separations from the frame center. 
   We quantify the relative sensitivity of the algorithms by using modified receiver operating characteristic curves (mROC).
   We discover that the ML algorithms produce fewer false positives and have a higher true positive rate than the STIM-based algorithm.
   We also show that the true positive rate of ML algorithms is less impacted by changing radial separation than the STIM-based algorithm.
-  Finally, we show that preserving the velocity dimension of the cross correlation coefficients in the training and inference plays an important role in ML algorithms being more sensitive to the simulated warm Jupiters.}
+  Finally, we show that preserving the velocity dimension of the cross correlation coefficients in the training and inference plays an important role in ML algorithms being more sensitive to the simulated \newchange{young gas giant}s.}
 %  We also discover that the use of velocity produces $\approx 20\%$ improvement in the true positives for the ML algorithms.}
   {Through this paper, we demonstrate that ML techniques have the potential to improve the detection limits and reduce false positives for directly imaged planets in IFS datasets, after transforming the spectral dimension into a radial velocity dimension through a cross correlation operation and that the presence of the temporal dimension does not lead to increased sensitivity.
   }
@@ -113,7 +110,7 @@
 \keywords{Methods: data analysis -- Techniques: image processing -- Planetary systems -- Planets and satellites: detection}
 %Exoplanets -- Direct imaging -- Supervised machine learning -- LSTM -- medium-resolution spectroscopy}
 
-\titlerunning{Combining cross correlation maps and deep learning on medium-resolution integral-field spectra} %Exploring detectability of warm Jupiters using high-contrast spectroscopy and ML
+\titlerunning{Combining cross correlation maps and deep learning on medium-resolution integral-field spectra} %Exploring detectability of \newchange{young gas giant}s using high-contrast spectroscopy and ML
 \authorrunning{Nath-Ranga et al.}
 \maketitle
 %
@@ -168,7 +165,7 @@ Here, we are focusing on how spatial, spectral (i.e., cross correlation), and te
 An alternative approach to do this is to implement the ML framework only in the cross correlated spectral dimension, to preserve spatial independence and flexibility towards spectral instruments, as in Garvin et al. (in prep.).
 
 The main research question in this paper is whether ML can improve upon the detection capability of non-ML algorithms. This involves addressing some intermediate questions, such as the definition of an appropriate non-ML algorithm to compare with, and the definition of performance metrics.
-To this end, this paper is organized as follows. Section~\ref{sec:data} describes the data, its spatial and spectral pre-processing, generation of cross correlation cubes and the final insertions of simulated warm Jupiters.
+To this end, this paper is organized as follows. Section~\ref{sec:data} describes the data, its spatial and spectral pre-processing, generation of cross correlation cubes and the final insertions of simulated \newchange{young gas giant}s.
 Section~\ref{sec:mapbased} describes the map-based detection algorithms, including one non-ML algorithm and two ML algorithms that we have developed for this project.
 Section~\ref{sec: training ML} describes the important process of preparing our data to train the ML algorithms.
 Section~\ref{sec:results} describes how results from the ML and non-ML algorithms can be evaluated with the same baseline comparison methods.
@@ -181,8 +178,8 @@ Finally, in Sect.~\ref{sec:discussion} we discuss the reasons why using data in 
 
 This section describes the step-wise transformation of the data from 4D IFS (i.e 2D spatial, 1D spectral and 1D temporal) tensors to cross correlation tensors that can then be used to train ML algorithms.
 We start with describing these 4D tensors in Sect.~\ref{sec:datadesc}.
-This is followed by describing the injection of simulated warm Jupiters in this data in Sect.~\ref{sec: FC insertion}.
-Finally, we describe the conversion of these simulated warm Jupiter tensors into cross correlation tensors in Sect.~\ref{sec:specpreproc}.
+This is followed by describing the injection of simulated \newchange{young gas giant}s in this data in Sect.~\ref{sec: FC insertion}.
+Finally, we describe the conversion of these simulated \newchange{young gas giant} tensors into cross correlation tensors in Sect.~\ref{sec:specpreproc}.
 
 \subsection{Observations and data calibration}\label{sec:datadesc}
 
@@ -216,35 +213,37 @@ The tensor now has $83$ temporal cubes with $2000$ wavelength bins with $61$ row
 \newchange{The reduced number of pixels is a result of the tradeoff with trying to keep as much of the field of view as possible while simultaneously filtering the bad pixels and keeping the star}
 %At a pixel resolution $12.5$ mas/pixel this leads to a field of view of $0\farcs76 \times 0\farcs76$ for each image.
 
-\subsection{Injection of simulated warm Jupiters in the data}\label{sec: FC insertion}
+\subsection{Injection of simulated \newchange{young gas giant}s in the data}\label{sec: FC insertion}
 
 In this paper we explore the detection of a population of planets which are relatively young (typically a few tens of Myr old) where they still retain a large fraction of their formation entropy, making them `warm' with a $T_{\rm eff}\approx 1000 - 1500$~K.
-Such exoplanets are called warm Jupiters because of their temperature and gas giant composition.
-In order to simulate the presence of a warm Jupiter in the data we inject a simulated warm Jupiter at a specific radial distance and position angle (PA) from the frame center.
+Such exoplanets are called \newchange{young gas giant}s because of their temperature and gas giant composition.
+In order to simulate the presence of a \newchange{young gas giant} in the data we inject a simulated \newchange{young gas giant} at a specific radial distance and position angle (PA) from the frame center.
 In this paper we use the template set provided by the BT-SETTL models \citep{1997Allard, 2011Allard,2003BTsettl}\newchange{,\citep[][]{2003BTsettl}}. 
-We use the substellar templates characterized by their effective temperature ($T_{\rm{eff}}$) and surface gravity ($\log(g)$), and contain detailed spectra which model the atmosphere for brown dwarfs, late M-type stars, and young gas-giant planets or warm Jupiters.
-Warm Jupiters are particularly interesting as they seem to be present in the $5-20$~au distance range \cite{2016Bryan}.
+We use the substellar templates characterized by their effective temperature ($T_{\rm{eff}}$) and surface gravity ($\log(g)$), and contain detailed spectra which model the atmosphere for brown dwarfs, late M-type stars, and young gas-giant planets or \newchange{young gas giant}s.
+\newchange{young gas giant}s are particularly interesting as they seem to be present in the $5-20$~au distance range \cite{2016Bryan}.
 For this paper we use the models from \newchange{\sout{the}} BT-SETTL \newchange{\sout{family of models 2003BTsettl that}} as \newchange{it allows us} to have a large enough wavelength range in the infrared. 
 With the BT-SETTL models we have access to wavelengths between $1\mu$m to $30\mu$m.
-We choose a warm Jupiter template with a $T_{\rm eff} = 1300$K and a $\log(g)=3.0$.
+We choose a \newchange{young gas giant} template with a $T_{\rm eff} = 1300$K and a $\log(g)=3.0$.
 When injecting this template, we follow these steps:
 \begin{enumerate}
     \item the template is re-sampled to the same spectral resolution as SINFONI and the wavelength range is limited to that of SINFONI, i.e., between $1.4$ to $2.4$ $\mu$m;
     \item we broaden each of the bins in the template spectrum to match the spectral PSF width of the SINFONI instrument (derived from the user manual);
     \item we remove the spectral bins between $1.8$ $\mu$m and $1.91$ $\mu$m corresponding to the telluric absorption range, and then re-normalize the spectrum so that the total number of photons in each spectrum is $1$;
     \item we then multiply the total photon count in the spectrum by factor of the total photon count in the extracted spectrum at the frame center that represents the stellar photon count (this factor is the contrast);
-    \item finally, we chose a pixel and add a PSF-scaled equivalent of the warm Jupiter spectrum in a FWHM-sized aperture around that pixel.
+    \item finally, we chose a pixel and add a PSF-scaled equivalent of the \newchange{young gas giant} spectrum in a FWHM-sized aperture around that pixel.
 \end{enumerate}
 We use routines from the \textsc{VIP} package to perform the spatial injection at a specified radial separation and position angle, and at a given contrast with respect to the star.
 Every insertion in each temporal cube is done taking into account the parallactic rotation of the frame (or spectral cube in this case).
-In order to rule out the possibility of a real warm Jupiter biasing our tests, the simulated warm Jupiters are inserted using the opposite parallactic angles to the ones associated with the data, and these are later used for final derotation of the frames.
+In order to rule out the possibility of a real \newchange{young gas giant} biasing our tests, the simulated \newchange{young gas giant}s are inserted using the opposite parallactic angles to the ones associated with the data, and these are later used for final derotation of the frames.
 
 
 \subsection{Producing cross correlation cubes}\label{sec:specpreproc}
 
 After injecting fake planets into our 4D IFS data cubes, we now proceed with the computation of the cross correlation, which consists of two steps: (i) reducing the amount of stellar feature contamination in the data, and (ii) cross correlating each spaxel with a similarly pre-processed version of a BT-SETTL planetary template with similar $T_{\rm eff}$ and $\log(g)$ to the one used for the injection.
 The idea of using a similar but not exact template is to avoid a highly optimistic set of cross correlation tensors.
-We use a template that is two grid points away from the template injected into the cubes.
+\newchange{If we use the exact template then it would result in cross correlation cubes that have unrealistically high cross correlation values making our algorithm optimistic. 
+Whereas if we choose a template that is very far away from the inject one (say four grid points away) it might lead to unrealistically low cross correlation values making our algorithm pessimistic.}
+\newchange{Hence, w}e use a template that is two grid points away from the template injected into the cubes.
 %Two terminologies of note is the word `spaxel' that refers to the spectra associated with the pixel and `extraction of a spectrum' refers to performing aperture photometry on each spaxel and the resultant spectrum is the `extracted' spectrum.
 
 \subsubsection{Stellar spectral feature subtraction}
@@ -260,7 +259,7 @@ To produce a reference spectrum we have the following sequential steps:
 \end{enumerate}
 This spectrum is the reference spectrum, which we compute for every temporal cube so that we end up with as many reference spectra as temporal cubes (in our case $83$ spectra).
 We then divide the rest of the spectra extracted from each of the spaxels in each temporal cube by its own reference spectrum.
-To remove any lower order residual contamination, we compute a first order Savitzky-Golay filtered spectrum with a window size of $101$ and subtract it from the extracted spectrum. The original spectrum is then replaced by this residual spectrum at the same pixel.
+To remove any lower order residual contamination, we compute a first order \newchange{\sout{Savitzky-Golay filtered spectrum } the spectrum filtered using the Savitzky-Golay filter \citep{1964SavitzkyGolay}} with a window size of $101$ and subtract it from the extracted spectrum. The original spectrum is then replaced by this residual spectrum at the same pixel.
 
 \subsubsection{Cross correlation of the template with target spectrum}\label{sec: CC algorithm}
 
@@ -291,7 +290,7 @@ Thus, the noise is typically underestimated.
 However, if the standard deviations are computed at sufficiently high velocity shifts from the central peak \citep[e.g., for $|v|\ge 250$ km/s in][]{2018AHoeijmakersMM} then this bias is somewhat mitigated.
 Even then, \citet{ruffio2019radial} show that this problem is not completely mitigated. 
 
-Direct imaging data as used in this paper allows us to produce cross correlation maps for a simulated warm Jupiter as described in Sect.~\ref{sec: FC insertion}.
+Direct imaging data as used in this paper allows us to produce cross correlation maps for a simulated \newchange{young gas giant} as described in Sect.~\ref{sec: FC insertion}.
 The image dimension gives us access to neighbouring pixels where the noise of the cross correlation can be measured as computed with a similar recipe to \citet{2022Patapis}.
 However, additional corrections are normally applied to all such S/N computations to avoid an optimistic value of S/N.
 All of these methods rely on computing a large set of cross correlations for every spaxel making the problem computationally intensive.
@@ -305,7 +304,7 @@ In the following sections, we describe our adaptation of the STIM algorithm to c
 Detecting an exoplanet in an imaging dataset requires the estimation of signal on the noise distribution of the dataset and tools such as S/N provide a means of doing this as demonstrated by \citet{2014MawetSNR}.
 Here, we introduce the standardized trajectory correlation mean (STCM) map as an analogous way to estimate the relative strength of the signal. To produce an STCM map we perform the following steps:
 \begin{enumerate}
-    \item we first compute the cross correlation tensor as described in Sect.~\ref{sec: CC algorithm} and derotate the cubes so that the pixels at which the simulated warm Jupiter was inserted now align in all the cubes;
+    \item we first compute the cross correlation tensor as described in Sect.~\ref{sec: CC algorithm} and derotate the cubes so that the pixels at which the simulated \newchange{young gas giant} was inserted now align in all the cubes;
     \item next we choose the velocity at which $CC(v)$ in Eq~\ref{eq:CC equation} is the highest for this pixel (since we don't apply an explicit frame shift and both the template and the spectrum are at the same rest frame the highest $CC$ would be at $v=0$) and recompose the tensor into a cube consisting of the spatial and the temporal dimensions only;
     \item finally the STIM algorithm is applied to this cube along the temporal axis, resulting in an STCM map.
 \end{enumerate}
@@ -313,14 +312,14 @@ Here, we introduce the standardized trajectory correlation mean (STCM) map as an
 \begin{figure*}%[][][t]{0.5\textwidth}
     \centering
     \includegraphics[width=0.8\textwidth]{Fig1_Dec_highres_noinbetween.png}
-    \caption{Detection maps obtained with different algorithms, where a warm Jupiter was inserted at a specific contrast at different separations from the frame centre. Column 1 corresponds to a classical ADI algorithm, where an intensity map is computed for each wavelength, and the S/N map is derived from the median of all the ADI-wavelength maps. Column 2 is obtained by computing an S/N map on the cross correlation map obtained with $v=0$ km/s. Column 3 represents the STCM map, produced as described in the text. The rows represent maps produced when the same companion is inserted at different radial separations from the frame centre, respectively at $2.3$, $3.3$ and $4.3$ FWHM. %The figure illustrates the overall noise distribution in the data as realised by the different algorithms.
-    The simulated warm Jupiter is inserted at the same contrast of $5\times10^{-4}$ in all maps.}
+    \caption{Detection maps obtained with different algorithms, where a \newchange{young gas giant} was inserted at a specific contrast at different separations from the frame centre. Column 1 corresponds to a classical ADI algorithm, where an intensity map is computed for each wavelength, and the S/N map is derived from the median of all the ADI-wavelength maps. Column 2 is obtained by computing an S/N map on the cross correlation map obtained with $v=0$ km/s. Column 3 represents the STCM map, produced as described in the text. The rows represent maps produced when the same companion is inserted at different radial separations from the frame centre, respectively at $2.3$, $3.3$ and $4.3$ FWHM. %The figure illustrates the overall noise distribution in the data as realised by the different algorithms.
+    The simulated \newchange{young gas giant} is inserted at the same contrast of $5\times10^{-4}$ in all maps.}
     \label{fig:fig_1}
 \end{figure*}
 
-In Fig.~\ref{fig:fig_1}, we demonstrate the application of three different ways of estimating the relative signal strength of the simulated warm Jupiter that we insert in the data as described in Sect.~\ref{sec: FC insertion}.
+In Fig.~\ref{fig:fig_1}, we demonstrate the application of three different ways of estimating the relative signal strength of the simulated \newchange{young gas giant} that we insert in the data as described in Sect.~\ref{sec: FC insertion}.
 Each column in Fig.~\ref{fig:fig_1} is the detection map for an injection at a fixed contrast of $5\times 10^{-4}$ produced using different algorithms. %namely ADI+S/N \citep[][]{2014}
-Each row is produced when the simulated warm Jupiter is inserted at different radial separations of $2.3$, $3.3$ and $4.3$ times the FWHM, at a fixed PA of $60^{\circ}$.
+Each row is produced when the simulated \newchange{young gas giant} is inserted at different radial separations of $2.3$, $3.3$ and $4.3$ times the FWHM, at a fixed PA of $60^{\circ}$.
 The first column is produced when we compute an S/N map \citep[as defined in][]{2014Mawet} after performing classical ADI on each 4D tensor.
 In order to do this we compute the ADI for a series of data cubes at every wavelength. Then, we compute the mean ADI cube from this result. 
 The second column is produced by calculating the S/N map \citep[as defined in][]{2014Mawet} to the cross correlation cube in two steps: first we compute the median along the temporal dimension (after applying appropriate de-rotation), and then we compute the cross correlation map and apply the standard spatial S/N to it.
@@ -359,12 +358,12 @@ Training neural networks is very important to achieve the desired result; we exp
 In this section we describe the two different deep neural network architectures that are used in this paper.
 Architectures are typically defined by the number of neurons, number of layers, and the kind of neurons used.
 Thus, while describing the deep-learning algorithms we have two parts, the first being its architecture, which is necessary to explain the neuron type, its activation function, and its output, and the second being its training methodology.
-We explore the detectability of warm Jupiters with different dimensionalities of the data with both a CNN based deep neural network and a convLSTM based network.
+We explore the detectability of \newchange{young gas giant}s with different dimensionalities of the data with both a CNN based deep neural network and a convLSTM based network.
 When using the CNN based network we compute a temporal mean reducing the dimensionalities to $x$, $y$ and $v$.
 For the spatial-velocity dimension we use a CNN-based deep-learning framework called Cross Correlation and Convolutional neural network based exoPlanet detectOr (C3PO).
 In order to include the temporal dimension, we also introduce a 2D convolutional long short term memory (LSTM) based algorithm called Cross correlation and convolutional LSTM based exoplANet DetectOr (C-LANDO).
 We have designed these algorithms so that they are able to produce probability maps akin to the STCM maps. 
-The input to these deep-learning algorithms will be the cross correlation tensors provided pixel by pixel and the output will be the probability of that pixel containing an exoplanet. %simulated warm Jupiter.
+The input to these deep-learning algorithms will be the cross correlation tensors provided pixel by pixel and the output will be the probability of that pixel containing an exoplanet. %simulated \newchange{young gas giant}.
 %The details of how these maps are produced will be addressed in \S\ref{sec: training ML}.
 
 \subsubsection{C3PO}
@@ -377,7 +376,7 @@ The input image is passed through each of these layers in a block for each feedf
 In our case, an input consists of the cross correlation coefficients in the $x$, $y$, and $v$ dimensions.
 The pooling layer downsamples the kernels of the convolutional layer based on a summary statistic of the output of the convolutional layer (e.g., maximum value).
 The output of this layer is then flattened to remove 3D elements and then connected to a multi-layer perceptron, with a sigmoid activation as final layer. 
-The latter will act as the classifier output, which is the probability of a pixel to contain a simulated warm Jupiter. The detailed architecture of C3PO is as follows:
+The latter will act as the classifier output, which is the probability of a pixel to contain a simulated \newchange{young gas giant}. The detailed architecture of C3PO is as follows:
 \begin{enumerate}
     \item a convolutional layer with kernel size of $\left(3,3\right)$ and $50$ such kernels with a hyperbolic tangent activation function;
     \item a pooling layer that uses the maximum value statistic with a pool size $\left(2,2\right)$ -- note that at this point the data dimensionality follows the dimensions set by C3PO, so that we now have a new dimensionality to the output based on the kernel size, number of velocity bins, and number of such kernels;
@@ -466,8 +465,13 @@ Hence, in the following section, we will outline the process of generating train
     \label{fig:fig-2}
 \end{figure*}
 
-To train the C3PO and C-LANDO networks presented in Sect.~\ref{sec:ML algorithms}, we insert simulated warm Jupiters at different selected pixels with a range of contrasts and at different PAs from the frame center, as described in Sect.~\ref{sec: FC insertion}.
-In practice these contrasts range from $10^{-2}$ to $10^{-4}$ and we insert these at each pixel with a PA sampling rate of one insertion for every $30^{\circ}$ of PA, to make sure that at the closest radial separations we still have a spaced out PA separation between insertions. From previous studies using deep learning to detect exoplanets in images \citep[e.g.,][]{2018Gomez,2023Carlito}, we learned that using full-frame images to train deep neural networks on spatial features is not optimal, as the features corresponding to an exoplanet are confined to a few percent of the total pixels that we train on. Therefore, we crop the field of view that is used as an input to the neural network to a region of two FWHM around the inserted fake companions (or around another position to learn the noise structure of non-detections).
+To train the C3PO and C-LANDO networks presented in Sect.~\ref{sec:ML algorithms}, we insert simulated \newchange{young gas giant}s at different selected pixels with a range of contrasts and at different PAs from the frame center, as described in Sect.~\ref{sec: FC insertion}.
+In practice these contrasts range from $10^{-2}$ to $10^{-4}$ and we insert these at each pixel with a PA sampling rate of one insertion for every $30^{\circ}$ of PA, to make sure that at the closest radial separations we still have a spaced out PA separation between insertions. 
+From previous studies using deep learning to detect exoplanets in images \citep[e.g.,][]{2018Gomez,2023Carlito}, we learned that using full-frame images to train deep neural networks on spatial features is not optimal, as the features corresponding to an exoplanet are confined to a few percent of the total pixels that we train on. 
+\newchange{For e.g if we consider the full $61\times61$ pixels, the simulated \newchange{young gas giant} is inserted within an area of $11\times11$ which is $\approx 16\%$ of the total image.
+This means on the total data just $16\%$ of it has usuable features to train ML algorithms to recognize exoplanets, which would make such data highly imbalanced.
+The effect of such imbalance can result in sub-optinmal training of ML algorithms.}
+Therefore, we crop the field of view that is used as an input to the neural network to a region of two FWHM around the inserted fake companions (or around another position to learn the noise structure of non-detections).
 %Following strategies of previous papers we crop the spatial extent and 
 This results in data with the following dimensions:
 \begin{itemize}
@@ -476,17 +480,17 @@ This results in data with the following dimensions:
     \item two spatial dimensions of two FWHM size each ($11\times 11$ pixels).
 \end{itemize}
 Thus, each pixel now corresponds to a tensor of these dimensions as an input to C3PO and C-LANDO.
-Both C3PO and C-LANDO produce as output a probability based on their input and that output is interpreted as the probability of a simulated warm Jupiter being present at central pixel of the input tensor.
+Both C3PO and C-LANDO produce as output a probability based on their input and that output is interpreted as the probability of a simulated \newchange{young gas giant} being present at central pixel of the input tensor.
 We use VIP to spatially crop each full frame into non-overlapping smaller $11\times11$ pixel sized patches.
 
-Patches are produced for a pixel where the simulated warm Jupiter is inserted, but also for those pixels where nothing is present.
-%The patches in which the simulated warm Jupiter was inserted are part of the class $C_{\rm{FC}}$ (where FC stands for fake companion). The rest are just noise samples which become part of the class $C_{\rm{N}}$ (where N stands for noise).
-The patches that contain the simulated warm Jupiter are part of the $C_{\rm{FC}}$ class (where FC stands for fake companion) and the rest, which are just noise samples, become part of the $C_{\rm{N}}$ class (where N stands for noise).
+Patches are produced for a pixel where the simulated \newchange{young gas giant} is inserted, but also for those pixels where nothing is present.
+%The patches in which the simulated \newchange{young gas giant} was inserted are part of the class $C_{\rm{FC}}$ (where FC stands for fake companion). The rest are just noise samples which become part of the class $C_{\rm{N}}$ (where N stands for noise).
+The patches that contain the simulated \newchange{young gas giant} are part of the $C_{\rm{FC}}$ class (where FC stands for fake companion) and the rest, which are just noise samples, become part of the $C_{\rm{N}}$ class (where N stands for noise).
 Fig.~\ref{fig:fig-2} shows a sample for both $\rm{C_{FC}}$ and $\rm{C_N}$ side by side.
 The first two lines are those representing $\rm{C_{FC}}$; they are produced by choosing a random temporal cube from the tensor.
 The last two rows are produced in the same manner with $\rm{C_N}$.
 In any data cube if an injection is made at a specific PA and radial separation and then the cube is cropped down into $2$ FWHM sized sub-cubes, we will have a total of $35$ non-identical $\rm{C_N}$ and $1$ $\rm{C_{FC}}$ patch tensor for every cross correlation tensor (produced from the insertion at the same PA and radial separation) that have the spatial, velocity and temporal features. 
-Diversity in the $\rm{C_{FC}}$ class is achieved by inserting the simulated warm Jupiter at different separations from the frame center and at different contrasts to the stellar flux and then producing cross correlation tensors.
+Diversity in the $\rm{C_{FC}}$ class is achieved by inserting the simulated \newchange{young gas giant} at different separations from the frame center and at different contrasts to the stellar flux and then producing cross correlation tensors.
 The features that we intend C3PO to learn are this spatial variation and the velocity variation which will be learnt as a ‘colour’ by the CNN. 
 C-LANDO will have the same features in addition to the repeating format temporally of $\rm{C_{FC}}$ and more random variation temporally.
 
@@ -497,10 +501,8 @@ Random patch sequences are subjected to one of the following augmentation techni
     \item random sub-pixel shifts of up to $0.5$ pixels are applied in either $x$ or $y$ direction,
     \item production of additional samples by adding two non-sequential and randomly chosen samples.
 \end{itemize}
-%The distinction between the classes is evident spatially and along the velocity dimension.
 Spatially the $\rm{C_{FC}}$ has an intensity distribution very similar to the PSF shape originally measured in the data whereas the intensity distribution in $\rm{C_N}$ class appears to be random.
 The range of cross correlation values in the $\rm{C_{FC}}$ and the $\rm{C_N}$ also offer a point of difference.
-%Each sample in $\rm{C_{FC}}$ shows a PSF shaped intensity distribution spatially whereas each pixel $\rm{C_{N}}$ exhibits a randomly varying behaviour without any clear pattern.
 This is the type of differentiating feature that allows a deep-learning algorithm to make fine distinctions.
 Such a differentiating feature was observed in the PCA dimension by \citet{2018Gomez}.
 The temporal dimension (not shown here) is such that each pixel in the $\rm{C_{FC}}$ class that contains the exoplanet shows consistently the same pixel value and a set of pixels tend to maintain a PSF like shape for a fixed velocity. 
@@ -524,7 +526,7 @@ As with the test the $\rm{C_N}$ and $\rm{C_{FC}}$ are removed before training.
 We describe the computation of false positives in Sect.~\ref{sec:results}.
 We use the number of false positives in the validation data to tune the mix of contrasts and the parameters of the ML algorithms such as number of layers, neurons etc.
 
-We started with a small network and grew it layer by layer as the validation data produced more true positives (i.e., started detecting the simulated warm Jupiter over multiple separations and for higher contrasts) and fewer false positives.
+We started with a small network and grew it layer by layer as the validation data produced more true positives (i.e., started detecting the simulated \newchange{young gas giant} over multiple separations and for higher contrasts) and fewer false positives.
 It became quickly clear that hyperparameters of the network (such as number of neurons, number of layers, and activation functions) themselves have little impact on the number of false positives produced in the validation data.
 Initially, we started with the full range of contrasts starting from $5\times10^{-2}$ to $10^{-4}$ with no sub-pixel shifts.
 We noticed that, as we increase the number of high-contrast examples in the data, we encounter higher false positives generated. Therefore, we limit the contrast to $<10^{-3}$ with the full range of separations starting from $\approx 1$ FWHM up to $\approx 5$ FWHM.
@@ -537,9 +539,10 @@ We continue training untill the validation loss does not change by more than $10
 
 \section{Comparing the performance of the algorithms}\label{sec:results}
 
-We benchmark all our algorithms based on their ability to accurately detect simulated warm Jupiters at contrasts $<10^{-3}$ with the fewest number of mistaken detections.
+We benchmark all our algorithms based on their ability to accurately detect simulated \newchange{young gas giant}s at contrasts $<10^{-3}$ with the fewest number of mistaken detections.
+\newchange{At this point, it is important to make the distinction betweem the contrasts supplied when training the ML algorithms is limited (i.e $\ge 10^{-3}$) to have lesser overfitting; while at testing we use the full range of contrasts (i.e $10^{-2}$ to $10^{-4}$).}
 In order to make this comparison as fair as possible, we produce detection maps from each of the algorithms and then subject these to modified ROC (mROC) analysis.
-We then compare the mROC curves for each of the algorithms for different simulated warm Jupiters at different radial separations from the frame center.
+We then compare the mROC curves for each of the algorithms for different simulated \newchange{young gas giant}s at different radial separations from the frame center.
 In this section, we describe the production of detection map and binary maps with our test data described in the previous section.
 The binary maps are then used to compute true and false positives, and we finally describe the metric used for the comparison of our algorithms, based on modified mROC curves.
 
@@ -548,7 +551,7 @@ The binary maps are then used to compute true and false positives, and we finall
 
 To produce a test dataset, we choose four PAs corresponding to $60,120,180,360^{\circ}$.
 The choice of these angles is somewhat arbitrary, but it is also done so that all of the tests can be performed with the same angles and there are lesser systematic effects when testing the three algorithms together.
-We then go through the procedure of inserting simulated warm Jupiters as described in Sect.~\ref{sec: FC insertion}, where we insert warm Jupiters at different radial separations over a range of contrasts between $10^{-2}$ to $10^{-4}$. We then produce cross correlation cubes as described in \S\ref{sec: CC algorithm}, and save these cross correlation tensors without any further processing.
+We then go through the procedure of inserting simulated \newchange{young gas giant}s as described in Sect.~\ref{sec: FC insertion}, where we insert \newchange{young gas giant}s at different radial separations over a range of contrasts between $10^{-2}$ to $10^{-4}$. We then produce cross correlation cubes as described in \S\ref{sec: CC algorithm}, and save these cross correlation tensors without any further processing.
 
 \begin{figure*}[t]
     \centering
@@ -576,23 +579,24 @@ We produce detection maps from each of the algorithms as shown in the first colu
 Each row in Fig.~\ref{fig:sample_detmaps} starts with the detection map followed by a binary map produced with the threshold indicated in the title of each of the plots in columns two through four.
 These detection and binary maps are produced on the test data.
 The STCM algorithm (first row in Fig.~\ref{fig:sample_detmaps}) produces a detection map as its natural output and constitutes the first row.
-In order to compare the STCM and ML algorithms, we present the ML algorithms with overlapping patches where the central pixel of each patch is the pixel of interest, whose probability of containing the simulated warm Jupiter will be predicted by the ML algorithm.
+In order to compare the STCM and ML algorithms, we present the ML algorithms with overlapping patches where the central pixel of each patch is the pixel of interest, whose probability of containing the simulated \newchange{young gas giant} will be predicted by the ML algorithm.
+\newchange{This method is thus also adapted to `searching' for exoplanets in the dataset as we will consider each pixel as the center of an overlapping patch and thus the algorithm is indeed `blind' to where the actual exoplanet is.}
 These probabilities are used to build a detection map.
 This constitutes row two and three of the first column of Fig.~\ref{fig:sample_detmaps}.
 Columns two to four in Fig.~\ref{fig:sample_detmaps} consist of binary maps produced by thresholding the detection maps.
-These binary maps are then used to compute the total number of false positives and true positives for each insertion or each frame (since we have exactly one simulated warm Jupiter inserted in each frame).
+These binary maps are then used to compute the total number of false positives and true positives for each insertion or each frame (since we have exactly one simulated young gas giant inserted in each frame).
 
 
 \subsection{Computing true and false positives}
 \label{sec:TPFP}
 
 In principle, the threshold is the cut off that allows us to identify the pixels where the exoplanet is present.
-Utilizing thresholding on a detection map facilitates the exploration of the tradeoff between false positives and the detection of faint companions. Lower thresholds, for example, increase the likelihood of identifying faint simulated warm Jupiters but concurrently result in a higher incidence of false positives.
+Utilizing thresholding on a detection map facilitates the exploration of the tradeoff between false positives and the detection of faint companions. Lower thresholds, for example, increase the likelihood of identifying faint simulated \newchange{young gas giant}s but concurrently result in a higher incidence of false positives.
 Counting the number of false positives and true positives in every binary map and comparing the two values as a function of the threshold allows to produce classical receiver operating characteristic curves (ROC). 
 ROC curves are particularly useful when posing a problem as a two-class classification problem to define the ability of a classifier to make the trade-off between predicting a class and admitting false positives.
 They allow to benchmark both ML and non-ML pipelines and make a relative comparison. 
 
-In this paper, we define all the connected pixels in a binary map within $\approx 1$ FWHM of the original insertion of the simulated warm Jupiter as a true positive (TP) and all other non-zero pixels as a false positive (FP). We perform this analysis over multiple insertions and thereby derive the number of TPs per insertion, also known as a true positive rate (TPR), and the mean number of FPs per detection map, or a mean full frame FP as described in \citet{2018Gomez}. Because we consider the whole field of view to count a mean number of FPs, instead of testing each single resolution element at a time to derive a false positive rate (FPR), we use adapted ROC curves as mROC curves. In comparison to ROC curves, these mROC curves are arguably more relevant to the problem at hand, where the goal is to work at very low FPR (e.g., $3\times 10^{-7}$ for an equivalent Gaussian $5\sigma$ detection). As we produce these mROC curves  curves for each detection map, we mask a circular region of $3.5$ pixels from each frame center.
+In this paper, we define all the connected pixels in a binary map within $\approx 1$ FWHM of the original insertion of the simulated \newchange{young gas giant} as a true positive (TP) and all other non-zero pixels as a false positive (FP). We perform this analysis over multiple insertions and thereby derive the number of TPs per insertion, also known as a true positive rate (TPR), and the mean number of FPs per detection map, or a mean full frame FP as described in \citet{2018Gomez}. Because we consider the whole field of view to count a mean number of FPs, instead of testing each single resolution element at a time to derive a false positive rate (FPR), we use adapted ROC curves as mROC curves. In comparison to ROC curves, these mROC curves are arguably more relevant to the problem at hand, where the goal is to work at very low FPR (e.g., $3\times 10^{-7}$ for an equivalent Gaussian $5\sigma$ detection). As we produce these mROC curves  curves for each detection map, we mask a circular region of $3.5$ pixels from each frame center.
 
 \begin{figure*}
 \centering
@@ -620,7 +624,7 @@ The numbers next to each data point correspond to the threshold that was applied
 We use procedures in VIP \citep{2017AJGomezVIP,2023Christiaens} to compute TPs and FPs from a detection map. First, each detection map is subjected to the map-based ROC analysis tool available in VIP. In this tool we set the values of the number of thresholds as $10$, varying from $\approx 1$ to $\approx 6$ for the STCM maps and from $0.1$ to $0.9999$ for the outputs of C3PO and C-LANDO. The FWHM is set to $4.8$ pixels, which is the mean FWHM of the SINFONI instruments in all wavelength bands. 
 In order to count the number of TPs and FPs we use the function \texttt{compute\_binary\_map} described in the VIP documentation\footnote{\url{https://vip.readthedocs.io/en/latest/_modules/vip_hci/metrics/roc.html?highlight=compute_binary_map}}, with the following parameters: the \texttt{overlap\_threshold} variable is set to $0.7$, the \texttt{max\_blob\_fact} variable is set to $3$ and \texttt{npix} variable set to $2$ because of computational errors resulting in slightly different values for higher thresholds even though it is part of the same blob.
 We produce such maps for many separations and a range of contrasts.
-For every contrast we insert exactly one simulated warm Jupiter at a specific radial separation and position angle.
+For every contrast we insert exactly one simulated \newchange{young gas giant} at a specific radial separation and position angle.
 Therefore, every detection map will contain at most one TP, and potentially many FPs for the lowest threshold. 
 As we progressively increase the threshold the FPs will reduce until at the maximum threshold we have no remaining FP. 
 True positives in Fig.~\ref{fig:sample_detmaps} are shown in green and false positives in red.
@@ -646,22 +650,22 @@ For the ML algorithms this is satisfied at the highest threshold value of $0.999
 
 To compare the different ML and non-ML algorithms, we computed their mROC curves for different separations, as each separation corresponds to a different noise regime.
 This corresponds to the columns in Fig~\ref{fig:fig_4}, with the rows corresponding to mean contrasts starting from $6\times10^{-4}$ down to $2\times10^{-4}$.
-We have chosen this range of contrasts specifically as it allows us to observe the change in detection sensitivity of the algorithms (c.f. Fig.~\ref{fig:fig_4}, top to bottom). The panels start with a similar sensitivity for all algorithms (all the algorithms detect the simulated warm Jupiter in every insertion with a ${\rm TPR}\approx 1.0$ for the different values of thresholds). 
+We have chosen this range of contrasts specifically as it allows us to observe the change in detection sensitivity of the algorithms (c.f. Fig.~\ref{fig:fig_4}, top to bottom). The panels start with a similar sensitivity for all algorithms (all the algorithms detect the simulated \newchange{young gas giant} in every insertion with a ${\rm TPR}\approx 1.0$ for the different values of thresholds). 
 As we step through different noise(left to right) and brightness levels (top to bottom), the STCM algorithm evolves towards a complete insensitivity.
 The shape of a mROC curve defines the response of the algorithm to increasing the thresholds and thereby its ability to continue to have TPs while the FPs are removed.
 An ideal detection algorithm is where the ${\rm TPR}=1$ even when the threshold changes (i.e. the mROC curve is flat, and lies at the very top of the plot).
-This case is illustrated in Fig.~\ref{fig:fig_4}  (c.f. first row first column) for all three algorithms and remains the case for the ML algorithms in most of the first two rows, while STCM begins to show a drastic drop in TPR as the simulated warm Jupiter gets fainter in the second row.
+This case is illustrated in Fig.~\ref{fig:fig_4}  (c.f. first row first column) for all three algorithms and remains the case for the ML algorithms in most of the first two rows, while STCM begins to show a drastic drop in TPR as the simulated \newchange{young gas giant} gets fainter in the second row.
 Conversely, when we look at the bottom right set of plots, which correspond to the higher contrast noisy regime, a decrease in threshold will produce more FPs but will also produce higher TPR. 
 
 The performance of the STCM is the baseline that establishes whether a contrast is `easily detectable' by non-ML methods. 
 This corresponds to contrasts in the top left of the plot, particularly the top left extreme where all three algorithms perform similarly in terms of the TPs for ${\rm FP}=0$.
 Thus, for this paper, we study those contrasts at which STCM produces ${\rm TPR}<1$ and compare how ML algorithms perform for these contrasts and separations.
 As we go from the top left towards the bottom right we see TPRs going down across all algorithms, until we reach a TPR $=0$ at the bottom row for STCM. 
-In general, ML algorithms continue to detect the majority of simulated warm Jupiters (TPR $\ge 0.5$) other than for the highest contrast companion closest to the frame center.
+In general, ML algorithms continue to detect the majority of simulated \newchange{young gas giant}s (TPR $\ge 0.5$) other than for the highest contrast companion closest to the frame center.
 For the lowest contrast, we see that STCM produces a TPR $=0$ for almost all separations and values of the thresholds.
 Conversely, the ML algorithms continue to be able to produce a TPR$>0$ for all the considered contrasts.
 The additional advantage offered by ML algorithms is that the FPs do not seem to increase indefinitely, whereas with STCM it is obvious that the FPs will continue to increase at lower thresholds.
-An interesting observation is that the brightness of the warm Jupiter seems to be the single most important astronomical aspect which impacts detectability with ML algorithms.
+An interesting observation is that the brightness of the \newchange{young gas giant} seems to be the single most important astronomical aspect which impacts detectability with ML algorithms.
 We see that the TPR does not drop when reducing radial separation (i.e across columns in Fig.~\ref{fig:fig_4}), but rather drops with increasing contrast. 
 Conversely,  the brightness of the companion and the background stellar contamination seems to both be impacting factors for the STCM, as we observe a drop in TPR both with increasing contrast and reducing radial separations (i.e., both rows and columns in Fig.~\ref{fig:fig_4}).
 
@@ -702,11 +706,11 @@ Therefore, it appears that while for lower contrasts C-LANDO sees the signature 
 We use Fig.~\ref{fig:disc-part1} to explain this behaviour.
 This figure shows the input to both algorithms, composed of cross correlation tensors that are cropped to the $2$ FWHM patch tensors.
 In the first six rows of the figure we depict patches of some of the $83$ temporal cubes, i.e., the temporal features that are used to train C-LANDO, while the final row shows the mean of these temporal cubes, i.e., the features used to train C3PO.
-The two large columns represent two different contrasts at which the simulated warm Jupiter is inserted. On the left is a contrast corresponding to the first column second row of Fig.~\ref{fig:fig_4}, where both algorithms perform very similarly.
+The two large columns represent two different contrasts at which the simulated \newchange{young gas giant} is inserted. On the left is a contrast corresponding to the first column second row of Fig.~\ref{fig:fig_4}, where both algorithms perform very similarly.
 Both in amplitude and spatial features the first large column shows quite similar features, where C-LANDO just seems to have an additional $83$ copies of the features that C3PO receives. 
 The data features the algorithm looks for is the spatial diversity of the cross correlation coefficients, as much as diversity in the temporal dimension.
-The second large column corresponds to a warm Jupiter inserted for the same separation at a higher contrast.
-Thus, the only difference between the columns is the brightness of the simulated warm Jupiter.
+The second large column corresponds to a \newchange{young gas giant} inserted for the same separation at a higher contrast.
+Thus, the only difference between the columns is the brightness of the simulated \newchange{young gas giant}.
 In this column the first difference that we notice is the difference in amplitude between the first six rows and the last row.
 The first six rows have an amplitude range closer to the class $\rm{C_N}$ in Fig.~\ref{fig:fig-2}, whereas the final row seems to have linearly scaled amplitude to its lower contrast counterpart (first column).
 
@@ -716,7 +720,7 @@ This seems to be another key differentiating factor between the two algorithms w
 %Thus we have two reasons why C3PO produces higher TPR compared to C-LANDO,
 %\begin{enumerate}
 %    \item the higher mean cross correlation coefficient for a fixed contrasts in the key spatial cross correlation diversity and
-%    \item better spatially conserved distribution of the spatial cross correlation signature of the inserted simulated warm Jupiter.
+%    \item better spatially conserved distribution of the spatial cross correlation signature of the inserted simulated \newchange{young gas giant}.
 %\end{enumerate}
 
 \subsection{Importance of the velocity dimension}
@@ -745,7 +749,7 @@ In order to appreciate the importance of this dimension, we train the ML algorit
 Note that because of the medium resolution of SINFONI, there is no difference between the spatial distribution and mean value of cross correlation between $v=-5$, 0, and 5 km/s. 
 Then, we re-create C3PO and C-LANDO such that the value for the number channels is $1$ instead of $20$ as in Fig.~\ref{fig:c3po schematic}.
 All other dilations/changes are appropriately altered automatically as a consequence of this but the hyperparameters (i.e., number of neurons, layers, the mix of contrasts used for training, optimization algorithm and error function) remain the same.
-We perform training exactly in the manner described in Sect.~\ref{sec:ML algorithms}, compute the TPs and FPs in frame exactly as in Sect.~\ref{sec:results}, and then produce sample ROC curves in Fig.~\ref{fig:novel_roc}, where the two plots are obtained for insertions of simulated warm Jupiters at different contrasts but at a fixed separation from the frame center.
+We perform training exactly in the manner described in Sect.~\ref{sec:ML algorithms}, compute the TPs and FPs in frame exactly as in Sect.~\ref{sec:results}, and then produce sample ROC curves in Fig.~\ref{fig:novel_roc}, where the two plots are obtained for insertions of simulated \newchange{young gas giant}s at different contrasts but at a fixed separation from the frame center.
 The dashed lines in Fig.~\ref{fig:novel_roc} are those produced with no explicit velocity evolution in the data.
 The solid lines are the same as those produced in Fig.~\ref{fig:fig_4}.
 
@@ -767,13 +771,13 @@ When we consider the performance of the ML and non-ML algorithms, it is clear th
 
 \section{Conclusion}
 
-In this paper we have explored the detectability of warm Jupiters in high-contrast imaging data while having access to medium-resolution spectra for each pixel of the image, with several such cubes produced temporally.
-The fundamental question we have addressed is whether the use of such data with ML algorithms produces any improvement in detection sensitivity to warm Jupiters.
+In this paper we have explored the detectability of \newchange{young gas giant}s in high-contrast imaging data while having access to medium-resolution spectra for each pixel of the image, with several such cubes produced temporally.
+The fundamental question we have addressed is whether the use of such data with ML algorithms produces any improvement in detection sensitivity to \newchange{young gas giant}s.
 In order to efficiently use the spectral dimension we have used cross correlations to produce cross correlation tensors, which are then subject to further statistical analysis to determine if these maps contain a detection of an exoplanet.
 We have used ML and non ML algorithms that are capable of detecting the cross correlation signature of an exoplanet. %and we have studied whether the use of ML algorithms provides any improvement in detectability.
 In order to answer this question, we have used ROC curves as a method to identify the trade-off between incorrectly labelling speckles as exoplanets in test data and detecting high-contrast exoplanets.
-To build ROC curves, we inserted simulated warm Jupiters in a dataset devoid of any known companions, at different radial separations from the host star to simulate different noise regimes and at different contrast to simulate exoplanets of different brightness.
-To detect these simulated warm Jupiters we have devised a non-ML algorithm (STCM), a CNN-based algorithm (C3PO), and a CNN-LSTM based algorithm (C-LANDO). 
+To build ROC curves, we inserted simulated \newchange{young gas giant}s in a dataset devoid of any known companions, at different radial separations from the host star to simulate different noise regimes and at different contrast to simulate exoplanets of different brightness.
+To detect these simulated \newchange{young gas giant}s we have devised a non-ML algorithm (STCM), a CNN-based algorithm (C3PO), and a CNN-LSTM based algorithm (C-LANDO). 
 We train the ML algorithms on part of the data and reserve the rest to test and benchmark our algorithms. 
 We train our algorithms so that the validation set has fewest number of FPs and tune our algorithms accordingly. 
 
@@ -844,7 +848,7 @@ R.N.R was funded for this project through the FRIA grant N\textsuperscript{o}	40
 %jThis seems to be the case because the cross correlation signal is combination of the cross correlation with the extracted spectrum and the autocorrelation signal produced by the template. 
 
 %This automatically boosts the signal leading to an underestimation of the noise and hence the SNR map appears relatively `less' noisy.
-%In the pixels where the inserted fake warm Jupiter is present, the autocorrelation boosts the signal twice as strongly because of the correlation of spectral features with itself. 
+%In the pixels where the inserted fake \newchange{young gas giant} is present, the autocorrelation boosts the signal twice as strongly because of the correlation of spectral features with itself. 
 %A means to mitigate this would be to divide out the autocorrelation, but this has to be done before the SNR is calculated.
 
 %In fact the method of computing this SNR is not optimized for spatial detections as described in this paper.
