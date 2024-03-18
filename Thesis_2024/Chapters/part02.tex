@@ -58,12 +58,12 @@ We confine ourselves to a smaller set of parameters to study.
 We choose three parameters, one of which is entirely intrinsic to the exoplanet we are studying and two of them are intrinsic to the the imaging strategy and the choice of spectrograph.
 The parameters we use in this part of the thesis to test our hypotheses are,
  \begin{enumerate}
-     \item \textbf{Contrast $(~\mathbf{C}~)$:}
+     \item \textbf{Contrast $~(\mathbf{C})~$:}
      The contrast of an exoplanet is defined as the flux ratio of the mean flux emitted by the exoplanet to mean stellar flux. 
      In principle, the brightness of the exoplanet is a free parameter that varies based on the temperature, composition, atmosphere physics (such as presence of clouds) and environment of the exoplanet. 
      The brightness of the star is mostly driven by its spectral type and surface gravity.
      Therefore, when the brightness of the star is fixed (by knowing accurately its spectral type and surface gravity), the contrast is only influenced by the brightness of the exoplanet in question.
-     \item \textbf{Signal to noise ratio of measured spectrum $(~\rm{\mathbf{SNR}}~)$:}
+     \item \textbf{Signal to noise ratio of measured spectrum $~(\rm{\mathbf{SNR}})~$:}
      The signal part of a spectrum is a measure of the number of photons in the spectrum that are from an observation (i.e from the star and the planet).
      The noise can be measured in several ways, but the most basic noise that is present in an observation is the photon noise.
      In this part of the thesis, we limit our scope to measuring this noise and thus the signal to noise ratio is a ratio of the observed photons and the photon noise.
@@ -71,15 +71,14 @@ The parameters we use in this part of the thesis to test our hypotheses are,
      %This noise is also called photon noise and is usually random in nature.
      %This also relates to the quality of the spectrum in that when we have higher number of photons as compared to the number of intrinsic observational noise present in the data.
      The $\rm{SNR}$ is typically a function of integration time of the observations, such that longer observing times lead to higher $\rm{SNR}$.
-     \item \textbf{Resolution of the spectrograph $\mathbf{R}$:}
+     \item \textbf{Resolution of the spectrograph $~(\mathbf{R})~$:}
      The spectral resolution is the ratio of a fixed wavelength to the difference between wavelengths of two consequent wavelength bins.
-     $R$ is typically dependent on the instrument and actually changes with the wavelength in consideration and is typically higher for higher wavelengths.
-     To keep the interpretation simple we consider the $R$ as computed for the smallest wavelength in our data.
+     $R$ is typically dependent on the instrument and changes with the wavelength in consideration and is typically higher for higher wavelengths.
+     To keep the interpretation simple we consider a fixed $R$ as computed for the smallest wavelength in our data.
  \end{enumerate}
-%These parameters present with a limited exploratory ability, but the choice of the parameters are driven by the detection and characterization seen in the literature.
-In literature, the $C$ for instance is the single parameter that defines the sensitivity in the data when computing contrast curves,
-the $\rm{SNR}$ is the parameter that is expected to be the limiting factor when developing a new instrument,
-and the $R$ has long been considered the key factor in using spectra in direct exoplanet detection and \citep[e.g KPIC, ][]{2016Mawet} has prided itself on provide high $\rm{SNR}$ and high $R$ spectra.
+%In literature, the $C$ for instance is the single parameter that defines the sensitivity in the data when computing contrast curves,
+%the $\rm{SNR}$ is the parameter that is expected to be the limiting factor when developing a new instrument,
+%and the $R$ has long been considered the key factor in using spectra in direct exoplanet detection and \citep[e.g KPIC, ][]{2016Mawet} has prided itself on provide high $\rm{SNR}$ and high $R$ spectra.
 \subsection{Synthetic spectra library}
 To test our hypotheses, these parameters have to be sampled over a large sample space to ensure that we are able to rigorously test our hypotheses.
 Additionally, instrument parameters will require us to have access to instruments with different resolutions but we will need to the exoplanets imaged with these instruments at different $\rm{SNR}$ and $C$.
@@ -109,15 +108,14 @@ The grid is defined by the following parameters,
     The stellar $\rm{\log(g)} = 2.5$ which is the solar $\rm{\log(g)}$.
     \item []\textbf{Wavelength $\rm{\mathbf{\lambda}}$:} We choose wavelength ranges that allow us to probe the full near infra-red region, $1 \mu\rm{m} \le \lambda \le 3 \mu \rm{m}$.
     This also includes the Telluric absorption lines between $1.78$ and $2.1$ $\mu$m.
-    The default spectral resolution of the data $R>300,000$ and the linewidth is in $\AA$. 
+    The default spectral resolution of the data $R>300,000$ and the linewidth is in $\AA$, this is downsampled to match the data that we will use througout this thesis.
     We resample the $R$ as needed but we broaden the line width to match an instrumental profile so that the absorption line widths are realistic.
     We choose this width to be the same as the SINFONI instrumental line width.
 \end{itemize}
+For the rest of this thesis, these \textsc{BT-SETTL} parameters remain pretty much unaltered, unless we use it with data that demands a different template set.
 
  \section{Generating synthetic spectra}
-%We use the \textsc{BT-SETTL} templates to generate synthetic spectra that can be used to test our hypotheses.
-%Our hypotheses will be tested with both ML algorithms and a cross correlation based non-ML algorithm.
-The goal of our tests is to ascertain if a) Which type of algorithm is able to satisfy either or both hypotheses b) what are the constraints we can draw on the algorithms themselves when they are tested.
+The goal of our tests is to ascertain the constraints on detection and characterization of exoplanets using a cross correlation based algorithm with direct imaging spectra.
 Consequently, the goals of generating synthetic spectra are also two fold, 
 \begin{enumerate}
     \item to be able to explore a parameter space which is relevant from both the astronomical as well as signal processing point of view.
@@ -128,24 +126,17 @@ Consequently, the goals of generating synthetic spectra are also two fold,
     %As in the case of a cross correlation based algorithm, the community will benefit if we are able to derive the limits at which these hypotheses were satisfied by ML algorithms.
     \item to be able to test our algorithms to the limit of what they can achieve for each hypothesis from a scientific point of view.
 \end{enumerate}
-Thus to generate spectra that are astronomically relevant, having realistic observation noise and finally lend to re derivation of the parameters (i.e now they can be viewed as parameters that can be re-estimated by an observer, we generate the same in three steps.
+Thus to generate spectra that are astronomically relevant, having realistic observation noise and finally lend to re derivation of the parameters (i.e now they can be viewed as parameters that can be re-estimated by an observer), we generate the same in three steps.
 We split the description of this into three subsections, first we create noise-less spectrum from a combination of stellar and exoplanetary spectrum.
 We then follow this with explaining the noise injection process and finally we describe the re-derivation of the $\rm{SNR}$ from this noisy spectrum.
 \subsection{Creating astronomically accurate synthetic spectra}
-%The \textsc{BT-SETTL} template library allows us to choose both the stellar and planetary spectra.
-%The stellar spectrum is chosen from a grid of $5000\le \rm{T_{eff}} \le 7000$ K with a fixed $\log\rm{(g)} = 2.5$. 
-%The star in question is randomly chosen as one star in this grid and the flux is measured for every length for this star as $F_{\rm{\lambda,star}}$.
 The stellar flux (of the spectrum chosen from BT-SETTL) is measured as $F_{\rm{\lambda,star}}$.
 For the exoplanetary spectrum, an exoplanetary template spectrum is randomly chosen with a $1200 \le \rm{T_{eff}} \le 1900$ K and  $2.5 \le \rm{\log(g)}\le  5.5$. 
-%This random choice thus can have $8$ $\rm{T_{eff}}$ and $5$ $\rm{\log(g)}$ and therefore $40$ combinations.
-%In practice, to validate our hypotheses, we start with choosing a single template to be our planet.
-%In the same manner as the stellar spectrum, the exoplanetary planet flux is also measured for every wavelength spectrum as $F_{\rm{\lambda,planet}}$.
-%Note that both the spectra are chosen from the same library and hence they are both at the same resolution as that of the library. 
-Both spectra are irst re-sampled to a desired $R$ such that $10^3<R<10^5$.
-Re-sampling is a two step process,
+Both spectra are first downsampled to a desired $R$ such that $10^3<R<10^5$.
+Downsampling is a two step process,
 \begin{enumerate}
     \item a wavelength vector is first generated with the desired wavelength range where we want to test our hypotheses. 
-    In this case we choose $1\le \lambda\le 3$ $\mu$m.
+    In this case we choose $1\le \lambda\le 3$ $\mu$m which falls in the far infrared spectrum and importantly covers all of the major carbon absorption lines. 
     The $R$ of this wavelength is set to the value we choose to generate our synthetic spectra.
     \item We then interpolate a new synthetic spectrum for the specified wavelength bins based on the flux present in the template library.
     Note that the maximum resolution cannot exceed the spectral resolution of the \textsc{BT-SETTL} library ($3\times10^{5}$)
@@ -230,7 +221,7 @@ In practice both of these equations are easily replicated with the \textsc{numpy
 Note that this function has to be applied repeatedly over every wavelength bin.
 This is now, one realization of a noisy spectrum.
 When this repeated many times with many number of spectra we will have spectra each having its own noise realization. 
-This is the final step in generating the synthetic spectrum. \footnote{the code for this part of the data generation is available here \href{https://github.com/digirak/PhD/blob/master/CCF_code/CCFcore/SyntheticData.py}{synthetic data generation}}
+This is the final step in generating the synthetic spectrum. \footnote{\textcolor{black}{the code for this part of the data generation is available here} \href{https://github.com/digirak/PhD/blob/master/CCF_code/CCFcore/SyntheticData.py}{synthetic data generation}}
 We generated spectra with a specific $R$, where the exoplanet spectrum is computed using a mean contrast $C$. These spectra maintain a fixed Signal-to-Noise Ratio (SNR), achieved by producing exoplanets with a known flux. Each spectrum produced using this method will have unique values for $R$, $C$, and the initial flux. The next subsection will explore how the SNR depends on the initial flux we insert.
 
 %The spectra that we have calculated now are generated using a specific $R$ where the exoplanet spectrum is computed with a mean contrast $C$. 
@@ -283,7 +274,7 @@ As a next step, we will need to define a benchmark on which we can test our hypo
 %This spectrum is subject to some basic pre-processing in line with \cite{haffert2019} to remove stellar features and then fed into the CCF pipeline.
 %explain this in the methods chapter.
 
-\section{Developing a common benchmark for ML algorithms and non-ML algorithms}
+\section{Developing a benchmark to evaluate algorithms}
 Defining a common benchmark for this thesis section is challenging due to three essential criteria: algorithm performance irrespective of scientific goals, a benchmark for the detection hypothesis, and a benchmark for the characterization hypothesis. All algorithms in this section must undergo testing against these benchmarks. Initially, each algorithm is assessed for its general performance. Once an algorithm meets this benchmark, we proceed to evaluate the detection and characterization hypotheses.
 The goal of this exercise is to understand two things,
 \begin{enumerate}
@@ -296,7 +287,9 @@ Finally, the end goal of this benchmarking procedure is to understand the streng
 Once our algorithm is developed, we will assess it on a dataset defined by a specific range of $\left (C, R, \rm{SNR}\right)$. The primary objective is to utilize exoplanet-specific absorption features, distinct from stellar emissions and other noise, to differentiate between spectra with and without exoplanets. 
 We set limits on the algorithm's output to ensure accurate discrimination. We impose constraints, such as a false positive rate not exceeding $10^{-4}$ which is directly related to detection accuracy. In the case of characterization, involving $\rm{T_{efF}}$ and $\rm{\log(g)}$ inference from absorption lines, a false positive entails misrecognizing absorption lines and inferring non-existent parameter values.
 
-This benchmark, applicable to both ML and non-ML algorithms, facilitates false positive evaluation while adjusting thresholds. The consistent and well-designed confusion matrix is employed for this purpose. True positives occur when the algorithm correctly identifies synthetic spectra with exoplanetary features, while false positives arise when spectra without exoplanetary features (i.e., $C=0$ in Eq~\ref{eq:insertion}) are incorrectly labeled as having such features. A sample confusion matrix in Tab~\ref{tab:sample_cm} outlines two conditions applied to Eq~\ref{eq:insertion}, specifically evaluating pure stellar spectra where the algorithm correctly identifies spectra lacking exoplanets. The algorithms adhere to thresholds for counting spectra above or below a fixed threshold in computing this matrix.
+This benchmark facilitates false positive evaluation while adjusting thresholds. 
+True positives occur when the algorithm correctly identifies synthetic spectra with exoplanetary features, while false positives arise when spectra without exoplanetary features (i.e., $C=0$ in Eq~\ref{eq:insertion}) are incorrectly labeled as having such features. 
+A sample confusion matrix in Tab~\ref{tab:sample_cm} outlines two conditions applied to Eq~\ref{eq:insertion}, specifically evaluating pure stellar spectra where the algorithm correctly identifies spectra lacking exoplanets. 
 \begin{table}[ht!]
     \centering
     \begin{tabular}{|c|c|c|}
@@ -313,12 +306,12 @@ This benchmark, applicable to both ML and non-ML algorithms, facilitates false p
     The False positives have to be limited to $10^{-4}\le$ whereas we don't put any constraint on the False negatives.}
     \label{tab:sample_cm}
 \end{table}
-%The goal of this confusion matrix is to evaluate the performance of the algorihm purely as a signal processing tool with some constraints defined by the final scientific goals. 
-%Since cross correlation based algorithms are fairly well tested, it is somewhat moot to test them with this method however, this is very important to understand if the performance of the ML algorithms compares to the cross correlation algorithm as a signal processing tool.
-%The confusion matrices will have to be evaluated for different ranges of the parameters and a good algorithm will perform similarly for different ranges or have very well quantifiable limits for the value of $C$.
+While the confusion matrix is best used when evaluating cross correlations of template spectra with fake companions, this method is also generalisable to data extracted from instruments such as KPIC \citep[][]{2019KPIC}.
 \subsection{Quantifying the algorithm as a detection tool}
 
-Once an algorithm clears individual confusion matrix tests, it's essential to explore the detection hypothesis limits. This hypothesis can be fully or partially satisfied under specific data constraints, requiring quantification across diverse parameter spaces. To achieve a comprehensive understanding of detection limits, we propose a detection matrix assessing the detectability of a warm Jupiter across varied $R$ and $\rm{SNR}$ values.
+Once an algorithm clears individual confusion matrix tests, it's essential to explore the detection hypothesis limits. 
+This hypothesis can be fully or partially satisfied under specific data constraints, requiring quantification across diverse parameter spaces. 
+To achieve a comprehensive understanding of detection limits, we propose a detection matrix assessing the detectability of a warm Jupiter across varied $R$ and $\rm{SNR}$ values.
 
 The detection matrix aims to:
 \begin{enumerate}
@@ -362,51 +355,25 @@ The detection matrix above has rows indexed by $\rm{SNR_1}$ to $\rm{SNR}_n$, rep
 Each entry in the detection matrix is indexed with $C_{R,\rm{SNR}}$, representing the contrast at which the exoplanet is detected when synthesized with a specific $\rm{SNR}$ and $R$. The ordering of contrast entries is not preferential, but the matrix provides insight into the detectability of increasing contrast with ascending $\rm{SNR}$ (from the bottom to the top with the same $R$) and changing $R$ (from left to right along the columns).
 
 \subsection{Quantifying the characterization hypothesis using the characterization matrix}
-%As described earlier, spectral features such as molecular absorption lines are impacted by the $\rm{T_{eff}}$ and the surface gravity ($\rm{\log(g)}$) of the exoplanet.
-%Therefore, a benefit of having algorithms that process spectra to detect exoplanets also allows us to draw inferences about these parameters that produce these spectra.
-%The characterization hypothesis states that it is possible to characterize an exoplanet \textit{provided} that exoplanetary features are indeed present in the spectra.
-%As stated earlier, the goal of the characterization using the $\rm{T_{eff}}$ and $\rm{\log(g)}$ was to also rule out false positives where a detection could be claimed but we could infer this as a false positive based on the characterization of the spectrum.
-%This is where the characterization matrix comes into play.
-%The characterization matrix needs to perform the following actions,
-%\begin{enumerate}
- %   \item quantify the relative strengths of the presence of absorption features for different templates using both ML and non-ML algorithms.
- %   \item Using this quantification, the characterization matrix should be used to derive the error-bars on both $\rm{T_{eff}}$ and $\rm{\log(g)}$ and
-  %  \item finally visually the characterization matrix should provide clear evidence that there is preferred combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$.
-%\end{enumerate}
-%he last point is fairly important when comparing a large number of spectra and its matrices, where unlike the detection matrix, the characterization matrix has to lend to quick perusal and acceptance.
-
-%his matrix will take a similar shape to the matrix in \textcolor{blue}{[Refer to Part II Methods chapter]}. 
-%e used multiple templates there to justify the best template to be used in the case of HD142527b \textcolor{blue}{[Refer to Part II Results HD142527b]} and conversely showed that the template does not make any impact on PDS70 \textcolor{blue}{[Refer to Part II Results, PDS70]}.
-%n that case we used the matrix purely as a visual and qualitative justification for the use of the templates to produce maps of the detected companion.
-%n order to fulfil the quantitative criteria we will go on to use the change of the output of the algorithm for different templates.
-%he dispersion of the changw will allow us to quantify the error in $\rm{T_{eFF}}$ and $\rm{\log(g)}$.
-%here are two basic reasons to use the dispersion of the detection parameter across different templates,
-%begin{enumerate}
-%   \item this dispersion of the detection parameter allows to constrain the sensitivity of the algorithm to supplying the closest template to the exoplanet present in the spectrum.
-%   \item constrain the sensitivity of both $\rm{T_{efF}}$ and $\rm{\log(g)}$ to varying templates.
-%\end{enumerate}
-%Note that it is possible to produce this characterization matrix when there is sufficient evidence that the algorithm is indeed sensitive to changing templates.
-%t is outside the scope of the thesis to define another metric for this 'sensitivity' but tests with different templates in one of the metrics defined here have to give us the confidence that the algorithm is indeed sensitive to changing templates.
-%n the subsequent sections we will discuss the application of this benchmark to both ML and non-ML algorithms and the results produced therein.
 Spectral features, such as molecular absorption lines, depend on the exoplanet's effective temperature ($\rm{T_{eff}}$) and surface gravity ($\rm{\log(g)}$). Algorithms processing spectra for exoplanet detection can also yield insights into these parameters, aligning with the characterization hypothesis. This hypothesis assumes characterization is possible when exoplanetary features are present in the spectra.
 
 The characterization matrix serves to:
-
-1. Quantify the presence of absorption features for different templates using both ML and non-ML algorithms.
-2. Utilize this quantification to derive error bars for both $\rm{T_{eff}}$ and $\rm{\log(g)}$.
-3. Visually provide evidence for preferred combinations of $\rm{T_{eff}}$ and $\rm{\log(g)}$.
-
+\begin{itemize}
+    \item Quantify the presence of absorption features for different templates.
+    \item Utilize this quantification to derive error bars for both $\rm{T_{eff}}$ and $\rm{\log(g)}$. 
+    \item Visually provide evidence for preferred combinations of $\rm{T_{eff}}$ and $\rm{\log(g)}$.
+\end{itemize}
 Unlike the detection matrix, the characterization matrix needs to allow quick and easy analysis, especially when comparing numerous spectra.
+The characterization hypothesis is ve`rified when a change in template produces a change in the error bars computed using the characterization matrix.
 
-This matrix will resemble the one discussed in [refer to Part II Methods chapter]. In that context, it justified the best template for HD142527b and demonstrated the template's negligible impact on PDS70. For quantitative analysis, we will examine the algorithm's output variation for different templates, measuring the dispersion to quantify error in $\rm{T_{eff}}$ and $\rm{\log(g)}$.
 
-The dispersion of the detection parameter across templates serves two purposes:
+\textcolor{magenta}{describe characterization matrix here. Not done because left over from earlier thesis org.}
+%The dispersion of the detection parameter across templates serves two purposes:
+%1. Constrains the algorithm's sensitivity to supplying the closest template to the exoplanet present in the spectrum.
+%2. Constrains the sensitivity of both $\rm{T_{eff}}$ and $\rm{\log(g)}$ to varying templates.
 
-1. Constrains the algorithm's sensitivity to supplying the closest template to the exoplanet present in the spectrum.
-2. Constrains the sensitivity of both $\rm{T_{eff}}$ and $\rm{\log(g)}$ to varying templates.
-
-The ability to produce this characterization matrix relies on sufficient evidence that the algorithm is indeed sensitive to changing templates. In subsequent sections, we will apply this benchmark to both ML and non-ML algorithms and discuss the results obtained.
-
+%The ability to produce this characterization matrix relies on sufficient evidence that the algorithm is indeed sensitive to changing templates.
+% In subsequent sections, we will apply this benchmark to both ML and non-ML algorithms and discuss the results obtained.
 \chapter{Detection and characterization performance using cross correlation and synthetic astronomical spectra}
 \label{chap:II.3}
 %In this part we have developed two classes of algorithms, non-ML based algorithms and the ML based algorithms.
