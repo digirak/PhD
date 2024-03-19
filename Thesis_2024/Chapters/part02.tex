@@ -356,7 +356,6 @@ Each entry in the detection matrix is indexed with $C_{R,\rm{SNR}}$, representin
 
 \subsection{Quantifying the characterization hypothesis using the characterization matrix}
 Spectral features, such as molecular absorption lines, depend on the exoplanet's effective temperature ($\rm{T_{eff}}$) and surface gravity ($\rm{\log(g)}$). Algorithms processing spectra for exoplanet detection can also yield insights into these parameters, aligning with the characterization hypothesis. This hypothesis assumes characterization is possible when exoplanetary features are present in the spectra.
-
 The characterization matrix serves to:
 \begin{itemize}
     \item Quantify the presence of absorption features for different templates.
@@ -364,16 +363,31 @@ The characterization matrix serves to:
     \item Visually provide evidence for preferred combinations of $\rm{T_{eff}}$ and $\rm{\log(g)}$.
 \end{itemize}
 Unlike the detection matrix, the characterization matrix needs to allow quick and easy analysis, especially when comparing numerous spectra.
-The characterization hypothesis is ve`rified when a change in template produces a change in the error bars computed using the characterization matrix.
+The characterization hypothesis is verified when a change in template produces a change in the error bars computed using the characterization matrix.
+The characterization parameter makes up the characterization matrix, this will descirbed in detail in the next chapter. 
+For now we will limit ourselves to describing how the characterization matrix itself is composed.
+
+The characterization matrix is composed of one row for each $T_{\rm{eff}}$ and one column for each $\log(g)$. 
+If the characterization parameter is $\rm{CP}$ then the characterization matrix is,
+\begin{table}[htbp]
+    \centering
+    \label{tab:charmat_rep}
+    \begin{tabular}{|>{\columncolor{gray!30}}c||c|c|c|c|}
+    \hline
+    \rowcolor{gray!30}
+     & $\log(g)_1$ & $\log(g)_2$ & $\log(g)_3$ & $\ldots$ \\ \hline\hline
+    $T_{\mathrm{eff}_1}$ & $\mathrm{CP_{1,1}}$ & $\mathrm{CP_{1,2}}$ & $\mathrm{CP_{1,3}}$ & $\ldots$ \\ \hline
+    $T_{\mathrm{eff}_2}$ & $\mathrm{CP_{2,1}}$ & $\mathrm{CP_{2,2}}$ & $\mathrm{CP_{2,3}}$ & $\ldots$ \\ \hline
+    $T_{\mathrm{eff}_3}$ & $\mathrm{CP_{3,1}}$ & $\mathrm{CP_{3,2}}$ & $\mathrm{CP_{3,3}}$ & $\ldots$ \\ \hline
+    $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ \\ \hline
+    $T_{\mathrm{eff}_n}$ & $\mathrm{CP_{n,1}}$ & $\mathrm{CP_{n,2}}$ & $\mathrm{CP_{n,3}}$ & $\ldots$ \\ \hline
+    \end{tabular}
+    \caption{Effective Temperatures and Surface Gravities}
+    \end{table}.
+Rows and columns in grey in Table \cref{tab:charmat_rep} pertain to specific $T_{\rm{eff}}$ and $\log{g}$ that are used to derive the characterization parameter.
 
 
-\textcolor{magenta}{describe characterization matrix here. Not done because left over from earlier thesis org.}
-%The dispersion of the detection parameter across templates serves two purposes:
-%1. Constrains the algorithm's sensitivity to supplying the closest template to the exoplanet present in the spectrum.
-%2. Constrains the sensitivity of both $\rm{T_{eff}}$ and $\rm{\log(g)}$ to varying templates.
 
-%The ability to produce this characterization matrix relies on sufficient evidence that the algorithm is indeed sensitive to changing templates.
-% In subsequent sections, we will apply this benchmark to both ML and non-ML algorithms and discuss the results obtained.
 \chapter{Detection and characterization performance using cross correlation and synthetic astronomical spectra}
 \label{chap:II.3}
 %In this part we have developed two classes of algorithms, non-ML based algorithms and the ML based algorithms.

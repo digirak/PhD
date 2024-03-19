@@ -16,14 +16,14 @@
 \contentsline {xchapter}{Spectral data generation to test the effectiveness of cross correlation based detection and characterization}{30}{chapter.5}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Detection and characterization performance using cross correlation and synthetic astronomical spectra}{41}{chapter.6}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption\relax }}{48}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Caption\relax }}{49}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Caption\relax }}{51}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Caption\relax }}{52}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Caption\relax }}{53}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Caption\relax }}{54}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Caption\relax }}{58}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Caption\relax }}{59}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption\relax }}{48}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Caption\relax }}{49}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Caption\relax }}{51}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Caption\relax }}{52}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Caption\relax }}{53}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Caption\relax }}{54}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Caption\relax }}{58}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Caption\relax }}{59}{figure.caption.34}%
 \contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{65}{part.3}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Producing detection and characterization maps from HCI and MRS data}{66}{chapter.7}%
@@ -34,16 +34,16 @@
 \contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{72}{part.4}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Development and performance of the ML algorithms}{73}{chapter.10}%
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Caption\relax }}{76}{figure.caption.36}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Caption\relax }}{77}{figure.caption.37}%
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Caption\relax }}{80}{figure.caption.41}%
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Caption\relax }}{82}{figure.caption.43}%
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Caption\relax }}{83}{figure.caption.45}%
-\contentsline {figure}{\numberline {10.6}{\ignorespaces CCF results\relax }}{87}{figure.caption.49}%
-\contentsline {figure}{\numberline {10.7}{\ignorespaces RF results\relax }}{88}{figure.caption.50}%
-\contentsline {figure}{\numberline {10.8}{\ignorespaces AE results\relax }}{89}{figure.caption.51}%
-\contentsline {figure}{\numberline {10.10}{\ignorespaces Caption\relax }}{91}{figure.caption.53}%
-\contentsline {figure}{\numberline {10.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{92}{figure.caption.54}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Caption\relax }}{76}{figure.caption.37}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Caption\relax }}{77}{figure.caption.38}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Caption\relax }}{80}{figure.caption.42}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Caption\relax }}{82}{figure.caption.44}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Caption\relax }}{83}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces CCF results\relax }}{87}{figure.caption.50}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces RF results\relax }}{88}{figure.caption.51}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces AE results\relax }}{89}{figure.caption.52}%
+\contentsline {figure}{\numberline {10.10}{\ignorespaces Caption\relax }}{91}{figure.caption.54}%
+\contentsline {figure}{\numberline {10.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{92}{figure.caption.55}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Use of machine learning algorithms with map based data}{94}{chapter.11}%
 \addvspace {10\p@ }
