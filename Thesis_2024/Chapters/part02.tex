@@ -371,7 +371,7 @@ The characterization matrix is composed of one row for each $T_{\rm{eff}}$ and o
 If the characterization parameter is $\rm{CP}$ then the characterization matrix is,
 \begin{table}[htbp]
     \centering
-    \label{tab:charmat_rep}
+    % Remove the \label{tab:charmat_rep} code since it is not referencing any table.
     \begin{tabular}{|>{\columncolor{gray!30}}c||c|c|c|c|}
     \hline
     \rowcolor{gray!30}
@@ -385,6 +385,7 @@ If the characterization parameter is $\rm{CP}$ then the characterization matrix 
     \caption{The characterization matrix is representative of the similarity of different template spectra, defined by a combination of $\rm{T_{eff}}$ and $\log(g)$, to the target spectrum. 
     The matrix itself is populated by the characterization parameter computed for every unique template spectrum.
     The rows have changing $T_{\rm{eff}}$ and the columns have changing $\log(g)$.}
+    \label{tab:charmat_rep}
     \end{table}.
 Rows and columns in grey in Table \ref{tab:charmat_rep} pertain to specific $T_{\rm{eff}}$ and $\log{g}$ that are used to derive the characterization parameter.
 The characterization parameter makes up each cell in the matrix and is computed for every unique template spectrum.
@@ -408,7 +409,7 @@ In this chapter we focus on the non-ML algorithms designed to test hypotheses us
     \item 
     Subtract the stellar template from the spectrum generated in Eq~\ref{eq:insertion} and conduct initial pre-processing (refer to \textcolor{blue}{[Part II Intro, pre-processing]}).
     \item
-    Compute cross-correlation using the basic equation (refer to \textcolor{blue}{[Part II Intro, cross-correlation]}), with a specific velocity dispersion.
+    Compute cross-correlation using the basic equation (refer to \textcolor{blue}{[Part II,Intro, cross-correlation]}), with a specific velocity dispersion.
     \item 
     Compute detection and characterization parameters as appropriate.
     \item 
@@ -419,74 +420,42 @@ Results of this algorithm with various inputs and exploration of parameter space
 The goal is to summarize the functioning of a basic algorithm utilizing cross-correlations, capable of producing scientifically relevant results. This also forms the basis for evaluating ML algorithms.
 
 \section{Methods}
-The cross correlation based non ML algorithm takes as input the spectrum resulting from Eq~\ref{eq:insertion}.
+%The cross correlation based non ML algorithm takes as input the spectrum resulting from Eq~\ref{eq:insertion}.
+The cross correlation algorithm processes the spectra produced in the previous chapter to detect an exoplanet if present and characterize it.
 %The output is available at different steps in the algorithm and can be used for diverse purposes at each step,
-The broad steps of the algorithm are as follows,
+The steps of the algorithm are as follows,
 
 \begin{enumerate}
-    \item In the preprocessing stage, spectra are deconvolved from stellar features and undergo continuum subtraction. This resultant spectrum, free from stellar influences, is typically cross-correlated with a template. However, it finds application beyond this, especially in characterizations unrelated to continuum-based analysis.
+    \item In the preprocessing stage, spectra are deconvolved from stellar features and undergo continuum subtraction. This resultant spectrum, free from stellar influences, is typically cross correlated with a template. However, it finds application beyond this, especially in characterizations unrelated to continuum-based analysis.
 
-\item Post cross-correlation, cross-correlation coefficients emerge at various velocity dispersions between the template and input spectrum. Though non-normalized, these coefficients offer insights into spectrum similarities.
+\item After cross correlating the template with the target spectrum, cross correlation coefficients emerge at various velocity dispersions between the template and input spectrum. Though non-normalized, these coefficients offer insights into spectrum similarities.
 
-\item Ultimately, detection and characterization hinge on parameters like cross-correlation signal-to-noise ratio and template log-likelihood. These parameters can be leveraged for log-likelihood-based characterizations.
+\item Ultimately, detection and characterization hinge on parameters like cross correlation signal-to-noise ratio and template log-likelihood. These parameters can be leveraged for log-likelihood-based characterizations.
 \end{enumerate}
 \subsection{Pre-processing and cross correlation}
 
-The spectral preprocessing aligns with the methodology detailed in \textcolor{blue}{[See Part II,Intro, pre-processing]}. For synthetic data, where the star's pixels are precisely known, we utilize the known stellar spectrum to eliminate stellar features. The procedure involves:
+The spectral preprocessing for synthetic data involves utilizing the known stellar spectrum to eliminate stellar features.
+The procedure involves:
 \begin{enumerate}
-    \item 
-    Computing the sum of the stellar spectrum in Eq~\ref{eq:scaling of F}, serving as the normalization reference for the spectrum in Eq~\ref{eq:insertion}.
-    \item
-    Deriving the reference spectrum by applying a Savitzky-Golay filter (order $1$, window size $101$) to the scaled stellar spectrum.
-    \item 
-    Dividing the reference stellar spectrum from each synthetic spectrum, resulting in a continuum-free spectrum (\textcolor{blue}{[Refer to Part II, Methods, pre-processing]}). The noise, exoplanet spectrum, and contrast remain unaffected.
+    \item Computing the sum of the stellar spectrum in Eq~\ref{eq:scaling of F}, serving as the normalization reference for the spectrum in Eq~\ref{eq:insertion}.
+    \item Deriving the reference spectrum by applying a Savitzky-Golay filter (order $1$, window size $101$) to the scaled stellar spectrum.
+    \item Dividing the reference stellar spectrum from each synthetic spectrum, resulting in a continuum-free spectrum.
 \end{enumerate}
-The subsequent step entails cross-correlating this spectrum with a template spectrum to generate a cross-correlation vector for different velocity dispersions. Employing Eq~\textcolor{blue}{[Refer to Part II, Intro, cross-correlation equation]}, we choose a velocity dispersion range of $-50$ to $50$ km/s. Unlike \textcolor{blue}{[Refer to Part II Methods, cross-correlation]}, the synthetic data allows for a well-measured noise level, eliminating the need for a broad dispersion range for noise computation. As there is no introduced relative velocity shift between the exoplanet and the observer, a small velocity dispersion within $-50$ to $50$ km/s is used for cross-correlation. The velocity resolution ($\delta v$) is related to spectral resolution ($R$) as,
+
+The spectrum at the end of this last step is then cross-correlated with the template for a specific range of velocities, resulting in a cross-correlation vector using Eq~\textcolor{blue}{[Refer to Part II, Intro, cross-correlation equation]}, we choose a velocity dispersion range of $-50$ to $50$ km/s. 
+The velocity resolution ($\delta v$) is related to spectral resolution ($R$) as,
 \begin{equation}
 \delta v = \dfrac{1}{R}. 
 \end{equation}
 The resulting cross-correlation vector is then employed to derive both detection and characterization parameters.
     
-%\subsection{Pre-processing and cross correlation}
-%The pre-processing of the spectra is in line with the pre-processing that was described in \textcolor{blue}{[Refer to Part II, Methods, pre-processing]}.
-%In the case where we have image data we have the advantage of knowing the pixels where the star is present, therefore we measure the exact stellar spectrum.
-%This also has the effect of measuring noisy stellar spectrum and therefore when subtracting the stellar spectrum could mis-subtract the noise.
-
-%In this case, since our data is purely synthetic, we use the known stellar spectrum to divide out stellar features.
-%In order to do this we undertake the following steps,
-%\begin{enumerate}
- %%   \item We compute the sum of the stellar spectrum in Eq~\ref{eq:scaling of F}. This would be the total flux that the spectrum has been normalized to and then divide the final spectrum generated in Eq~\ref{eq:insertion} by this value.
-   % \item This is followed by computing computing the reference spectrum from the scaled stellar spectrum by applying a Savitzky-Golay filter of order $1$ and window size $101$ on the normalized stellar spectrum.
-    %This is the reference spectrum.
-    %\item Finally, the reference stellar spectrum is divided out of every synthetic spectrum.
-%\end{enumerate}
-%This leaves a continuum free spectrum, as in \textcolor{blue}{[Cite Part II, Methods, pre-processing]}.
-%But the noise in the spectrum and the exoplanet spectrum and its contrast remain unaltered.
-
-%The next step is cross correlate this spectrum with a template spectrum and produce a cross correlation vector for different velocity dispersions.
-%As with \textcolor{blue}{[Refer to Part II Methods, cross correlation]} we use Eq~\textcolor{blue}{[Refer to Part II methods, cross correlation equation]} to cross correlate a chosen template spectrum with the target spectrum.
-%In \textcolor{blue}{Part II cross correlation} we used a large velocity dispersion of $-2000$ to $2000$ km/s between the spectra and use the larger velocity dispersions as the noise computation baseline.
-%We saw that this large range of dispersions are computationally expensive but provide signal to noise values for each pixel.
-%The reason of doing so in the previous part was the lack of a standardized technique to measure noise in the data.
-%In this Part the data we use is purely synthetic and hence the noise is well measured.
-%We also don't introduce a relative velocity shift between the template and the target spectrum.
-%Thus, if there is a match between the template and the target then it will be present at $v=0$ km/s.
-%But in order to be still considered a cross correlation we still provide a small velocity dispersion to work with.
-%Consequently, the velocity dispersion we choose is between $-50$ to $50$ km/s.
-%The velocity resolution of this cross correlation is related to spectral resolution as,
-%\begin{equation}
- %   \delta v = \dfrac{V_{1}}{R}
-%\end{equation}
-%where $\delta v$ is the velocity resolution and $V_1$ is the velocity at $1$ km/s.
-%Finally, we will recompose the cross correlation vector to now be used to produce both the detection and the characterization parameters.
 \subsection{Development of the detection parameters and its application}
 Claiming a detection in the field of exoplanet detection is probably one of the most contentious issues in the field.
-%As we have seen in \textcolor{blue}{[Refer Part II methods, SNR]} it is possible to use signal to noise from the cross correlation to define a detection threshold.
 There is some limited evidence on the use of signal to noise ratio to claim molecular detection by \citet[]{2018AHoeijmakersMM}.
-However, computing this signal to noise ratio is computationally intensive. %and does not take into account the auto-correlation. 
-In this part we will re-compute the signal to noise of the cross correlation by taking into account the auto correlation and taking the noisiness of the spectrum into account.
+However, computing this signal to noise ratio is computationally intensive and can be fraught with issues of autocorrelation boosting the $\rm{SNR}$.
+In this section, we will compute the signal-to-noise ratio of the cross correlation by appropriately compensating for the autocorrelation and taking into account the noise level of the spectrum.
 
-To begin with we define the `signal' of the signal to noise which is defined as,
+To begin with, we define the `signal' of the signal to noise which is defined as,
 \begin{equation}
     S(0) = CC(0)
     \label{eq:numerator-snr}
@@ -503,28 +472,17 @@ The auto-correlation value is defined as in the cross correlation function as fo
 %where $\textrm{AC}(v)$ is the auto correlation value at $v$, as before $M_{\lambda}$ is the model flux in wavelength bin $\lambda$ and when the $v$ suffix is added it is the wavelength shifted version by a velocity dispersion $v$.
 $\textrm{AC}(v)$ represents the auto-correlation value at velocity dispersion $v$. As previously defined, $M_{\lambda}$ denotes the model flux in wavelength bin $\lambda$, and the addition of the $v$ suffix indicates the wavelength-shifted version resulting from a velocity dispersion of $v$.
 The $M_{\textrm{SG},v,\lambda}$ is the Savitzky-Golay filtered version of the template which also acts as mean subtraction for the cross correlation.
-%\textcolor{red}{[The goal is to keep the first term pristine and untouched whereas the second term is the "template". Not sure if I need to state that here.]}
-%Thus now we have the noise terms namely the noise ($\sigma$) and the auto-correlation $\textrm{AC}(v)$.
 %We use these three terms to compute a signal to noise value for each cross correlation.
-We define the cross correlation $\rm{SNR}$ only for $v=0$ and is denoted as $\rm{SNR_{ccf}}$ .
+We define the cross correlation $\rm{SNR}$ only for $v=0$ and is denoted as $\rm{SNR_{ccf}}$.
 We then compose the noise portion of this signal to noise thus,
 \begin{equation}
     N(0) = \sigma \sqrt{\textrm{AC}(0)}
 \end{equation}
-%A key point to be noted is that the effect of the auto-correlation as a noise term is considered only a square root, while the full value of $\sigma$ is considered.
-%Therefore, when the auto-correlation increases its effect is not increased in an unbound manner, which if allowed could have allowed this effect to overwhelm the effect of the noise.
-%As with the signal we compute the noise at $v=0$.
 The next step is to use both these parts to compose the signal to noise metric.
 
-%Claiming a detection is fraught with difficulties particularly when doing so with $\rm{SNR_{ccf}}$.
-%While other $\rm{SNR}$ techniques such as \cite{2014MawetSNR} has been well whetted and their limitations are well understood \citep[e.g STIM][]{2019Pairet}, there is very little literature on the robustness of calculating $\rm{SNR_{ccf}}$.
-%Therefore, when thresholding such measures, there is very little understanding of what the false positive rate is at different thresholds.
-%But a threshold we must set and a threshold we will have.
-%A contribution of this study is to also estimate the false positive rate at a threshold of $\rm{SNR_{ccf}}\ge 6$.
-%Note that this signal to noise ratio is still just a metric of the similarity between the target spectrum and its template and not a significance of the detection.
-%The CCF algorithm performs the cross correlations and returns a $\rm{SNR_{ccf}}$ using the formula from \cite{ruffio2019radial},
-Detecting with $\rm{SNR_{ccf}}$ poses challenges. Unlike established $\rm{SNR}$ techniques such as \cite{2014MawetSNR}, which have been thoroughly vetted and their limitations well-documented \citep[e.g. pre disposition to false positives remedied using STIM][]{2019Pairet}, the robustness of calculating $\rm{SNR_{ccf}}$ lacks comprehensive literature. Consequently, understanding the false positive rate at different thresholds for such measures remains limited. Despite this, setting a threshold is imperative. This study contributes by estimating the false positive rate at $\rm{SNR_{ccf}}\ge 6$. 
-It's crucial to note that this signal-to-noise ratio merely establlishes a similarity measure between the target spectrum and its template and does not indicate the significance of the detection.
+Detecting with $\rm{SNR_{ccf}}$ poses challenges. Unlike established $\rm{SNR}$ techniques such as \cite{2014MawetSNR}, which have been thoroughly vetted and their limitations well-documented \citep[e.g. pre disposition to false positives remedied using STIM][]{2019Pairet}, the robustness of calculating $\rm{SNR_{ccf}}$ lacks comprehensive literature.
+Consequently, understanding the false positive rate at different thresholds for such measures remains limited.
+Despite this, setting a threshold is imperative. This study contributes by estimating the false positive rate at $\rm{SNR_{ccf}}\ge 6$.  It's crucial to note that this signal-to-noise ratio merely establishes a similarity measure between the target spectrum and its template and does not indicate the significance of the detection.
 Finally, we use the expression in \citet{ruffio2019radial} to compute the cross correlation signal to noise as follows,
 \begin{equation}
     \rm{SNR_{ccf}}=\frac{CC(0)}{\sigma \sqrt{\textrm{AC}(0)}}
@@ -543,25 +501,8 @@ In order to make this a detection parameter we take the following steps,
 \subsection{Development of the characterization parameter and its application}
 The cross correlation coefficient is a measure of similarity between a template spectrum and the target spectrum.
 The extent of this similarity is quantified by $\rm{SNR_{ccf}}$.
-While this is a measure of similarity, characterization aims to find the \textbf{most} similar template spectrum to the target spectrum.
-%However, while this is a measure of the similarity, there is not much evidence to show that it is a good measure of the \textit{difference} between spectra.
-%The characterization parameter needs to encapsulate the following pieces of information,
-%\begin{enumerate}
- %   \item the extent of similarity of one template (within the characterization parameter space as discussed in the previous chapter) with the target spectrum,
- %   \item the relative non-similarity of other templates with the target spectrum and this will allow us to quantify the difference between individual templates and identify the spectrum that best fits with the exoplanetary template in the synthetic spectrum.
-%\end{enumerate}
-%Thus, characterization is an exercise in optimizing the parameter space such that the optimal value of the characterization parameter can be defined.
-%We use log-likelihood of the cross correlation to evaluate the optimal combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$ and measure the uncertainty in estimating this value.
-%In this subsection we describe our derivation and use of the characterization parameter by answering three fundamental questions, a) What is the advantage of log-likelihood b) how do we define the relationship between cross correlation and log-likelihood and finally c) how do we use the properties of this log-likelihood to derive the error bars of the characterization of an exoplanet.
-The characterization parameter plays a crucial role in capturing specific information, including:
-\begin{itemize}
-    \item 
-    Evaluating the degree of similarity between a chosen template (within the parameter space discussed in the previous chapter) and the target spectrum.
-    \item
-    Quantifying the relative dissimilarity of other templates compared to the target spectrum, facilitating the identification of the spectrum that best aligns with the exoplanetary template in the synthetic spectrum.
-\end{itemize}
-
-Therefore, the process of characterization involves optimizing the parameter space to define the most suitable value for the characterization parameter. Our approach involves utilizing the log-likelihood of the cross-correlation to determine the optimal combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$, accompanied by an assessment of the uncertainty associated with estimating this value.
+While this is a measure of similarity, characterization aims to find the \textbf{most} similar template spectrum to the target spectrum among several template spectra.
+The characterization process optimizes the parameter space using the log-likelihood of the cross-correlation to determine the optimal combination of $\rm{T_{eff}}$ and $\rm{\log(g)}$, while also assessing the associated uncertainty.
 In this subsection, we clarify our derivation and application of the characterization parameter by addressing three key questions:
 \begin{itemize}
     \item [a]What advantages does log-likelihood offer?
@@ -575,7 +516,6 @@ The idea of using log-likelihood as a method to estimate parameters inferred fro
     LL \propto \log(1-\rm{CC}^2)
     \label{eq:LL-cc eqn}
 \end{equation}
-%The goal of such an log-likelihood was to have a $\chi^2$ like behaviour, the standard deviation of which can be used to compute the uncertainty.
 The use of log-likelihood and cross correlations is justified in \cite{2019Brogi}, the use of the negative sign and the dependence on the square of the cross correlation allows for two crucial factors to be considered,
 \begin{enumerate}
 \item using the square of $\rm{CC}$ will allow us to make a deep likelihood trough only for truly high cross correlation values and any small variations will get ruled out.
@@ -611,12 +551,11 @@ Thus, we have the final $LL$ computation is giveny by,
 
 \paragraph{How do we use this log-likelihood to compute the uncertainties?\\}
 
-%As stated earlier this log-likelihood function takes on a $\chi^2$ shape around the template library parameter space which can be used to infer the uncertainties. 
-The characterization matrix consists of rows of $T_{\rm{eff}}$ and columns of $\rm{\log(g)}$ and we fill each cell with the $LL$ computed using the spectrum with the corresponding combination of rows and columns.
-This results in 2D matrix, however the error bars have to be computed separately in $\rm{T_{eff}}$ and $\rm{\log(g)}$.
+%The characterization matrix consists of rows of $T_{\rm{eff}}$ and columns of $\rm{\log(g)}$ and we fill each cell with the $LL$ computed using the spectrum with the corresponding combination of rows and columns.
+In the characterization matrix from Table~\ref{tab:charmat_rep}, the characterization parameter is $\rm{LL}$.
 In order to now compute the error bars separately, we first find the cell with the lowest value of $LL$.
 This is the initial guess of the parameters that we supply to the inverse Gaussian fit.
-Then we fit an inverse Gaussian as defined by,
+Then we fit an inverse Gaussian to the $LL$ using,
 \begin{equation}
     LL_{g} = \dfrac{A}{\sigma_{x}\sqrt{2\pi}}\exp{\left(-\dfrac{(x-\mu_x)^2}{2\sigma_{x}^2}\right)}
     \label{eq: gaussian fit LL}
@@ -627,44 +566,34 @@ These represent the estimated value of the parameter and our desired error bar.
 As guesses we have to specify th starting value of the parameter, we first start with a guess value of $T_{eff}$ or $\rm{\log(g)}$ at the lowest value cell and for the $\sigma_x$ we choose the desired error bar.
 
 \section{Results}
-This results section will discuss the results of the cross correlation based algorithm from a scientific point of view.
-It has been stated that for both the ML and non-ML algorithms, the confusion matrices for each algorithm will be computed for specified parameter space. 
-While this is useful to evaluate the algorithm, it does not make statement about the detection and characterization of exoplanets.
-Therefore, the description of the confusion matrix of the cross correlation algorithms will be discussed in \S\ref{chap:II.5}.
+This results section will describe the results of the cross correlation based algorithm.
 In this section we will discuss the following aspects,
 \begin{enumerate}
     \item the parameter space that was used to generate these experiments and how the cross correlation fares in this parameter space. We will describe the scientific motivation of this parameter space, 
     \item this is followed by the description of the detection matrix and a brief discussion of what the discussion matrix means for scientific data processing and
     \item finally, we will describe the error bars which we were able to compute using the characterization matrix.
 \end{enumerate}
-We will wrap this section with implications that these results mean for the scientific community in general.
+We will end this section with implications that these results mean for the scientific community in general.
 \subsection{The parameter space that we use to generate data}
 As a reminder, the parameter space here is the range of values we supply for the contrast ($C$), the instrument resolution $R$ and the spectral signal to noise ratio ($\rm{SNR}$).
 Each of these parameters have different consequences for the science, the instrument selection and finally observation baseline duration.
-It is not possible to practically cover every scenario but a good choice of the parameter space selection would be to cover as wide a net as possible for the parameters in question.
-Alternatively, we could choose to define limits to the parameters which will have scientific relevance.
-Before we describe the choice of parameters we must first define what is the "sampling" criteria for these parameters.
-Due to the advantage of using synthetic data, we can freely define our sampling criterion and thereby have as fine a mesh as needed.
-The sampling criteria has both storage and computation time consequence particularly if we vary these parameters simultaneously.
-The parameters $C$ and $\rm{SNR}$ do not have any additional computational requirements when they are changed, however, $R$ has increasing computational constraints.
-$R$ is directly proportional to the total number of wavelength bins in the data, 
-\begin{equation}
-    \rm{N}\approx 2R
-\end{equation}
-where $N$ is the total number of wavelength bins in the data. 
-While this relationship changes slightly and the constant of proportionality ($2$) rises with increasing $R$ it will still remain between $2$ and $2.5$.
-Therefore, when we generate the parameter space the computational costs of computing cross correlations are significantly higher at higher resolutions.
-This will become pertinent when using ML algorithms, but for the purposes of this chapter the only limit on the value of $R$ is the resolution limit of the template library.
+The parameter space selection for $C$, $R$, and $\rm{SNR}$ should aim to cover a wide range of values while considering scientific relevance. The sampling criteria for these parameters should be defined carefully, considering storage and computation time constraints.
+% $R$ is directly proportional to the total number of wavelength bins in the data, 
+% \begin{equation}
+%     \rm{N}\approx 2R
+% \end{equation}
+% where $N$ is the total number of wavelength bins in the data. 
+% While this relationship changes slightly and the constant of proportionality ($2$) rises with increasing $R$ it will still remain between $2$ and $2.5$.
+% Therefore, when we generate the parameter space the computational costs of computing cross correlations are significantly higher at higher resolutions.
+% This will become pertinent when using ML algorithms, but for the purposes of this chapter the only limit on the value of $R$ is the resolution limit of the template library.
 
 \paragraph{Parameter ranges of $C$:\\}
-Contrast is defined in the Eq~\ref{eq: defn of contrast}.
-This contrast varies over each wavelength bin such that different wavelength bins have varying contrasts.
+The contrast varies over each wavelength bin such that different wavelength bins have varying contrasts.
 However, when referring to contrasts, we will always refer to the mean contrast of the spectrum.
-The contrasts we choose lie on a logarithmic scale between $C_{\{rm{min}}$ and $C_{\rm{max}}$.
-We choose the $C_{\rm{min}}=10^{-2}$ based on the contrasts of HD142527b which has been detected well by the cross correlation algorithm \textcolor{blue}{[Refer to Part II Results, HD142527]}.
-The choice of $C_{\rm{max}}$ based on the detection limits set the warm Jupiter \citep[\textsc{1000246b}][]{2015Quanz,2023Cugno} with a contrast of between $10^{-5}$ and $10^{-6}$.
-Thus with the $C_{min}$ and $C_{max}$ set for the parameter space, we can produce spectra with varying contrasts.
+The contrasts we choose lie on a logarithmic scale between $C_{\rm{min}}$ and $C_{\rm{max}}$, starting from $10^{-2}$ to $10^{-6}$.
+Note that the smaller number corresponds to the `higher' contrast.
 We choose a logarithmic sampling rate of $1.2\times10^{-3}$ for each step of contrasts between $C_{min}$ and $C_{max}$.
+The choice of $C_{\rm{max}}$ based on the detection limits set the warm Jupiter \citep[\textsc{1000246b}][]{2015Quanz,2023Cugno} with a contrast of between $10^{-5}$ and $10^{-6}$.
 
 \paragraph{Parameter ranges of $\rm{SNR}:\\$}
 The ranges of $\rm{SNR}$ were chosen based on the mean $\rm{SNR}$ per wavelength bin.
@@ -687,8 +616,9 @@ For a fixed $R$ we now can generate a large number of spectra with varying $\rm{
 An example of such an interaction is Fig~\ref{fig:parspace-1}. 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale =0.5]{images/Chapter3/parspace_new.png}
-    \caption{Caption}
+    \resizebox{\textwidth}{!}{\includegraphics[scale={0.5}]{images/Chapter3/parspace_new.png}}
+    \caption{A depiction of the parameter space chosen to test the cross correlation based detection algorithm where the x-axis shows the $\rm{SNR}$ and the y-axis shows the $\rm{SNR_{\rm{ccf}}}$. The different colored lines depict different contrasts and relationship between the $\rm{SNR}$ and $\rm{SNR_{\rm{ccf}}}$.
+    The vertical lines indicate the lower bound (dash and dot) and the upper bound (solid) of the $\rm{SNR}$ whereeas the horizontal dashed line indicates the $\rm{SNR_{ccf}}\ge6$.}
     \label{fig:parspace-1}
 \end{figure}
 On the x-axis is $\rm{SNR}$ and on the y-axis is the $\rm{SNR_{ccf}}$. 
@@ -703,16 +633,19 @@ The parameter space of $R$ is limited by the resolution of the \textsc{BT-SETTL}
 We choose a sampling rate of $50$ between $10^{2}$ and $10^{5}$ so that we have a total of $20$ different resolutions for each spectrum.
 
 \subsection{The detection matrix }
-The goal of defining the parameter space and designing the algorithm was to populate the detection and characterization matrices.
+The goal of defining the parameter space and designing the algorithm was to produce the detection and characterization matrices.
 Given the context here, the detection matrix itself is not very difficult to explain and is indeed somewhat self explanatory. 
 However, it is important to still define what each row and column means in the detection matrix for warm Jupiters in Fig~\ref{fig:detmat}
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.5]{images/Chapter3/detmat.png}
-    \caption{Caption}
+    \caption{The detection matrix presents the detectability of warm Jupiters using their spectra with the cross correlation algorithm. 
+    The x-axis is changing $R$ and y-axis is the changing $\rm{SNR}$ and each cell is filled with the contrast at which the warm Jupiter is detectable for a fixed $R$, $\rm{SNR}$.
+    This detection matrix is produced for a warm Jupiter with $T_{\rm{eff}}= 1500$~K and $\log(g)=4.5$, but cross correlate the spectra with a template that is $2$ grid points away so as to neither be optimistic or pessimistic with this matrix.
+    While this detection matrix is for one kind of exoplanet, this can be repeated for several types of exoplanets and also constructed for specific molecules (i.e narrower wavelength ranges).
+    }
     \label{fig:detmat}
 \end{figure}
-This detection is produced as described in the methods chapter.
 Each cell in the matrix represents a contrast between $10^{-1}$ and $10^{-6}$.
 From the bottom to the top the rows represent $\rm{SNR}$ values from the lowest to the highest.
 The bottom two rows i.e $\rm{SNR}<300$ contain a lot of white cells, these are cells where even for the unphysically low contrasts of $0.1$ the exoplanets were not detected. 
@@ -722,17 +655,13 @@ As with Fig~\ref{fig:parspace-1} we saw that a linear relationship exists betwee
 The detection matrix seems to reinforce this idea when detecting faint exoplanets.
 As the $\rm{SNR}$ increases the matrix gets redder indicating the detectability of fainter companions. 
 The top $3$ rows are at a detection limit of $10^{-6}$, this means that the faintest companion is completely detectable for the highest signal to noise of the spectrum.
-
-Another interesting point to be noted in this matrix is when the $\rm{SNR}$ is fixed for higher $R$ there is no measurable improvement in sensitivity of detection of faint exoplanets.
-There are a some slight improvements in detection sensitvity at higher $\rm{SNR}$ particularly at $\rm{SNR}\approx 10^{5}$ and $R\approx 5\times10^4$ where we are able to detect a slightly higher contrast exoplanet.
-But once we increase the $\rm{SNR}$ we wash out any differences there may be at higher resolution.
-Note that for a constant $\rm{SNR}$ as $R$ increases $\rm{SNR_{\lambda}}$ reduces, therefore the advantage of having several wavelength bands is outweighed by lower $\rm{SNR_{\lambda}}$.
-Using this detection matrix, it is clear that for warm Jupiters, this trade-off indeed means that increase of $R$ no discernable advantage for detection.
+%For higher values of $R$ and a fixed SNR, there is no significant improvement in the sensitivity of detecting faint exoplanets. Although there are slight improvements at higher SNR, they are washed out when increasing the SNR further. 
+%This is because as $R$ increases, $\rm{SNR_{\lambda}}$ decreases, outweighing the advantage of having more wavelength bands. Therefore, for warm Jupiters, increasing $R$ does not provide any noticeable advantage in detection.
 \subsection{Characterization error bars }
 \label{sec:char error bars}
-The characterization of an exoplanet consists of two subsequent steps,
+The characterization of an exoplanet is carried out in two subsequent steps,
 \begin{enumerate}
-    \item produce the characterization matrix with either the $\rm{SNR_{ccf}}$ or $LL$ where both the matrices have to be mirror images of each other and
+    \item produce the characterization matrix with $\rm{SNR_{ccf}}$ or $LL$ where both the matrices have to be mirror images of each other and
     \item fit the inverse Gaussian to $LL$ characterization matrix.
 \end{enumerate}
 For the first part, it is important to first look at a sample plots of the characterization matrices at specific values from the parameter space.
@@ -741,7 +670,9 @@ We start with a lower $\rm{SNR}$ where the exoplanet is not detectable in Fig~\r
 \begin{figure}[!h]
     \centering
     \includegraphics[scale=0.4]{images/Chapter3/char_plots_8e+03_1e-04_2.42e+04.png}
-    \caption{Caption}
+    \caption{We produce a characterization matrix based on the template in Table~\ref{tab:charmat_rep}, the characterization parameter can be either $\rm{SNR_{ccf}}$ (left) or $LL$ (right) and the cross correlation function at $\rm{max~(SNR_{ccf})}$ or $\textrm{min~}(LL)$ is depicted at the bottom.
+    This plot shows that we can find the approximate $\log(g)$ but have large error bars in $T_{\rm{eff}}$ when the warm Jupiter cannot be detected (i.e $\rm{SNR_{ccf}}<6$).
+    }
     \label{fig:nondet_char}
 \end{figure}
 The top left is the characterization matrix with $\rm{SNR_{ccf}}$ as the parameter within the matrix and $LL$ as the parameter on the top right.
@@ -754,12 +685,14 @@ Therefore, we depict a case where $\rm{SNR_{ccf}}>5$ inf Fig~\ref{fig:charmap-de
 \begin{figure}[!h]
     \centering
     \includegraphics[scale=0.4]{images/Chapter3/char_plots_8e+03_1e-04_9.67e+04.png}
-    \caption{Caption}
+    \caption{In this instance of a characterization matrix, we use a spectrum with a higher SNR where we detect the exoplanet. 
+    The error bar is $\approx~200$K and $<0.83$ in $\rm{T_{eff}}$ and $\log(g)$ respectively.
+    The cross correlation also peaks clearly at $v=0$ km/s, which are all signs of a well detected exoplanet and thus our characterization is also accurate.}
     \label{fig:charmap-det}
 \end{figure}
 A couple of interesting points of comparison between these two last figures,
 \begin{enumerate}
-    \item Firstly, when $\rm{SNR_{ccf}}<5$ we notice that the depth of the $LL$ is fairly shallow. 
+    \item Firstly, when $\rm{SNR_{ccf}}<6$ we notice that the depth of the $LL$ is fairly shallow. 
     This results in a wild estimate of $\rm{T_{eff}}$ whereas a more reasonable estimate of $\log(\rm{g})$ is present but this is because of the limited number of bins.
     \item Secondly, the shape of the cross correlation over velocities is strikingly different, which is also reflected in the depth of the $LL$.
     This also brings to light the close relationship between detection and characterization.
