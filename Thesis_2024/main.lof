@@ -20,41 +20,43 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces The detection matrix presents the detectability of warm Jupiters using their spectra with the cross correlation algorithm. The x-axis is changing $R$ and y-axis is the changing $\rm {SNR}$ and each cell is filled with the contrast at which the warm Jupiter is detectable for a fixed $R$, $\rm {SNR}$. This detection matrix is produced for a warm Jupiter with $T_{\rm {eff}}= 1500$~K and $\log (g)=4.5$, but cross correlate the spectra with a template that is $2$ grid points away so as to neither be optimistic or pessimistic with this matrix. While this detection matrix is for one kind of exoplanet, this can be repeated for several types of exoplanets and also constructed for specific molecules (i.e narrower wavelength ranges). \relax }}{49}{figure.caption.24}%
 \contentsline {figure}{\numberline {6.3}{\ignorespaces We produce a characterization matrix based on the template in Table~\ref {tab:charmat_rep}, the characterization parameter can be either $\rm {SNR_{ccf}}$ (left) or $LL$ (right) and the cross correlation function at $\rm {max~(SNR_{ccf})}$ or $\textrm {min~}(LL)$ is depicted at the bottom. This plot shows that we can find the approximate $\log (g)$ but have large error bars in $T_{\rm {eff}}$ when the warm Jupiter cannot be detected (i.e $\rm {SNR_{ccf}}<6$). \relax }}{50}{figure.caption.25}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces In this instance of a characterization matrix, we use a spectrum with a higher SNR where we detect the exoplanet. The error bar is $\approx ~200$K and $<0.83$ in $\rm {T_{eff}}$ and $\log (g)$ respectively. The cross correlation also peaks clearly at $v=0$ km/s, which are all signs of a well detected exoplanet and thus our characterization is also accurate.\relax }}{51}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Caption\relax }}{52}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Caption\relax }}{53}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Caption\relax }}{57}{figure.caption.32}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Caption\relax }}{58}{figure.caption.34}%
-\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{64}{part.3}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces This is a characterization matrix with the same spectral features but at a higher $\rm {SNR}$ than in Fig~\ref {fig:charmap-det}. The error bars are lower and the mean characterization values are quite close to what is expected. But it is possible that even thought the $\rm {SNR}$ is high the $R$ is still too low to have enough spectral features to reduce the error bar.\relax }}{52}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces The same spectrum as from Fig\ref {fig:charmap-deeptrough} but at higher resolution and slightly higher $\rm {SNR}$ because of the increased number $\lambda _N$.\relax }}{53}{figure.caption.28}%
+\contentsline {xpart}{Using cross correlations with high contrast images with several dimensions}{56}{part.3}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Producing detection and characterization maps from HCI and MRS data}{65}{chapter.7}%
+\contentsline {xchapter}{Producing detection and characterization maps from HCI and MRS data}{57}{chapter.7}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Using cross correlations with 4D data}{67}{chapter.8}%
+\contentsline {xchapter}{Using cross correlations with 4D data}{59}{chapter.8}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Discussion of the advantages and limitations of processing spectra in this manner}{68}{chapter.9}%
-\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{71}{part.4}%
+\contentsline {xchapter}{Discussion of the advantages and limitations of processing spectra in this manner}{60}{chapter.9}%
+\contentsline {xpart}{Use of ML algorithms with exoplanet spectra and direct imaging maps}{63}{part.4}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Development and performance of the ML algorithms}{72}{chapter.10}%
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Caption\relax }}{75}{figure.caption.37}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Caption\relax }}{76}{figure.caption.38}%
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Caption\relax }}{79}{figure.caption.42}%
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Caption\relax }}{81}{figure.caption.44}%
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Caption\relax }}{82}{figure.caption.46}%
-\contentsline {figure}{\numberline {10.6}{\ignorespaces CCF results\relax }}{86}{figure.caption.50}%
-\contentsline {figure}{\numberline {10.7}{\ignorespaces RF results\relax }}{87}{figure.caption.51}%
-\contentsline {figure}{\numberline {10.8}{\ignorespaces AE results\relax }}{88}{figure.caption.52}%
-\contentsline {figure}{\numberline {10.10}{\ignorespaces Caption\relax }}{90}{figure.caption.54}%
-\contentsline {figure}{\numberline {10.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{91}{figure.caption.55}%
+\contentsline {xchapter}{Revisiting the context of the use of ML algorithms for detection and characterization}{64}{chapter.10}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Caption\relax }}{68}{figure.caption.32}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Caption\relax }}{69}{figure.caption.34}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Use of machine learning algorithms with map based data}{93}{chapter.11}%
+\contentsline {xchapter}{Development and performance of the ML algorithms}{73}{chapter.11}%
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Caption\relax }}{76}{figure.caption.37}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Caption\relax }}{77}{figure.caption.38}%
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Caption\relax }}{80}{figure.caption.42}%
+\contentsline {figure}{\numberline {11.4}{\ignorespaces Caption\relax }}{82}{figure.caption.44}%
+\contentsline {figure}{\numberline {11.5}{\ignorespaces Caption\relax }}{83}{figure.caption.46}%
+\contentsline {figure}{\numberline {11.6}{\ignorespaces CCF results\relax }}{87}{figure.caption.50}%
+\contentsline {figure}{\numberline {11.7}{\ignorespaces RF results\relax }}{88}{figure.caption.51}%
+\contentsline {figure}{\numberline {11.8}{\ignorespaces AE results\relax }}{89}{figure.caption.52}%
+\contentsline {figure}{\numberline {11.10}{\ignorespaces Caption\relax }}{91}{figure.caption.54}%
+\contentsline {figure}{\numberline {11.11}{\ignorespaces \textcolor {blue}{Use the correct plot here}\relax }}{92}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Training and testing of the ML algorithms with simulated data}{94}{chapter.12}%
+\contentsline {xchapter}{Use of machine learning algorithms with map based data}{94}{chapter.12}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Discussion and salient features of map based detection algorithms}{95}{chapter.13}%
-\contentsline {xpart}{Discussions and conclusion}{98}{part.5}%
+\contentsline {xchapter}{Training and testing of the ML algorithms with simulated data}{95}{chapter.13}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{99}{chapter.14}%
+\contentsline {xchapter}{Discussion and salient features of map based detection algorithms}{96}{chapter.14}%
+\contentsline {xpart}{Discussions and conclusion}{99}{part.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{100}{chapter.15}%
+\contentsline {xchapter}{What is the advantage that matched filtering and using spectral correlations give us over standard median subtraction?}{100}{chapter.15}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{What are the ways forward?}{107}{chapter.16}%
+\contentsline {xchapter}{Why does ML not beat standard cross correlation based detection techniques and what is the best use of ML algorithms}{101}{chapter.16}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{What are the ways forward?}{108}{chapter.17}%
 \contentsfinish 
