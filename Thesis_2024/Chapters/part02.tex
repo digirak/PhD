@@ -714,11 +714,13 @@ The spectrum in Fig~\ref{fig:charmap-deeptrough} though has a high $\rm{SNR}$, s
 While the $\log(\rm{g})$ is slight above one template resolution unit ($0.5$ dex) the $\rm{T_{eff}}$ has an error bar $\approx~200$K which is twice the resolution unit of $100$K. 
 This error bar also is quite close to the error bar at $\rm{SNR}$ where the exoplanet is just detected.
 This shows that increasing neither increasing $R$ nor $\rm{SNR}$ produces a more accurate characterization, whereas for detection a higher $\rm{SNR}$ does produce fainter detections.
-\begin{figure}[!ht]
+\begin{figure}[h]
     \centering
+    \begin{minipage}{0.8\textwidth}
     \includegraphics[scale=0.3]{images/Chapter3/char_plots_1e+05_1e-06_1.85e+07.png}
     \caption{The same spectrum as from Fig\ref{fig:charmap-deeptrough} but at higher resolution and slightly higher $\rm{SNR}$ because of the increased number $\lambda_N$.}
     \label{fig:highres-charmat}
+    \end{minipage}
 \end{figure}
 
 It is, thus, clear that there is a theoretical limit to how accurate a characterization can be.
@@ -728,3 +730,11 @@ This width as we have seen defines the $\sigma_x$ which is our error bar.
 In the discussion section of this chapter we will define the benchmark that the cross correlation algorithm sets for the ML algorithms and what steps the ML algorithms need to pass to be considered usable for scientific analysis.
 \section{Discussion and conclusion}
 We end this part with a small discussion which will motivate the use of the imaging dimension along with the spectral dimension to improve detection sensitivity. 
+As we see from our tests, its seems fairly clear particularly when comparing the perfromance of the detection matrix (c.f Fig~\ref{fig:detmat}) and the characterization matrix in Fig~\ref{fig:highres-charmat}, that detection and characterization are indeed deeply interlinked to one another. 
+In fact characterization seems to be relevant only when the exoplanet is detected with $\rm{SNR_{ccf}}\ge 6$. 
+Another fact we have noticed is that unlike detection sensitivity which seems to improve with increasing signal to noise, the characterization accuracy does not seem to get better likewise.
+This is keenly observed between Fig~\ref{fig:charmap-det} and Fig~\ref{fig:charmap-deeptrough}. 
+
+These two points make it very clear that while detection has clear benefits when using spectral data, whereby fainter exoplanets can be detected by increasing the $\rm{SNR}$, characterization does not particularly reflect these benefits. 
+Thus, this study, somewhat ironically, proves that the spectral data processing using cross correlation is better suited to detection problem than a characterization problem. 
+However, while spectra themselves may not 
